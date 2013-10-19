@@ -1,0 +1,257 @@
+/*
+  This is the default layout template for nice menus, and will provide
+  a starting point for the look of your menus. To customize, it's
+  recommended to create a custom CSS file using this file as a template,
+  then configure the module to use your custom CSS file
+  (this is done in the global settings tab of the theme administration.)
+
+  See README.txt and the handbook page (http://drupal.org/node/185543)
+  for more information on using the CSS.
+*/
+/******************************
+ Global CSS for ALL menu types
+******************************/
+/* line 19, ../sass/menu.scss */
+ul.nice-menu,
+ul.nice-menu ul,
+ul.nice-menu li {
+  border: 0;
+  background: none;
+  float: left;
+  list-style: none;
+}
+
+/* line 27, ../sass/menu.scss */
+li.menuparent li, li.menuparent ul {
+  background: #ebebeb;
+}
+
+/* line 32, ../sass/menu.scss */
+ul.nice-menu a {
+  padding: 0.3em 5px 0.3em 5px;
+  text-decoration: none;
+  color: #00335c;
+}
+
+/* line 39, ../sass/menu.scss */
+ul.nice-menu ul {
+  top: 1.8em;
+  left: -1px;
+  /* LTR */
+  border: 0;
+  margin-right: 0;
+  /* LTR */
+}
+
+/* line 46, ../sass/menu.scss */
+ul.nice-menu ul li {
+  width: 12.5em;
+}
+
+/******************************
+ VERTICAL (left/right) menus
+******************************/
+/* This is the default width of all vertical menus. */
+/* line 58, ../sass/menu.scss */
+ul.nice-menu-right,
+ul.nice-menu-left,
+ul.nice-menu-right li,
+ul.nice-menu-left li {
+  width: 12.5em;
+}
+
+/* VERTICAL menus where submenus pop RIGHT (default). */
+/* line 63, ../sass/menu.scss */
+ul.nice-menu-right ul {
+  width: 12.5em;
+  left: 12.5em;
+  top: -1px;
+}
+
+/* line 69, ../sass/menu.scss */
+ul.nice-menu-right ul ul {
+  width: 12.5em;
+  left: 12.5em;
+  top: -1px;
+}
+
+/* line 76, ../sass/menu.scss */
+ul.nice-menu-right li.menuparent,
+ul.nice-menu-right li li.menuparent {
+  background: url("../images/arrow-right.png") right center no-repeat;
+}
+
+/* line 82, ../sass/menu.scss */
+ul.nice-menu-right li.menuparent:hover,
+ul.nice-menu-right li li.menuparent:hover {
+  background: #cccccc url("../images/arrow-right.png") right center no-repeat;
+}
+
+/* VERTICAL menus where submenus pop LEFT. */
+/* line 87, ../sass/menu.scss */
+ul.nice-menu-left li ul {
+  width: 12.5em;
+  left: -12.65em;
+  top: -1px;
+}
+
+/* line 93, ../sass/menu.scss */
+ul.nice-menu-left li ul li ul {
+  width: 12.5em;
+  left: -12.65em;
+  top: -1px;
+}
+
+/* line 100, ../sass/menu.scss */
+ul.nice-menu-left li.menuparent,
+ul.nice-menu-left li li.menuparent {
+  background: #eeeeee url("../images/arrow-left.png") left center no-repeat;
+}
+
+/* line 105, ../sass/menu.scss */
+ul.nice-menu-left li.menuparent:hover,
+ul.nice-menu-left li li.menuparent:hover {
+  background: #cccccc url("../images/arrow-left.png") left center no-repeat;
+}
+
+/* line 110, ../sass/menu.scss */
+ul.nice-menu-left a,
+ul.nice-menu-left ul a {
+  padding-left: 14px;
+}
+
+/******************************
+ HORIZONTAL (down) menus
+******************************/
+/* line 118, ../sass/menu.scss */
+ul.nice-menu-down {
+  float: left;
+  /* LTR */
+  border: 0;
+}
+
+/* line 124, ../sass/menu.scss */
+ul.nice-menu-down li li {
+  border-top: 0;
+}
+
+/* line 128, ../sass/menu.scss */
+ul.nice-menu-down ul {
+  left: 0;
+  /* LTR */
+}
+
+/* line 132, ../sass/menu.scss */
+ul.nice-menu-down ul li {
+  clear: both;
+}
+
+/* line 136, ../sass/menu.scss */
+ul.nice-menu-down li ul li ul {
+  left: 12.5em;
+  /* LTR */
+  top: -1px;
+}
+
+/* line 141, ../sass/menu.scss */
+ul.nice-menu-down .menuparent a {
+  padding-right: 15px;
+  /* LTR */
+}
+
+/* line 145, ../sass/menu.scss */
+ul.nice-menu-down li.menuparent {
+  background: url("../images/arrow-down.png") right center no-repeat;
+  /* LTR */
+}
+
+/* line 149, ../sass/menu.scss */
+ul.nice-menu-down li.menuparent:hover {
+  background: url("../images/arrow-down.png") right center no-repeat;
+  /* LTR */
+}
+
+/* line 153, ../sass/menu.scss */
+ul.nice-menu-down li li.menuparent {
+  background: url("../images/arrow-right.png") right center no-repeat;
+  /* LTR */
+}
+
+/* line 157, ../sass/menu.scss */
+ul.nice-menu-down li li.menuparent:hover {
+  background: url("../images/arrow-right.png") right center no-repeat;
+  /* LTR */
+}
+
+/******************************
+ Garland-specific CSS
+******************************/
+/**
+ * Global CSS for ALL menu types
+ */
+/* line 168, ../sass/menu.scss */
+ul.nice-menu li {
+  margin: 0;
+  padding-left: 0;
+  /* LTR */
+  background-image: none;
+}
+
+/* line 174, ../sass/menu.scss */
+#header-region ul.nice-menu li {
+  margin: 0;
+  /* Padding rules are needed to deal with Garland's header line-height. */
+  padding-top: 0.1em;
+  padding-bottom: 0.1em;
+  background: #eee;
+}
+
+/* line 182, ../sass/menu.scss */
+#header-region ul.nice-menu ul {
+  top: 1.8em;
+  left: -1px;
+  /* LTR */
+  border: 0;
+  border-top: 1px solid #ccc;
+  margin-right: 0;
+  /* LTR */
+}
+
+/* line 190, ../sass/menu.scss */
+#header-region ul.nice-menu ul {
+  top: 1.7em;
+}
+
+/**
+ * HORIZONTAL (down) menus
+ */
+/* line 197, ../sass/menu.scss */
+#header-region ul.nice-menu-down li ul li ul {
+  left: 12.5em;
+  /* LTR */
+  top: -1px;
+}
+
+/* line 202, ../sass/menu.scss */
+#header-region ul.nice-menu-down li.menuparent {
+  background: #eeeeee url("../images/arrow-down.png") right center no-repeat;
+  /* LTR */
+}
+
+/* line 206, ../sass/menu.scss */
+#header-region ul.nice-menu-down li.menuparent:hover {
+  background: #cccccc url("../images/arrow-down.png") right center no-repeat;
+  /* LTR */
+}
+
+/* line 210, ../sass/menu.scss */
+#header-region ul.nice-menu-down li li.menuparent {
+  background: #eeeeee url("../images/arrow-right.png") right center no-repeat;
+  /* LTR */
+}
+
+/* line 214, ../sass/menu.scss */
+#header-region ul.nice-menu-down li li.menuparent:hover {
+  background: #cccccc url("../images/arrow-right.png") right center no-repeat;
+  /* LTR */
+}

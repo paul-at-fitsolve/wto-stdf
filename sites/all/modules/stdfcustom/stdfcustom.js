@@ -1,0 +1,87 @@
+
+(function($) {
+	
+	Drupal.behaviors.stdfcustom = {
+		attach : function(context, settings) {
+			
+			//Stop top menu items from having active links.
+			$(".menuparent > a").attr('href','javascript:void(0)');
+					
+			$( "#block-mailchimp-lists-stdf-mail-list" ).dialog({
+				 autoOpen: false,
+				 dialogClass: 'dialogFixed',
+				 title: Drupal.t("Signup For Newsletter"),
+				 zindex:1000,
+				 width:600,
+				 position:{my:"center top", at:"center top", of:"body"},
+				 
+				 
+				 show: {
+				 effect: "fade",
+				 duration: 1000
+			 },
+				 hide: {
+				 effect: "fade",
+				 duration: 1000
+				 }
+			});
+			
+			
+			$( "#signup_button" ).click(function(){
+		        $("#block-mailchimp-lists-stdf-mail-list").dialog('open');
+		        return false;
+			});
+			
+			$('.form-item-mailchimp-lists-mailchimp-stdf-mail-list-mergevars-FNAME').prepend('<div id="fname_error"></div>');
+			$('.form-item-mailchimp-lists-mailchimp-stdf-mail-list-mergevars-LNAME').prepend('<div id="lname_error"></div>');
+			$('.form-item-mailchimp-lists-mailchimp-stdf-mail-list-mergevars-MMERGE4').prepend('<div id="mmerge4_error"></div>');
+			$('.form-item-mailchimp-lists-mailchimp-stdf-mail-list-mergevars-MMERGE5').prepend('<div id="mmerge5_error"></div>');
+			$('.form-item-mailchimp-lists-mailchimp-stdf-mail-list-mergevars-EMAIL').prepend('<div id="email_error"></div>');
+			
+			$('#edit-field-budget-implementation-und-0-value')
+					.focusout(
+							function() {
+								if (!(Drupal.stdfcustom.isNumber($('#edit-field-budget-implementation-und-0-value').val()))) {
+									$('#edit-field-budget-implementation-und-0-value').val('0');
+								}
+								var supbudget = $('#edit-field-budget-supervision-impleme-und-0-value').val();
+								var nonstdf = $('#edit-field-budget-non-stdf-contributi-und-0-value').val();
+								$('#edit-field-budget-total-stdf-und-0-value').val(+$('#edit-field-budget-implementation-und-0-value').val() + +supbudget);
+								$('#edit-field-budget-total-project-value-und-0-value').val(+$('#edit-field-budget-implementation-und-0-value').val() + +nonstdf); 
+							});
+			
+			$('#edit-field-budget-supervision-impleme-und-0-value')
+			.focusout(
+					function() {
+						if (!(Drupal.stdfcustom.isNumber($('#edit-field-budget-supervision-impleme-und-0-value').val()))) {
+							$('#edit-field-budget-supervision-impleme-und-0-value').val('0');
+						}
+						var impbudget = $('#edit-field-budget-implementation-und-0-value').val();
+						$('#edit-field-budget-total-stdf-und-0-value').val(+$('#edit-field-budget-supervision-impleme-und-0-value').val() + +impbudget);
+					});
+			
+			$('#edit-field-budget-non-stdf-contributi-und-0-value')
+			.focusout(
+					function() {
+						if (!(Drupal.stdfcustom.isNumber($('#edit-field-budget-non-stdf-contributi-und-0-value').val()))) {
+							$('#edit-field-budget-non-stdf-contributi-und-0-value').val('0');
+						}
+						var impbudget = $('#edit-field-budget-implementation-und-0-value').val();
+						$('#edit-field-budget-total-project-value-und-0-value').val(+$('#edit-field-budget-non-stdf-contributi-und-0-value').val() + +impbudget);
+					});
+		}
+	};
+})(jQuery);
+
+Drupal.stdfcustom = {
+		isNumber : function(n) {
+			return !isNaN(parseFloat(n)) && isFinite(n);
+		}
+
+	};
+
+
+
+
+
+

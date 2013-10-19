@@ -1,0 +1,578 @@
+/**
+ * @file
+ * Page Styling
+ *
+ * Style the markup found in page.tpl.php. Also includes some styling of
+ * miscellaneous Drupal elements that appear in the $content variable, such as
+ * ul.links, .pager, .more-link, etc.
+ */
+
+@import "base";
+
+/*
+ * Body
+ */
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family:$base-font-family; 
+  font-size:$base-font-size;
+  line-height:$base-line-height;
+  color:$dark_blue;
+  &.not-front {
+    background:url(../images/bg_header.png) top left no-repeat;
+    background-size:100% 11em;
+  }
+}
+
+#page {
+}
+
+/*
+ * The skip-link link will be completely hidden until a user tabs to the link.
+ * See the element-focusable rule in system.base.css.
+ */
+
+#skip-link {
+  margin: 0;
+
+  a,
+  a:visited {
+    display: block;
+    width: 100%;
+    padding: 2px 0 3px 0;
+    text-align: center;
+    background-color: #666;
+    color: #fff;
+  }
+}
+
+
+/*
+ * Header
+ */
+
+#header {
+  position:absolute;
+  z-index:100;
+  top:15px;
+  left:0;
+  #block-search-form,
+  #block-locale-language  {
+    float:right;
+    clear:both;
+    margin-bottom:0;
+	padding:0 0.3em 0 0;
+    ul  {
+      padding:0;
+      margin:0;
+      li  {
+        padding:0 .25em 0 0;
+      }
+    }
+  }
+  .block-nice-menus {
+    ul.sf-menu.sf-style-default {
+      float:right;
+    }
+  }
+}
+
+.not-front #header { 
+
+	margin: 0;
+	position: static;
+	top: auto;
+	left: auto;
+	
+	#block-locale-language ul li {
+		padding:0 0.3em 0 0;
+	}
+	
+	.block-superfish  {
+		margin-top:4.5em;	
+	}
+	
+
+} 
+
+#logo { /* Wrapping link for logo */
+  padding:0em;
+  margin: 5.5em 0 0;
+   float:left;
+  img {
+    vertical-align: bottom;
+    margin:0em;
+   
+  }
+}
+
+.not-front #logo {
+	
+	padding:0;
+	margin: 5.5em 0 0;
+	float: left; 
+		img {
+		
+		margin: 0;
+		
+		}
+}
+
+
+
+
+#name-and-slogan { /* Wrapper for website name and slogan */
+  float: left;
+}
+
+#site-name { /* The name of the website */
+  margin: 0;
+  font-size: 2em;
+  line-height: 1.5em;
+  a:link,
+  a:visited {
+    color: #000;
+    text-decoration: none;
+  }
+  a:hover,
+  a:focus {
+    text-decoration: underline;
+  }
+}
+
+#site-slogan { /* The slogan (or tagline) of a website */
+  margin: 0;
+  font-size: 1em;
+}
+
+.region-header { /* Wrapper for any blocks placed in the header region */
+  float:right;
+  margin: 2em 0 0;
+}
+
+/*
+ * Main (container for everything else)
+ */
+
+.not-front  {
+  #main {
+    padding-top:2.1em;
+    position:relative;
+  }
+  
+  .region-header {
+	float: right; 
+	margin: 2em 0 0 0;
+  }
+  
+  #inner-content { padding: 20px 0 0 0;}
+  
+}
+
+.region-sidebar-first { 
+
+	padding-bottom: 1em;
+	@include background(
+                      image-url("../images/first-sidebar-top-bg.png") no-repeat,
+                      image-url("../images/first-sidebar-bottom-bg.png") no-repeat bottom,
+					  image-url("../images/first-sidebar-bg.png"));
+                     
+	
+	}
+
+
+
+#main {
+}
+
+
+.front {
+   #main {
+     padding:0;
+  }
+}
+
+/*
+ * Content
+ */
+
+#content {
+}
+
+.region-highlighted {
+}
+
+.breadcrumb { /* The path to the current page in the form of a list of links */
+  ol {
+    margin: 0;
+    padding: 0;
+  }
+  li {
+    display: inline;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+}
+
+.not-front .breadcrumb {
+
+	text-transform: uppercase; 
+	a { 
+		text-decoration: none; 
+		color: #99b4c9;
+		font-size: 0.6em;
+	  }
+
+}
+
+
+
+h1.title, /* The title of the page */
+h2.node-title, /* Title of a piece of content when it is given in a list of content */
+h2.block-title, /* Block title */
+h2.title, /* Comment section heading */
+h2.comment-form, /* Comment form heading */
+h3.title { /* Comment title */
+  margin: 0;
+}
+
+
+.not-front h1.title {
+	font-family: $base-font-family;
+	font-weight: normal;
+	text-transform: uppercase; 
+}
+
+h2.node-title a {text-decoration: none;
+                 text-transform:uppercase;  }
+                 
+a.language-link  {
+  font-size:0.75em;
+  text-decoration: none;
+  text-transform:uppercase;
+  color:#668faf;
+  &.active  {
+    color:#00335c;
+  }         
+}
+
+.not-front .language-link {
+	text-transform:uppercase;
+	text-decoration: none; 
+	color: #55718d;
+	font-size:0.75em;
+}
+ 
+                 
+                 li.en, li.fr,li.es {
+                 list-style:none;
+                 float:left;
+                 padding: 0.5em;
+                 }
+                 
+                 ul.language-switcher-locale-url {
+                 float:right;
+                 }
+
+
+tr.even { /* Some tables have rows marked even or odd. */
+  /* background-color: #eee; */ /* Drupal core uses a #eee background */
+}
+
+tr.odd {
+  /* background-color: #eee; */ /* Drupal core uses a #eee background */
+}
+
+div.messages { /* Important messages (status, warning, and error) for the user. See also the declarations in messages.css. */
+  margin: 1.5em 0; /* Drupal core uses "6px 0" margin */
+
+  ul {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+}
+
+div.status { /* Normal priority messages */
+}
+
+div.warning,
+tr.warning { /* Medium priority messages */
+  /* border: 1px solid #f0c020; */ /* Drupal core uses: 1px solid #f0c020 */
+}
+
+div.error,
+tr.error { /* High priority messages. See also the .error declaration below. */
+}
+
+.error { /* Errors that are separate from div.messages status messages. */
+  /* color: #e55; */ /* Drupal core uses a #e55 background */
+}
+
+.warning { /* Warnings that are separate from div.messages status messages. */
+  /* color: #e09010; */ /* Drupal core uses a #e09010 background */
+}
+
+.tabs { /* See also the tabs.css file. */
+}
+
+.region-help { /* Help text on a page */
+}
+
+.more-help-link { /* Link to more help */
+}
+
+.region-content { /* Wrapper for the actual page content */
+}
+
+ul.inline { /* List of links generated by theme_links() */
+  display: inline;
+  padding: 0;
+
+  li {
+    display: inline;
+    list-style-type: none;
+    padding: 0 1em 0 0; /* LTR */
+  }
+}
+span.field-label { /* The inline field label used by the Fences module */
+  padding: 0 1em 0 0; /* LTR */
+}
+
+.item-list .pager { /* A list of page numbers when more than 1 page of content is available */
+  padding: 0;
+
+  li { /* Each page number in the pager list */
+    padding: 0 0.5em;
+  }
+}
+
+.feed-icon { /* The link to the RSS or Atom feed for the current list of content */
+}
+
+.more-link { /* Aggregator, blog, and forum more link */
+}
+
+/*
+ * First sidebar (on left in LTR languages, on right in RTL)
+ *
+ * Remember to NOT add padding or margin to your .region-sidebar-first
+ * (see the layout.css file.)
+ */
+
+.region-sidebar-first {
+}
+
+/*
+ * Second sidebar (on right in LTR languages, on left in RTL)
+ *
+ * Remember to NOT add padding or margin to your .region-sidebar-second
+ * (see the layout.css file.)
+ */
+
+.region-sidebar-second {
+}
+
+/*
+ * Footer
+ */
+
+#footer {
+  background:none;
+  
+}
+
+.not-front #footer { margin: 4em 0 0 0; }
+
+
+
+
+/*
+ * Page bottom
+ */
+
+.region-bottom { /* Wrapper for any blocks placed in the page bottom region */
+}
+
+#block-views-front-carousel-block .views-field-body, #block-views-front-carousel-block .views-field-body-1 {
+    p  {
+      font-family:$pt;
+  	  color:#fff;
+  	  font-weight: normal;
+  	  line-height:120%;
+  	  text-shadow:2px 2px #000;  
+  	  padding: 0;
+  	  text-align: center;  
+  	  position:relative;	
+	  z-index:1000;
+    }
+}
+
+#block-views-front-carousel-block .views-field-body {
+  p {
+    margin:0 20%;
+    }
+}
+
+#block-views-front-carousel-block .views-field-body-1 {
+  p {
+    margin: 0 25%; 
+    }
+  }
+
+
+button, input[type="button"], input[type="reset"], input[type="submit"],.action-button,.view-footer a,.view-nodequeue-thematic-activities .views-field-view-node a {
+  font-family:$lato;
+  border:1px solid #ccc;
+  &:hover { 
+    background: #99b4c9;
+    border:1px solid #7d97ac;
+    color:white;
+  }
+  background: #ebebeb;
+  text-decoration: none;
+  color: #00335c;
+  text-transform: uppercase;
+  padding: 4px 8px;
+  margin: 10px;
+ }
+ 
+ button, input[type="button"], input[type="reset"], input[type="submit"],.action-button,.view-nodequeue-thematic-activities .views-field-view-node a {
+   float:right;
+ }
+
+.action-button,
+.action-button:visited  {
+  text-decoration:none;
+  color:$dark_blue;
+}
+ 
+/*  
+ *  JQuery UI overrides
+ * 
+ * */
+.ui-dialog  {
+  font-family:$lato !important;
+}
+.ui-dialog-titlebar.ui-widget-header {
+  background:url(../images/fabric-big.png) top left repeat;
+  border-radius:0 0 0 0;
+  border:none;
+  font-size:$base-font-size + 4px;
+  text-transform:uppercase;
+  font-weight:700;
+}
+
+.node-event {
+ header {
+ h2{
+  line-height:1em;
+ a{
+   text-decoration:none;
+  
+   font-size:0.65em;
+   }
+   }
+ }
+}
+
+ .date-display-single{
+ display:inline;
+ }
+ 
+ article.node a { color: #978a82;}
+ 
+ 
+ .person {
+	
+	img.image { float: left; max-width: 100%; width: 180px; margin: 0 10px 0 0;}
+	&.clearfix {  }
+ 
+ }
+ 
+ img.center { margin: 0 auto; display: block ;}
+ 
+ .highlighted.border {
+	border: 2px solid #d4dde6;
+	padding: 2em;
+	a { float: left; display: block; margin: 0 2em 0 0;
+	
+		img {
+			max-width: 100%;
+			width: 150px; 
+		}
+	}
+	
+ 
+ }
+ 
+ 
+ 
+.flexslider_views_slideshow_slide {
+
+	.views-field.views-field-body,.views-field.views-field-body-1 {
+		position: absolute; 
+		bottom: 15%;
+	}
+	
+
+}
+
+.flexslider {
+  border:0;
+  margin:0 0 50px;
+ }
+ 
+ .border { 
+	
+	border: 2px solid #d2dae2; padding: 2em;
+		a.book { float: left; margin: 0 2em 0 0; width: 100px;}
+		p { margin-top: 0; } 
+
+	}
+	
+table.content-table { width: 100%;}
+
+#partners img{
+  max-width:100%;
+  height:auto;
+}
+
+.day {
+ float:left;
+ margin:0.25em 0 0 0.75em;
+ width:100%;
+ font-size:110%;
+}
+
+.month{
+  float:left;
+  color:#978A82;
+  margin:2px;
+  font-size: 85%;
+  text-align: center;
+  width: 45px;
+}
+
+.region-third-content {
+  background: url("../images/partners_bg.png") repeat scroll 0 0 rgba(0, 0, 0, 0);
+  clear:both;
+} 
+
+.block {
+ margin: 0 auto !important;
+ }
+ 
+ #copyright {
+   text-align:center;
+   p{
+     font-size:10pt;
+     color:#99b4c9;
+     }
+ }
+body {
+  overflow-x:hidden;
+  overflow-y:scroll;
+}

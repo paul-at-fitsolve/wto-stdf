@@ -1,0 +1,4 @@
+/* line 1, ../sass/dialogs.scss */
+.dialogFixed {
+  position: fixed !important;
+}

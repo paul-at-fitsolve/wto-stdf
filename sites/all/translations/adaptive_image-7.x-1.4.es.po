@@ -1,0 +1,26 @@
+# Spanish translation of Adaptive Image (7.x-1.4)
+# Copyright (c) 2013 by the Spanish translation team
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Adaptive Image (7.x-1.4)\n"
+"POT-Creation-Date: 2013-01-25 17:13+0000\n"
+"PO-Revision-Date: YYYY-mm-DD HH:MM+ZZZZ\n"
+"Language-Team: Spanish\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n!=1);\n"
+
+msgid "image"
+msgstr "imagen"
+msgid "Resolutions"
+msgstr "Resoluciones"
+msgid "Image generation in progress. Try again shortly."
+msgstr "Creación de imagen en progreso. Inténtelo dentro de un instante."
+msgid "Error generating image."
+msgstr "Error al crear la imagen"
+msgid "Unable to generate the derived image located at %path."
+msgstr "No se pudo generar la imagen derivada ubicada en %path."
+msgid "Generate image style"
+msgstr "Crear estilo de imagen"

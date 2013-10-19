@@ -1,0 +1,269 @@
+/**
+ * @file
+ * Views Styling
+ */
+/*
+ * Views' admin tabs
+ *
+ * The views admin tabs use the same classes as the secondary tabs. We prevent
+ * some of our tab styling from bleeding into (and breaking) the Views admin
+ * pages. If your sub-theme isn't used for admin pages, you can remove this
+ * entire section.
+ */
+/* line 18, ../sass/views-styles.scss */
+.views-displays .secondary li {
+  float: none;
+  margin: 0 6px 0;
+}
+/* line 24, ../sass/views-styles.scss */
+.views-displays .secondary a:link,
+.views-displays .secondary a:visited {
+  text-shadow: none;
+  padding: 2px 7px 3px;
+}
+/* line 29, ../sass/views-styles.scss */
+.views-displays .secondary .open > a {
+  -webkit-border-radius: 7px 7px 0 0;
+  -moz-border-radius: 7px 7px 0 0;
+  -ms-border-radius: 7px 7px 0 0;
+  -o-border-radius: 7px 7px 0 0;
+  border-radius: 7px 7px 0 0;
+}
+/* line 31, ../sass/views-styles.scss */
+.views-displays .secondary .open > a:hover {
+  color: #333;
+}
+/* line 36, ../sass/views-styles.scss */
+.views-displays .secondary .action-list li {
+  margin: 0;
+}
+/* line 38, ../sass/views-styles.scss */
+.views-displays .secondary .action-list li:first-child {
+  -webkit-border-radius: 0 7px 0 0;
+  -moz-border-radius: 0 7px 0 0;
+  -ms-border-radius: 0 7px 0 0;
+  -o-border-radius: 0 7px 0 0;
+  border-radius: 0 7px 0 0;
+}
+/* line 41, ../sass/views-styles.scss */
+.views-displays .secondary .action-list li:last-child {
+  -webkit-border-radius: 0 0 7px 7px;
+  -moz-border-radius: 0 0 7px 7px;
+  -ms-border-radius: 0 0 7px 7px;
+  -o-border-radius: 0 0 7px 7px;
+  border-radius: 0 0 7px 7px;
+}
+
+/* line 52, ../sass/views-styles.scss */
+.view-nodequeue-recent-thematic-activities table {
+  margin: 0 auto;
+}
+/* line 55, ../sass/views-styles.scss */
+.view-nodequeue-recent-thematic-activities td {
+  margin: 0;
+  padding: 0;
+  margin-right: 20px;
+  width: 25%;
+  vertical-align: top;
+  max-width: 220px;
+  padding-right: 20px;
+  color: #00335c;
+  font-size: 85%;
+}
+/* line 66, ../sass/views-styles.scss */
+.view-nodequeue-recent-thematic-activities td .field-slideshow,
+.view-nodequeue-recent-thematic-activities td img {
+  max-width: 100%;
+  height: auto !important;
+  width: auto !important;
+}
+
+/* line 76, ../sass/views-styles.scss */
+.view-display-id-mini_upcoming .views-label-field-location {
+  float: left;
+  font-weight: bold;
+  padding-right: 1em;
+}
+
+/* line 84, ../sass/views-styles.scss */
+.view-nodequeue-upcoming-events li {
+  list-style: none;
+}
+
+/* line 88, ../sass/views-styles.scss */
+.date-display-single {
+  display: inline;
+}
+
+/* line 93, ../sass/views-styles.scss */
+.views-exposed-widget .description {
+  font-size: 75%;
+}
+
+/* line 99, ../sass/views-styles.scss */
+.view-projects label {
+  text-transform: uppercase;
+}
+/* line 102, ../sass/views-styles.scss */
+.view-projects .form-type-select {
+  width: 290px;
+  overflow: hidden;
+  height: auto;
+  background: url(../images/arrow.png) no-repeat right #d4dde5;
+}
+/* line 108, ../sass/views-styles.scss */
+.view-projects .form-autocomplete {
+  background-color: #D4DDE5;
+  color: #668FAF;
+  border: 0;
+  height: 18px;
+  padding: 5px;
+}
+/* line 115, ../sass/views-styles.scss */
+.view-projects .form-submit {
+  height: 28px;
+  position: relative;
+  top: -2px;
+  left: 8px;
+  width: 126px;
+}
+/* line 122, ../sass/views-styles.scss */
+.view-projects select {
+  background: transparent;
+  width: 312px;
+  padding: 5px;
+  font-size: 14px;
+  line-height: 1;
+  border: 0;
+  -webkit-appearance: none;
+  text-transform: uppercase;
+  color: #668FAF;
+  cursor: pointer;
+}
+
+/* line 137, ../sass/views-styles.scss */
+td.views-field {
+  border: 3px solid white;
+}
+
+/* line 141, ../sass/views-styles.scss */
+th.views-field {
+  padding: 0 1.25em;
+  background: url(../images/fabric_1px.png) repeat-x;
+  border: 3px solid white;
+  text-transform: uppercase;
+  font-size: 10pt;
+}
+/* line 147, ../sass/views-styles.scss */
+th.views-field a {
+  text-decoration: none;
+  color: white;
+}
+
+/* line 153, ../sass/views-styles.scss */
+td.views-field {
+  text-decoration: none;
+  color: #668FAF;
+  font-size: 10pt;
+  padding: 0 3px;
+}
+/* line 158, ../sass/views-styles.scss */
+td.views-field a {
+  text-decoration: none;
+  color: #668FAF;
+  font-size: 10pt;
+}
+
+/* line 165, ../sass/views-styles.scss */
+.completed {
+  color: green !important;
+}
+
+/* line 169, ../sass/views-styles.scss */
+.awaiting {
+  color: red !important;
+}
+
+/* Animated throbber overrides css in modules/system/system.base.css*/
+/* line 174, ../sass/views-styles.scss */
+html.js input.form-autocomplete {
+  background-position: 100% 8px;
+  /* LTR */
+}
+
+/* line 177, ../sass/views-styles.scss */
+html.js input.throbbing {
+  background-position: 100% -12px;
+  /* LTR */
+}
+
+/* line 181, ../sass/views-styles.scss */
+#edit-reset {
+  background: url(../images/cancel.png) no-repeat left center #ebebeb;
+}
+
+/* line 185, ../sass/views-styles.scss */
+#edit-submit-projects {
+  background: url(../images/submit.png) no-repeat left center #ebebeb;
+}
+
+/* line 189, ../sass/views-styles.scss */
+#edit-field-sector-value-wrapper {
+  left: 7px;
+  position: relative;
+}
+
+/* line 196, ../sass/views-styles.scss */
+.view-nodequeue-upcoming-events li {
+  list-style: none;
+}
+/* line 201, ../sass/views-styles.scss */
+.view-nodequeue-upcoming-events .locality, .view-nodequeue-upcoming-events .country-name, .view-nodequeue-upcoming-events .geo, .view-nodequeue-upcoming-events .map-link {
+  display: none;
+}
+/* line 203, ../sass/views-styles.scss */
+.view-nodequeue-upcoming-events .views-row {
+  margin: 1em 0 0 0;
+  border-bottom: 1px dotted #b3b3b3;
+  padding: 0;
+  background: url(../images/diary.png) no-repeat;
+}
+/* line 209, ../sass/views-styles.scss */
+.view-nodequeue-upcoming-events .node-event {
+  position: relative;
+  top: -25px;
+  left: 20px;
+}
+/* line 214, ../sass/views-styles.scss */
+.view-nodequeue-upcoming-events h2.node-title a {
+  text-transform: none;
+}
+/* line 216, ../sass/views-styles.scss */
+.view-nodequeue-upcoming-events h2.node-title a img {
+  position: absolute;
+  right: 6%;
+  top: 50%;
+}
+/* line 223, ../sass/views-styles.scss */
+.view-nodequeue-upcoming-events .field-name-field-organizer {
+  font-size: 0.7em;
+  margin: 0 0.8em 0 0;
+  float: left;
+}
+/* line 229, ../sass/views-styles.scss */
+.view-nodequeue-upcoming-events .field-name-field-location {
+  font-size: 0.7em;
+  float: left;
+}
+/* line 235, ../sass/views-styles.scss */
+.view-nodequeue-upcoming-events .field-name-field-date-and-time {
+  font-size: 0.7em;
+  float: left;
+  position: relative;
+  left: 49px;
+}
+/* line 242, ../sass/views-styles.scss */
+.view-nodequeue-upcoming-events .translation-link {
+  float: left;
+  width: 100%;
+}

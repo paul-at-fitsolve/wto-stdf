@@ -1,0 +1,342 @@
+/**
+ * @file
+ * Block Styling
+ */
+
+@import "base";
+
+
+.block { /* Block wrapper */
+  margin-bottom: 1.5em;
+
+  &.first { /* The first block in the region */
+  }
+
+  &.last { /* The last block in the region */
+  }
+
+  &.odd { /* Zebra striping for each block in the region */
+  }
+
+  &.even { /* Zebra striping for each block in the region */
+  }
+
+  h2.block-title { /* Block title */
+  }
+}
+
+
+#block-aggregator-category-1 { /* Block for the latest news items in the first category */
+}
+
+#block-aggregator-feed-1 { /* Block for the latest news items in the first feed */
+}
+
+#block-block-1 { /* First block created with "Add block" link */
+}
+
+#block-blog-recent { /* "Recent blog posts" block */
+}
+
+#block-book-navigation { /* "Book navigation" block for the current book's table of contents */
+}
+
+#block-comment-recent { /* "Recent comments" block */
+}
+
+#block-forum-active { /* "Active forum topics" block */
+}
+
+#block-forum-new { /* "New forum topics" block */
+}
+
+#block-locale-language { /* Language switcher block */
+}
+
+#block-menu-menu-NAME { /* Custom menu block */
+}
+
+#block-node-recent { /* "Recent content" block */
+}
+
+#block-node-syndicate { /* "Syndicate" block for primary RSS feed; see also page.css's .feed-icon */
+}
+
+#block-poll-recent { /* "Most recent poll" block */
+}
+
+#block-profile-author-information { /* "Author information" block for the profile of the page's author */
+}
+
+#block-search-form { /* "Search form" block */
+}
+
+#block-shortcut-shortcuts { /* "Shortcuts" block */
+}
+
+#block-statistics-popular { /* "Popular content" block */
+}
+
+#block-system-main-menu { /* "Main menu" block */
+}
+
+#block-system-management { /* "Management" block for Drupal management menu */
+}
+
+#block-system-navigation { /* "Navigation" block for Drupal navigation menu */
+}
+
+#block-system-user-menu { /* "User menu" block for Drupal user menu */
+}
+
+#block-system-help { /* "System help" block */
+}
+
+#block-system-main { /* "Main page content" block */
+}
+
+#block-system-powered-by { /* "Powered by Drupal" block */
+}
+
+#block-user-login { /* "User login form" block */
+}
+
+#block-user-new { /* "Who's new" block for a list of the newest users */
+}
+
+#block-user-online { /* "Who's online" block for a list of the online users */
+}
+
+
+#footer .block {
+	
+	h2.block-title {
+	
+		text-align:center; 
+		background: #99b4c9; 
+		color: #fff; 
+		text-transform: uppercase; 
+		font-size: 1em;
+		font-weight: normal;
+	
+	}
+
+}
+
+
+/*Appnovation code starts here - these are all our custom blocks */
+
+#block-views-front-carousel-block { /*Front carousel block with slideshow */
+  width:100%;
+}
+
+#block-locale-language {
+  li{
+    display:inline;
+    list-style:none;
+    a.language-link  {
+      font-size:0.75em;
+      text-decoration: none;
+      text-transform:uppercase;
+      color:#668faf;
+      &.active  {
+        color:#00335c;
+      }         
+    }
+  } 
+}
+
+#block-views-eebb22e852a8f93e943e8c7a212a3c68{
+  h2.block-title { 
+    text-align: center;
+  }
+  .view-nodequeue-thematic-activities {	
+    p {	
+      font-size: 0.8em; 
+	  text-align: justify;
+    }		
+  }
+
+    td {
+     float:left;
+     .views-field-title{
+       font-size:14pt;
+       font-weight:bold;
+       min-height:47px;
+       
+       a {
+         text-decoration:none;
+         color:#00335c; 
+       }
+       }
+    }
+    h2 {
+     text-align:center;
+    }
+}
+
+
+
+#header #block-search-form {
+
+margin: 0 0 0.8em 0;
+
+}
+
+
+footer .block a { color: #978a82; }
+
+#block-stdffrontpage-contact-info .menu-block-wrapper { font-size: 0.9em; margin: 0.8em 0 0 0;}
+#block-menu-block-2 {
+	li {
+		background: url("../images/bullet-footer-menu.png") no-repeat scroll right center transparent;
+	}
+	a {
+	text-transform: uppercase; 
+	}
+}
+
+#block-stdfcustom-newsletter-signup {
+	
+	input {
+	
+		margin: 1em 0 0 0;
+		background: #fff; 
+		border: 2px solid #d4dde6;
+		font-size: 0.8em;
+		width: 100%;
+	
+	}
+	
+
+}
+
+
+#block-user-login {
+
+	.form-item {
+		margin: 0.7em 0 0 0;
+		
+		
+	}
+	
+	input.form-text { width: 100%; background: #fff; border: 2px solid #d4dde6;}
+	.item-list { font-size: 0.69em; text-transform: uppercase; }
+	#edit-actions--2 { float: right; margin: 0;}
+
+}
+
+#block-views-nodequeue-upcoming-events-block {
+    .view-nodequeue-upcoming-events {
+	.item-list ul {
+		margin: 0; padding: 0;
+	}
+    }
+    .block-title{
+      text-align: center;
+      line-height:3em;
+      background:url(../images/title_bg.png) repeat-x center;
+      text-transform:uppercase;
+      color:white;
+       img{
+        position:relative;
+        left:-50%;
+        top:15px;
+        } 
+    }
+
+}
+
+#block-block-2 {
+
+	width: 100%; 
+	margin: 0 auto;
+
+}
+
+#block-stdffrontpage-proposal-deadline{
+  position:relative;
+  top:-50px;
+  float:left;
+  background-image:url('../images/fabric-big.png');
+  text-align:center;
+  text-transform:uppercase;
+  font-size:125%;
+  width:100%;
+}
+
+#block-stdffrontpage-publications{ 
+  .block-title{
+      text-align: center;
+      line-height:3em;
+      background:url(../images/title_bg.png) repeat-x center;
+      text-transform:uppercase;
+      color:white;
+      img{
+        position:relative;
+        left:-50%;
+        top:15px;
+        }
+  }
+  li {
+    height:33px;
+    text-indent:50px;
+    list-style:none;
+    padding:0 0 2.5em 0;
+    border-bottom:1px dotted #B3B3B3;
+  }
+  a {
+     position:relative;
+     top:1.5em;
+     text-decoration:none;
+     color:#978A82;
+     text-size:1.25em;
+     }
+  li.newsletter{
+    background:url(../images/newsletter_bg.png) center left no-repeat;
+    a {
+      img {
+        position:relative;
+        left:60%;
+      }
+    }
+  }
+   li.briefings{
+    background:url(../images/briefings_bg.png) center left no-repeat;
+        a {
+      img {
+        position:relative;
+              left:63.5%;
+      }
+    }
+  }
+   li.publications{
+    background:url(../images/publications_bg.png) center left no-repeat;
+        a {
+      img {
+        position:relative;
+        left:58%;
+      }
+    }
+  }
+   li.videos{
+    background:url(../images/videos_bg.png) center left no-repeat;
+        a {
+      img {
+        position:relative;
+        left:66%;
+      }
+    }
+  }
+}
+
+#block-stdffrontpage-partnerlogos{
+  max-width:960px;
+  margin-bottom:1em !important;
+  h2{
+    text-align:center;
+  }
+  img {
+    margin:0 2.8em;
+  }
+}

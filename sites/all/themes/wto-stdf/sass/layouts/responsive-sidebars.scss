@@ -1,0 +1,446 @@
+/**
+ * @file
+ * Positioning for responsive layout .
+ *
+ * Define CSS classes to create a table-free, 3-column, 2-column, or single
+ * column layout depending on whether blocks are enabled in the left or right
+ * columns.
+ *
+ * This layout uses the Zen Grids plugin for Compass: http://zengrids.com
+ */
+
+@import "base";
+
+
+// We are going to create a 960px wide, 5 column grid with 20px gutters between
+// columns (applied as 10px of left/right padding on each column).
+$zen-column-count:  5;
+$zen-gutter-width:  40px;
+
+
+// IE6-7 don't support box-sizing: border-box. We can fix this in 1 of 3 ways:
+// - Drop support for IE 6/7. :-) In the _base.scss, set $legacy-support-for-ie6
+//   and $legacy-support-for-ie7 to false.
+// - (Preferred) Install the box-sizing polyfill and set the variable below to
+//   the absolute path URL to the boxsizing.htc file.
+//   @see https://github.com/Schepp/box-sizing-polyfill
+//   $box-sizing-polyfill-path: "/path/to/boxsizing.htc";
+// - Use the same CSS unit for grid width and gutter width (use px for both or
+//   use % for both, etc.) and set the box-sizing variable to content-box.
+//   $zen-box-sizing: content-box;
+
+
+// You can generate more efficient CSS if you manually apply the
+// zen-grid-item-base mixin to all grid items from within a single ruleset.
+$zen-auto-include-item-base: true;
+// $zen-auto-include-flow-item-base: false;
+
+
+/*
+ * Center the page.
+ */
+
+#page,
+  .region-bottom {
+  /* For screen sizes larger than 1200px, prevent excessively long lines of text
+     by setting a max-width. */
+
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 100%;
+
+}
+
+.not-front #page,
+	.not-front .region-bottom{
+	max-width: 960px; 
+  }
+
+  
+  
+
+/*
+ * Apply the shared properties of grid items in a single, efficient ruleset.
+ */
+// See the note about $zen-auto-include-item-base above.
+
+#header,
+#content,
+#navigation,
+.region-sidebar-first,
+.region-sidebar-second,
+#footer {
+  @include zen-grid-item-base();
+}
+
+/*
+ * Containers for grid items and flow items.
+ */
+
+#header,
+#main,
+#footer {
+  @include zen-grid-container();
+}
+
+
+@media all and (max-width: 960px) {
+  #block-stdffrontpage-publications{ 
+       margin-top:3em;
+       max-width:90%;
+       margin:0 auto;
+  }
+  #block-views-nodequeue-upcoming-events-block{
+       max-width:90%;
+       margin:0 auto;
+  }
+  
+}
+
+@media all and (min-width: 960px) {
+  #block-stdffrontpage-publications{ 
+    width:50%;
+    float:right;
+  }
+  #block-views-nodequeue-upcoming-events-block{
+    width:50%;
+    float:left;
+    .view-nodequeue-upcoming-events{
+      .view-footer{
+        p{
+          float:right;
+        }
+      }  
+    }
+  }
+  
+   #block-views-eebb22e852a8f93e943e8c7a212a3c68{
+     .view-nodequeue-thematic-activities {	
+       .views-field-body {
+         min-height: 200px;
+       }
+     }
+   }
+  
+}
+
+
+@media all and (max-width: 650px) {
+  #block-views-front-carousel-block .views-field-body {
+    display:none;
+  }
+  #block-views-front-carousel-block .views-field-body-1 {
+    display:block;
+  }
+    #block-views-eebb22e852a8f93e943e8c7a212a3c68{
+    .view-nodequeue-thematic-activities {	
+      margin-right:auto;
+	  margin-left:auto;
+	  max-width:80%;	
+    td {
+      width:80%;
+      padding: 0 0 0 10%;
+      border-bottom:1px dotted #668faf;
+      margin-bottom:1em;
+    }
+  }
+}
+  
+}
+
+
+@media all and (min-width: 650px) and (max-width: 960px) {
+  .view-front-carousel {
+    p {
+      font-size:1em;
+    }
+  }
+    #block-views-front-carousel-block .views-field-body {
+    display:block;
+  }
+  #block-views-front-carousel-block .views-field-body-1 {
+    display:none;
+  }
+
+}
+
+@media all and (min-width: 650px) {
+  #block-views-front-carousel-block .views-field-body {
+    display:block;
+  }
+  #block-views-front-carousel-block .views-field-body-1 {
+    display:none;
+  }
+  
+    #block-views-eebb22e852a8f93e943e8c7a212a3c68{
+    .view-nodequeue-thematic-activities {
+      margin-right:auto;
+	  margin-left:auto;
+	  max-width:960px;	
+    td {
+      width:12em;
+      padding:1em;
+    }
+  }
+}
+}
+
+@media all and (min-width: 960px) {
+  .view-front-carousel {
+    p {
+      font-size:1.25em;
+    }
+  }
+}
+
+/*
+ * Navigation bar
+ */
+
+@media all and (min-width: 480px) {
+  #main {
+    padding-top:13em;
+    position:relative;
+    .front{
+    padding-top: 3em; /* Move all the children of #main down to make room. */
+    }
+  }
+  #navigation {
+    position: absolute;
+    top: 0; /* Move the navbar up inside #main's padding. */
+    height: 3em;
+    width: $zen-grid-width;
+  }
+}
+
+@media all and (min-width: 480px) and (max-width: 959px) {
+  /*
+   * Use 3 grid columns for smaller screens.
+   */
+  $zen-column-count: 3;
+
+  /*
+   * The layout when there is only one sidebar, the left one.
+   */
+
+  .sidebar-first {
+    #content { /* Span 2 columns, starting in 2nd column from left. */
+      @include zen-grid-item(2, 2);
+    }
+
+    .region-sidebar-first { /* Span 1 column, starting in 1st column from left. */
+      @include zen-grid-item(1, 1);
+    }
+  }
+
+  /*
+   * The layout when there is only one sidebar, the right one.
+   */
+
+  .sidebar-second {
+    #content { /* Span 2 columns, starting in 1st column from left. */
+      @include zen-grid-item(2, 1);
+    }
+
+    .region-sidebar-second { /* Span 1 column, starting in 3rd column from left. */
+      @include zen-grid-item(1, 3);
+    }
+  }
+
+  /*
+   * The layout when there are two sidebars.
+   */
+
+  .two-sidebars {
+    #content { /* Span 2 columns, starting in 2nd column from left. */
+      @include zen-grid-item(2, 2);
+    }
+
+    .region-sidebar-first { /* Span 1 column, starting in 1st column from left. */
+      @include zen-grid-item(1, 1);
+    }
+
+    .region-sidebar-second { /* Start a new row and span all 3 columns. */
+      @include zen-grid-item(3, 1);
+      @include zen-nested-container(); // Since we're making every block in this region be a grid item.
+      @include zen-clear();
+
+      .block {
+        @include zen-grid-item-base();
+      }
+      .block:nth-child(3n+1) { /* Span 1 column, starting in the 1st column from left. */
+        @include zen-grid-item(1, 1);
+        @include zen-clear();
+      }
+      .block:nth-child(3n+2) { /* Span 1 column, starting in the 2nd column from left. */
+        @include zen-grid-item(1, 2);
+      }
+      .block:nth-child(3n) { /* Span 1 column, starting in the 3rd column from left. */
+        @include zen-grid-item(1, 3);
+      }
+    }
+  }
+}
+
+@media all and (min-width: 960px) {
+  /*
+   * Use 5 grid columns for larger screens.
+   */
+  $zen-column-count: 5;
+
+  /*
+   * The layout when there is only one sidebar, the left one.
+   */
+  #page header {
+
+	width: 100%;
+	.inner {
+  
+	max-width: 1100px;
+	margin: 0 auto; 
+  
+  }
+  
+  }
+  
+  
+  .region-second-content {
+  
+	$zen-column-count: 2;
+	
+		#block-block-1 {
+			@include zen-grid-item(1, 2);
+		}
+		
+		#block-views-nodequeue-upcoming-events-block {
+			@include zen-grid-item(1, 1);
+		}
+		
+		
+		
+		
+	
+  }
+  
+    .region-third-content {
+	@include zen-clear();  
+  }
+  
+  
+  
+  .front.sidebar-first {
+    #content { /* Span 4 columns, starting in 2nd column from left. */
+      @include zen-grid-item(4, 2);
+    }
+
+    .region-sidebar-first { /* Span 1 column, starting in 1st column from left. */
+      @include zen-grid-item(1, 1);
+    }
+  }
+  
+  
+  
+  
+
+  /*
+   * The layout when there is only one sidebar, the right one.
+   */
+
+  .sidebar-second {
+    #content { /* Span 4 columns, starting in 1st column from left. */
+      @include zen-grid-item(4, 1);
+    }
+
+    .region-sidebar-second { /* Span 1 column, starting in 5th column from left. */
+      @include zen-grid-item(1, 5);
+    }
+  }
+
+  /*
+   * The layout when there are two sidebars.
+   */
+
+  .two-sidebars {
+    #content { /* Span 3 columns, starting in 2nd column from left. */
+      @include zen-grid-item(3, 2);
+    }
+
+    .region-sidebar-first { /* Span 1 column, starting in 1st column from left. */
+      @include zen-grid-item(1, 1);
+    }
+
+    .region-sidebar-second { /* Span 1 column, starting in 5th column from left. */
+      @include zen-grid-item(1, 5);
+    }
+  }
+  
+   
+   $zen-column-count: 10;
+  .sidebar-first {
+    #content { 
+      @include zen-grid-item(8, 3);
+    }
+
+    .region-sidebar-first {
+      @include zen-grid-item(2, 1);
+       margin-top:1em;
+    }
+		    
+  }
+  
+  $zen-column-count: 4;
+  $zen-gutter-width:  0px;
+  
+  .not-logged-in #footer {
+	@include zen-grid-item-base();
+		
+		$zen-gutter-width:  20px;
+		
+		#block-menu-block-2 {
+			@include zen-grid-item(1, 1);
+		}
+		
+		#block-stdffrontpage-contact-info {
+			@include zen-grid-item(1, 2);
+		}
+		
+		#block-stdfcustom-newsletter-signup {
+			@include zen-grid-item(1, 3);
+		}
+		
+		#block-user-login {
+			@include zen-grid-item(1, 4);
+		}
+
+	}
+	
+	
+  $zen-column-count: 3;
+  $zen-gutter-width:  0px;
+  
+  .logged-in #footer {
+	@include zen-grid-item-base();
+		
+		$zen-gutter-width:  20px;
+		
+		#block-menu-block-2 {
+			@include zen-grid-item(1, 1);
+		}
+		
+		#block-stdffrontpage-contact-info {
+			@include zen-grid-item(1, 2);
+		}
+		
+		#block-stdfcustom-newsletter-signup {
+			@include zen-grid-item(1, 3);
+		}
+		
+		
+
+	}
+	
+}
+#partners {
+  max-width:960px;
+  margin:0 auto;
+}

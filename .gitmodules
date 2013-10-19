@@ -1,0 +1,12 @@
+[submodule "vm"]
+	path = vm
+	url = git@git.eeshore.com:core-team/base_dev_env.git
+[submodule "build"]
+	path = build
+	url = git@git.eeshore.com:core-team/phing_drupal_template.git
+[submodule "superfish"]
+        path = sites/all/libraries/superfish
+        url = https://github.com/mehrpadin/Superfish-for-Drupal.git
+[submodule "flexslider"]
+        path = sites/all/libraries/flexslider
+        url =  https://github.com/woothemes/FlexSlider.git

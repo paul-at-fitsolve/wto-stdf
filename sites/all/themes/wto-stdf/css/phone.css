@@ -1,0 +1,57 @@
+/** phone-specific settings **/
+/* line 4, ../sass/phone.scss */
+html,
+body,
+.page {
+  width: 100%;
+}
+
+/* line 8, ../sass/phone.scss */
+.region-header {
+  /* Wrapper for any blocks placed in the header region */
+  float: right;
+  width: auto;
+}
+
+/* line 13, ../sass/phone.scss */
+.region-content-left,
+.region-content-right {
+  width: 100%;
+}
+
+/* line 16, ../sass/phone.scss */
+#block-superfish-1 {
+  display: none !important;
+}
+
+/* line 19, ../sass/phone.scss */
+div.field-slideshow-caption span.field-slideshow-caption-text {
+  font-size: 70%;
+  margin-top: -110px;
+  text-shadow: 1px 1px #000;
+}
+
+/* line 24, ../sass/phone.scss */
+div.field-slideshow-caption {
+  width: 60%;
+  margin: -5% 0 0 36%;
+  position: absolute;
+}
+
+/* line 29, ../sass/phone.scss */
+.view-nodequeue-recent-thematic-activities .field-name-body {
+  display: none;
+}
+
+/* line 32, ../sass/phone.scss */
+#header {
+  margin-right: 2em;
+}
+/* line 34, ../sass/phone.scss */
+#header #logo {
+  padding-top: 2.5em;
+}
+/* line 37, ../sass/phone.scss */
+#header #block-search-form {
+  display: none;
+}

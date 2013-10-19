@@ -1,0 +1,425 @@
+2013-08-23 15:06:47 overwrite css/pages.css 
+2013-08-23 15:08:42 overwrite css/layouts/responsive-sidebars-rtl.css 
+2013-08-23 15:08:42 overwrite css/layouts/responsive-sidebars.css 
+2013-08-25 23:51:42 overwrite css/blocks.css 
+2013-08-25 23:51:42 overwrite css/comments.css 
+2013-08-25 23:51:43 overwrite css/fields.css 
+2013-08-25 23:51:43 overwrite css/forms.css 
+2013-08-25 23:51:43 overwrite css/navigation.css 
+2013-08-25 23:51:44 overwrite css/nodes.css 
+2013-08-25 23:51:44 overwrite css/normalize.css 
+2013-08-25 23:51:45 overwrite css/pages.css 
+2013-08-25 23:51:45 overwrite css/print.css 
+2013-08-25 23:51:45 overwrite css/tabs.css 
+2013-08-25 23:51:46 overwrite css/views-styles.css 
+2013-08-25 23:51:46 overwrite css/wireframes.css 
+2013-08-25 23:51:47 overwrite css/layouts/fixed-width.css 
+2013-08-25 23:51:47 overwrite css/layouts/responsive-sidebars-rtl.css 
+2013-08-25 23:51:47 overwrite css/layouts/responsive-sidebars.css 
+2013-08-25 23:55:09    remove .sass-cache/ 
+2013-08-25 23:55:09    remove css/blocks.css 
+2013-08-25 23:55:09    remove css/comments.css 
+2013-08-25 23:55:09    remove css/fields.css 
+2013-08-25 23:55:10    remove css/forms.css 
+2013-08-25 23:55:10    remove css/navigation.css 
+2013-08-25 23:55:10    remove css/nodes.css 
+2013-08-25 23:55:10    remove css/normalize.css 
+2013-08-25 23:55:10    remove css/pages.css 
+2013-08-25 23:55:10    remove css/print.css 
+2013-08-25 23:55:10    remove css/tabs.css 
+2013-08-25 23:55:10    remove css/views-styles.css 
+2013-08-25 23:55:10    remove css/wireframes.css 
+2013-08-25 23:55:10    remove css/layouts/fixed-width.css 
+2013-08-25 23:55:10    remove css/layouts/responsive-sidebars-rtl.css 
+2013-08-25 23:55:10    remove css/layouts/responsive-sidebars.css 
+2013-08-25 23:55:12    create css/blocks.css 
+2013-08-25 23:55:12    create css/comments.css 
+2013-08-25 23:55:12    create css/fields.css 
+2013-08-25 23:55:13    create css/forms.css 
+2013-08-25 23:55:13    create css/navigation.css 
+2013-08-25 23:55:13    create css/nodes.css 
+2013-08-25 23:55:14    create css/normalize.css 
+2013-08-25 23:55:14    create css/pages.css 
+2013-08-25 23:55:15    create css/print.css 
+2013-08-25 23:55:15    create css/tabs.css 
+2013-08-25 23:55:15    create css/views-styles.css 
+2013-08-25 23:55:16    create css/wireframes.css 
+2013-08-25 23:55:16    create css/layouts/fixed-width.css 
+2013-08-25 23:55:16    create css/layouts/responsive-sidebars-rtl.css 
+2013-08-25 23:55:17    create css/layouts/responsive-sidebars.css 
+2013-08-26 00:50:04 identical css/blocks.css 
+2013-08-26 00:50:04 identical css/comments.css 
+2013-08-26 00:50:04 identical css/fields.css 
+2013-08-26 00:50:05 identical css/navigation.css 
+2013-08-26 00:50:05 identical css/nodes.css 
+2013-08-26 00:50:05 identical css/print.css 
+2013-08-26 00:50:06 identical css/tabs.css 
+2013-08-26 00:50:06 identical css/wireframes.css 
+2013-08-26 00:50:06 identical css/layouts/fixed-width.css 
+2013-08-26 13:29:11 overwrite css/pages.css 
+2013-08-26 13:32:54 overwrite css/pages.css 
+2013-08-26 17:18:33 overwrite css/pages.css 
+2013-08-26 17:19:14 overwrite css/pages.css 
+2013-08-26 17:19:36 overwrite css/pages.css 
+2013-08-26 17:20:18 overwrite css/pages.css 
+2013-08-26 17:20:43 overwrite css/pages.css 
+2013-08-26 17:21:14 overwrite css/pages.css 
+2013-08-26 17:23:06 overwrite css/pages.css 
+2013-08-26 18:35:09 overwrite css/pages.css 
+2013-08-26 18:35:31 overwrite css/pages.css 
+2013-08-26 18:37:25 overwrite css/pages.css 
+2013-08-26 18:37:30 overwrite css/pages.css 
+2013-08-26 18:38:59 overwrite css/pages.css 
+2013-08-26 18:39:10 overwrite css/pages.css 
+2013-08-26 18:43:51 overwrite css/pages.css 
+2013-08-26 18:44:24 overwrite css/pages.css 
+2013-08-26 18:44:59     error sass/pages.scss (Line 293: Invalid CSS after "	z-index:": expected pseudoclass or pseudoelement, was "1000;")
+2013-08-26 18:44:59 overwrite css/pages.css 
+2013-08-26 18:45:27 overwrite css/pages.css 
+2013-08-26 18:46:08 overwrite css/pages.css 
+2013-08-26 18:46:53 overwrite css/pages.css 
+2013-08-26 18:47:17 overwrite css/pages.css 
+2013-08-26 18:47:53 overwrite css/pages.css 
+2013-08-26 18:48:09 overwrite css/pages.css 
+2013-08-26 18:48:42 overwrite css/pages.css 
+2013-08-26 18:49:51 overwrite css/pages.css 
+2013-08-26 18:52:05 overwrite css/pages.css 
+2013-08-26 18:52:40     error sass/pages.scss (Line 295: Invalid CSS after "	  margin-top:": expected pseudoclass or pseudoelement, was "-250px;")
+2013-08-26 18:52:40 overwrite css/pages.css 
+2013-08-26 18:52:53 overwrite css/pages.css 
+2013-08-26 19:11:18 overwrite css/pages.css 
+2013-08-26 19:13:12 overwrite css/pages.css 
+2013-08-26 19:15:41 overwrite css/pages.css 
+2013-08-26 19:15:55 overwrite css/pages.css 
+2013-08-26 19:24:38 overwrite css/pages.css 
+2013-08-26 19:26:42 overwrite css/pages.css 
+2013-08-26 19:27:47 overwrite css/pages.css 
+2013-08-26 19:42:21 overwrite css/pages.css 
+2013-08-26 19:43:23 overwrite css/pages.css 
+2013-08-26 19:43:30 overwrite css/pages.css 
+2013-08-26 19:44:03 overwrite css/pages.css 
+2013-08-26 19:48:07 overwrite css/pages.css 
+2013-08-26 19:48:31 overwrite css/pages.css 
+2013-08-26 19:48:55 overwrite css/pages.css 
+2013-08-26 19:49:12 overwrite css/pages.css 
+2013-08-26 19:49:36 overwrite css/pages.css 
+2013-08-26 19:51:07 overwrite css/pages.css 
+2013-08-26 19:51:37 overwrite css/pages.css 
+2013-08-26 19:53:03 overwrite css/pages.css 
+2013-08-26 19:54:17 overwrite css/wtosuperfish.css 
+2013-08-26 19:54:31 overwrite css/wtosuperfish.css 
+2013-08-26 19:55:36 overwrite css/wtosuperfish.css 
+2013-08-26 19:58:11 overwrite css/wtosuperfish.css 
+2013-08-26 19:59:02 overwrite css/wtosuperfish.css 
+2013-08-26 19:59:36 overwrite css/wtosuperfish.css 
+2013-08-26 20:00:05 overwrite css/wtosuperfish.css 
+2013-08-26 20:02:59 overwrite css/wtosuperfish.css 
+2013-08-26 20:04:45 overwrite css/wtosuperfish.css 
+2013-08-26 20:12:43 overwrite css/wtosuperfish.css 
+2013-08-26 20:13:31 overwrite css/pages.css 
+2013-08-26 20:16:36 overwrite css/pages.css 
+2013-08-26 20:27:06 overwrite css/pages.css 
+2013-08-26 20:36:43 overwrite css/pages.css 
+2013-08-26 20:37:12 overwrite css/pages.css 
+2013-08-26 20:37:37 overwrite css/pages.css 
+2013-08-26 20:39:04 overwrite css/pages.css 
+2013-08-26 20:39:43 overwrite css/pages.css 
+2013-08-26 20:54:54 overwrite css/pages.css 
+2013-08-26 20:58:06 overwrite css/pages.css 
+2013-08-26 21:00:12 overwrite css/pages.css 
+2013-08-26 21:01:45 overwrite css/pages.css 
+2013-08-26 21:06:23 overwrite css/pages.css 
+2013-08-26 21:06:58 overwrite css/pages.css 
+2013-08-26 21:08:05 overwrite css/pages.css 
+2013-09-04 00:06:43 identical css/pages.css 
+2013-09-04 00:09:58 overwrite css/pages.css 
+2013-09-04 03:50:57 identical css/layouts/responsive-sidebars-rtl.css 
+2013-09-04 03:50:58 identical css/layouts/responsive-sidebars.css 
+2013-09-04 16:06:01 overwrite css/pages.css 
+2013-09-04 16:07:26 overwrite css/pages.css 
+2013-09-04 16:08:49 overwrite css/pages.css 
+2013-09-06 06:12:13 overwrite css/pages.css 
+2013-09-06 06:13:12     error sass/blocks.scss (Line 81 of sass/_base.scss: Invalid CSS after "$dark_blue: ": expected expression (e.g. 1px, bold), was "$00335c;")
+2013-09-06 06:13:13 overwrite css/blocks.css 
+2013-09-06 06:13:13     error sass/comments.scss (Line 81 of sass/_base.scss: Invalid CSS after "$dark_blue: ": expected expression (e.g. 1px, bold), was "$00335c;")
+2013-09-06 06:13:13 overwrite css/comments.css 
+2013-09-06 06:13:13     error sass/fields.scss (Line 81 of sass/_base.scss: Invalid CSS after "$dark_blue: ": expected expression (e.g. 1px, bold), was "$00335c;")
+2013-09-06 06:13:13 overwrite css/fields.css 
+2013-09-06 06:13:13     error sass/forms.scss (Line 81 of sass/_base.scss: Invalid CSS after "$dark_blue: ": expected expression (e.g. 1px, bold), was "$00335c;")
+2013-09-06 06:13:13 overwrite css/forms.css 
+2013-09-06 06:13:14     error sass/navigation.scss (Line 81 of sass/_base.scss: Invalid CSS after "$dark_blue: ": expected expression (e.g. 1px, bold), was "$00335c;")
+2013-09-06 06:13:14 overwrite css/navigation.css 
+2013-09-06 06:13:14     error sass/nodes.scss (Line 81 of sass/_base.scss: Invalid CSS after "$dark_blue: ": expected expression (e.g. 1px, bold), was "$00335c;")
+2013-09-06 06:13:14 overwrite css/nodes.css 
+2013-09-06 06:13:14     error sass/normalize.scss (Line 81 of sass/_base.scss: Invalid CSS after "$dark_blue: ": expected expression (e.g. 1px, bold), was "$00335c;")
+2013-09-06 06:13:14 overwrite css/normalize.css 
+2013-09-06 06:13:14     error sass/pages.scss (Line 81 of sass/_base.scss: Invalid CSS after "$dark_blue: ": expected expression (e.g. 1px, bold), was "$00335c;")
+2013-09-06 06:13:15 overwrite css/pages.css 
+2013-09-06 06:13:15     error sass/print.scss (Line 81 of sass/_base.scss: Invalid CSS after "$dark_blue: ": expected expression (e.g. 1px, bold), was "$00335c;")
+2013-09-06 06:13:15 overwrite css/print.css 
+2013-09-06 06:13:15     error sass/tabs.scss (Line 81 of sass/_base.scss: Invalid CSS after "$dark_blue: ": expected expression (e.g. 1px, bold), was "$00335c;")
+2013-09-06 06:13:15 overwrite css/tabs.css 
+2013-09-06 06:13:15     error sass/views-styles.scss (Line 81 of sass/_base.scss: Invalid CSS after "$dark_blue: ": expected expression (e.g. 1px, bold), was "$00335c;")
+2013-09-06 06:13:15 overwrite css/views-styles.css 
+2013-09-06 06:13:16     error sass/wireframes.scss (Line 81 of sass/_base.scss: Invalid CSS after "$dark_blue: ": expected expression (e.g. 1px, bold), was "$00335c;")
+2013-09-06 06:13:16 overwrite css/wireframes.css 
+2013-09-06 06:13:16     error sass/layouts/fixed-width.scss (Line 81 of sass/_base.scss: Invalid CSS after "$dark_blue: ": expected expression (e.g. 1px, bold), was "$00335c;")
+2013-09-06 06:13:16 overwrite css/layouts/fixed-width.css 
+2013-09-06 06:13:16     error sass/layouts/responsive-sidebars-rtl.scss (Line 81 of sass/_base.scss: Invalid CSS after "$dark_blue: ": expected expression (e.g. 1px, bold), was "$00335c;")
+2013-09-06 06:13:16 overwrite css/layouts/responsive-sidebars-rtl.css 
+2013-09-06 06:13:16     error sass/layouts/responsive-sidebars.scss (Line 81 of sass/_base.scss: Invalid CSS after "$dark_blue: ": expected expression (e.g. 1px, bold), was "$00335c;")
+2013-09-06 06:13:17 overwrite css/layouts/responsive-sidebars.css 
+2013-09-06 06:13:19     error sass/blocks.scss (Line 81 of sass/_base.scss: Invalid CSS after "$dark_blue: ": expected expression (e.g. 1px, bold), was "$00335c;")
+2013-09-06 06:13:20 identical css/blocks.css 
+2013-09-06 06:13:20     error sass/comments.scss (Line 81 of sass/_base.scss: Invalid CSS after "$dark_blue: ": expected expression (e.g. 1px, bold), was "$00335c;")
+2013-09-06 06:13:20 identical css/comments.css 
+2013-09-06 06:13:20     error sass/fields.scss (Line 81 of sass/_base.scss: Invalid CSS after "$dark_blue: ": expected expression (e.g. 1px, bold), was "$00335c;")
+2013-09-06 06:13:20 identical css/fields.css 
+2013-09-06 06:13:20     error sass/forms.scss (Line 81 of sass/_base.scss: Invalid CSS after "$dark_blue: ": expected expression (e.g. 1px, bold), was "$00335c;")
+2013-09-06 06:13:20 identical css/forms.css 
+2013-09-06 06:13:21     error sass/navigation.scss (Line 81 of sass/_base.scss: Invalid CSS after "$dark_blue: ": expected expression (e.g. 1px, bold), was "$00335c;")
+2013-09-06 06:13:21 identical css/navigation.css 
+2013-09-06 06:13:21     error sass/nodes.scss (Line 81 of sass/_base.scss: Invalid CSS after "$dark_blue: ": expected expression (e.g. 1px, bold), was "$00335c;")
+2013-09-06 06:13:21 identical css/nodes.css 
+2013-09-06 06:13:21     error sass/normalize.scss (Line 81 of sass/_base.scss: Invalid CSS after "$dark_blue: ": expected expression (e.g. 1px, bold), was "$00335c;")
+2013-09-06 06:13:21 identical css/normalize.css 
+2013-09-06 06:13:22     error sass/pages.scss (Line 81 of sass/_base.scss: Invalid CSS after "$dark_blue: ": expected expression (e.g. 1px, bold), was "$00335c;")
+2013-09-06 06:13:22 identical css/pages.css 
+2013-09-06 06:13:22     error sass/print.scss (Line 81 of sass/_base.scss: Invalid CSS after "$dark_blue: ": expected expression (e.g. 1px, bold), was "$00335c;")
+2013-09-06 06:13:22 identical css/print.css 
+2013-09-06 06:13:22     error sass/tabs.scss (Line 81 of sass/_base.scss: Invalid CSS after "$dark_blue: ": expected expression (e.g. 1px, bold), was "$00335c;")
+2013-09-06 06:13:23 identical css/tabs.css 
+2013-09-06 06:13:23     error sass/views-styles.scss (Line 81 of sass/_base.scss: Invalid CSS after "$dark_blue: ": expected expression (e.g. 1px, bold), was "$00335c;")
+2013-09-06 06:13:23 identical css/views-styles.css 
+2013-09-06 06:13:23     error sass/wireframes.scss (Line 81 of sass/_base.scss: Invalid CSS after "$dark_blue: ": expected expression (e.g. 1px, bold), was "$00335c;")
+2013-09-06 06:13:23 identical css/wireframes.css 
+2013-09-06 06:13:23     error sass/layouts/fixed-width.scss (Line 81 of sass/_base.scss: Invalid CSS after "$dark_blue: ": expected expression (e.g. 1px, bold), was "$00335c;")
+2013-09-06 06:13:24 identical css/layouts/fixed-width.css 
+2013-09-06 06:13:24     error sass/layouts/responsive-sidebars-rtl.scss (Line 81 of sass/_base.scss: Invalid CSS after "$dark_blue: ": expected expression (e.g. 1px, bold), was "$00335c;")
+2013-09-06 06:13:24 identical css/layouts/responsive-sidebars-rtl.css 
+2013-09-06 06:13:24     error sass/layouts/responsive-sidebars.scss (Line 81 of sass/_base.scss: Invalid CSS after "$dark_blue: ": expected expression (e.g. 1px, bold), was "$00335c;")
+2013-09-06 06:13:24 identical css/layouts/responsive-sidebars.css 
+2013-09-06 06:13:48 overwrite css/blocks.css 
+2013-09-06 06:13:49 overwrite css/comments.css 
+2013-09-06 06:13:49 overwrite css/fields.css 
+2013-09-06 06:13:50 overwrite css/forms.css 
+2013-09-06 06:13:50 overwrite css/navigation.css 
+2013-09-06 06:13:51 overwrite css/nodes.css 
+2013-09-06 06:13:51 overwrite css/normalize.css 
+2013-09-06 06:13:52 overwrite css/pages.css 
+2013-09-06 06:13:52 overwrite css/print.css 
+2013-09-06 06:13:53 overwrite css/tabs.css 
+2013-09-06 06:13:54 overwrite css/views-styles.css 
+2013-09-06 06:13:55 overwrite css/wireframes.css 
+2013-09-06 06:13:56 overwrite css/layouts/fixed-width.css 
+2013-09-06 06:13:57 overwrite css/layouts/responsive-sidebars-rtl.css 
+2013-09-06 06:13:58 overwrite css/layouts/responsive-sidebars.css 
+2013-09-06 06:15:17 overwrite css/pages.css 
+2013-09-06 06:15:36 overwrite css/pages.css 
+2013-09-06 06:16:23 overwrite css/pages.css 
+2013-09-06 06:20:39    create css/phone.css 
+2013-09-06 06:20:52 overwrite css/phone.css 
+2013-09-06 06:23:03 overwrite css/views-styles.css 
+2013-09-06 06:23:38 overwrite css/views-styles.css 
+2013-09-06 06:25:12 overwrite css/views-styles.css 
+2013-09-06 06:25:31 overwrite css/views-styles.css 
+2013-09-06 06:26:18 overwrite css/views-styles.css 
+2013-09-06 06:28:15 overwrite css/pages.css 
+2013-09-06 06:28:31 overwrite css/pages.css 
+2013-09-06 06:28:52 overwrite css/pages.css 
+2013-09-06 06:31:23 overwrite css/views-styles.css 
+2013-09-06 06:32:07 overwrite css/views-styles.css 
+2013-09-06 06:35:10 overwrite css/views-styles.css 
+2013-09-06 06:37:54 overwrite css/views-styles.css 
+2013-09-06 06:50:37 overwrite css/pages.css 
+2013-09-06 06:51:18 overwrite css/pages.css 
+2013-09-06 06:56:38 overwrite css/phone.css 
+2013-09-06 07:16:45 overwrite css/phone.css 
+2013-09-06 07:17:51 overwrite css/phone.css 
+2013-09-06 07:19:46 overwrite css/phone.css 
+2013-09-06 07:26:32    create css/tablet.css 
+2013-09-06 07:40:46 overwrite css/pages.css 
+2013-09-06 07:46:16 overwrite css/pages.css 
+2013-09-06 10:49:17 overwrite css/views-styles.css 
+2013-09-06 10:49:22 overwrite css/views-styles.css 
+2013-09-06 11:19:00 overwrite css/pages.css 
+2013-09-06 11:20:25     error sass/phone.scss (Line 16: Invalid CSS after "  font-size:": expected expression (e.g. 1px, bold), was "}")
+2013-09-06 11:20:25 overwrite css/phone.css 
+2013-09-06 11:20:30 overwrite css/phone.css 
+2013-09-06 11:20:52 overwrite css/phone.css 
+2013-09-06 11:21:15 overwrite css/phone.css 
+2013-09-06 11:23:16 overwrite css/phone.css 
+2013-09-06 11:24:12 overwrite css/phone.css 
+2013-09-06 11:24:35 overwrite css/phone.css 
+2013-09-06 11:27:10 overwrite css/phone.css 
+2013-09-06 11:27:37 overwrite css/phone.css 
+2013-09-06 11:27:54 overwrite css/phone.css 
+2013-09-06 11:29:22 overwrite css/phone.css 
+2013-09-06 11:29:26 overwrite css/phone.css 
+2013-09-06 11:30:08 overwrite css/phone.css 
+2013-09-06 11:31:15 overwrite css/phone.css 
+2013-09-06 11:32:04 overwrite css/phone.css 
+2013-09-06 11:38:02 overwrite css/phone.css 
+2013-09-06 11:46:33 overwrite css/pages.css 
+2013-09-06 11:50:09 overwrite css/pages.css 
+2013-09-06 11:51:22 overwrite css/pages.css 
+2013-09-06 11:53:13 overwrite css/pages.css 
+2013-09-06 11:55:08 overwrite css/pages.css 
+2013-09-06 11:55:34 overwrite css/pages.css 
+2013-09-06 11:58:57 identical css/blocks.css 
+2013-09-06 11:58:57 identical css/comments.css 
+2013-09-06 11:58:57 identical css/fields.css 
+2013-09-06 11:58:58 identical css/forms.css 
+2013-09-06 11:58:58 identical css/navigation.css 
+2013-09-06 11:58:58 identical css/nodes.css 
+2013-09-06 11:58:59 identical css/normalize.css 
+2013-09-06 11:58:59 identical css/pages.css 
+2013-09-06 11:59:00 identical css/print.css 
+2013-09-06 11:59:00 identical css/tabs.css 
+2013-09-06 11:59:00 identical css/views-styles.css 
+2013-09-06 11:59:01 identical css/wireframes.css 
+2013-09-06 11:59:01 identical css/layouts/fixed-width.css 
+2013-09-06 11:59:02 identical css/layouts/responsive-sidebars-rtl.css 
+2013-09-06 11:59:02 identical css/layouts/responsive-sidebars.css 
+2013-09-06 11:59:08     error sass/pages.scss (Line 404: Invalid CSS after "    padding-left:": expected expression (e.g. 1px, bold), was "}")
+2013-09-06 11:59:08 overwrite css/pages.css 
+2013-09-06 11:59:19     error sass/pages.scss (Line 404: Invalid CSS after "    padding-left:": expected expression (e.g. 1px, bold), was "}")
+2013-09-06 11:59:20 identical css/pages.css 
+2013-09-06 12:00:00 overwrite css/pages.css 
+2013-09-06 12:00:48 overwrite css/pages.css 
+2013-09-06 12:05:01 overwrite css/pages.css 
+2013-09-06 12:06:26 overwrite css/pages.css 
+2013-09-06 12:06:51 overwrite css/pages.css 
+2013-09-06 12:07:26 overwrite css/pages.css 
+2013-09-06 12:07:39 overwrite css/pages.css 
+2013-09-06 12:07:51 overwrite css/pages.css 
+2013-09-06 12:08:08 overwrite css/pages.css 
+2013-09-06 12:08:54 overwrite css/pages.css 
+2013-09-06 12:09:15 overwrite css/pages.css 
+2013-09-06 12:14:53 overwrite css/pages.css 
+2013-09-06 12:16:18 overwrite css/pages.css 
+2013-09-06 12:17:15 overwrite css/pages.css 
+2013-09-06 12:17:43 overwrite css/pages.css 
+2013-09-06 12:17:53 overwrite css/pages.css 
+2013-09-06 12:24:08 identical css/blocks.css 
+2013-09-06 12:24:08 identical css/comments.css 
+2013-09-06 12:24:08 identical css/fields.css 
+2013-09-06 12:24:09 identical css/forms.css 
+2013-09-06 12:24:09 identical css/navigation.css 
+2013-09-06 12:24:09 identical css/nodes.css 
+2013-09-06 12:24:10 overwrite css/normalize.css 
+2013-09-06 12:24:10 overwrite css/pages.css 
+2013-09-06 12:24:11 identical css/print.css 
+2013-09-06 12:24:11 identical css/tabs.css 
+2013-09-06 12:24:11 identical css/views-styles.css 
+2013-09-06 12:24:11 identical css/wireframes.css 
+2013-09-06 12:24:12 identical css/layouts/fixed-width.css 
+2013-09-06 12:24:12 identical css/layouts/responsive-sidebars-rtl.css 
+2013-09-06 12:24:12 identical css/layouts/responsive-sidebars.css 
+2013-09-06 12:25:12 identical css/blocks.css 
+2013-09-06 12:25:12 identical css/comments.css 
+2013-09-06 12:25:12 identical css/fields.css 
+2013-09-06 12:25:13 identical css/forms.css 
+2013-09-06 12:25:13 identical css/navigation.css 
+2013-09-06 12:25:13 identical css/nodes.css 
+2013-09-06 12:25:14 overwrite css/normalize.css 
+2013-09-06 12:25:14 overwrite css/pages.css 
+2013-09-06 12:25:14 identical css/print.css 
+2013-09-06 12:25:15 identical css/tabs.css 
+2013-09-06 12:25:15 identical css/views-styles.css 
+2013-09-06 12:25:15 identical css/wireframes.css 
+2013-09-06 12:25:15 identical css/layouts/fixed-width.css 
+2013-09-06 12:25:16 identical css/layouts/responsive-sidebars-rtl.css 
+2013-09-06 12:25:16 identical css/layouts/responsive-sidebars.css 
+2013-09-06 12:26:11 overwrite css/pages.css 
+2013-09-06 12:26:30 overwrite css/pages.css 
+2013-09-06 12:27:10 overwrite css/pages.css 
+2013-09-06 12:27:47 overwrite css/pages.css 
+2013-09-06 12:40:35 overwrite css/pages.css 
+2013-09-06 12:40:41 overwrite css/pages.css 
+2013-09-06 12:42:24 overwrite css/tablet.css 
+2013-09-06 12:42:31 overwrite css/phone.css 
+2013-09-06 12:42:47 overwrite css/phone.css 
+2013-09-06 12:42:54 overwrite css/tablet.css 
+2013-09-06 12:44:13 overwrite css/phone.css 
+2013-09-06 12:44:21 overwrite css/tablet.css 
+2013-09-06 12:58:39 overwrite css/phone.css 
+2013-09-06 13:00:36 overwrite css/phone.css 
+2013-09-09 13:28:00 overwrite css/pages.css 
+2013-09-09 13:28:06 overwrite css/pages.css 
+2013-09-11 04:02:18 identical css/blocks.css 
+2013-09-11 04:02:18 identical css/comments.css 
+2013-09-11 04:02:18 identical css/fields.css 
+2013-09-11 04:02:18 identical css/forms.css 
+2013-09-11 04:02:19 identical css/navigation.css 
+2013-09-11 04:02:19 identical css/nodes.css 
+2013-09-11 04:02:19     error sass/normalize.scss (Line 107: 6.25%*em/px isn't a valid CSS value.)
+2013-09-11 04:02:19 overwrite css/normalize.css 
+2013-09-11 04:02:19     error sass/pages.scss (Line 296: Incompatible units: 'px' and 'em'.)
+2013-09-11 04:02:19 overwrite css/pages.css 
+2013-09-11 04:02:20 overwrite css/print.css 
+2013-09-11 04:02:20 identical css/tabs.css 
+2013-09-11 04:02:20 identical css/views-styles.css 
+2013-09-11 04:02:20 identical css/wireframes.css 
+2013-09-11 04:02:21 identical css/layouts/fixed-width.css 
+2013-09-11 04:02:21 identical css/layouts/responsive-sidebars-rtl.css 
+2013-09-11 04:02:21 identical css/layouts/responsive-sidebars.css 
+2013-09-11 04:02:52 identical css/blocks.css 
+2013-09-11 04:02:53 identical css/comments.css 
+2013-09-11 04:02:53 identical css/fields.css 
+2013-09-11 04:02:53 identical css/forms.css 
+2013-09-11 04:02:53 identical css/navigation.css 
+2013-09-11 04:02:54 identical css/nodes.css 
+2013-09-11 04:02:54     error sass/normalize.scss (Line 107: 6.25%*em/px isn't a valid CSS value.)
+2013-09-11 04:02:54 overwrite css/normalize.css 
+2013-09-11 04:02:54     error sass/pages.scss (Line 296: Incompatible units: 'px' and 'em'.)
+2013-09-11 04:02:54 overwrite css/pages.css 
+2013-09-11 04:02:55 identical css/print.css 
+2013-09-11 04:02:55 identical css/tabs.css 
+2013-09-11 04:02:55 identical css/views-styles.css 
+2013-09-11 04:02:55 identical css/wireframes.css 
+2013-09-11 04:02:56 identical css/layouts/fixed-width.css 
+2013-09-11 04:02:56 identical css/layouts/responsive-sidebars-rtl.css 
+2013-09-11 04:02:56 identical css/layouts/responsive-sidebars.css 
+2013-09-11 04:03:48 overwrite css/pages.css 
+2013-09-11 04:04:20     error sass/normalize.scss (Line 133 of _vertical_rhythm.scss: Incompatible units: 'px' and 'em'.)
+2013-09-11 04:04:20 overwrite css/normalize.css 
+2013-09-11 04:04:50 identical css/blocks.css 
+2013-09-11 04:04:50 identical css/comments.css 
+2013-09-11 04:04:50 identical css/fields.css 
+2013-09-11 04:04:51 identical css/forms.css 
+2013-09-11 04:04:51 identical css/navigation.css 
+2013-09-11 04:04:51 identical css/nodes.css 
+2013-09-11 04:04:52     error sass/normalize.scss (Line 107: 1600%*px/em isn't a valid CSS value.)
+2013-09-11 04:04:52 overwrite css/normalize.css 
+2013-09-11 04:04:52     error sass/pages.scss (Line 296: Incompatible units: 'em' and 'px'.)
+2013-09-11 04:04:52 overwrite css/pages.css 
+2013-09-11 04:04:52 overwrite css/print.css 
+2013-09-11 04:04:53 identical css/tabs.css 
+2013-09-11 04:04:53 identical css/views-styles.css 
+2013-09-11 04:04:53 identical css/wireframes.css 
+2013-09-11 04:04:54 identical css/layouts/fixed-width.css 
+2013-09-11 04:04:54 identical css/layouts/responsive-sidebars-rtl.css 
+2013-09-11 04:04:54 identical css/layouts/responsive-sidebars.css 
+2013-09-11 04:04:56 overwrite css/pages.css 
+2013-09-11 04:05:16 overwrite css/normalize.css 
+2013-09-11 04:34:55 overwrite css/pages.css 
+2013-09-11 04:58:58 identical css/blocks.css 
+2013-09-11 04:58:58 identical css/comments.css 
+2013-09-11 04:58:59 identical css/fields.css 
+2013-09-11 04:58:59 identical css/forms.css 
+2013-09-11 04:59:00 identical css/navigation.css 
+2013-09-11 04:59:00 identical css/nodes.css 
+2013-09-11 04:59:01 identical css/normalize.css 
+2013-09-11 04:59:01 identical css/pages.css 
+2013-09-11 04:59:01 identical css/print.css 
+2013-09-11 04:59:02 identical css/tabs.css 
+2013-09-11 04:59:02 identical css/views-styles.css 
+2013-09-11 04:59:02 identical css/wireframes.css 
+2013-09-11 04:59:03 identical css/layouts/fixed-width.css 
+2013-09-11 04:59:03 identical css/layouts/responsive-sidebars-rtl.css 
+2013-09-11 04:59:03 identical css/layouts/responsive-sidebars.css 
+2013-09-11 05:03:56 overwrite css/phone.css 
+2013-09-11 05:06:34 overwrite css/phone.css 
+2013-09-11 05:09:27 overwrite css/phone.css 
+2013-09-11 05:18:58 overwrite css/pages.css 

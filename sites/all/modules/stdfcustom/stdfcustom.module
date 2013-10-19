@@ -1,0 +1,525 @@
+<?php
+
+function stdfcustom_form_mailchimp_lists_user_subscribe_form_stdf_mail_list_alter(&$form, &$form_state) {
+    $form['mailchimp_lists']['mailchimp_stdf_mail_list']['mergevars']['MMERGE3']['#default_value'] = 'English';
+    $form['submit']['#ajax'] = array(
+      'callback' => '_stdfcustom_mailchimp_form_callback',
+      'wrapper' => 'message',
+      'method' => 'replace',
+      'effect' => 'fade',
+    );
+}
+
+function _stdfcustom_mailchimp_form_callback ($form, $form_state) {
+    $commands = array();
+    $errors = form_get_errors();
+    form_clear_error();
+    $result = array();
+    foreach ($errors as $key => $value){
+        preg_match('/[A-Z0-9]+$/', $key, $result);
+        $selector = '#'. strtolower($result[0]) . '_error';
+        $commands[] = ajax_command_replace($selector, '<p class="error">'.$value.'</p>');
+        // Add a visual "changed" marker to the '#object-1' element.
+        $commands[] = ajax_command_changed($selector);
+    }
+    // Menu 'page callback' and #ajax['callback'] functions are supposed to
+    // return render arrays. If returning an Ajax commands array, it must be
+    // encapsulated in a render array structure.
+    return array('#type' => 'ajax', '#commands' => $commands);
+}
+
+function stdfcustom_form_user_register_form_alter(&$form, &$form_state) {
+    // Only alter user forms if there is more than one language.
+    if (!isset($form['locale']) && drupal_multilingual()) {
+        locale_language_selector_form($form, $form_state, $form['#user']);
+    }
+
+    if (isset($form['locale'])) {
+        $form['locale']['#access'] = TRUE;
+    }
+}
+
+function stdfcustom_apachesolr_query_alter ($query)
+{
+    //dpm($_SESSION);
+    if (! (isset($_SESSION['advanced']))) {
+        return;
+    }
+    
+    $compiled_filter = new SolrFilterSubQuery('AND');
+    if ($_SESSION['advanced']['title'] != '') {
+        $compiled_filter->addFilter('label', $_SESSION['advanced']['title']);
+    } 
+    
+    if ($_SESSION['advanced']['author'] != '') {
+        $compiled_filter->addFilter('sm_vid_Author', $_SESSION['advanced']['author']);
+    }
+    
+    if ($_SESSION['advanced']['publisher'] != '') {
+        $compiled_filter->addFilter('sm_vid_Publisher', $_SESSION['advanced']['publisher']);
+    }
+    
+    if ($_SESSION['advanced']['country'] != '') {
+        $compiled_filter->addFilter('sm_vid_Publisher', $_SESSION['advanced']['country']);
+    }
+  
+    
+    $language_filter = new SolrFilterSubQuery('OR');
+    if ($_SESSION['advanced']['language']['EN'] == 'EN') {
+        $language_filter->addFilter('ss_field_language', 'en');
+    }
+    
+    if ($_SESSION['advanced']['language']['FR'] == 'FR') {
+        $language_filter->addFilter('ss_field_language', 'fr');
+    }
+    
+    if ($_SESSION['advanced']['language']['SP'] == 'SP') {
+        $language_filter->addFilter('ss_field_language', 'es');
+    }
+    
+    $compiled_filter->addFilterSubQuery($language_filter);
+    $query->addFilterSubQuery($compiled_filter);
+    
+    //dpm($query->getParams());
+    
+    unset($_SESSION['advanced']);
+    
+}
+
+function stdfcustom_block_info() {
+    $blocks ['newsletter_signup'] = array (
+            'info' => t ( 'Signup For Newsletter' ),
+            'cache' => DRUPAL_NO_CACHE
+    );
+
+    return $blocks;
+}
+
+function stdfcustom_block_view($delta) {
+    $block = array ();
+    switch ($delta) {
+        case 'newsletter_signup' :
+            $block ['content'] = '<input id = "signup_button" type="submit" value="Signup for our newsletter"/>';
+            break;
+    }
+    return $block;
+}
+
+function stdfcustom_countries_alter(&$countries) {
+    $countries['TW'] = t('Taipei');
+}
+
+
+function stdfcustom_init() {
+    
+   drupal_add_html_head_link(array('href'=>'http://fonts.googleapis.com/css?family=Lato:400,700',
+                             'rel'=>'stylesheet',
+                             'type'=>'text/css'));
+   drupal_add_html_head_link(array('href'=>'http://fonts.googleapis.com/css?family=Oswald:400,300,700&subset=latin,latin-ext',
+   							'rel'=>'stylesheet',
+							'type'=>'text/css'));
+   drupal_add_js ( drupal_get_path ( 'module', 'stdfcustom' ) . '/stdfcustom.js' );
+   drupal_add_library('system', 'ui.dialog');
+}
+
+function stdfcustom_menu ()
+{
+    // Menu definition for the Solr query that returns autocomplete suggestions
+    // for author.
+    $items['ajax/getauthors'] = array(
+            'title' => 'Solr authors autocomplete',
+            'page callback' => '_stdfcustom_authors_autocomplete',
+            'page arguments' => array(
+                    2
+            ),
+            'access callback' => 'user_access',
+            'access arguments' => array(
+                    'access content'
+            ),
+            'type' => MENU_CALLBACK
+    );
+    
+    // Menu definition for the Solr query that returns autocomplete suggestions
+    // for publisher.
+    $items['ajax/getpublishers'] = array(
+            'title' => 'Solr publishers autocomplete',
+            'page callback' => '_stdfcustom_publishers_autocomplete',
+            'page arguments' => array(
+                    2
+            ),
+            'access callback' => 'user_access',
+            'access arguments' => array(
+                    'access content'
+            ),
+            'type' => MENU_CALLBACK
+    );
+    
+    // Menu definition for the Solr query that returns autocomplete suggestions
+    // for keywords.
+    $items['ajax/getkeywords'] = array(
+            'title' => 'Solr keywords autocomplete',
+            'page callback' => '_stdfcustom_keywords_autocomplete',
+            'page arguments' => array(
+                    2
+            ),
+            'access callback' => 'user_access',
+            'access arguments' => array(
+                    'access content'
+            ),
+            'type' => MENU_CALLBACK
+    );
+    
+    $items['simplesearch'] = array(
+            'title' => t('Simple Search'),
+            'description' => 'Simple Search using SOLR',
+            'page callback' => 'drupal_get_form',
+            'page arguments' => array('_stdfcustom_solrsearch_form_simple'),
+            'access callback' => 'user_access',
+            'access arguments' => array('access content'),      
+    );
+
+    $items['advancedsearch'] = array(
+            'title' => t('Advanced Search'),
+            'description' => 'Advanced Search using SOLR',
+            'page callback' => 'drupal_get_form',
+            'page arguments' => array('_stdfcustom_solrsearch_form_advanced'),
+            'access callback' => 'user_access',
+            'access arguments' => array('access content'),
+    );
+    
+    $items['mailchimp_archive'] = array(
+            'title' => t('STDF Newsletter'),
+            'description' => t('Archive of newsletters'),
+            'page callback' => '_stdfcustom_newsletter_list',
+            'access callback' => 'user_access',
+            'access arguments' => array('access content'),
+    );
+    
+    return $items;
+}
+
+// Form definition code
+function _stdfcustom_solrsearch_form_simple ($form, &$form_state)
+{
+    $form['term'] = array(
+            '#type' => 'textarea',
+            '#size' => 225,
+            '#resizable' => FALSE,
+            '#default_value' => variable_get('searchval'),
+    );
+    $form['search_type'] = array(
+            '#type' => 'radios',
+            '#default_value' => variable_get('search_type', 0),
+            '#options' => array(
+                    t('Any of these words'),
+                    t('All of these words'),
+                    t('Exact Phrase')
+            ),
+            '#attributes' => array(
+                    'class' => array(
+                            'search-form'
+                    )
+            ),
+    );
+
+    $form['submit'] = array(
+            '#type' => 'submit',
+            '#value' => 'Search',
+    );
+ 
+    return $form;
+
+}
+
+
+function _stdfcustom_solrsearch_form_simple_validate($form, &$form_state) {
+    
+    //Validate length of search term.
+    if(strlen($form_state['values']['term']) < 2) {
+        form_set_error('term', t('Please enter more than 2 characters to search on.'));
+    }
+    
+    //Add quotation marks to perform a phrase search.
+    if($form_state['values']['search_type'] == 2) {
+        $form_state['values']['term'] = '"' . $form_state['values']['term'] . '"';
+    }
+ 
+}
+
+function _stdfcustom_solrsearch_form_simple_submit($form, &$form_state) {
+    //Just redirect the form submission to the search url.
+    $form_state['redirect'] = 'search/file_entity/' . $form_state['values']['term'];
+}
+
+
+
+function _stdfcustom_solrsearch_form_advanced($form, $form_state) {
+    
+    $form['term'] = array(
+            '#type' => 'textarea',
+            '#size' => 225,
+            '#resizable' => FALSE,
+            '#default_value' => variable_get('searchval'),
+    );
+    $form['search_type'] = array(
+            '#type' => 'radios',
+            '#default_value' => variable_get('search_type', 0),
+            '#options' => array(
+                    t('Any of these words'),
+                    t('All of these words'),
+                    t('Exact Phrase')
+            ),
+            '#attributes' => array(
+                    'class' => array(
+                            'search-form'
+                    )
+            ),
+    );
+    
+    
+    $form['title'] = array(
+            '#type' => 'textfield',
+            '#title' => t('Title'),
+            '#size' => 60,
+            '#maxlength' => 128
+    );
+    
+    $form['author'] = array(
+            '#type' => 'textfield',
+            '#title' => t('Author'),
+            '#size' => 60,
+            '#maxlength' => 128,
+            '#autocomplete_path' => 'ajax/getauthors'
+    );
+    
+    $form['publisher'] = array(
+            '#type' => 'textfield',
+            '#title' => t('Publisher'),
+            '#size' => 60,
+            '#maxlength' => 128,
+            '#autocomplete_path' => 'ajax/getpublishers'
+    );
+    
+    $form['publication_date'] = array(
+                    '#type' => 'select',
+                    '#title' => t('Publication Date'),
+                    '#options' => _stdfcustom_get_years(),
+                    '#default_value' => $category['selected'],
+ 
+    );
+    
+    $form['country'] = array(
+            '#type' => 'textfield',
+            '#title' => t('Country'),
+            '#size' => 60,
+            '#maxlength' => 128,
+    );
+    
+    $form['keywords'] = array(
+            '#type' => 'textfield',
+            '#title' => t('Keywords'),
+            '#size' => 60,
+            '#maxlength' => 128,
+            '#autocomplete_path' => 'ajax/getkeywords'
+    );
+    
+    $form['language'] = array(
+             '#type' => 'checkboxes',
+             '#options' => drupal_map_assoc(array(t('EN'), t('FR'), t('SP'))),
+             '#title' => t('Filter by language'),
+    );
+    
+    $form['submit'] = array(
+        '#type' => 'submit',
+        '#value' => 'Search',      
+    );
+  
+    return $form;
+}
+
+
+function _stdfcustom_solrsearch_form_advanced_validate($form, &$form_state) {
+
+ //Validate length of search term.
+    if(strlen($form_state['values']['term']) < 2) {
+        form_set_error('term', t('Please enter more than 2 characters to search on.'));
+    }
+    
+    //Add quotation marks to perform a phrase search.
+    if($form_state['values']['search_type'] == 2) {
+        $form_state['values']['term'] = '"' . $form_state['values']['term'] . '"';
+    }
+
+}
+
+function _stdfcustom_solrsearch_form_advanced_submit($form, &$form_state) { 
+    $_SESSION['advanced']['title'] = $form_state['values']['title'];
+    $_SESSION['advanced']['author'] = $form_state['values']['author'];
+    $_SESSION['advanced']['publisher'] = $form_state['values']['publisher'];
+    $_SESSION['advanced']['publication_date'] = $form_state['values']['publication_date'];
+    $_SESSION['advanced']['country'] = $form_state['values']['country'];
+    $_SESSION['advanced']['keywords'] = $form_state['values']['keywords'];
+    $_SESSION['advanced']['language'] = $form_state['values']['language'];   
+    
+    $form_state['redirect'] = 'search/file_entity/' . $form_state['values']['term'];
+}
+
+
+function _stdfcustom_newsletter_list() {
+    return '<div id="mailchimp_div"><p>The STDF newsletter provides an overview of ongoing activities of the STDF and its partners. It gives an update of the major developments in the area of SPS standard setting and implementation. It also aims to provide SPS practitioners with links to useful resources and with information about forthcoming events.</p> <script language="javascript" src="http://us4.campaign-archive2.com/generate-js/?u=1dd65e410f4f874eaf3175abc&fid=6825&show=10" type="text/javascript"></script></div>';
+}
+/*
+ * Implements hook_form_x_alter.
+ * This code alters the project creation/edit form to disable the calculated input fields.
+ */
+function stdfcustom_form_project_node_form_alter (&$form, &$form_state, $form_id)
+{
+    $form['field_budget_total_stdf']['#disabled'] = TRUE;
+    $form['field_budget_total_project_value']['#disabled'] = TRUE;
+    $form['#attached'] = array(
+            'js' => array(
+                    'type' => 'file',
+                    'data' => drupal_get_path('module', 'stdfcustom') .
+                             '/stdfcustom.js'
+            )
+    );
+    
+    $form['#validate'][] = 'stdfcustom_project_node_form_validate';
+    $form['#submit'][] = 'stdfcustom_project_node_form_submit';
+    
+}
+
+function stdfcustom_project_node_form_validate(&$form, &$form_state) {
+    //Lookup the supplied code and reject if it already exists.
+    //Only validate when the node is being created not when edited.
+   if($form_state['values']['nid'] == null) { 
+    $query = db_select ( 'field_data_field_reference_number', 'no' );
+    $query->addField('no', 'field_reference_number_value');
+    $query->condition('no.field_reference_number_value', $form_state['values']['field_reference_number']['und'][0]['value']);
+    $result = $query->execute ();
+    if ($result->rowCount()){
+        form_set_error('field_reference_number' , t('The reference number is already in use.'));
+    }
+   }
+    
+}
+
+/*
+ * This code calculates the budget totals on the server.
+ * The disabled fields are not passed as part of the post operation.
+ * It is more secure to calculate the values in the browser (just for user feedback) and then recalculate them on the server.
+ */
+function stdfcustom_project_node_form_submit (&$form, &$form_state)
+{
+     $form_state['values']['field_budget_total_stdf']['und'][0]['value'] =
+     $form_state['values']['field_budget_implementation']['und'][0]['value'] +
+     $form_state['values']['field_budget_supervision_impleme']['und'][0]['value'];
+     
+     $form_state['values']['field_budget_total_project_value']['und'][0]['value'] =
+     $form_state['values']['field_budget_implementation']['und'][0]['value'] +
+     $form_state['values']['field_budget_non_stdf_contributi']['und'][0]['value'];
+}
+
+/**
+ * AUTOCOMPLETE FUNCTIONALITY STARTS HERE!
+ * *****************************************************************************************************
+ * /**
+ *
+ * @param unknown_type $value            
+ *
+ */
+function _stdfcustom_authors_autocomplete ($value)
+{
+    $results = array();
+    $suggestions = array();
+    
+    $host = 'localhost';
+    $port = '8983';
+    $path = '/solr';
+    $url = $host . ':' . $port . $path .
+             '/select?name&rows=0&q=*:*&facet=true&facet.field=sm_vid_Author&facet.mincount=1&facet.prefix=' .
+             $value . '&wt=json';
+    $response = json_decode(_stdfcustom_get_url_contents($url));
+    
+    foreach ($response->facet_counts->facet_fields->sm_vid_Author as $key => $suggestion) {
+        if ($key % 2 == 0) {
+            $hold = $suggestion;
+        } else {
+            $results[$hold] = $hold . ' (' . $suggestion . ')';
+        }
+    }
+    
+    drupal_json_output($results);
+}
+
+function _stdfcustom_publishers_autocomplete ($value)
+{
+    $results = array();
+    $suggestions = array();
+
+    $host = 'localhost';
+    $port = '8983';
+    $path = '/solr';
+    $url = $host . ':' . $port . $path .
+    '/select?name&rows=0&q=*:*&facet=true&facet.field=sm_vid_Publisher&facet.mincount=1&facet.prefix=' .
+    $value . '&wt=json';
+    $response = json_decode(_stdfcustom_get_url_contents($url));
+
+    foreach ($response->facet_counts->facet_fields->sm_vid_Publisher as $key => $suggestion) {
+        if ($key % 2 == 0) {
+            $hold = $suggestion;
+        } else {
+            $results[$hold] = $hold . ' (' . $suggestion . ')';
+        }
+    }
+
+    drupal_json_output($results);
+}
+
+function _stdfcustom_keywords_autocomplete ($value)
+{
+    $results = array();
+    $suggestions = array();
+
+    $host = 'localhost';
+    $port = '8983';
+    $path = '/solr';
+    $url = $host . ':' . $port . $path .
+    '/select?name&rows=0&q=*:*&facet=true&facet.field=sm_vid_Publisher&facet.mincount=1&facet.prefix=' .
+    $value . '&wt=json';
+    $response = json_decode(_stdfcustom_get_url_contents($url));
+
+    foreach ($response->facet_counts->facet_fields->sm_vid_Keywords as $key => $suggestion) {
+        if ($key % 2 == 0) {
+            $hold = $suggestion;
+        } else {
+            $results[$hold] = $hold . ' (' . $suggestion . ')';
+        }
+    }
+
+    drupal_json_output($results);
+}
+
+/**
+ * Utility function to make the request to the server using CURL extension.
+ *
+ * @param unknown_type $url            
+ * @return mixed
+ */
+function _stdfcustom_get_url_contents ($url)
+{
+    $crl = curl_init();
+    $timeout = 5;
+    curl_setopt($crl, CURLOPT_URL, $url);
+    curl_setopt($crl, CURLOPT_RETURNTRANSFER, 1);
+    curl_setopt($crl, CURLOPT_CONNECTTIMEOUT, $timeout);
+    $ret = curl_exec($crl);
+    curl_close($crl);
+    return $ret;
+}
+
+
+
+function _stdfcustom_get_years() {
+    return range ( date("Y") -20 , date("Y") + 20 );
+}

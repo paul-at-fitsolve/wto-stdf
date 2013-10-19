@@ -1,0 +1,40 @@
+/** phone-specific settings **/
+html,
+body,
+.page {
+  width:100%;
+}  
+ 
+.region-header { /* Wrapper for any blocks placed in the header region */
+  float: right;
+  width: auto;
+}
+.region-content-left,
+.region-content-right {
+  width:100%;
+}
+#block-superfish-1  {
+  display:none !important;
+}
+div.field-slideshow-caption span.field-slideshow-caption-text {
+  font-size:70%;
+  margin-top:-110px;
+  text-shadow:1px 1px #000;
+}
+div.field-slideshow-caption {
+  width:60%;
+  margin:-5% 0 0 36%;
+  position:absolute;
+}
+.view-nodequeue-recent-thematic-activities .field-name-body  {
+  display:none;
+}
+#header {
+  margin-right:2em;
+  #logo {
+    padding-top:2.5em;
+  }
+  #block-search-form  {
+    display:none;
+  }
+}
