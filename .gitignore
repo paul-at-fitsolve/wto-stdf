@@ -5,6 +5,8 @@ sites/*/settings*.php
 sites/*/files
 sites/*/private
 
+sites/all/modules/stdfmigrate/vl.tar
+sites/all/modules/stdfmigrate/virtual_library
 sites/default/files
 sites/all/libraries/dompdf/*
 sites/*/themes/*/.sass-cache/*

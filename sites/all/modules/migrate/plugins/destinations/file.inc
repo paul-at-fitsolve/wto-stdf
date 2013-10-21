@@ -108,7 +108,8 @@ abstract class MigrateFileBase implements MigrateFileInterface {
     $file->uri = $destination;
     $file->uid = $owner;
     if (!isset($file->filename)) {
-      $file->filename = drupal_basename($destination);
+      $parts = explode('.', $destination); 
+      $file->filename = substr(drupal_basename($destination,$parts[1]), 0, -1);
     }
     if (!isset($file->filemime)) {
       $file->filemime = file_get_mimetype(urldecode($destination));
