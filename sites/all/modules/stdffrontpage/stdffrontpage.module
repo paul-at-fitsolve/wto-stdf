@@ -16,7 +16,7 @@ function stdffrontpage_init() {
  * hook_variable_info().
  */
 function stdffrontpage_variable_info($options) {
-  //Contact information is declared as a tranlatable variable.
+  //Contact information is declared as a translatable variable.
   $variables ['Contact Information'] = array (
       'type' => 'string',
       'title' => t ( 'Contact Information' ),

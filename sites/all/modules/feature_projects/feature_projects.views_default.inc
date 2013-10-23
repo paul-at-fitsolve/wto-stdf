@@ -48,7 +48,7 @@ function feature_projects_views_default_views() {
   $handler->display->display_options['style_options']['tooltipfield'] = 'title';
   $handler->display->display_options['style_options']['bubbletextfield'] = 'title';
   $handler->display->display_options['row_plugin'] = 'fields';
-  /* Relationship: Entity Reference: Referencing entity */
+  /* Relationship: Broken/missing handler */
   $handler->display->display_options['relationships']['reverse_field_beneficiaries_node']['id'] = 'reverse_field_beneficiaries_node';
   $handler->display->display_options['relationships']['reverse_field_beneficiaries_node']['table'] = 'node';
   $handler->display->display_options['relationships']['reverse_field_beneficiaries_node']['field'] = 'reverse_field_beneficiaries_node';
@@ -251,7 +251,7 @@ function feature_projects_views_default_views() {
     ),
   );
   $handler->display->display_options['style_options']['sticky'] = TRUE;
-  /* Relationship: Entity Reference: Referenced Entity */
+  /* Relationship: Broken/missing handler */
   $handler->display->display_options['relationships']['field_beneficiaries_target_id']['id'] = 'field_beneficiaries_target_id';
   $handler->display->display_options['relationships']['field_beneficiaries_target_id']['table'] = 'field_data_field_beneficiaries';
   $handler->display->display_options['relationships']['field_beneficiaries_target_id']['field'] = 'field_beneficiaries_target_id';

@@ -99,7 +99,7 @@ function stdfcustom_block_view($delta) {
     $block = array ();
     switch ($delta) {
         case 'newsletter_signup' :
-            $block ['content'] = '<input id = "signup_button" type="submit" value="Signup for our newsletter"/>';
+            $block ['content'] = '<input id = "signup_button" type="submit" value="' . t('Signup for our newsletter') .'"/>';
             break;
     }
     return $block;

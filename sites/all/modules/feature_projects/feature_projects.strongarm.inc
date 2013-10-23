@@ -187,13 +187,13 @@ function feature_projects_strongarm() {
     'extra_fields' => array(
       'form' => array(
         'title' => array(
-          'weight' => '1',
-        ),
-        'language' => array(
           'weight' => '0',
         ),
+        'language' => array(
+          'weight' => '39',
+        ),
         'path' => array(
-          'weight' => '34',
+          'weight' => '36',
         ),
       ),
       'display' => array(
