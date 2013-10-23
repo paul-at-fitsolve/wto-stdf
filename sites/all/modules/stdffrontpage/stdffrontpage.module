@@ -1,182 +1,228 @@
 <?php
-
+/*
+ *
+ * Implements
+ * hook_init().
+ */
 function stdffrontpage_init() {
-    drupal_add_js(drupal_get_path('module', 'stdffrontpage') .'/stdffrontpage.js');
-}
-
-
-/**
- * Implements hook_variable_info().
- */
-function stdffrontpage_variable_info ($options)
-{
-    $variables['Contact Information'] = array(
-            'type' => 'string',
-            'title' => t('Contact Information'),
-            'default' => 'Not set',
-            'description' => t('Holds the contact information for the site', array(), $options),
-            'required' => TRUE,
-            'localize' => TRUE,
-    );
-    return $variables;
-}
-
-function stdffrontpage_form_alter (&$form, 
-        &$form_state, $form_id)
-{
-    if ($form_id == 'system_site_information_settings'){
-    global $language;
-    $form['contact_info'] = array(
-            '#title' => t('Contact Information'),
-            '#type' => 'text_format',
-            '#base_type' => 'textarea',
-            '#format' => 'wysiwyg_filter',
-            '#description' => t('The site\'s contact information, which can be translated if required.'),
-            '#default_value' => i18n_variable_get('contact_info', $_GET['variable_realm_key_language'])['value'],
-    );
-    $form['proposal_deadline'] = array(
-            '#title' => t('Proposal Deadline'),
-            '#type' => 'text_format',
-            '#base_type' => 'textarea',
-            '#format' => 'wysiwyg_filter',
-            '#description' => t('The deadline for proposals, which can be translated if required.'),
-            '#default_value' => i18n_variable_get('proposal_deadline', $_GET['variable_realm_key_language'])['value'],
-    );
-    
-    $form['#submit'][] = 'stdffrontpage_submit';
-    }
-    
-    if ($form_id == 'views_exposed_form') {
-        $form['submit']['#value'] = 'OK';
-        $form['reset']['#value'] = 'CLEAR';
-    }
-}
-
-
-function stdffrontpage_submit(&$form, $form_state){
-    i18n_variable_set('contact_info',$form_state['values']['contact_info'] , $_GET['variable_realm_key_language']);
-    i18n_variable_set('proposal_deadline',$form_state['values']['proposal_deadline'] , $_GET['variable_realm_key_language']);
+  // Add the javaScript needed on the front_page.
+  if (drupal_is_front_page ()) {
+    drupal_add_js ( drupal_get_path ( 'module', 'stdffrontpage' ) . '/stdffrontpage.js' );
+  }
 }
 
 /**
- * Implements hook_entity_info_alter().
- * Let's setup the custom view modes we need on the frontpage!
+ * Implements
+ * hook_variable_info().
  */
-function stdffrontpage_entity_info_alter (&$entity_info)
-{
-    $entity_info['node']['view modes']['frontpage'] = array(
-            'label' => t('Frontpage'),
-            'custom settings' => TRUE
-    );
-    
-    $entity_info['node']['view modes']['publications'] = array(
-            'label' => t('Publications'),
-            'custom settings' => TRUE
-    );
-    
-    $entity_info['node']['view modes']['briefings'] = array(
-            'label' => t('Briefings'),
-            'custom settings' => TRUE
-    );
-    
-    $entity_info['node']['view modes']['thematic'] = array(
-            'label' => t('Thematic Activities'),
-            'custom settings' => TRUE
-    );
+function stdffrontpage_variable_info($options) {
+  //Contact information is declared as a tranlatable variable.
+  $variables ['Contact Information'] = array (
+      'type' => 'string',
+      'title' => t ( 'Contact Information' ),
+      'default' => 'Not set',
+      'description' => t ( 'Holds the contact information for the site', array (), $options ),
+      'required' => TRUE,
+      'localize' => TRUE 
+  );
+  return $variables;
 }
 
-function stdffrontpage_block_info ()
-{
-    $blocks['contact_info'] = array(
-            'info' => t('Contact Information'),
-            'cache' => DRUPAL_NO_CACHE
-    );
-    
-    $blocks['proposal_deadline'] = array(
-            'info' => t('Proposal Deadline'),
-            'cache' => DRUPAL_NO_CACHE
-    );
-    
-    $blocks['publications'] = array(
-            'info' => t('Publications'),
-            'cache' => DRUPAL_NO_CACHE
-    );
-    
-    $blocks['partnerlogos'] = array(
-            'info' => t('Our Partners'),
-            'cache' => DRUPAL_NO_CACHE
-    );
-    
-    $blocks['copyright'] = array(
-            'info' => t('Copyright'),
-            'cache' => DRUPAL_NO_CACHE
-    );
-    
-    return $blocks;
-}
-
-function stdffrontpage_block_view ($delta)
-{
-    $block = array();
+function stdffrontpage_form_alter(&$form, &$form_state, $form_id) {
+  if ($form_id == 'system_site_information_settings') {
     global $language;
-    switch ($delta) {
-        case 'contact_info':
-            $block['subject'] = t('Contact Info');
-			$block['content'] .= "<div class='menu-block-wrapper'>";
-            $block['content'] .= i18n_variable_get('contact_info', $language->language)['value'];
-			$block['content'] .= "</div>";
-            break;
-        case 'proposal_deadline':
-            $block['content'] .= "<div class='menu-block-wrapper'>";
-            $block['content'] .= i18n_variable_get('proposal_deadline', $language->language)['value'];
-            $block['content'] .= "</div>";
-            break;
-        case 'publications':
-            $block['content'] .= _stdffrontpage_publications();
-            break;
-        case 'partnerlogos':
-            $block['subject'] = t('Our Partners');
-            $block['content'] .= _stdffrontpage_partners();
-            break;
-        case 'copyright':
-            $block['subject'] = t('Copyright');
-            $block['content'] .= '<div id="copyright"><p>&copy; 2013 Standards and Trade Development Facility - All Rights Reserved.';
-            break;
-    }
-    return $block;
+    $form ['contact_info'] = array (
+        '#title' => t ( 'Contact Information' ),
+        '#type' => 'text_format',
+        '#base_type' => 'textarea',
+        '#format' => 'wysiwyg_filter',
+        '#description' => t ( 'The site\'s contact information, which can be translated if required.' ),
+        '#default_value' => i18n_variable_get ( 'contact_info', $_GET ['variable_realm_key_language'] )['value'] 
+    );
+    $form ['proposal_deadline'] = array (
+        '#title' => t ( 'Proposal Deadline' ),
+        '#type' => 'text_format',
+        '#base_type' => 'textarea',
+        '#format' => 'wysiwyg_filter',
+        '#description' => t ( 'The deadline for proposals, which can be translated if required.' ),
+        '#default_value' => i18n_variable_get ( 'proposal_deadline', $_GET ['variable_realm_key_language'] )['value'] 
+    );
+    
+    $form ['#submit'] [] = 'stdffrontpage_submit';
+  }
+  
+  if ($form_id == 'views_exposed_form') {
+    $form ['submit'] ['#value'] = 'OK';
+    $form ['reset'] ['#value'] = 'CLEAR';
+  }
+}
+function stdffrontpage_submit(&$form, $form_state) {
+  i18n_variable_set ( 'contact_info', $form_state ['values'] ['contact_info'], $_GET ['variable_realm_key_language'] );
+  i18n_variable_set ( 'proposal_deadline', $form_state ['values'] ['proposal_deadline'], $_GET ['variable_realm_key_language'] );
 }
 
+/**
+ * Implements
+ * hook_entity_info_alter().
+ * Let's
+ * setup
+ * the
+ * custom
+ * view
+ * modes
+ * we
+ * need
+ * on
+ * the
+ * frontpage!
+ */
+function stdffrontpage_entity_info_alter(&$entity_info) {
+  $entity_info ['node'] ['view modes'] ['frontpage'] = array (
+      'label' => t ( 'Frontpage' ),
+      'custom settings' => TRUE 
+  );
+  
+  $entity_info ['node'] ['view modes'] ['publications'] = array (
+      'label' => t ( 'Publications' ),
+      'custom settings' => TRUE 
+  );
+  
+  $entity_info ['node'] ['view modes'] ['briefings'] = array (
+      'label' => t ( 'Briefings' ),
+      'custom settings' => TRUE 
+  );
+  
+  $entity_info ['node'] ['view modes'] ['thematic'] = array (
+      'label' => t ( 'Thematic Activities' ),
+      'custom settings' => TRUE 
+  );
+}
+function stdffrontpage_block_info() {
+  $blocks ['contact_info'] = array (
+      'info' => t ( 'Contact Information' ),
+      'cache' => DRUPAL_NO_CACHE 
+  );
+  
+  $blocks ['proposal_deadline'] = array (
+      'info' => t ( 'Proposal Deadline' ),
+      'cache' => DRUPAL_NO_CACHE 
+  );
+  
+  $blocks ['publications'] = array (
+      'info' => t ( 'Publications' ),
+      'cache' => DRUPAL_NO_CACHE 
+  );
+  
+  $blocks ['partnerlogos'] = array (
+      'info' => t ( 'Our Partners' ),
+      'cache' => DRUPAL_NO_CACHE 
+  );
+  
+  $blocks ['copyright'] = array (
+      'info' => t ( 'Copyright' ),
+      'cache' => DRUPAL_NO_CACHE 
+  );
+  
+  return $blocks;
+}
+function stdffrontpage_block_view($delta) {
+  $block = array ();
+  global $language;
+  switch ($delta) {
+    case 'contact_info' :
+      $block ['subject'] = t ( 'Contact Info' );
+      $block ['content'] .= "<div class='menu-block-wrapper'>";
+      $block ['content'] .= i18n_variable_get ( 'contact_info', $language->language )['value'];
+      $block ['content'] .= "</div>";
+      break;
+    case 'proposal_deadline' :
+      $block ['content'] .= "<div class='menu-block-wrapper'>";
+      $block ['content'] .= i18n_variable_get ( 'proposal_deadline', $language->language )['value'];
+      $block ['content'] .= "</div>";
+      break;
+    case 'publications' :
+      $block ['content'] .= _stdffrontpage_publications ();
+      break;
+    case 'partnerlogos' :
+      $block ['subject'] = t ( 'Our Partners' );
+      $block ['content'] .= _stdffrontpage_partners ();
+      break;
+    case 'copyright' :
+      $block ['subject'] = t ( 'Copyright' );
+      $block ['content'] .= '<div id="copyright"><p>&copy; 2013 Standards and Trade Development Facility - All Rights Reserved.';
+      break;
+  }
+  return $block;
+}
 function _stdffrontpage_publications() {
-    
-    $links = array(
-        'newsletter' => array ('title' => t('Newsletter'),'href' => 'mailchimp_archive'),
-        'briefings' => array('title' => t('Briefings'),'href' => 'nodequeue/briefings'),
-        'publications' => array('title' => t('Publications'), 'href' => 'nodequeue/publications'),
-        'videos' => array('title' => t('Videos'), 'href' => 'video-gallery'),                
-    );
-    
-    $heading = array ('text' => t('Publications') , 'level' => 'h2' , 'class' => 'block-title');
-    return theme('links', array('links' => $links,'heading' => $heading));
+  $links = array (
+      'newsletter' => array (
+          'title' => t ( 'Newsletter' ),
+          'href' => 'mailchimp_archive' 
+      ),
+      'briefings' => array (
+          'title' => t ( 'Briefings' ),
+          'href' => 'nodequeue/briefings' 
+      ),
+      'publications' => array (
+          'title' => t ( 'Publications' ),
+          'href' => 'nodequeue/publications' 
+      ),
+      'videos' => array (
+          'title' => t ( 'Videos' ),
+          'href' => 'video-gallery' 
+      ) 
+  );
+  
+  $heading = array (
+      'text' => t ( 'Publications' ),
+      'level' => 'h2',
+      'class' => 'block-title' 
+  );
+  return theme ( 'links', array (
+      'links' => $links,
+      'heading' => $heading 
+  ) );
 }
-
-
-
-function _stdffrontpage_partners() { 
-     
-    $image = array ('title' => t('FAO'), 'alt' => t('FAO'), 'path' => 'sites/all/themes/wto-stdf/images/partner1.png');
-    $html .= theme('image', $image);
-    
-    $image = array ('title' => t('FAO'), 'alt' => t('FAO'), 'path' => 'sites/all/themes/wto-stdf/images/partner2.png');
-    $html .= theme('image', $image);
-    
-    $image = array ('title' => t('FAO'), 'alt' => t('FAO'), 'path' => 'sites/all/themes/wto-stdf/images/partner3.png');
-    $html .= theme('image', $image);
-    
-    $image = array ('title' => t('FAO'), 'alt' => t('FAO'), 'path' => 'sites/all/themes/wto-stdf/images/partner4.png');
-    $html .= theme('image', $image);
-    
-    $image = array ('title' => t('FAO'), 'alt' => t('FAO'), 'path' => 'sites/all/themes/wto-stdf/images/partner5.png');
-    $html .= theme('image', $image);
-    return $html;
+/*
+ * Helper function to generate some html for the partner logos.
+ */
+function _stdffrontpage_partners() {
+  $image = array (
+      'title' => t ( 'FAO' ),
+      'alt' => t ( 'FAO' ),
+      'path' => path_to_theme() . '/images/partner1.png',
+  );
+  
+  $html .= l(theme ( 'image', $image ), 'http://www.fao.org/ag/agn/', array('html' => TRUE));
+  
+  $image = array (
+      'title' => t ( 'FAO' ),
+      'alt' => t ( 'FAO' ),
+      'path' => path_to_theme() . '/images/partner2.png' 
+  );
+  $html .= l(theme ( 'image', $image ), 'http://www.oie.int/' , array('html' => TRUE));
+  
+  $image = array (
+      'title' => t ( 'FAO' ),
+      'alt' => t ( 'FAO' ),
+      'path' => path_to_theme() . '/images/partner3.png' 
+  );
+  $html .= l(theme ( 'image', $image ), 'http://web.worldbank.org/WBSITE/EXTERNAL/TOPICS/TRADE/0,,contentMDK:20629901~menuPK:222955~pagePK:148956~piPK:216618~theSitePK:239071,00.html', array('html' => TRUE));
+  
+  $image = array (
+      'title' => t ( 'FAO' ),
+      'alt' => t ( 'FAO' ),
+      'path' => path_to_theme() . '/images/partner4.png' 
+  );
+  $html .= l(theme ( 'image', $image ), 'http://www.who.int/foodsafety/en/ ', array('html' => TRUE));;
+  
+  $image = array (
+      'title' => t ( 'FAO' ),
+      'alt' => t ( 'FAO' ),
+      'path' => path_to_theme() .'/images/partner5.png' 
+  );
+  $html .= l(theme ( 'image', $image ), 'http://www.wto.org/english/tratop_e/sps_e/sps_e.htm', array('html' => TRUE));
+  return $html;
 }
  
