@@ -5,3 +5,4 @@ dependencies[] = migrate
 files[] = includes/base.inc
 files[] = includes/projects.inc
 files[] = includes/virtual_library.inc
+files[] = includes/beneficiaries.inc

@@ -29,15 +29,12 @@ function stdfmigrate_migrate_api() {
           // 'ImplementingEntityTerm'
           // )
                     ),
-          /*
+          
                     'BeneficiaryFieldCollection' => array(
                             'class_name' => 'StdfMigrationBeneficiariesMigration',
                             'group_name' => 'projects',
-                            'dependencies' => array(
-                                    'ProjectNode'
-                            )
                     )
-                 */
+                
             ) 
   );
 }
