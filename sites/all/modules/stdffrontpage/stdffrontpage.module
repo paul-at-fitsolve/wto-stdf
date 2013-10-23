@@ -188,41 +188,51 @@ function _stdffrontpage_publications() {
  * Helper function to generate some html for the partner logos.
  */
 function _stdffrontpage_partners() {
+  global $language;
   $image = array (
       'title' => t ( 'FAO' ),
       'alt' => t ( 'FAO' ),
       'path' => path_to_theme() . '/images/partner1.png',
   );
   
-  $html .= l(theme ( 'image', $image ), 'http://www.fao.org/ag/agn/', array('html' => TRUE));
+  $html .= l(theme ( 'image', $image ), 'http://www.fao.org/home/' . $language->language, array('attributes' => array('target' => '_blank') ,'html' => TRUE));
   
   $image = array (
-      'title' => t ( 'FAO' ),
-      'alt' => t ( 'FAO' ),
+      'title' => t ( 'OIE' ),
+      'alt' => t ( 'OIE' ),
       'path' => path_to_theme() . '/images/partner2.png' 
   );
-  $html .= l(theme ( 'image', $image ), 'http://www.oie.int/' , array('html' => TRUE));
+  $html .= l(theme ( 'image', $image ), 'http://www.oie.int/' . $language->language, array('attributes' => array('target' => '_blank') ,'html' => TRUE));
   
   $image = array (
-      'title' => t ( 'FAO' ),
-      'alt' => t ( 'FAO' ),
+      'title' => t ( 'World Bank' ),
+      'alt' => t ( 'World Bank' ),
       'path' => path_to_theme() . '/images/partner3.png' 
   );
-  $html .= l(theme ( 'image', $image ), 'http://web.worldbank.org/WBSITE/EXTERNAL/TOPICS/TRADE/0,,contentMDK:20629901~menuPK:222955~pagePK:148956~piPK:216618~theSitePK:239071,00.html', array('html' => TRUE));
+  
+  if ($language->language == 'en') {
+    $url = 'http://www.worldbank.org/';
+  } elseif ($language->language == 'fr') {
+    $url = 'http://www.banquemondiale.org/';
+  } else {
+    $url = 'http://www.bancomundial.org/';
+  }
+  
+  $html .= l(theme ( 'image', $image ), $url, array('attributes' => array('target' => '_blank') ,'html' => TRUE));
   
   $image = array (
-      'title' => t ( 'FAO' ),
-      'alt' => t ( 'FAO' ),
+      'title' => t ( 'WHO' ),
+      'alt' => t ( 'WHO' ),
       'path' => path_to_theme() . '/images/partner4.png' 
   );
-  $html .= l(theme ( 'image', $image ), 'http://www.who.int/foodsafety/en/ ', array('html' => TRUE));;
+  $html .= l(theme ( 'image', $image ), 'http://www.who.int/' . $language->language, array('attributes' => array('target' => '_blank') ,'html' => TRUE));
   
   $image = array (
-      'title' => t ( 'FAO' ),
-      'alt' => t ( 'FAO' ),
+      'title' => t ( 'WTO' ),
+      'alt' => t ( 'WTO' ),
       'path' => path_to_theme() .'/images/partner5.png' 
   );
-  $html .= l(theme ( 'image', $image ), 'http://www.wto.org/english/tratop_e/sps_e/sps_e.htm', array('html' => TRUE));
+  $html .= l(theme ( 'image', $image ), 'http://www.wto.org/' . (($language->language == 'en') ? '' : (($language->language == 'fr') ? $language->language : 'indexsp.htm')), array('attributes' => array('target' => '_blank') ,'html' => TRUE));
   return $html;
 }
  
