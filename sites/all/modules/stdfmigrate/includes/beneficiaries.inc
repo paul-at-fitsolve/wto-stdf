@@ -7,9 +7,9 @@ class StdfMigrationBeneficiariesMigration extends StdfMigration {
     parent::__construct ( $arguments );
     
     $this->description = t ( 'Import beneficiary data from CSV.' );
-    $this->dependencies = array (
-        'ProjectNode' 
-    );
+    //$this->dependencies = array (
+       // 'ProjectNode' 
+    //);
     
     $this->source = new MigrateSourceCSV ( $this->project_source_file, $this->projectcsvcolumns (), array (
         'header_rows' => 1 
@@ -30,7 +30,7 @@ class StdfMigrationBeneficiariesMigration extends StdfMigration {
     
     $this->addFieldMapping ( 'host_entity_id', 'reference_number' )->sourceMigration ( 'ProjectNode' );
     
-    $this->addFieldMapping ( 'field_beneficiary_text', 'beneficiary' );
+    $this->addFieldMapping ( 'field_beneficiary_text', 'beneficiary' )->separator(';');
     $this->addFieldMapping ( 'field_beneficiary_text:create_term' )->defaultValue ( TRUE );
   }
 }

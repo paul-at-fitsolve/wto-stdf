@@ -71,9 +71,9 @@ class StdfMigrationProjectMigration extends StdfMigration {
     $this->addFieldMapping ( 'field_dac', 'dac' );
     $this->addFieldMapping ( 'field_acp', 'acp' );
     $this->addFieldMapping ( 'field_sector', 'sector' );
-    $this->addFieldMapping ( 'field_implementing_entity', 'implementing_entity' );
+    $this->addFieldMapping ( 'field_implementing_entity', 'implementing_entity' )->separator(';');
     $this->addFieldMapping ( 'field_implementing_entity:create_term' )->defaultValue ( TRUE );
-    $this->addFieldMapping ( 'field_partner', 'partners' );
+    $this->addFieldMapping ( 'field_partner', 'partners' )->separator(';');
     $this->addFieldMapping ( 'field_partner:create_term' )->defaultValue ( TRUE );
     $this->addFieldMapping ( 'field_approval_date', 'approval_date' );
     $this->addFieldMapping ( 'field_approval_year', 'approval_year' );
@@ -104,6 +104,15 @@ class StdfMigrationProjectMigration extends StdfMigration {
       $row->acp = FALSE;
     } else {
       $row->acp = TRUE;
+    }
+    
+    
+    if ($row->start_year == 'NULL') {
+      $row->start_year = NULL;
+    }
+    
+   if ($row->end_year == 'NULL') {
+      $row->end_year = NULL;
     }
     
     if ($row->approval_date != 'NULL') {

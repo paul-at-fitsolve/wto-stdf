@@ -139,6 +139,22 @@ function stdfcustom_menu ()
             'type' => MENU_CALLBACK
     );
     
+    
+    // Menu definition for the Solr query that returns autocomplete suggestions
+    // for dates.
+    $items['ajax/getdates'] = array(
+            'title' => 'Solr dates autocomplete',
+            'page callback' => '_stdfcustom_dates_autocomplete',
+            'page arguments' => array(
+                    2
+            ),
+            'access callback' => 'user_access',
+            'access arguments' => array(
+                    'access content'
+            ),
+            'type' => MENU_CALLBACK
+    );
+    
     // Menu definition for the Solr query that returns autocomplete suggestions
     // for publisher.
     $items['ajax/getpublishers'] = array(
@@ -300,11 +316,19 @@ function _stdfcustom_solrsearch_form_advanced($form, $form_state) {
             '#autocomplete_path' => 'ajax/getpublishers'
     );
     
-    $form['publication_date'] = array(
-                    '#type' => 'select',
-                    '#title' => t('Publication Date'),
-                    '#options' => _stdfcustom_get_years(),
-                    '#default_value' => $category['selected'],
+    $form['publication_date_from'] = array(
+                    '#type' => 'textfield',
+                    '#title' => t('Date From'),
+                    '#size' => 10,
+                    '#autocomplete_path' => 'ajax/getdates'
+ 
+    );
+    
+     $form['publication_date_to'] = array(
+                    '#type' => 'textfield',
+                    '#title' => t('Date To'),
+                    '#size' => 10,
+                    '#autocomplete_path' => 'ajax/getdates'
  
     );
     
@@ -449,6 +473,29 @@ function _stdfcustom_authors_autocomplete ($value)
         }
     }
     
+    drupal_json_output($results);
+}
+
+function _stdfcustom_dates_autocomplete ($value)
+{
+    $results = array();
+    $suggestions = array();
+
+    $host = 'localhost';
+    $port = '8983';
+    $path = '/solr';
+    $url = $host . ':' . $port . $path .
+    '/select?name&rows=0&q=*:*&facet=true&facet.range=ds_field_publication_date&facet.range.start=1900-01-01T00:00:00Z&facet.range.end=NOW&facet.range.gap=%2B1YEAR&facet.mincount=1&wt=json';
+    $response = json_decode(_stdfcustom_get_url_contents($url));
+    //dpm($response);
+    foreach ($response->facet_counts->facet_ranges->ds_field_publication_date->counts as $key => $suggestion) {
+        if ($key % 2 == 0) {
+            $hold = substr($suggestion,0,4);
+        } else {
+            $results[$hold] = $hold . ' (' . $suggestion . ')';
+        }
+    }
+
     drupal_json_output($results);
 }
 
