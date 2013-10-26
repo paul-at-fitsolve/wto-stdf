@@ -31,7 +31,6 @@ class StdfMigrationProjectMigration extends StdfMigration {
         'sticky',
         'revision',
         'log',
-        'language',
         'tnid',
         'translate',
         'revision_uid',
@@ -72,6 +71,7 @@ class StdfMigrationProjectMigration extends StdfMigration {
     $this->addFieldMapping ( 'field_acp', 'acp' );
     $this->addFieldMapping ( 'field_sector', 'sector' );
     $this->addFieldMapping ( 'field_implementing_entity', 'implementing_entity' )->separator ( ';' );
+    $this->addFieldMapping ( 'language' )->defaultValue ( 'en' );
     $this->addFieldMapping ( 'field_implementing_entity:create_term' )->defaultValue ( TRUE );
     $this->addFieldMapping ( 'field_partner', 'partners' )->separator ( ';' );
     $this->addFieldMapping ( 'field_partner:create_term' )->defaultValue ( TRUE );
@@ -105,7 +105,7 @@ class StdfMigrationProjectMigration extends StdfMigration {
       return FALSE;
     }
     
-    dpm ( $row );
+
     if ($row->acp != 'Yes') {
       $row->acp = FALSE;
     } else {
@@ -152,23 +152,33 @@ class StdfMigrationProjectMigration extends StdfMigration {
       }
     }
     
-    if ($row->approval_date != NULL) {
+    if (!(empty($row->approval_date))) {
+      $date = explode('/',$row->approval_date);
+      $row->approvalxx_date = $date[2] .'/' . $date[1] . '/' . $date[0];
       $row->approval_date = date ( 'Y-m-d', strtotime ( $row->approval_date ) );
     }
     
-    if ($row->start_date != NULL) {
+    if (!(empty($row->start_date))) {
+      $date = explode('/',$row->start_date);
+      $row->start_date = $date[2] .'/' . $date[1] . '/' . $date[0];
       $row->start_date = date ( 'Y-m-d', strtotime ( $row->start_date ) );
     }
     
-    if ($row->end_date != NULL) {
+    if (!(empty($row->end_date))) {
+      $date = explode('/',$row->end_date);
+      $row->end_date = $date[2] .'/' . $date[1] . '/' . $date[0];
       $row->end_date = date ( 'Y-m-d', strtotime ( $row->end_date ) );
     }
     
-    if ($row->actual_end_date != NULL) {
+    if (!(empty($row->actual_end_date))) {
+      $date = explode('/',$row->actual_end_date);
+      $row->actual_end_date = $date[2] .'/' . $date[1] . '/' . $date[0];
       $row->actual_end_date = date ( 'Y-m-d', strtotime ( $row->actual_end_date ) );
     }
     
-    if ($row->extension != NULL) {
+    if (!(empty($row->extension))) {
+      $date = explode('/',$row->extension);
+      $row->extension = $date[2] .'/' . $date[1] . '/' . $date[0];
       $row->extension = date ( 'Y-m-d', strtotime ( $row->extension ) );
     }
     
@@ -209,7 +219,7 @@ class StdfMigrationProjectMigration extends StdfMigration {
       $row->budget_chf = str_replace ( ',', '', substr ( $row->budget_chf, 4 ) );
     }
     */
-    dpm ( $row );
+
   }
   function prepare(&$node, $row) {
     if ($row->start_date == 'NULL') {

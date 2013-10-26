@@ -1,4 +1,4 @@
-<?php
+  <?php
 function apachesolr_file_apachesolr_entity_info_alter(&$entity_info) {
   $entity_info['file']['indexable'] = TRUE;
   $entity_info['file']['status callback'][] = 'apachesolr_file_status_callback';
