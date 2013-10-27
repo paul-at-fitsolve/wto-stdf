@@ -690,6 +690,33 @@ function feature_projects_field_default_field_bases() {
     'type' => 'text',
   );
 
+  // Exported field_base: 'field_expected_results'
+  $field_bases['field_expected_results'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_expected_results',
+    'foreign keys' => array(
+      'format' => array(
+        'columns' => array(
+          'format' => 'format',
+        ),
+        'table' => 'filter_format',
+      ),
+    ),
+    'indexes' => array(
+      'format' => array(
+        0 => 'format',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'text',
+    'settings' => array(),
+    'translatable' => 0,
+    'type' => 'text_long',
+  );
+
   // Exported field_base: 'field_extension_date'
   $field_bases['field_extension_date'] = array(
     'active' => 1,
@@ -792,6 +819,33 @@ function feature_projects_field_default_field_bases() {
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_key_objective',
+    'foreign keys' => array(
+      'format' => array(
+        'columns' => array(
+          'format' => 'format',
+        ),
+        'table' => 'filter_format',
+      ),
+    ),
+    'indexes' => array(
+      'format' => array(
+        0 => 'format',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'text',
+    'settings' => array(),
+    'translatable' => 0,
+    'type' => 'text_long',
+  );
+
+  // Exported field_base: 'field_lessons_learned'
+  $field_bases['field_lessons_learned'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_lessons_learned',
     'foreign keys' => array(
       'format' => array(
         'columns' => array(
@@ -925,6 +979,60 @@ function feature_projects_field_default_field_bases() {
     'type' => 'text',
   );
 
+  // Exported field_base: 'field_project_achievements'
+  $field_bases['field_project_achievements'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_project_achievements',
+    'foreign keys' => array(
+      'format' => array(
+        'columns' => array(
+          'format' => 'format',
+        ),
+        'table' => 'filter_format',
+      ),
+    ),
+    'indexes' => array(
+      'format' => array(
+        0 => 'format',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'text',
+    'settings' => array(),
+    'translatable' => 0,
+    'type' => 'text_long',
+  );
+
+  // Exported field_base: 'field_project_activities'
+  $field_bases['field_project_activities'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_project_activities',
+    'foreign keys' => array(
+      'format' => array(
+        'columns' => array(
+          'format' => 'format',
+        ),
+        'table' => 'filter_format',
+      ),
+    ),
+    'indexes' => array(
+      'format' => array(
+        0 => 'format',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'text',
+    'settings' => array(),
+    'translatable' => 0,
+    'type' => 'text_long',
+  );
+
   // Exported field_base: 'field_reference_number'
   $field_bases['field_reference_number'] = array(
     'active' => 1,
@@ -974,7 +1082,7 @@ function feature_projects_field_default_field_bases() {
         '002' => 'Africa',
         142 => 'Asia',
         'Global' => 'Global',
-        'LAC' => 'LAC',
+        'LAC' => 'Latin America',
         'Other' => 'Other',
       ),
       'allowed_values_function' => '',

@@ -150,6 +150,141 @@ function feature_projects_views_default_views() {
   $export['beneficiaries'] = $view;
 
   $view = new view();
+  $view->name = 'project_detail';
+  $view->description = '';
+  $view->tag = 'default';
+  $view->base_table = 'node';
+  $view->human_name = 'Project Detail';
+  $view->core = 7;
+  $view->api_version = '3.0';
+  $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
+
+  /* Display: Master */
+  $handler = $view->new_display('default', 'Master', 'default');
+  $handler->display->display_options['title'] = 'Project Detail';
+  $handler->display->display_options['use_more_always'] = FALSE;
+  $handler->display->display_options['access']['type'] = 'perm';
+  $handler->display->display_options['cache']['type'] = 'none';
+  $handler->display->display_options['query']['type'] = 'views_query';
+  $handler->display->display_options['exposed_form']['type'] = 'basic';
+  $handler->display->display_options['pager']['type'] = 'some';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '1';
+  $handler->display->display_options['style_plugin'] = 'grid';
+  $handler->display->display_options['style_options']['columns'] = '1';
+  $handler->display->display_options['style_options']['alignment'] = 'vertical';
+  $handler->display->display_options['row_plugin'] = 'fields';
+  /* No results behavior: Global: Text area */
+  $handler->display->display_options['empty']['area']['id'] = 'area';
+  $handler->display->display_options['empty']['area']['table'] = 'views';
+  $handler->display->display_options['empty']['area']['field'] = 'area';
+  $handler->display->display_options['empty']['area']['empty'] = TRUE;
+  $handler->display->display_options['empty']['area']['content'] = 'None';
+  $handler->display->display_options['empty']['area']['format'] = 'filtered_html';
+  /* Field: Content: Reference Number */
+  $handler->display->display_options['fields']['field_reference_number']['id'] = 'field_reference_number';
+  $handler->display->display_options['fields']['field_reference_number']['table'] = 'field_data_field_reference_number';
+  $handler->display->display_options['fields']['field_reference_number']['field'] = 'field_reference_number';
+  $handler->display->display_options['fields']['field_reference_number']['label'] = '';
+  $handler->display->display_options['fields']['field_reference_number']['element_label_colon'] = FALSE;
+  /* Field: Content: Status */
+  $handler->display->display_options['fields']['field_status']['id'] = 'field_status';
+  $handler->display->display_options['fields']['field_status']['table'] = 'field_data_field_status';
+  $handler->display->display_options['fields']['field_status']['field'] = 'field_status';
+  $handler->display->display_options['fields']['field_status']['element_label_colon'] = FALSE;
+  /* Field: Content: Budget - Total Project Value */
+  $handler->display->display_options['fields']['field_budget_total_project_value']['id'] = 'field_budget_total_project_value';
+  $handler->display->display_options['fields']['field_budget_total_project_value']['table'] = 'field_data_field_budget_total_project_value';
+  $handler->display->display_options['fields']['field_budget_total_project_value']['field'] = 'field_budget_total_project_value';
+  $handler->display->display_options['fields']['field_budget_total_project_value']['label'] = 'Budget (US $) - TOTAL';
+  $handler->display->display_options['fields']['field_budget_total_project_value']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_budget_total_project_value']['settings'] = array(
+    'thousand_separator' => ' ',
+    'decimal_separator' => '.',
+    'scale' => '2',
+    'prefix_suffix' => 1,
+  );
+  /* Field: Content: Budget - Total STDF */
+  $handler->display->display_options['fields']['field_budget_total_stdf']['id'] = 'field_budget_total_stdf';
+  $handler->display->display_options['fields']['field_budget_total_stdf']['table'] = 'field_data_field_budget_total_stdf';
+  $handler->display->display_options['fields']['field_budget_total_stdf']['field'] = 'field_budget_total_stdf';
+  $handler->display->display_options['fields']['field_budget_total_stdf']['label'] = 'STDF Contribution (US $)';
+  $handler->display->display_options['fields']['field_budget_total_stdf']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_budget_total_stdf']['settings'] = array(
+    'thousand_separator' => ' ',
+    'decimal_separator' => '.',
+    'scale' => '2',
+    'prefix_suffix' => 1,
+  );
+  /* Field: Content: Beneficiaries */
+  $handler->display->display_options['fields']['field_beneficiaries']['id'] = 'field_beneficiaries';
+  $handler->display->display_options['fields']['field_beneficiaries']['table'] = 'field_data_field_beneficiaries';
+  $handler->display->display_options['fields']['field_beneficiaries']['field'] = 'field_beneficiaries';
+  $handler->display->display_options['fields']['field_beneficiaries']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_beneficiaries']['type'] = 'field_collection_fields';
+  $handler->display->display_options['fields']['field_beneficiaries']['settings'] = array(
+    'view_mode' => 'full',
+  );
+  $handler->display->display_options['fields']['field_beneficiaries']['delta_offset'] = '0';
+  /* Field: Content: Partner */
+  $handler->display->display_options['fields']['field_partner']['id'] = 'field_partner';
+  $handler->display->display_options['fields']['field_partner']['table'] = 'field_data_field_partner';
+  $handler->display->display_options['fields']['field_partner']['field'] = 'field_partner';
+  $handler->display->display_options['fields']['field_partner']['label'] = 'Partners';
+  $handler->display->display_options['fields']['field_partner']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_partner']['type'] = 'taxonomy_term_reference_plain';
+  $handler->display->display_options['fields']['field_partner']['delta_offset'] = '0';
+  /* Sort criterion: Content: Post date */
+  $handler->display->display_options['sorts']['created']['id'] = 'created';
+  $handler->display->display_options['sorts']['created']['table'] = 'node';
+  $handler->display->display_options['sorts']['created']['field'] = 'created';
+  $handler->display->display_options['sorts']['created']['order'] = 'DESC';
+  /* Contextual filter: Content: Nid */
+  $handler->display->display_options['arguments']['nid']['id'] = 'nid';
+  $handler->display->display_options['arguments']['nid']['table'] = 'node';
+  $handler->display->display_options['arguments']['nid']['field'] = 'nid';
+  $handler->display->display_options['arguments']['nid']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['nid']['default_argument_type'] = 'node';
+  $handler->display->display_options['arguments']['nid']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['nid']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['nid']['summary_options']['items_per_page'] = '25';
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'project' => 'project',
+  );
+
+  /* Display: Block */
+  $handler = $view->new_display('block', 'Block', 'block');
+  $translatables['project_detail'] = array(
+    t('Master'),
+    t('Project Detail'),
+    t('more'),
+    t('Apply'),
+    t('Reset'),
+    t('Sort by'),
+    t('Asc'),
+    t('Desc'),
+    t('None'),
+    t('Status'),
+    t('Budget (US $) - TOTAL'),
+    t('STDF Contribution (US $)'),
+    t('Beneficiaries'),
+    t('Partners'),
+    t('All'),
+    t('Block'),
+  );
+  $export['project_detail'] = $view;
+
+  $view = new view();
   $view->name = 'projects';
   $view->description = '';
   $view->tag = 'default';

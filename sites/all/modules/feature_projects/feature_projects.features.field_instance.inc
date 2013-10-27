@@ -18,7 +18,7 @@ function feature_projects_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'above',
+        'label' => 'hidden',
         'module' => 'entityreference',
         'settings' => array(
           'link' => FALSE,
@@ -54,10 +54,10 @@ function feature_projects_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'above',
-        'module' => 'i18n_taxonomy',
+        'label' => 'hidden',
+        'module' => 'taxonomy',
         'settings' => array(),
-        'type' => 'i18n_taxonomy_term_reference_link',
+        'type' => 'taxonomy_term_reference_plain',
         'weight' => 0,
       ),
     ),
@@ -97,8 +97,15 @@ function feature_projects_field_default_field_instances() {
     'entity_type' => 'field_collection_item',
     'field_name' => 'field_caption',
     'label' => 'Caption',
-    'required' => 1,
+    'required' => 0,
     'settings' => array(
+      'mediafront' => array(
+        'custom' => '',
+        'field_type' => 0,
+        'media_type' => 'media',
+        'preview' => 0,
+        'thumbnail' => 0,
+      ),
       'text_processing' => 1,
       'user_register_form' => FALSE,
     ),
@@ -200,7 +207,7 @@ function feature_projects_field_default_field_instances() {
     'entity_type' => 'field_collection_item',
     'field_name' => 'field_link',
     'label' => 'Link',
-    'required' => 1,
+    'required' => 0,
     'settings' => array(
       'attributes' => array(
         'class' => '',
@@ -213,6 +220,13 @@ function feature_projects_field_default_field_instances() {
         'url_cutoff' => 80,
       ),
       'enable_tokens' => 1,
+      'mediafront' => array(
+        'custom' => '',
+        'field_type' => 0,
+        'media_type' => 'media',
+        'preview' => 0,
+        'thumbnail' => 0,
+      ),
       'rel_remove' => 'default',
       'title' => 'none',
       'title_maxlength' => 128,
@@ -305,11 +319,11 @@ function feature_projects_field_default_field_instances() {
         'weight' => 0,
       ),
       'default' => array(
-        'label' => 'hidden',
+        'label' => 'above',
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 5,
+        'weight' => 3,
       ),
       'frontpage' => array(
         'label' => 'above',
@@ -384,7 +398,7 @@ function feature_projects_field_default_field_instances() {
         'label' => 'inline',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 29,
+        'weight' => 28,
       ),
       'frontpage' => array(
         'label' => 'above',
@@ -426,7 +440,7 @@ function feature_projects_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 11,
+      'weight' => 15,
     ),
   );
 
@@ -451,7 +465,7 @@ function feature_projects_field_default_field_instances() {
         'label' => 'inline',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 26,
+        'weight' => 25,
       ),
       'frontpage' => array(
         'label' => 'above',
@@ -499,7 +513,7 @@ function feature_projects_field_default_field_instances() {
         'display_label' => 1,
       ),
       'type' => 'options_onoff',
-      'weight' => 14,
+      'weight' => 18,
     ),
   );
 
@@ -562,7 +576,7 @@ function feature_projects_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 25,
+      'weight' => 29,
     ),
   );
 
@@ -583,7 +597,7 @@ function feature_projects_field_default_field_instances() {
         'label' => 'inline',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 25,
+        'weight' => 24,
       ),
       'frontpage' => array(
         'label' => 'above',
@@ -625,99 +639,7 @@ function feature_projects_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 26,
-    ),
-  );
-
-  // Exported field_instance: 'node-project-field_agenda'
-  $field_instances['node-project-field_agenda'] = array(
-    'bundle' => 'project',
-    'deleted' => 0,
-    'description' => 'Please add an agenda to the project if required.',
-    'display' => array(
-      'briefings' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'default' => array(
-        'label' => 'above',
-        'module' => 'file',
-        'settings' => array(),
-        'type' => 'file_default',
-        'weight' => 13,
-      ),
-      'frontpage' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'publications' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'thematic' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_agenda',
-    'label' => 'Agenda',
-    'required' => 0,
-    'settings' => array(
-      'description_field' => 0,
-      'file_directory' => '',
-      'file_extensions' => 'pdf doc docx',
-      'max_filesize' => '',
-      'mediafront' => array(
-        'custom' => '',
-        'field_type' => 0,
-        'media_type' => 'media',
-        'preview' => 0,
-        'thumbnail' => 0,
-      ),
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'media',
-      'settings' => array(
-        'allowed_schemes' => array(
-          'private' => 0,
-          'public' => 'public',
-          'youtube' => 0,
-        ),
-        'allowed_types' => array(
-          'audio' => 0,
-          'document' => 'document',
-          'image' => 0,
-          'private_document' => 0,
-          'video' => 0,
-        ),
-        'browser_plugins' => array(
-          'media_default--media_browser_1' => 'media_default--media_browser_1',
-          'media_default--media_browser_my_files' => 0,
-          'media_internet' => 0,
-          'upload' => 'upload',
-          'youtube' => 0,
-        ),
-        'progress_indicator' => 'throbber',
-      ),
-      'type' => 'media_generic',
-      'weight' => 37,
+      'weight' => 30,
     ),
   );
 
@@ -787,7 +709,7 @@ function feature_projects_field_default_field_instances() {
         'year_range' => '-10:+3',
       ),
       'type' => 'date_popup',
-      'weight' => 17,
+      'weight' => 21,
     ),
   );
 
@@ -805,11 +727,10 @@ function feature_projects_field_default_field_instances() {
         'weight' => 0,
       ),
       'default' => array(
-        'label' => 'above',
-        'module' => 'text',
+        'label' => 'inline',
         'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 39,
+        'type' => 'hidden',
+        'weight' => 37,
       ),
       'frontpage' => array(
         'label' => 'above',
@@ -858,7 +779,7 @@ function feature_projects_field_default_field_instances() {
         'size' => 10,
       ),
       'type' => 'text_textfield',
-      'weight' => 18,
+      'weight' => 22,
     ),
   );
 
@@ -879,14 +800,10 @@ function feature_projects_field_default_field_instances() {
         'label' => 'above',
         'module' => 'field_collection',
         'settings' => array(
-          'add' => 'Add',
-          'delete' => 'Delete',
-          'description' => TRUE,
-          'edit' => 'Edit',
           'view_mode' => 'full',
         ),
-        'type' => 'field_collection_view',
-        'weight' => 33,
+        'type' => 'field_collection_fields',
+        'weight' => 10,
       ),
       'frontpage' => array(
         'label' => 'above',
@@ -932,7 +849,7 @@ function feature_projects_field_default_field_instances() {
       'module' => 'field_collection',
       'settings' => array(),
       'type' => 'field_collection_embed',
-      'weight' => 38,
+      'weight' => 41,
     ),
   );
 
@@ -953,7 +870,7 @@ function feature_projects_field_default_field_instances() {
         'label' => 'inline',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 21,
+        'weight' => 20,
       ),
       'frontpage' => array(
         'label' => 'above',
@@ -996,7 +913,7 @@ function feature_projects_field_default_field_instances() {
       'module' => 'number',
       'settings' => array(),
       'type' => 'number',
-      'weight' => 31,
+      'weight' => 35,
     ),
   );
 
@@ -1060,7 +977,7 @@ function feature_projects_field_default_field_instances() {
       'module' => 'number',
       'settings' => array(),
       'type' => 'number',
-      'weight' => 27,
+      'weight' => 31,
     ),
   );
 
@@ -1070,6 +987,134 @@ function feature_projects_field_default_field_instances() {
     'default_value' => NULL,
     'deleted' => 0,
     'description' => 'If applicable, then please enter the non STDF Contribution in USD',
+    'display' => array(
+      'briefings' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'default' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 11,
+      ),
+      'frontpage' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'publications' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'thematic' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_budget_non_stdf_contributi',
+    'label' => 'Budget - Non STDF Contribution',
+    'required' => 0,
+    'settings' => array(
+      'max' => '',
+      'min' => 0,
+      'prefix' => '$',
+      'suffix' => '',
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'number',
+      'settings' => array(),
+      'type' => 'number',
+      'weight' => 33,
+    ),
+  );
+
+  // Exported field_instance: 'node-project-field_budget_swiss_francs'
+  $field_instances['node-project-field_budget_swiss_francs'] = array(
+    'bundle' => 'project',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => 'Please enter a budget amount in Swiss Francs, if applicable.',
+    'display' => array(
+      'briefings' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'default' => array(
+        'label' => 'inline',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 21,
+      ),
+      'frontpage' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'publications' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'thematic' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_budget_swiss_francs',
+    'label' => 'Budget - Swiss Francs',
+    'required' => 0,
+    'settings' => array(
+      'max' => '',
+      'min' => 0,
+      'prefix' => 'CHF',
+      'suffix' => '',
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'number',
+      'settings' => array(),
+      'type' => 'number',
+      'weight' => 36,
+    ),
+  );
+
+  // Exported field_instance: 'node-project-field_budget_total_project_value'
+  $field_instances['node-project-field_budget_total_project_value'] = array(
+    'bundle' => 'project',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => 'The value in this field is calculated from the Implementation Budget and the non-STDF Contribution.',
     'display' => array(
       'briefings' => array(
         'label' => 'above',
@@ -1115,8 +1160,8 @@ function feature_projects_field_default_field_instances() {
       ),
     ),
     'entity_type' => 'node',
-    'field_name' => 'field_budget_non_stdf_contributi',
-    'label' => 'Budget - Non STDF Contribution',
+    'field_name' => 'field_budget_total_project_value',
+    'label' => 'Budget - Total Project Value',
     'required' => 0,
     'settings' => array(
       'max' => '',
@@ -1130,80 +1175,16 @@ function feature_projects_field_default_field_instances() {
       'module' => 'number',
       'settings' => array(),
       'type' => 'number',
-      'weight' => 29,
+      'weight' => 34,
     ),
   );
 
-  // Exported field_instance: 'node-project-field_budget_swiss_francs'
-  $field_instances['node-project-field_budget_swiss_francs'] = array(
+  // Exported field_instance: 'node-project-field_budget_total_stdf'
+  $field_instances['node-project-field_budget_total_stdf'] = array(
     'bundle' => 'project',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => 'Please enter a budget amount in Swiss Francs, if applicable.',
-    'display' => array(
-      'briefings' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'default' => array(
-        'label' => 'inline',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 22,
-      ),
-      'frontpage' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'publications' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'thematic' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_budget_swiss_francs',
-    'label' => 'Budget - Swiss Francs',
-    'required' => 0,
-    'settings' => array(
-      'max' => '',
-      'min' => 0,
-      'prefix' => 'CHF',
-      'suffix' => '',
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 0,
-      'module' => 'number',
-      'settings' => array(),
-      'type' => 'number',
-      'weight' => 32,
-    ),
-  );
-
-  // Exported field_instance: 'node-project-field_budget_total_project_value'
-  $field_instances['node-project-field_budget_total_project_value'] = array(
-    'bundle' => 'project',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => 'The value in this field is calculated from the Implementation Budget and the non-STDF Contribution.',
+    'description' => 'The value in this field will be calculated as the sum of the Implementation Budget and the Supervision Budget.',
     'display' => array(
       'briefings' => array(
         'label' => 'above',
@@ -1249,76 +1230,6 @@ function feature_projects_field_default_field_instances() {
       ),
     ),
     'entity_type' => 'node',
-    'field_name' => 'field_budget_total_project_value',
-    'label' => 'Budget - Total Project Value',
-    'required' => 0,
-    'settings' => array(
-      'max' => '',
-      'min' => 0,
-      'prefix' => '$',
-      'suffix' => '',
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 0,
-      'module' => 'number',
-      'settings' => array(),
-      'type' => 'number',
-      'weight' => 30,
-    ),
-  );
-
-  // Exported field_instance: 'node-project-field_budget_total_stdf'
-  $field_instances['node-project-field_budget_total_stdf'] = array(
-    'bundle' => 'project',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => 'The value in this field will be calculated as the sum of the Implementation Budget and the Supervision Budget.',
-    'display' => array(
-      'briefings' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'default' => array(
-        'label' => 'above',
-        'module' => 'number',
-        'settings' => array(
-          'decimal_separator' => '.',
-          'prefix_suffix' => TRUE,
-          'scale' => 2,
-          'thousand_separator' => ' ',
-        ),
-        'type' => 'number_decimal',
-        'weight' => 6,
-      ),
-      'frontpage' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'publications' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'thematic' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
     'field_name' => 'field_budget_total_stdf',
     'label' => 'Budget - Total STDF',
     'required' => 0,
@@ -1334,7 +1245,7 @@ function feature_projects_field_default_field_instances() {
       'module' => 'number',
       'settings' => array(),
       'type' => 'number',
-      'weight' => 28,
+      'weight' => 32,
     ),
   );
 
@@ -1355,7 +1266,7 @@ function feature_projects_field_default_field_instances() {
         'label' => 'inline',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 23,
+        'weight' => 22,
       ),
       'frontpage' => array(
         'label' => 'above',
@@ -1397,7 +1308,7 @@ function feature_projects_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 34,
+      'weight' => 38,
     ),
   );
 
@@ -1418,7 +1329,7 @@ function feature_projects_field_default_field_instances() {
         'label' => 'inline',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 31,
+        'weight' => 30,
       ),
       'frontpage' => array(
         'label' => 'above',
@@ -1457,7 +1368,7 @@ function feature_projects_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_select',
-      'weight' => 13,
+      'weight' => 17,
     ),
   );
 
@@ -1474,11 +1385,11 @@ function feature_projects_field_default_field_instances() {
         'weight' => 0,
       ),
       'default' => array(
-        'label' => 'hidden',
+        'label' => 'above',
         'module' => 'file',
         'settings' => array(),
         'type' => 'file_table',
-        'weight' => 14,
+        'weight' => 4,
       ),
       'frontpage' => array(
         'label' => 'above',
@@ -1534,7 +1445,7 @@ function feature_projects_field_default_field_instances() {
         'progress_indicator' => 'throbber',
       ),
       'type' => 'media_generic',
-      'weight' => 35,
+      'weight' => 39,
     ),
   );
 
@@ -1554,7 +1465,7 @@ function feature_projects_field_default_field_instances() {
         'label' => 'inline',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 24,
+        'weight' => 23,
       ),
       'frontpage' => array(
         'label' => 'above',
@@ -1611,7 +1522,7 @@ function feature_projects_field_default_field_instances() {
         'year_range' => '-10:+10',
       ),
       'type' => 'date_popup',
-      'weight' => 22,
+      'weight' => 26,
     ),
   );
 
@@ -1629,11 +1540,10 @@ function feature_projects_field_default_field_instances() {
         'weight' => 0,
       ),
       'default' => array(
-        'label' => 'above',
-        'module' => 'text',
+        'label' => 'inline',
         'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 38,
+        'type' => 'hidden',
+        'weight' => 36,
       ),
       'frontpage' => array(
         'label' => 'above',
@@ -1682,7 +1592,78 @@ function feature_projects_field_default_field_instances() {
         'size' => 10,
       ),
       'type' => 'text_textfield',
-      'weight' => 23,
+      'weight' => 27,
+    ),
+  );
+
+  // Exported field_instance: 'node-project-field_expected_results'
+  $field_instances['node-project-field_expected_results'] = array(
+    'bundle' => 'project',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => 'Please enter the expected results of the project.',
+    'display' => array(
+      'briefings' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 41,
+      ),
+      'frontpage' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'publications' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'thematic' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_expected_results',
+    'label' => 'Expected Results',
+    'required' => 0,
+    'settings' => array(
+      'mediafront' => array(
+        'custom' => '',
+        'field_type' => 0,
+        'media_type' => 'media',
+        'preview' => 0,
+        'thumbnail' => 0,
+      ),
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'rows' => 5,
+      ),
+      'type' => 'text_textarea',
+      'weight' => 7,
     ),
   );
 
@@ -1752,7 +1733,7 @@ function feature_projects_field_default_field_instances() {
         'year_range' => '-10:+10',
       ),
       'type' => 'date_popup',
-      'weight' => 21,
+      'weight' => 25,
     ),
   );
 
@@ -1770,11 +1751,10 @@ function feature_projects_field_default_field_instances() {
         'weight' => 0,
       ),
       'default' => array(
-        'label' => 'above',
-        'module' => 'taxonomy',
+        'label' => 'inline',
         'settings' => array(),
-        'type' => 'taxonomy_term_reference_link',
-        'weight' => 2,
+        'type' => 'hidden',
+        'weight' => 12,
       ),
       'frontpage' => array(
         'label' => 'above',
@@ -1816,7 +1796,7 @@ function feature_projects_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'taxonomy_autocomplete',
-      'weight' => 16,
+      'weight' => 20,
     ),
   );
 
@@ -1825,7 +1805,7 @@ function feature_projects_field_default_field_instances() {
     'bundle' => 'project',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => 'Please enter the key objective. This will be highlighted on the project details page. ',
+    'description' => 'Please enter the objectives of the project. This will be highlighted on the project details page. ',
     'display' => array(
       'briefings' => array(
         'label' => 'above',
@@ -1834,11 +1814,11 @@ function feature_projects_field_default_field_instances() {
         'weight' => 0,
       ),
       'default' => array(
-        'label' => 'hidden',
+        'label' => 'above',
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 4,
+        'weight' => 2,
       ),
       'frontpage' => array(
         'label' => 'above',
@@ -1867,7 +1847,7 @@ function feature_projects_field_default_field_instances() {
     ),
     'entity_type' => 'node',
     'field_name' => 'field_key_objective',
-    'label' => 'Key Objective',
+    'label' => 'Objectives',
     'required' => 0,
     'settings' => array(
       'mediafront' => array(
@@ -1891,6 +1871,77 @@ function feature_projects_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-project-field_lessons_learned'
+  $field_instances['node-project-field_lessons_learned'] = array(
+    'bundle' => 'project',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => 'Please enter the lessons learned on the project, these will appear in a separate tab.',
+    'display' => array(
+      'briefings' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 39,
+      ),
+      'frontpage' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'publications' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'thematic' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_lessons_learned',
+    'label' => 'Lessons Learned',
+    'required' => 0,
+    'settings' => array(
+      'mediafront' => array(
+        'custom' => '',
+        'field_type' => 0,
+        'media_type' => 'media',
+        'preview' => 0,
+        'thumbnail' => 0,
+      ),
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'rows' => 5,
+      ),
+      'type' => 'text_textarea',
+      'weight' => 9,
+    ),
+  );
+
   // Exported field_instance: 'node-project-field_overhead'
   $field_instances['node-project-field_overhead'] = array(
     'bundle' => 'project',
@@ -1905,16 +1956,10 @@ function feature_projects_field_default_field_instances() {
         'weight' => 0,
       ),
       'default' => array(
-        'label' => 'above',
-        'module' => 'number',
-        'settings' => array(
-          'decimal_separator' => '.',
-          'prefix_suffix' => TRUE,
-          'scale' => 2,
-          'thousand_separator' => ' ',
-        ),
-        'type' => 'number_decimal',
-        'weight' => 35,
+        'label' => 'inline',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 33,
       ),
       'frontpage' => array(
         'label' => 'above',
@@ -1964,7 +2009,7 @@ function feature_projects_field_default_field_instances() {
       'module' => 'number',
       'settings' => array(),
       'type' => 'number',
-      'weight' => 33,
+      'weight' => 37,
     ),
   );
 
@@ -1986,7 +2031,7 @@ function feature_projects_field_default_field_instances() {
         'module' => 'taxonomy',
         'settings' => array(),
         'type' => 'taxonomy_term_reference_plain',
-        'weight' => 32,
+        'weight' => 9,
       ),
       'frontpage' => array(
         'label' => 'above',
@@ -2035,7 +2080,7 @@ function feature_projects_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'taxonomy_autocomplete',
-      'weight' => 8,
+      'weight' => 12,
     ),
   );
 
@@ -2056,7 +2101,7 @@ function feature_projects_field_default_field_instances() {
         'label' => 'inline',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 30,
+        'weight' => 29,
       ),
       'frontpage' => array(
         'label' => 'above',
@@ -2095,7 +2140,7 @@ function feature_projects_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_select',
-      'weight' => 12,
+      'weight' => 16,
     ),
   );
 
@@ -2113,11 +2158,10 @@ function feature_projects_field_default_field_instances() {
         'weight' => 0,
       ),
       'default' => array(
-        'label' => 'above',
-        'module' => 'text',
+        'label' => 'inline',
         'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 34,
+        'type' => 'hidden',
+        'weight' => 32,
       ),
       'frontpage' => array(
         'label' => 'above',
@@ -2166,7 +2210,149 @@ function feature_projects_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 10,
+      'weight' => 14,
+    ),
+  );
+
+  // Exported field_instance: 'node-project-field_project_achievements'
+  $field_instances['node-project-field_project_achievements'] = array(
+    'bundle' => 'project',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => 'Please enter the achievements that apply to the project.',
+    'display' => array(
+      'briefings' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 38,
+      ),
+      'frontpage' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'publications' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'thematic' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_project_achievements',
+    'label' => 'Project Achievements',
+    'required' => 0,
+    'settings' => array(
+      'mediafront' => array(
+        'custom' => '',
+        'field_type' => 0,
+        'media_type' => 'media',
+        'preview' => 0,
+        'thumbnail' => 0,
+      ),
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'rows' => 5,
+      ),
+      'type' => 'text_textarea',
+      'weight' => 8,
+    ),
+  );
+
+  // Exported field_instance: 'node-project-field_project_activities'
+  $field_instances['node-project-field_project_activities'] = array(
+    'bundle' => 'project',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => 'Please enter the project activities.',
+    'display' => array(
+      'briefings' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 40,
+      ),
+      'frontpage' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'publications' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'thematic' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_project_activities',
+    'label' => 'Project Activities',
+    'required' => 0,
+    'settings' => array(
+      'mediafront' => array(
+        'custom' => '',
+        'field_type' => 0,
+        'media_type' => 'media',
+        'preview' => 0,
+        'thumbnail' => 0,
+      ),
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'rows' => 5,
+      ),
+      'type' => 'text_textarea',
+      'weight' => 6,
     ),
   );
 
@@ -2188,11 +2374,11 @@ function feature_projects_field_default_field_instances() {
         'weight' => 0,
       ),
       'default' => array(
-        'label' => 'hidden',
+        'label' => 'above',
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 1,
+        'weight' => 5,
       ),
       'frontpage' => array(
         'label' => 'above',
@@ -2256,11 +2442,10 @@ function feature_projects_field_default_field_instances() {
         'weight' => 0,
       ),
       'default' => array(
-        'label' => 'above',
-        'module' => 'list',
+        'label' => 'inline',
         'settings' => array(),
-        'type' => 'list_default',
-        'weight' => 10,
+        'type' => 'hidden',
+        'weight' => 13,
       ),
       'frontpage' => array(
         'label' => 'above',
@@ -2299,7 +2484,7 @@ function feature_projects_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_select',
-      'weight' => 7,
+      'weight' => 11,
     ),
   );
 
@@ -2320,7 +2505,7 @@ function feature_projects_field_default_field_instances() {
         'label' => 'inline',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 28,
+        'weight' => 27,
       ),
       'frontpage' => array(
         'label' => 'above',
@@ -2362,7 +2547,7 @@ function feature_projects_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 9,
+      'weight' => 13,
     ),
   );
 
@@ -2381,10 +2566,9 @@ function feature_projects_field_default_field_instances() {
       ),
       'default' => array(
         'label' => 'above',
-        'module' => 'list',
         'settings' => array(),
-        'type' => 'list_default',
-        'weight' => 11,
+        'type' => 'hidden',
+        'weight' => 14,
       ),
       'frontpage' => array(
         'label' => 'above',
@@ -2422,7 +2606,7 @@ function feature_projects_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_select',
-      'weight' => 15,
+      'weight' => 19,
     ),
   );
 
@@ -2440,7 +2624,7 @@ function feature_projects_field_default_field_instances() {
         'weight' => 0,
       ),
       'default' => array(
-        'label' => 'hidden',
+        'label' => 'above',
         'module' => 'field_slideshow',
         'settings' => array(
           'slideshow_caption' => 'field_caption',
@@ -2541,7 +2725,7 @@ function feature_projects_field_default_field_instances() {
           'multiple_to' => '',
         ),
         'type' => 'date_default',
-        'weight' => 3,
+        'weight' => 1,
       ),
       'frontpage' => array(
         'label' => 'above',
@@ -2598,7 +2782,7 @@ function feature_projects_field_default_field_instances() {
         'year_range' => '-10:+10',
       ),
       'type' => 'date_popup',
-      'weight' => 19,
+      'weight' => 23,
     ),
   );
 
@@ -2616,11 +2800,10 @@ function feature_projects_field_default_field_instances() {
         'weight' => 0,
       ),
       'default' => array(
-        'label' => 'above',
-        'module' => 'text',
+        'label' => 'inline',
         'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 37,
+        'type' => 'hidden',
+        'weight' => 35,
       ),
       'frontpage' => array(
         'label' => 'above',
@@ -2669,7 +2852,7 @@ function feature_projects_field_default_field_instances() {
         'size' => 10,
       ),
       'type' => 'text_textfield',
-      'weight' => 20,
+      'weight' => 24,
     ),
   );
 
@@ -2691,7 +2874,7 @@ function feature_projects_field_default_field_instances() {
         'module' => 'list',
         'settings' => array(),
         'type' => 'list_default',
-        'weight' => 9,
+        'weight' => 6,
       ),
       'frontpage' => array(
         'label' => 'above',
@@ -2730,7 +2913,7 @@ function feature_projects_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_select',
-      'weight' => 6,
+      'weight' => 10,
     ),
   );
 
@@ -2755,7 +2938,7 @@ function feature_projects_field_default_field_instances() {
         'label' => 'inline',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 27,
+        'weight' => 26,
       ),
       'frontpage' => array(
         'label' => 'above',
@@ -2816,11 +2999,10 @@ function feature_projects_field_default_field_instances() {
         'weight' => 0,
       ),
       'default' => array(
-        'label' => 'above',
-        'module' => 'list',
+        'label' => 'inline',
         'settings' => array(),
-        'type' => 'list_default',
-        'weight' => 36,
+        'type' => 'hidden',
+        'weight' => 34,
       ),
       'frontpage' => array(
         'label' => 'above',
@@ -2868,7 +3050,7 @@ function feature_projects_field_default_field_instances() {
         'display_label' => 0,
       ),
       'type' => 'options_onoff',
-      'weight' => 24,
+      'weight' => 28,
     ),
   );
 
@@ -2880,7 +3062,6 @@ function feature_projects_field_default_field_instances() {
   t('Actions Required');
   t('Actual End Date');
   t('Actual End Year');
-  t('Agenda');
   t('Approval Date');
   t('Approval Year');
   t('Beneficiaries');
@@ -2905,40 +3086,47 @@ function feature_projects_field_default_field_instances() {
   t('Enter any actions since the last WG.');
   t('Enter the beneficiaries of this project. You can enter beneficiaries as text or as a link to a full beneficiary record. The latter is used to create a map showing the countries that constitute the beneficiary.');
   t('Enter the reference number of the project, in the form STDF/PG/nnn for project grants and STDF/PPG/nnn for project preparation grants.');
+  t('Expected Results');
   t('Extension Date');
   t('If applicable, then please enter the non STDF Contribution in USD');
   t('If the project is extended then enter the extension day, month, and year.');
   t('Image');
   t('Implementing Entity');
-  t('Key Objective');
+  t('Lessons Learned');
   t('Link');
+  t('Objectives');
   t('Overhead');
   t('PPG Outcome');
   t('Partner');
-  t('Please add an agenda to the project if required.');
   t('Please describe the project.');
   t('Please enter a budget amount in Euros, if applicable. ');
   t('Please enter a budget amount in Swiss Francs, if applicable.');
   t('Please enter any comments relating to this project.');
   t('Please enter any outstanding actions.');
   t('Please enter the URL which you want the image to link to. You can set the link target attribute, which controls if the link opens in the current browser window/tab or a new window/tab.');
+  t('Please enter the achievements that apply to the project.');
   t('Please enter the appropriate accounting code for the project.');
   t('Please enter the caption which should accompany the image.');
   t('Please enter the day, month and year that the project started or is planned to start. Then enter the day, month, and year that it is or was planned to end.');
   t('Please enter the day, month and year that the project was approved.');
+  t('Please enter the expected results of the project.');
   t('Please enter the final end date of the project.');
   t('Please enter the implementation budget in USD.');
-  t('Please enter the key objective. This will be highlighted on the project details page. ');
+  t('Please enter the lessons learned on the project, these will appear in a separate tab.');
+  t('Please enter the objectives of the project. This will be highlighted on the project details page. ');
   t('Please enter the outcome of the PPG process.');
   t('Please enter the overhead of this project in USD.');
   t('Please enter the partner(s) involved with this project.');
   t('Please enter the person who was previously responsible for the project.');
+  t('Please enter the project activities.');
   t('Please enter who is responsible for the project.');
   t('Please link to any documents that relate to this project.');
   t('Please select the countries that make up this beneficiary. ');
   t('Please select the image file for the slide - take it from the media library or upload a new file.');
   t('Please select whether this is a project or a project preparation.');
   t('Previous Responsible');
+  t('Project Achievements');
+  t('Project Activities');
   t('Project Type');
   t('Reference Number');
   t('Region');

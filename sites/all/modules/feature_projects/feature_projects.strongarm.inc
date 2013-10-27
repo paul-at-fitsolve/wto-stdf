@@ -190,16 +190,16 @@ function feature_projects_strongarm() {
           'weight' => '0',
         ),
         'language' => array(
-          'weight' => '39',
+          'weight' => '42',
         ),
         'path' => array(
-          'weight' => '36',
+          'weight' => '40',
         ),
       ),
       'display' => array(
         'language' => array(
           'default' => array(
-            'weight' => '32',
+            'weight' => '31',
             'visible' => FALSE,
           ),
         ),
