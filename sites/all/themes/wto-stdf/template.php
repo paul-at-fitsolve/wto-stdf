@@ -228,6 +228,27 @@ function wto_stdf_preprocess_block(&$variables, $hook) {
 }
 // */
 
+/*
+ * Add the authors and publishers fields to the variables.
+ */
+function wto_stdf_preprocess_search_result(&$variables) { 
+  if ($variables['result']['entity_type'] == 'file'){
+    $file = file_load($variables['result']['fields']['entity_id']);
+     $variables['title_prefix']['icon'] = array('#children' => '<img src="/' . path_to_theme() . '/images/' . substr($file->filemime,-3) .'.gif" />',
+                                              '#prefix' => '<span class="doc_icon">',
+                                              '#suffix' => '</span>',
+                                              );
+   
+      foreach($file->field_author[LANGUAGE_NONE] as $tid) {
+        $variables['authors'][] = taxonomy_term_load($tid['tid'])->name;
+      }
+      foreach($file->field_publisher[LANGUAGE_NONE] as $tid) {
+        $variables['publishers'][] = taxonomy_term_load($tid['tid'])->name;
+      }
+  }
+}
+
+
 //overriding forms
 function wto_stdf_form_alter(&$form, &$form_state, $form_id) {
   //overriding search form
