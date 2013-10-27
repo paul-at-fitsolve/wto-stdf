@@ -221,25 +221,6 @@ class StdfMigrationProjectMigration extends StdfMigration {
     */
 
   }
-  function prepare(&$node, $row) {
-    if ($row->start_date == 'NULL') {
-      $node->field_uncertain_dates ['en'] [0] ['value'] = TRUE;
-      $row->start_date = NULL;
-    }
-    
-    if ($row->end_date == 'NULL') {
-      $node->field_uncertain_dates ['en'] [0] ['value'] = TRUE;
-      $row->end_date = NULL;
-    }
-    
-    if ($row->actual_end_date == 'NULL') {
-      $node->field_uncertain_dates ['en'] [0] ['value'] = TRUE;
-      $row->actual_end_date = NULL;
-    }
-    
-    if ($row->extension == NULL) {
-      $node->field_uncertain_dates ['en'] [0] ['value'] = TRUE;
-    }
-  }
+
 }
  
