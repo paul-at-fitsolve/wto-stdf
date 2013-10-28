@@ -93,6 +93,8 @@ class StdfMigrationProjectMigration extends StdfMigration {
     $this->addFieldMapping ( 'field_budget_euros', 'budget_eur' );
     $this->addFieldMapping ( 'field_budget_swiss_francs', 'budget_chf' );
     $this->addFieldMapping ( 'field_comments', 'comments' );
+    $this->addFieldMapping ( 'field_beneficiary_text', 'beneficiary' )->separator(';');
+    $this->addFieldMapping ( 'field_beneficiary_text:create_term' )->defaultValue ( TRUE );
     
     $this->addFieldMapping ( 'field_documents', 'link1' )->separator ( ';' );
     
