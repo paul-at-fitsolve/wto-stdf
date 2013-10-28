@@ -564,7 +564,7 @@ function _stdfcustom_mailchimp_form_callback($form, $form_state) {
   foreach ( $errors as $key => $value ) {
     preg_match ( '/[A-Z0-9]+$/', $key, $result );
     $selector = '#' . strtolower ( $result [0] ) . '_error';
-    $commands [] = ajax_command_replace ( $selector, '<p class="error">' . $value . '</p>' );
+    $commands [] = ajax_command_replace ( $selector, '<div class="ajaxerror"><p class="error">' . $value . '</p></div>' );
     // Add a visual "changed" marker to the '#object-1' element.
     $commands [] = ajax_command_changed ( $selector );
   }
@@ -576,7 +576,7 @@ function _stdfcustom_mailchimp_form_callback($form, $form_state) {
       '#commands' => $commands 
   );
   } else {
-    return "<div id='test-ajax'>Thank You for signing up.</div>";
+    return '<div id="test-ajax">Thank You for signing up.</div><div id="ajax-response"></div>';
   }
 }
 

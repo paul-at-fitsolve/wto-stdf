@@ -6,7 +6,7 @@
 			// Stop top menu items from having active links.
 			$(".menuparent > a").attr('href', 'javascript:void(0)');
 
-			if ($('#test-ajax').length > 0) {
+			if ($('#ajax-response').length) {
 				setTimeout(function() {
 					$('#block-mailchimp-lists-stdf-mail-list')
 							.dialog('close');

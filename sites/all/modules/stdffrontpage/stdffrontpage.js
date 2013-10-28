@@ -4,6 +4,7 @@
 		attach : function(context, settings) {
 			$(document).ready(function() {
 				
+				if (!$('#ajax-response').length && !$('.ajaxerror').length) {
 			 
 				//This code adds the date widget.
 				$('.node-event').each(function(index) {
@@ -11,7 +12,6 @@
 			      var date = raw.split(" ");
 			      $(this).parent().prepend('<span class="month">' + date[1].substr(0,3) + '</span>');
 			      $(this).parent().prepend('<span class="day">' + date[0] + '</span>');
-			      $(this).off(index);
 				});	
 				//This code adds a class to colour the status field value for the project table.
 				$('td.views-field-field-status').each(function(index) {	
@@ -24,7 +24,7 @@
 			    var pub = $('#block-stdffrontpage-publications > h2');
 			    pub.append('<img title="Publications" src="sites/all/themes/wto-stdf/images/pubicon_bg.png" />');
 			    
-			    
+				}
 			    
 			    if (!$.browser.msie) {
 			    	$('.flexslider').css('float','left');
