@@ -1,8 +1,6 @@
 <?php
 /*
- *
- * Implements
- * hook_init().
+ * Implements hook_init().
  */
 function stdffrontpage_init() {
   // Add the javaScript needed on the front_page.
@@ -16,7 +14,7 @@ function stdffrontpage_init() {
  * hook_variable_info().
  */
 function stdffrontpage_variable_info($options) {
-  //Contact information is declared as a translatable variable.
+  // Contact information is declared as a translatable variable.
   $variables ['Contact Information'] = array (
       'type' => 'string',
       'title' => t ( 'Contact Information' ),
@@ -27,7 +25,6 @@ function stdffrontpage_variable_info($options) {
   );
   return $variables;
 }
-
 function stdffrontpage_form_alter(&$form, &$form_state, $form_id) {
   if ($form_id == 'system_site_information_settings') {
     global $language;
@@ -192,22 +189,32 @@ function _stdffrontpage_partners() {
   $image = array (
       'title' => t ( 'FAO' ),
       'alt' => t ( 'FAO' ),
-      'path' => path_to_theme() . '/images/partner1.png',
+      'path' => path_to_theme () . '/images/partner1.png' 
   );
   
-  $html .= l(theme ( 'image', $image ), 'http://www.fao.org/home/' . $language->language, array('attributes' => array('target' => '_blank') ,'html' => TRUE));
+  $html .= l ( theme ( 'image', $image ), 'http://www.fao.org/home/' . $language->language, array (
+      'attributes' => array (
+          'target' => '_blank' 
+      ),
+      'html' => TRUE 
+  ) );
   
   $image = array (
       'title' => t ( 'OIE' ),
       'alt' => t ( 'OIE' ),
-      'path' => path_to_theme() . '/images/partner2.png' 
+      'path' => path_to_theme () . '/images/partner2.png' 
   );
-  $html .= l(theme ( 'image', $image ), 'http://www.oie.int/' . $language->language, array('attributes' => array('target' => '_blank') ,'html' => TRUE));
+  $html .= l ( theme ( 'image', $image ), 'http://www.oie.int/' . $language->language, array (
+      'attributes' => array (
+          'target' => '_blank' 
+      ),
+      'html' => TRUE 
+  ) );
   
   $image = array (
       'title' => t ( 'World Bank' ),
       'alt' => t ( 'World Bank' ),
-      'path' => path_to_theme() . '/images/partner3.png' 
+      'path' => path_to_theme () . '/images/partner3.png' 
   );
   
   if ($language->language == 'en') {
@@ -218,21 +225,36 @@ function _stdffrontpage_partners() {
     $url = 'http://www.bancomundial.org/';
   }
   
-  $html .= l(theme ( 'image', $image ), $url, array('attributes' => array('target' => '_blank') ,'html' => TRUE));
+  $html .= l ( theme ( 'image', $image ), $url, array (
+      'attributes' => array (
+          'target' => '_blank' 
+      ),
+      'html' => TRUE 
+  ) );
   
   $image = array (
       'title' => t ( 'WHO' ),
       'alt' => t ( 'WHO' ),
-      'path' => path_to_theme() . '/images/partner4.png' 
+      'path' => path_to_theme () . '/images/partner4.png' 
   );
-  $html .= l(theme ( 'image', $image ), 'http://www.who.int/' . $language->language, array('attributes' => array('target' => '_blank') ,'html' => TRUE));
+  $html .= l ( theme ( 'image', $image ), 'http://www.who.int/' . $language->language, array (
+      'attributes' => array (
+          'target' => '_blank' 
+      ),
+      'html' => TRUE 
+  ) );
   
   $image = array (
       'title' => t ( 'WTO' ),
       'alt' => t ( 'WTO' ),
-      'path' => path_to_theme() .'/images/partner5.png' 
+      'path' => path_to_theme () . '/images/partner5.png' 
   );
-  $html .= l(theme ( 'image', $image ), 'http://www.wto.org/' . (($language->language == 'en') ? '' : (($language->language == 'fr') ? $language->language : 'indexsp.htm')), array('attributes' => array('target' => '_blank') ,'html' => TRUE));
+  $html .= l ( theme ( 'image', $image ), 'http://www.wto.org/' . (($language->language == 'en') ? '' : (($language->language == 'fr') ? $language->language : 'indexsp.htm')), array (
+      'attributes' => array (
+          'target' => '_blank' 
+      ),
+      'html' => TRUE 
+  ) );
   return $html;
 }
  

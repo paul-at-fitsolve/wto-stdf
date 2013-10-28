@@ -1,123 +1,11 @@
 <?php 
-function stdfcustom_form_mailchimp_lists_user_subscribe_form_stdf_mail_list_alter(&$form, &$form_state) {
-  $form ['mailchimp_lists'] ['mailchimp_stdf_mail_list'] ['mergevars'] ['MMERGE3'] ['#default_value'] = 'English';
-  $form ['submit'] ['#ajax'] = array (
-      'callback' => '_stdfcustom_mailchimp_form_callback',
-      'wrapper' => 'message',
-      'method' => 'replace',
-      'effect' => 'fade' 
-  );
-}
-function _stdfcustom_mailchimp_form_callback($form, $form_state) {
-  $commands = array ();
-  $errors = form_get_errors ();
-  form_clear_error ();
-  $result = array ();
-  foreach ( $errors as $key => $value ) {
-    preg_match ( '/[A-Z0-9]+$/', $key, $result );
-    $selector = '#' . strtolower ( $result [0] ) . '_error';
-    $commands [] = ajax_command_replace ( $selector, '<p class="error">' . $value . '</p>' );
-    // Add a visual "changed" marker to the '#object-1' element.
-    $commands [] = ajax_command_changed ( $selector );
-  }
-  // Menu 'page callback' and #ajax['callback'] functions are supposed to
-  // return render arrays. If returning an Ajax commands array, it must be
-  // encapsulated in a render array structure.
-  return array (
-      '#type' => 'ajax',
-      '#commands' => $commands 
-  );
-}
-function stdfcustom_form_user_register_form_alter(&$form, &$form_state) {
-  // Only alter user forms if there is more than one language.
-  if (! isset ( $form ['locale'] ) && drupal_multilingual ()) {
-    locale_language_selector_form ( $form, $form_state, $form ['#user'] );
-  }
-  
-  if (isset ( $form ['locale'] )) {
-    $form ['locale'] ['#access'] = TRUE;
-  }
-}
-function stdfcustom_apachesolr_query_alter($query) {
-  if (! (isset ( $_SESSION ['advanced'] ))) {
-    return;
-  }
-  
-  $compiled_filter = new SolrFilterSubQuery ( 'AND' );
-  if ($_SESSION ['advanced'] ['title'] != '') {
-    $compiled_filter->addFilter ( 'label', $_SESSION ['advanced'] ['title'] );
-  }
-  
-  if ($_SESSION ['advanced'] ['author'] != '') {
-    $compiled_filter->addFilter ( 'sm_vid_Author', $_SESSION ['advanced'] ['author'] );
-  }
-  
-  if ($_SESSION ['advanced'] ['publisher'] != '') {
-    $compiled_filter->addFilter ( 'sm_vid_Publisher', $_SESSION ['advanced'] ['publisher'] );
-  }
-  
-  if ($_SESSION ['advanced'] ['country'] != '') {
-    $compiled_filter->addFilter ( 'sm_vid_Publisher', $_SESSION ['advanced'] ['country'] );
-  }
-  if ($_SESSION ['advanced'] ['publication_date_from'] != '') {
-    $range = '[' . $_SESSION ['advanced'] ['publication_date_from'] . '-01-01T00:00:00.000Z TO';
-  } else {
-    $range = '[1900-01-01T00:00:00.000Z TO';
-  }
-  
-  if ($_SESSION ['advanced'] ['publication_date_to'] != '') {
-    $range .= ' ' . $_SESSION ['advanced'] ['publication_date_to'] . '-12-31T24:59:99.999Z]';
-  } else {
-    $range .= ' NOW]';
-  }
-  $compiled_filter->addFilter ( 'ds_field_publication_date', $range );
-  // dpm($_SESSION['advanced']['language']);
-  $language_filter = new SolrFilterSubQuery ( 'OR' );
-  if (! $_SESSION ['advanced'] ['language'] ['EN'] == 0) {
-    $language_filter->addFilter ( 'ss_field_language', 'EN' );
-  }
-  if (! $_SESSION ['advanced'] ['language'] ['FR'] == 0) {
-    $language_filter->addFilter ( 'ss_field_language', 'FR' );
-  }
-  if (! $_SESSION ['advanced'] ['language'] ['SP'] == 0) {
-    $language_filter->addFilter ( 'ss_field_language', 'ES' );
-  }
-  
-  $compiled_filter->addFilterSubQuery ( $language_filter );
-  
-  $keyword_filter = new SolrFilterSubQuery ( 'OR' );
-  foreach ( $_SESSION ['advanced'] ['keywords'] as $keyword ) {
-    if (! $keyword == 0) {
-      $keyword_filter->addFilter ( 'ss_vid_Keywords', $keyword );
-    }
-  }
-  
-  $compiled_filter->addFilterSubQuery ( $keyword_filter );
-  
-  $query->addFilterSubQuery ( $compiled_filter );
-  // dpm($query->getParams());
-  unset ( $_SESSION ['advanced'] );
-}
-function stdfcustom_block_info() {
-  $blocks ['newsletter_signup'] = array (
-      'info' => t ( 'Signup For Newsletter' ),
-      'cache' => DRUPAL_NO_CACHE 
-  );
-  
-  return $blocks;
-}
-function stdfcustom_block_view($delta) {
-  $block = array ();
-  switch ($delta) {
-    case 'newsletter_signup' :
-      $block ['content'] = '<input id = "signup_button" type="submit" value="' . t ( 'Signup for our newsletter' ) . '"/>';
-      break;
-  }
-  return $block;
-}
-function stdfcustom_countries_alter(&$countries) {
-  $countries ['TW'] = t ( 'Taipei' );
-}
+
+//Boilerplate code...
+
+/*
+ * Implements hook_init()
+ * Adds fonts, javascript, css etc..
+ */
 function stdfcustom_init() {
   drupal_add_html_head_link ( array (
       'href' => 'http://fonts.googleapis.com/css?family=Lato:400,700',
@@ -132,6 +20,11 @@ function stdfcustom_init() {
   drupal_add_js ( drupal_get_path ( 'module', 'stdfcustom' ) . '/stdfcustom.js' );
   drupal_add_library ( 'system', 'ui.dialog' );
 }
+
+/*
+ * Implements hook_menu()
+ * Defines menu items.
+ */
 function stdfcustom_menu() {
   // Menu definition for the Solr query that returns autocomplete suggestions
   // for author.
@@ -232,7 +125,49 @@ function stdfcustom_menu() {
   return $items;
 }
 
+
+/*
+ * Implements hook_block_info()
+ * Defines the newsletter signup block.
+ */
+function stdfcustom_block_info() {
+  $blocks ['newsletter_signup'] = array (
+      'info' => t ( 'Signup For Newsletter' ),
+      'cache' => DRUPAL_NO_CACHE 
+  );
+  
+  return $blocks;
+}
+
+/*
+ * Implements hook_block_view()
+ * Defines the content of the newsletter signup block - a button with translatable text.
+ */
+function stdfcustom_block_view($delta) {
+  $block = array ();
+  switch ($delta) {
+    case 'newsletter_signup' :
+      $block ['content'] = '<input id = "signup_button" type="submit" value="' . t ( 'Signup for our newsletter' ) . '"/>';
+      break;
+  }
+  return $block;
+}
+
+/*
+ * Implements hook_countries_alter()
+ * Taiwan must not appear on the system as it is not recognised by China.
+ * This transforms that name to Taipei which makes them happy.
+ */
+function stdfcustom_countries_alter(&$countries) {
+  $countries ['TW'] = t ( 'Taipei' );
+}
+
+
 // Form definition code
+
+/*
+ * Defines the simple search form to Drupal FAPI.
+ */
 function _stdfcustom_solrsearch_form_simple($form, &$form_state) {
   $form ['term'] = array (
       '#type' => 'textarea',
@@ -262,6 +197,10 @@ function _stdfcustom_solrsearch_form_simple($form, &$form_state) {
   
   return $form;
 }
+
+/*
+ * Simplesearch validation.
+ */
 function _stdfcustom_solrsearch_form_simple_validate($form, &$form_state) {
   
   // Validate length of search term.
@@ -271,13 +210,17 @@ function _stdfcustom_solrsearch_form_simple_validate($form, &$form_state) {
   
   $form_state ['values'] ['term'] = _stdfcustom_process_tokens ( $form_state ['values'] ['search_type'], $form_state ['values'] ['term'] );
 }
+
+/*
+ * Simple search submit - redirect to the appropriate search form.
+ */
 function _stdfcustom_solrsearch_form_simple_submit($form, &$form_state) {
   // Just redirect the form submission to the search url.
   $form_state ['redirect'] = 'search/virtual_library/' . $form_state ['values'] ['term'];
 }
 
 /*
- *
+ * Preprocess the supplied tokens to add various Lucene syntax.
  */
 function _stdfcustom_process_tokens($option, $rawtokens) {
   
@@ -303,6 +246,10 @@ function _stdfcustom_process_tokens($option, $rawtokens) {
   
   return $tokens;
 }
+
+/*
+ * Defines the advanced search form to Drupal FAPI.
+ */
 function _stdfcustom_solrsearch_form_advanced($form, $form_state) {
   $form ['term'] = array (
       '#type' => 'textarea',
@@ -393,6 +340,10 @@ function _stdfcustom_solrsearch_form_advanced($form, $form_state) {
   
   return $form;
 }
+
+/*
+ * Validate the advanced search form.
+ */
 function _stdfcustom_solrsearch_form_advanced_validate($form, &$form_state) {
   
   // If user does not supply any characters then treat the search as match all.
@@ -400,6 +351,10 @@ function _stdfcustom_solrsearch_form_advanced_validate($form, &$form_state) {
     $form_state ['values'] ['term'] = '*:*';
   }
 }
+
+/*
+ * Submit the advanced search form.
+ */
 function _stdfcustom_solrsearch_form_advanced_submit($form, &$form_state) {
   $_SESSION ['advanced'] ['title'] = $form_state ['values'] ['title'];
   $_SESSION ['advanced'] ['author'] = $form_state ['values'] ['author'];
@@ -413,9 +368,15 @@ function _stdfcustom_solrsearch_form_advanced_submit($form, &$form_state) {
   
   $form_state ['redirect'] = 'search/virtual_library/' . $form_state ['values'] ['term'];
 }
+
+/*
+ * Produce some HTML for the newsletter block.
+ * It's a javaScript call to a Mailchimp archive.
+ */
 function _stdfcustom_newsletter_list() {
   return '<div id="mailchimp_div"><p>The STDF newsletter provides an overview of ongoing activities of the STDF and its partners. It gives an update of the major developments in the area of SPS standard setting and implementation. It also aims to provide SPS practitioners with links to useful resources and with information about forthcoming events.</p> <script language="javascript" src="http://us4.campaign-archive2.com/generate-js/?u=1dd65e410f4f874eaf3175abc&fid=6825&show=10" type="text/javascript"></script></div>';
 }
+
 /*
  * Implements hook_form_x_alter. This code alters the project creation/edit form to disable the calculated input fields.
  */
@@ -432,6 +393,10 @@ function stdfcustom_form_project_node_form_alter(&$form, &$form_state, $form_id)
   $form ['#validate'] [] = 'stdfcustom_project_node_form_validate';
   $form ['#submit'] [] = 'stdfcustom_project_node_form_submit';
 }
+
+/*
+ * Validate the project node form.
+ */
 function stdfcustom_project_node_form_validate(&$form, &$form_state) {
   // Lookup the supplied code and reject if it already exists.
   // Only validate when the node is being created not when edited.
@@ -455,13 +420,9 @@ function stdfcustom_project_node_form_submit(&$form, &$form_state) {
   $form_state ['values'] ['field_budget_total_project_value'] ['und'] [0] ['value'] = $form_state ['values'] ['field_budget_implementation'] ['und'] [0] ['value'] + $form_state ['values'] ['field_budget_non_stdf_contributi'] ['und'] [0] ['value'];
 }
 
-/**
- * AUTOCOMPLETE FUNCTIONALITY STARTS HERE!
- * *****************************************************************************************************
- * /**
- *
- * @param unknown_type $value          
- *
+/*
+ * Use Solr facet search to provide values to autocomplete on the advanced search form.
+ * This looks up authors.
  */
 function _stdfcustom_authors_autocomplete($value) {
   $results = array ();
@@ -483,6 +444,11 @@ function _stdfcustom_authors_autocomplete($value) {
   
   drupal_json_output ( $results );
 }
+
+/*
+ * This looks up publication dates on the Solr index via facets.
+ * Gives a list of dates and the number of results per date.
+ */
 function _stdfcustom_dates_autocomplete($value) {
   $results = array ();
   $suggestions = array ();
@@ -502,6 +468,10 @@ function _stdfcustom_dates_autocomplete($value) {
   
   drupal_json_output ( $results );
 }
+
+/*
+ * Uses the SOLR index to produce a set of publishers via facet searching.
+ */
 function _stdfcustom_publishers_autocomplete($value) {
   $results = array ();
   $suggestions = array ();
@@ -522,6 +492,10 @@ function _stdfcustom_publishers_autocomplete($value) {
   
   drupal_json_output ( $results );
 }
+
+/*
+ * We translate keywords and so we get them from the database.
+ */
 function _stdfcustom_keywords_autocomplete() {
   /**
    * returns a array for use with #options in a form field
@@ -550,6 +524,140 @@ function _stdfcustom_get_url_contents($url) {
   curl_close ( $crl );
   return $ret;
 }
+
+/*
+ * Gives a range of years + and - 20 from now.
+ * Not used though so deprecated and probably can delete..
+ */
 function _stdfcustom_get_years() {
   return range ( date ( "Y" ) - 20, date ( "Y" ) + 20 );
+}
+
+//Mailchimp customisations.
+
+/*
+ * Implements hook_formID_alter
+ * Adds Ajax functionality to the Mailchimp sign-up form
+ */
+function stdfcustom_form_mailchimp_lists_user_subscribe_form_stdf_mail_list_alter(&$form, &$form_state) {
+  $form ['mailchimp_lists'] ['mailchimp_stdf_mail_list'] ['mergevars'] ['MMERGE3'] ['#default_value'] = 'English';
+  
+  $form["wrapper"] = array("#markup" => "<div id='test-ajax'></div>");
+  $form ['submit'] ['#ajax'] = array (
+      'callback' => '_stdfcustom_mailchimp_form_callback',
+      'wrapper' => 'mailchimp-lists-user-subscribe-form-stdf-mail-list',
+      'method' => 'replace',
+      'effect' => 'fade' 
+  );
+}
+
+/*
+ * Callback function to validate the mailchimp form.
+ * Error messages are displayed above the offending field(s).
+ */
+function _stdfcustom_mailchimp_form_callback($form, $form_state) {
+  $commands = array ();
+  $errors = form_get_errors ();
+  if(count($errors) > 0){
+  form_clear_error ();
+  $result = array ();
+  foreach ( $errors as $key => $value ) {
+    preg_match ( '/[A-Z0-9]+$/', $key, $result );
+    $selector = '#' . strtolower ( $result [0] ) . '_error';
+    $commands [] = ajax_command_replace ( $selector, '<p class="error">' . $value . '</p>' );
+    // Add a visual "changed" marker to the '#object-1' element.
+    $commands [] = ajax_command_changed ( $selector );
+  }
+  // Menu 'page callback' and #ajax['callback'] functions are supposed to
+  // return render arrays. If returning an Ajax commands array, it must be
+  // encapsulated in a render array structure.
+  return array (
+      '#type' => 'ajax',
+      '#commands' => $commands 
+  );
+  } else {
+    return "<div id='test-ajax'>Thank You for signing up.</div>";
+  }
+}
+
+/*
+ * Implements hook_form_alter()
+ * Adds a language selector to the user registration form.
+ */
+function stdfcustom_form_user_register_form_alter(&$form, &$form_state) {
+  // Only alter user forms if there is more than one language.
+  if (! isset ( $form ['locale'] ) && drupal_multilingual ()) {
+    locale_language_selector_form ( $form, $form_state, $form ['#user'] );
+  }
+  
+  if (isset ( $form ['locale'] )) {
+    $form ['locale'] ['#access'] = TRUE;
+  }
+}
+
+//Apache SOLR customisations
+
+/*
+ * Implements hook_apachesolr_query_alter()
+ * Modifies the query for the advanced search form.
+ */
+function stdfcustom_apachesolr_query_alter($query) {
+  if (! (isset ( $_SESSION ['advanced'] ))) {
+    return;
+  }
+  
+  $compiled_filter = new SolrFilterSubQuery ( 'AND' );
+  if ($_SESSION ['advanced'] ['title'] != '') {
+    $compiled_filter->addFilter ( 'label', $_SESSION ['advanced'] ['title'] );
+  }
+  
+  if ($_SESSION ['advanced'] ['author'] != '') {
+    $compiled_filter->addFilter ( 'sm_vid_Author', $_SESSION ['advanced'] ['author'] );
+  }
+  
+  if ($_SESSION ['advanced'] ['publisher'] != '') {
+    $compiled_filter->addFilter ( 'sm_vid_Publisher', $_SESSION ['advanced'] ['publisher'] );
+  }
+  
+  if ($_SESSION ['advanced'] ['country'] != '') {
+    $compiled_filter->addFilter ( 'sm_vid_Publisher', $_SESSION ['advanced'] ['country'] );
+  }
+  if ($_SESSION ['advanced'] ['publication_date_from'] != '') {
+    $range = '[' . $_SESSION ['advanced'] ['publication_date_from'] . '-01-01T00:00:00.000Z TO';
+  } else {
+    $range = '[1900-01-01T00:00:00.000Z TO';
+  }
+  
+  if ($_SESSION ['advanced'] ['publication_date_to'] != '') {
+    $range .= ' ' . $_SESSION ['advanced'] ['publication_date_to'] . '-12-31T24:59:99.999Z]';
+  } else {
+    $range .= ' NOW]';
+  }
+  $compiled_filter->addFilter ( 'ds_field_publication_date', $range );
+  // dpm($_SESSION['advanced']['language']);
+  $language_filter = new SolrFilterSubQuery ( 'OR' );
+  if (! $_SESSION ['advanced'] ['language'] ['EN'] == 0) {
+    $language_filter->addFilter ( 'ss_field_language', 'EN' );
+  }
+  if (! $_SESSION ['advanced'] ['language'] ['FR'] == 0) {
+    $language_filter->addFilter ( 'ss_field_language', 'FR' );
+  }
+  if (! $_SESSION ['advanced'] ['language'] ['SP'] == 0) {
+    $language_filter->addFilter ( 'ss_field_language', 'ES' );
+  }
+  
+  $compiled_filter->addFilterSubQuery ( $language_filter );
+  
+  $keyword_filter = new SolrFilterSubQuery ( 'OR' );
+  foreach ( $_SESSION ['advanced'] ['keywords'] as $keyword ) {
+    if (! $keyword == 0) {
+      $keyword_filter->addFilter ( 'ss_vid_Keywords', $keyword );
+    }
+  }
+  
+  $compiled_filter->addFilterSubQuery ( $keyword_filter );
+  
+  $query->addFilterSubQuery ( $compiled_filter );
+  // dpm($query->getParams());
+  unset ( $_SESSION ['advanced'] );
 }
