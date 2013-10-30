@@ -9,6 +9,9 @@
 				//This code adds the date widget.
 				$('.node-event').each(function(index) {
 				  var raw = $(this).find('.date-display-start').html();
+				  if (raw == undefined) {
+					  raw = $(this).find('.date-display-single').html();
+				  }
 			      var date = raw.split(" ");
 			      $(this).parent().prepend('<span class="month">' + date[1].substr(0,3) + '</span>');
 			      $(this).parent().prepend('<span class="day">' + date[0] + '</span>');
