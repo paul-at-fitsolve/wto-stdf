@@ -75,6 +75,8 @@ class StdfMigrationVirtualLibraryMigration extends StdfMigration {
     //The "Year (and just the year)" format only works if a time string has already been found -- otherwise this format is recognised as HH MM. 
     $row->pub_date = $row->pub_date . '/01/01'; 
     $row->pub_date = strtotime ( $row->pub_date ) ;
+    
+    //We need to make sure the language code is in lower case to map onto the defined language codes.
+    $row->language = strtolower($row->language);
   }
- 
 }
