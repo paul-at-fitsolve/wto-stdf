@@ -340,3 +340,41 @@ footer .block a { color: #978a82; }
     margin:0 2.8em;
   }
 }
+
+#block-nice-menus-2 {
+.block-title {
+ color:white;
+ float: right;
+    font-size: 1em;
+    font-weight: normal;
+ }
+   background: url("images/bkg.png") repeat-x scroll left bottom #101010;
+    left: 0;
+    text-align: left;
+  box-shadow: 0 -10px 20px 13px #000000;
+   font-size: 0.846em;
+    padding: 5px 10px 0;
+    font: small "Lucida Grande",Verdana,sans-serif;
+    right: 0;
+    width: auto;
+  position:fixed;
+  top:0;
+  z-index:1000;
+  ul{
+      line-height: 1.4em;
+    list-style: none outside none;
+    margin: 0;
+    padding: 0;
+    z-index: 999;
+    li{
+  float:left;
+  background-color:black !important;
+  border:none !important;
+  a{
+  text-decoration:none;
+  margin-bottom:4px;
+  color:white;
+  }
+  }
+  }
+}

@@ -1,10 +1,9 @@
-<?php 
+<?php
 
-//Boilerplate code...
+// Boilerplate code...
 
 /*
- * Implements hook_init()
- * Adds fonts, javascript, css etc..
+ * Implements hook_init() Adds fonts, javascript, css etc..
  */
 function stdfcustom_init() {
   drupal_add_html_head_link ( array (
@@ -22,8 +21,7 @@ function stdfcustom_init() {
 }
 
 /*
- * Implements hook_menu()
- * Defines menu items.
+ * Implements hook_menu() Defines menu items.
  */
 function stdfcustom_menu() {
   // Menu definition for the Solr query that returns autocomplete suggestions
@@ -125,10 +123,8 @@ function stdfcustom_menu() {
   return $items;
 }
 
-
 /*
- * Implements hook_block_info()
- * Defines the newsletter signup block.
+ * Implements hook_block_info() Defines the newsletter signup block.
  */
 function stdfcustom_block_info() {
   $blocks ['newsletter_signup'] = array (
@@ -140,8 +136,7 @@ function stdfcustom_block_info() {
 }
 
 /*
- * Implements hook_block_view()
- * Defines the content of the newsletter signup block - a button with translatable text.
+ * Implements hook_block_view() Defines the content of the newsletter signup block - a button with translatable text.
  */
 function stdfcustom_block_view($delta) {
   $block = array ();
@@ -154,14 +149,11 @@ function stdfcustom_block_view($delta) {
 }
 
 /*
- * Implements hook_countries_alter()
- * Taiwan must not appear on the system as it is not recognised by China.
- * This transforms that name to Taipei which makes them happy.
+ * Implements hook_countries_alter() Taiwan must not appear on the system as it is not recognised by China. This transforms that name to Taipei which makes them happy.
  */
 function stdfcustom_countries_alter(&$countries) {
   $countries ['TW'] = t ( 'Taipei' );
 }
-
 
 // Form definition code
 
@@ -370,8 +362,7 @@ function _stdfcustom_solrsearch_form_advanced_submit($form, &$form_state) {
 }
 
 /*
- * Produce some HTML for the newsletter block.
- * It's a javaScript call to a Mailchimp archive.
+ * Produce some HTML for the newsletter block. It's a javaScript call to a Mailchimp archive.
  */
 function _stdfcustom_newsletter_list() {
   return '<div id="mailchimp_div"><p>The STDF newsletter provides an overview of ongoing activities of the STDF and its partners. It gives an update of the major developments in the area of SPS standard setting and implementation. It also aims to provide SPS practitioners with links to useful resources and with information about forthcoming events.</p> <script language="javascript" src="http://us4.campaign-archive2.com/generate-js/?u=1dd65e410f4f874eaf3175abc&fid=6825&show=10" type="text/javascript"></script></div>';
@@ -421,8 +412,7 @@ function stdfcustom_project_node_form_submit(&$form, &$form_state) {
 }
 
 /*
- * Use Solr facet search to provide values to autocomplete on the advanced search form.
- * This looks up authors.
+ * Use Solr facet search to provide values to autocomplete on the advanced search form. This looks up authors.
  */
 function _stdfcustom_authors_autocomplete($value) {
   $results = array ();
@@ -446,8 +436,7 @@ function _stdfcustom_authors_autocomplete($value) {
 }
 
 /*
- * This looks up publication dates on the Solr index via facets.
- * Gives a list of dates and the number of results per date.
+ * This looks up publication dates on the Solr index via facets. Gives a list of dates and the number of results per date.
  */
 function _stdfcustom_dates_autocomplete($value) {
   $results = array ();
@@ -526,23 +515,23 @@ function _stdfcustom_get_url_contents($url) {
 }
 
 /*
- * Gives a range of years + and - 20 from now.
- * Not used though so deprecated and probably can delete..
+ * Gives a range of years + and - 20 from now. Not used though so deprecated and probably can delete..
  */
 function _stdfcustom_get_years() {
   return range ( date ( "Y" ) - 20, date ( "Y" ) + 20 );
 }
 
-//Mailchimp customisations.
+// Mailchimp customisations.
 
 /*
- * Implements hook_formID_alter
- * Adds Ajax functionality to the Mailchimp sign-up form
+ * Implements hook_formID_alter Adds Ajax functionality to the Mailchimp sign-up form
  */
 function stdfcustom_form_mailchimp_lists_user_subscribe_form_stdf_mail_list_alter(&$form, &$form_state) {
   $form ['mailchimp_lists'] ['mailchimp_stdf_mail_list'] ['mergevars'] ['MMERGE3'] ['#default_value'] = 'English';
   
-  $form["wrapper"] = array("#markup" => "<div id='test-ajax'></div>");
+  $form ["wrapper"] = array (
+      "#markup" => "<div id='test-ajax'></div>" 
+  );
   $form ['submit'] ['#ajax'] = array (
       'callback' => '_stdfcustom_mailchimp_form_callback',
       'wrapper' => 'mailchimp-lists-user-subscribe-form-stdf-mail-list',
@@ -552,37 +541,35 @@ function stdfcustom_form_mailchimp_lists_user_subscribe_form_stdf_mail_list_alte
 }
 
 /*
- * Callback function to validate the mailchimp form.
- * Error messages are displayed above the offending field(s).
+ * Callback function to validate the mailchimp form. Error messages are displayed above the offending field(s).
  */
 function _stdfcustom_mailchimp_form_callback($form, $form_state) {
   $commands = array ();
   $errors = form_get_errors ();
-  if(count($errors) > 0){
-  form_clear_error ();
-  $result = array ();
-  foreach ( $errors as $key => $value ) {
-    preg_match ( '/[A-Z0-9]+$/', $key, $result );
-    $selector = '#' . strtolower ( $result [0] ) . '_error';
-    $commands [] = ajax_command_replace ( $selector, '<div class="ajaxerror"><p class="error">' . $value . '</p></div>' );
-    // Add a visual "changed" marker to the '#object-1' element.
-    $commands [] = ajax_command_changed ( $selector );
-  }
-  // Menu 'page callback' and #ajax['callback'] functions are supposed to
-  // return render arrays. If returning an Ajax commands array, it must be
-  // encapsulated in a render array structure.
-  return array (
-      '#type' => 'ajax',
-      '#commands' => $commands 
-  );
+  if (count ( $errors ) > 0) {
+    form_clear_error ();
+    $result = array ();
+    foreach ( $errors as $key => $value ) {
+      preg_match ( '/[A-Z0-9]+$/', $key, $result );
+      $selector = '#' . strtolower ( $result [0] ) . '_error';
+      $commands [] = ajax_command_replace ( $selector, '<div class="ajaxerror"><p class="error">' . $value . '</p></div>' );
+      // Add a visual "changed" marker to the '#object-1' element.
+      $commands [] = ajax_command_changed ( $selector );
+    }
+    // Menu 'page callback' and #ajax['callback'] functions are supposed to
+    // return render arrays. If returning an Ajax commands array, it must be
+    // encapsulated in a render array structure.
+    return array (
+        '#type' => 'ajax',
+        '#commands' => $commands 
+    );
   } else {
     return '<div id="test-ajax">Thank You for signing up.</div><div id="ajax-response"></div>';
   }
 }
 
 /*
- * Implements hook_form_alter()
- * Adds a language selector to the user registration form.
+ * Implements hook_form_alter() Adds a language selector to the user registration form.
  */
 function stdfcustom_form_user_register_form_alter(&$form, &$form_state) {
   // Only alter user forms if there is more than one language.
@@ -595,11 +582,10 @@ function stdfcustom_form_user_register_form_alter(&$form, &$form_state) {
   }
 }
 
-//Apache SOLR customisations
+// Apache SOLR customisations
 
 /*
- * Implements hook_apachesolr_query_alter()
- * Modifies the query for the advanced search form.
+ * Implements hook_apachesolr_query_alter() Modifies the query for the advanced search form.
  */
 function stdfcustom_apachesolr_query_alter($query) {
   if (! (isset ( $_SESSION ['advanced'] ))) {
@@ -660,4 +646,10 @@ function stdfcustom_apachesolr_query_alter($query) {
   $query->addFilterSubQuery ( $compiled_filter );
   // dpm($query->getParams());
   unset ( $_SESSION ['advanced'] );
+}
+function stdfcustom_block_view_nice_menus_2_alter(&$data, $block) {
+  global $user;
+  $data ['subject'] = t ( 'Welcome @user', array (
+      '@user' => $user->name 
+  ) );
 }
