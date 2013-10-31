@@ -623,13 +623,13 @@ function stdfcustom_apachesolr_query_alter($query) {
   // dpm($_SESSION['advanced']['language']);
   $language_filter = new SolrFilterSubQuery ( 'OR' );
   if (! $_SESSION ['advanced'] ['language'] ['EN'] == 0) {
-    $language_filter->addFilter ( 'ss_field_language', 'EN' );
+    $language_filter->addFilter ( 'ss_field_language', 'en' );
   }
   if (! $_SESSION ['advanced'] ['language'] ['FR'] == 0) {
-    $language_filter->addFilter ( 'ss_field_language', 'FR' );
+    $language_filter->addFilter ( 'ss_field_language', 'fr' );
   }
   if (! $_SESSION ['advanced'] ['language'] ['SP'] == 0) {
-    $language_filter->addFilter ( 'ss_field_language', 'ES' );
+    $language_filter->addFilter ( 'ss_field_language', 'es' );
   }
   
   $compiled_filter->addFilterSubQuery ( $language_filter );
@@ -637,19 +637,76 @@ function stdfcustom_apachesolr_query_alter($query) {
   $keyword_filter = new SolrFilterSubQuery ( 'OR' );
   foreach ( $_SESSION ['advanced'] ['keywords'] as $keyword ) {
     if (! $keyword == 0) {
-      $keyword_filter->addFilter ( 'ss_vid_Keywords', $keyword );
+      $keyword_filter->addFilter ( 'sm_vid_Keywords', $keyword );
     }
   }
   
   $compiled_filter->addFilterSubQuery ( $keyword_filter );
   
   $query->addFilterSubQuery ( $compiled_filter );
-  // dpm($query->getParams());
+// dpm($query->getParams());
   unset ( $_SESSION ['advanced'] );
-}
+} 
 function stdfcustom_block_view_nice_menus_2_alter(&$data, $block) {
   global $user;
   $data ['subject'] = t ( 'Welcome @user', array (
       '@user' => $user->name 
   ) );
+}
+
+/*
+ * Implements hooki_node_access_records Only allow members and content authors to access members content.
+ */
+function stdfcustom_node_access_records($node) {
+  if ($node->type == 'members_content') {
+    $grants [] = array (
+        'realm' => 'stdfcustom',
+        'gid' => 3,
+        'grant_view' => 1,
+        'grant_update' => 0,
+        'grant_delete' => 0,
+        'priority' => 0 
+    );
+    $grants [] = array (
+        'realm' => 'stdfcustom',
+        'gid' => 4,
+        'grant_view' => 1,
+        'grant_update' => 0,
+        'grant_delete' => 0,
+        'priority' => 0 
+    );
+    $grants [] = array (
+        'realm' => 'stdfcustom',
+        'gid' => 5,
+        'grant_view' => 1,
+        'grant_update' => 0,
+        'grant_delete' => 0,
+        'priority' => 0 
+    );
+  }
+  
+  return $grants;
+}
+
+/**
+ * Implement hook_node_grants().
+ */
+function stdfcustom_node_grants($account, $op) {
+  if ($op == 'view') {
+    // Get the user roles.
+    $roles = array_keys ( $account->roles );
+ 
+    // Error checking.
+    if (empty ( $roles )) {
+      return array ();
+    }
+    // Initialize a $grants array.
+    $grants = array ();
+    // Iterate through the roles.
+    foreach ( $roles as $grant_id ) {
+      $grants ['stdfcustom'] [] = $grant_id;
+    }
+    // Return the grants.
+    return $grants;
+  }
 }

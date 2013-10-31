@@ -3,10 +3,29 @@
 	Drupal.behaviors.stdfcustom = {
 		attach : function(context, settings) {
 
+			// Add ECMA262-5 Array methods if not supported natively
+			//
+			if (!('indexOf' in Array.prototype)) {
+			    Array.prototype.indexOf= function(find, i /*opt*/) {
+			        if (i===undefined) i= 0;
+			        if (i<0) i+= this.length;
+			        if (i<0) i= 0;
+			        for (var n= this.length; i<n; i++)
+			            if (i in this && this[i]===find)
+			                return i;
+			        return -1;
+			    };
+			}
+			
 			// Stop top menu items from having active links.
 			$(".menuparent > a").attr('href', 'javascript:void(0)');
+			
+			//Hide search tabs
+			if (document.URL.indexOf('search') != -1) {
+				$(".tabs").hide();
+			}
 
-			if ($('#ajax-response').length) {
+			if ($("#ajax-response").length) {
 				setTimeout(function() {
 					$('#block-mailchimp-lists-stdf-mail-list')
 							.dialog('close');
