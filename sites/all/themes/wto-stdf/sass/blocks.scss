@@ -138,10 +138,20 @@
       font-size:0.75em;
       text-decoration: none;
       text-transform:uppercase;
-      color:#668faf;
-      &.active  {
-        color:#00335c;
-      }         
+      color:#00335c;
+      -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=73)";
+      filter: alpha(opacity=73);
+      -moz-opacity: 0.73;
+      -khtml-opacity: 0.73;
+      opacity: 0.73;
+        &.active  {
+          -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+          filter: alpha(opacity=100);
+          -moz-opacity: 1;
+          -khtml-opacity: 1;
+          opacity: 1;
+          font-weight: 700;
+        }         
     }
   } 
 }
@@ -331,8 +341,8 @@ footer .block a { color: #978a82; }
 }
 
 #block-stdffrontpage-partnerlogos{
-  max-width:960px;
-  margin-bottom:1em !important;
+    max-width:960px;
+    margin-bottom: 1em !important;
   h2{
     text-align:center;
   }

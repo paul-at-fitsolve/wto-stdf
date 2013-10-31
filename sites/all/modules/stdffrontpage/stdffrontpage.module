@@ -146,7 +146,9 @@ function stdffrontpage_block_view($delta) {
       break;
     case 'copyright' :
       $block ['subject'] = t ( 'Copyright' );
-      $block ['content'] .= '<div id="copyright"><p>&copy; 2013 Standards and Trade Development Facility - All Rights Reserved.';
+      $block ['content'] .= '<div id="copyright"><p>';
+      $block ['content'] .= t('&copy; 2013 Standards and Trade Development Facility - All Rights Reserved.');
+      $block ['content'] .= '</div>';
       break;
   }
   return $block;

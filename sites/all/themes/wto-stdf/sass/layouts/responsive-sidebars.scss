@@ -121,7 +121,7 @@ $zen-auto-include-item-base: true;
        }
      }
    }
-  
+   ul { margin: 0;}
 }
 
 
@@ -199,7 +199,6 @@ $zen-auto-include-item-base: true;
 
 @media all and (min-width: 480px) {
   #main {
-    padding-top:13em;
     position:relative;
     .front{
     padding-top: 3em; /* Move all the children of #main down to make room. */
@@ -280,6 +279,8 @@ $zen-auto-include-item-base: true;
       }
     }
   }
+  
+  #logo { margin: 32px 0 0 0;}
 }
 
 @media all and (min-width: 960px) {
@@ -291,7 +292,7 @@ $zen-auto-include-item-base: true;
   /*
    * The layout when there is only one sidebar, the left one.
    */
-  #page header {
+  #page header#header {
 
 	width: 100%;
 	.inner {
@@ -383,7 +384,6 @@ $zen-auto-include-item-base: true;
 
     .region-sidebar-first {
       @include zen-grid-item(2, 1);
-       margin-top:1em;
     }
 		    
   }
@@ -438,7 +438,10 @@ $zen-auto-include-item-base: true;
 		
 
 	}
-	
+    #logo {
+      margin: 85px 0 0;
+    }
+
 }
 #partners {
   max-width:960px;

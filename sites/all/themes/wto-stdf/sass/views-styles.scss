@@ -203,16 +203,14 @@ li {
 	.views-row { 
 		margin: 1em 0 0 0;
 		border-bottom: 1px dotted #b3b3b3;
-		padding: 0;	
-		background: url(../images/diary.png) no-repeat;
+		padding: 0;
 	}
 	.node-event {
-	  position:relative;
-      top:-25px;
-      left:20px;
+            margin: 0 0 0 61px;
 	}
 		h2.node-title a {
-		text-transform: none; 
+                    text-transform: none;
+                    padding-right: 40px;
 		img {
 		  position:absolute;
 		  right:6%;
@@ -220,23 +218,12 @@ li {
 		  }
 	}
 	
-	.field-name-field-organizer {
-		font-size: 0.7em;
-		margin: 0 0.8em 0 0;
-		float: left;
-	}
-	
-	.field-name-field-location {
-		font-size: 0.7em;
-		float: left;
-
-	}
-	
-	.field-name-field-date-and-time {
-	  font-size: 0.7em;
-      float: left;
-      position:relative;
-      left:49px;
+	.field-name-field-organizer,
+        .field-name-field-location,
+        .field-name-field-date-and-time{
+            font-size: 0.7em;
+            margin: 0 0.8em 0 0;
+            float: left;
 	}
 
     .translation-link {

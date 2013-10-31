@@ -32,6 +32,7 @@ features[fe_block_settings][] = nice_menus-1
 features[fe_block_settings][] = search-form
 features[fe_block_settings][] = stdfcustom-newsletter_signup
 features[fe_block_settings][] = stdffrontpage-contact_info
+features[fe_block_settings][] = stdffrontpage-copyright
 features[fe_block_settings][] = stdffrontpage-proposal_deadline
 features[fe_block_settings][] = stdffrontpage-publications
 features[fe_block_settings][] = views-beneficiaries-block_1
