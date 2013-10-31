@@ -130,32 +130,36 @@ li a.active {
 }
 /* line 137, ../sass/navigation.scss */
 #block-nice-menus-1 ul.nice-menu-down li.menuparent {
-  margin: 0 0.25em 0 0;
   border: none;
   background-color: transparent;
 }
-/* line 141, ../sass/navigation.scss */
+/* line 140, ../sass/navigation.scss */
 #block-nice-menus-1 ul.nice-menu-down li.menuparent a {
   font-family: "PT Sans Narrow", sans-serif;
   text-transform: uppercase;
   color: #00345e;
   text-decoration: none;
 }
-/* line 146, ../sass/navigation.scss */
+/* line 145, ../sass/navigation.scss */
 #block-nice-menus-1 ul.nice-menu-down li.menuparent a:hover {
   text-decoration: underline;
 }
-/* line 151, ../sass/navigation.scss */
+/* line 150, ../sass/navigation.scss */
 #block-nice-menus-1 ul.nice-menu-down li.menuparent ul li {
   background-color: rgba(153, 180, 201, 0.9);
   border-bottom: 1px solid rgba(153, 180, 201, 0.9);
 }
-/* line 154, ../sass/navigation.scss */
+/* line 153, ../sass/navigation.scss */
 #block-nice-menus-1 ul.nice-menu-down li.menuparent ul li a {
   text-transform: none;
 }
-/* line 156, ../sass/navigation.scss */
+/* line 155, ../sass/navigation.scss */
 #block-nice-menus-1 ul.nice-menu-down li.menuparent ul li a:hover {
   background-color: rgba(153, 180, 201, 0.9);
   color: white;
+}
+
+/* line 166, ../sass/navigation.scss */
+header .block-nice-menus {
+  max-width: 790px;
 }

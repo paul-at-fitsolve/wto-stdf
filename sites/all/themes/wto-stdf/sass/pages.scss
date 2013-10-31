@@ -21,8 +21,8 @@ body {
   line-height:$base-line-height;
   color:$dark_blue;
   &.not-front {
-    background:url(../images/bg_header.png) top left no-repeat;
-    background-size:100% 11em;
+    background:url(../images/bg_header.jpg) top left no-repeat;
+    background-size:100% 158px;
   }
 }
 
@@ -58,6 +58,7 @@ body {
   z-index:100;
   top:15px;
   left:0;
+  height: 151px;
   #block-search-form,
   #block-locale-language  {
     float:right;
@@ -98,30 +99,14 @@ body {
 } 
 
 #logo { /* Wrapping link for logo */
-  padding:0em;
-  margin: 5.5em 0 0;
-   float:left;
+  padding: 0;
+  float: left;
   img {
     vertical-align: bottom;
-    margin:0em;
+    margin: 0;
    
   }
 }
-
-.not-front #logo {
-	
-	padding:0;
-	margin: 5.5em 0 0;
-	float: left; 
-		img {
-		
-		margin: 0;
-		
-		}
-}
-
-
-
 
 #name-and-slogan { /* Wrapper for website name and slogan */
   float: left;
@@ -158,7 +143,6 @@ body {
 
 .not-front  {
   #main {
-    padding-top:2.1em;
     position:relative;
   }
   

@@ -135,7 +135,6 @@ li a.active {
    margin-bottom: 0; 
    ul.nice-menu-down {
      li.menuparent { 
-	   margin: 0 0.25em 0 0;
 	   border: none; 
 	   background-color: transparent;
 	   a {
@@ -162,4 +161,8 @@ li a.active {
      }
     }
    } 		
+}
+
+header .block-nice-menus {
+    max-width: 790px;
 }
