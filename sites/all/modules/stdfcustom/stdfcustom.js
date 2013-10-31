@@ -22,12 +22,7 @@
 
 			// Stop top menu items from having active links.
 			$(".menuparent > a").attr('href', 'javascript:void(0)');
-			
-			//Hide search tabs
-			if (document.URL.indexOf('search') != -1) {
-				$(".tabs").hide();
-			}
-
+		
 
 			//This code adds a class to colour the status field value for the project table.
 			$('td.views-field-field-status').each(function(index) {	
