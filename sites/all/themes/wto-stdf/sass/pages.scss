@@ -21,8 +21,8 @@ body {
   line-height:$base-line-height;
   color:$dark_blue;
   &.not-front {
-    background:url(../images/bg_header.png) top left no-repeat;
-    background-size:100% 11em;
+    background:url(../images/bg_header.jpg) top left no-repeat;
+    background-size:100% 158px;
   }
 }
 
@@ -58,6 +58,7 @@ body {
   z-index:100;
   top:15px;
   left:0;
+  height: 151px;
   #block-search-form,
   #block-locale-language  {
     float:right;
@@ -98,30 +99,14 @@ body {
 } 
 
 #logo { /* Wrapping link for logo */
-  padding:0em;
-  margin: 5.5em 0 0;
-   float:left;
+  padding: 0;
+  float: left;
   img {
     vertical-align: bottom;
-    margin:0em;
+    margin: 0;
    
   }
 }
-
-.not-front #logo {
-	
-	padding:0;
-	margin: 5.5em 0 0;
-	float: left; 
-		img {
-		
-		margin: 0;
-		
-		}
-}
-
-
-
 
 #name-and-slogan { /* Wrapper for website name and slogan */
   float: left;
@@ -158,7 +143,6 @@ body {
 
 .not-front  {
   #main {
-    padding-top:2.1em;
     position:relative;
   }
   
@@ -394,25 +378,27 @@ span.field-label { /* The inline field label used by the Fences module */
  */
 
 .region-bottom { /* Wrapper for any blocks placed in the page bottom region */
+    div.contextual-links-wrapper ul.contextual-links { position: relative; }
 }
 
 #block-views-front-carousel-block .views-field-body, #block-views-front-carousel-block .views-field-body-1 {
     p  {
-      font-family:$pt;
-  	  color:#fff;
-  	  font-weight: normal;
-  	  line-height:120%;
-  	  text-shadow:2px 2px #000;  
-  	  padding: 0;
-  	  text-align: center;  
-  	  position:relative;	
-	  z-index:1000;
+        font-family:$lato;
+        color: #fff;
+        font-weight: 500;
+        line-height: 160%;
+        text-shadow: 1px 1px #000;  
+        padding: 0;
+        text-align: center;  
+        position: relative;	
+        z-index:1000;
+        text-rendering: geometricPrecision;
     }
 }
 
 #block-views-front-carousel-block .views-field-body {
   p {
-    margin:0 20%;
+    margin:0 12%;
     }
 }
 
@@ -463,19 +449,6 @@ button, input[type="button"], input[type="reset"], input[type="submit"],.action-
   font-size:$base-font-size + 4px;
   text-transform:uppercase;
   font-weight:700;
-}
-
-.node-event {
- header {
- h2{
-  line-height:1em;
- a{
-   text-decoration:none;
-  
-   font-size:0.65em;
-   }
-   }
- }
 }
 
  .date-display-single{
@@ -540,20 +513,43 @@ table.content-table { width: 100%;}
   height:auto;
 }
 
-.day {
- float:left;
- margin:0.25em 0 0 0.75em;
- width:100%;
- font-size:110%;
+.date {
+    width: 49px;
+    border-top: 6px solid #1f4e74;
+    float: left;
+    .day, .month {
+        border: solid #d5d5d5;
+        border-width: 0 1px;
+        width: 47px;
+        display: block;
+        text-align: center;
+        line-height: 1em;
+    }
+    .day { 
+        font-size: 160%;
+        padding-top: 5px;
+    }
+    .month {
+        color: #978A82;
+        font-size: 85%;
+        border-width: 0 1px 1px;
+        text-transform: uppercase;
+        padding-bottom: 5px;
+    }
 }
-
-.month{
-  float:left;
-  color:#978A82;
-  margin:2px;
-  font-size: 85%;
-  text-align: center;
-  width: 45px;
+.node-event {
+    header {
+     position: relative;
+     top: -6px;
+        h2 {
+            line-height: 12px;
+                a {
+                  text-decoration: none;
+                  font-size: 12px;
+                  color: #00335c;
+                }
+        }
+    }
 }
 
 .region-third-content {
