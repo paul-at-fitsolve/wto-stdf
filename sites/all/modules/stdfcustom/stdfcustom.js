@@ -25,6 +25,11 @@
 				$(".tabs").hide();
 			}
 
+			//This code adds a class to colour the status field value for the project table.
+			$('td.views-field-field-status').each(function(index) {	
+			  $(this).addClass($(this).text().toLowerCase());
+			});	
+			
 			if ($("#ajax-response").length) {
 				setTimeout(function() {
 					$('#block-mailchimp-lists-stdf-mail-list')
