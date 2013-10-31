@@ -14,6 +14,11 @@
 				);
 			}
 
+			//This code adds a class to colour the status field value for the project table.
+			$('td.views-field-field-status').each(function(index) {	
+			  $(this).addClass($(this).text().toLowerCase());
+			});	
+			
 			// Display mailchimp form in jQuery dialog.
 
 			$("#block-mailchimp-lists-stdf-mail-list").dialog({

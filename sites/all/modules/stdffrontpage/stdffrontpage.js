@@ -15,10 +15,7 @@
 			      var date = raw.split(" ");
 			      $(this).parent().prepend('<div class="date"><span class="day">' + date[0] + '</span><span class="month">' + date[1].substr(0,3) + '</span></div>');
 				});	
-				//This code adds a class to colour the status field value for the project table.
-				$('td.views-field-field-status').each(function(index) {	
-				  $(this).addClass($(this).text().toLowerCase());
-				});	
+				
 				$('#block-stdffrontpage-publications > ul > li > a').append('<img src="sites/all/themes/wto-stdf/images/linkarrow.png" />');
 				$('.node-event > header > h2 > a').append('<img src="sites/all/themes/wto-stdf/images/linkarrow.png" />');
 			    var event = $('#block-views-nodequeue-upcoming-events-block > h2');

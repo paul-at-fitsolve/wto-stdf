@@ -623,13 +623,13 @@ function stdfcustom_apachesolr_query_alter($query) {
   // dpm($_SESSION['advanced']['language']);
   $language_filter = new SolrFilterSubQuery ( 'OR' );
   if (! $_SESSION ['advanced'] ['language'] ['EN'] == 0) {
-    $language_filter->addFilter ( 'ss_field_language', 'EN' );
+    $language_filter->addFilter ( 'ss_field_language', 'en' );
   }
   if (! $_SESSION ['advanced'] ['language'] ['FR'] == 0) {
-    $language_filter->addFilter ( 'ss_field_language', 'FR' );
+    $language_filter->addFilter ( 'ss_field_language', 'fr' );
   }
   if (! $_SESSION ['advanced'] ['language'] ['SP'] == 0) {
-    $language_filter->addFilter ( 'ss_field_language', 'ES' );
+    $language_filter->addFilter ( 'ss_field_language', 'es' );
   }
   
   $compiled_filter->addFilterSubQuery ( $language_filter );
@@ -637,7 +637,7 @@ function stdfcustom_apachesolr_query_alter($query) {
   $keyword_filter = new SolrFilterSubQuery ( 'OR' );
   foreach ( $_SESSION ['advanced'] ['keywords'] as $keyword ) {
     if (! $keyword == 0) {
-      $keyword_filter->addFilter ( 'ss_vid_Keywords', $keyword );
+      $keyword_filter->addFilter ( 'sm_vid_Keywords', $keyword );
     }
   }
   
