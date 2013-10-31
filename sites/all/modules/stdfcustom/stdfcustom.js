@@ -6,17 +6,20 @@
 			// Add ECMA262-5 Array methods if not supported natively
 			//
 			if (!('indexOf' in Array.prototype)) {
-			    Array.prototype.indexOf= function(find, i /*opt*/) {
-			        if (i===undefined) i= 0;
-			        if (i<0) i+= this.length;
-			        if (i<0) i= 0;
-			        for (var n= this.length; i<n; i++)
-			            if (i in this && this[i]===find)
-			                return i;
-			        return -1;
-			    };
+				Array.prototype.indexOf = function(find, i /* opt */) {
+					if (i === undefined)
+						i = 0;
+					if (i < 0)
+						i += this.length;
+					if (i < 0)
+						i = 0;
+					for ( var n = this.length; i < n; i++)
+						if (i in this && this[i] === find)
+							return i;
+					return -1;
+				};
 			}
-			
+
 			// Stop top menu items from having active links.
 			$(".menuparent > a").attr('href', 'javascript:void(0)');
 			
@@ -25,18 +28,31 @@
 				$(".tabs").hide();
 			}
 
+
 			//This code adds a class to colour the status field value for the project table.
 			$('td.views-field-field-status').each(function(index) {	
 			  $(this).addClass($(this).text().toLowerCase());
 			});	
 			
 			if ($("#ajax-response").length) {
+
+			// Hide search tabs
+			if (document.URL.indexOf('search') != -1) {
+				$(".tabs").hide();
+			}
+
+			if ($('#ajax-response').length) {
 				setTimeout(function() {
-					$('#block-mailchimp-lists-stdf-mail-list')
-							.dialog('close');
+					$('#block-mailchimp-lists-stdf-mail-list').dialog('close');
 				}, 2000 // milliseconds delay
 				);
 			}
+
+			// This code adds a class to colour the status field value for the
+			// project table.
+			$('td.views-field-field-status').each(function(index) {
+				$(this).addClass($(this).text().toLowerCase());
+			});
 
 			// Display mailchimp form in jQuery dialog.
 
