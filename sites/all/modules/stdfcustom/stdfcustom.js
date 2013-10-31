@@ -28,8 +28,6 @@
 			$('td.views-field-field-status').each(function(index) {	
 			  $(this).addClass($(this).text().toLowerCase());
 			});	
-			
-			if ($("#ajax-response").length) {
 
 			// Hide search tabs
 			if (document.URL.indexOf('search') != -1) {
