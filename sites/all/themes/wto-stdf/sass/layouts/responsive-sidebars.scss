@@ -292,7 +292,7 @@ $zen-auto-include-item-base: true;
   /*
    * The layout when there is only one sidebar, the left one.
    */
-  #page header {
+  #page header#header {
 
 	width: 100%;
 	.inner {

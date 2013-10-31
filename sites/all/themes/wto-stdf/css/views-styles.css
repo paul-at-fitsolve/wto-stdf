@@ -226,43 +226,31 @@ html.js input.throbbing {
   margin: 1em 0 0 0;
   border-bottom: 1px dotted #b3b3b3;
   padding: 0;
-  background: url(../images/diary.png) no-repeat;
 }
-/* line 209, ../sass/views-styles.scss */
+/* line 208, ../sass/views-styles.scss */
 .view-nodequeue-upcoming-events .node-event {
-  position: relative;
-  top: -25px;
-  left: 20px;
+  margin: 0 0 0 61px;
 }
-/* line 214, ../sass/views-styles.scss */
+/* line 211, ../sass/views-styles.scss */
 .view-nodequeue-upcoming-events h2.node-title a {
   text-transform: none;
+  padding-right: 40px;
 }
-/* line 216, ../sass/views-styles.scss */
+/* line 214, ../sass/views-styles.scss */
 .view-nodequeue-upcoming-events h2.node-title a img {
   position: absolute;
   right: 6%;
   top: 50%;
 }
 /* line 223, ../sass/views-styles.scss */
-.view-nodequeue-upcoming-events .field-name-field-organizer {
+.view-nodequeue-upcoming-events .field-name-field-organizer,
+.view-nodequeue-upcoming-events .field-name-field-location,
+.view-nodequeue-upcoming-events .field-name-field-date-and-time {
   font-size: 0.7em;
   margin: 0 0.8em 0 0;
   float: left;
 }
 /* line 229, ../sass/views-styles.scss */
-.view-nodequeue-upcoming-events .field-name-field-location {
-  font-size: 0.7em;
-  float: left;
-}
-/* line 235, ../sass/views-styles.scss */
-.view-nodequeue-upcoming-events .field-name-field-date-and-time {
-  font-size: 0.7em;
-  float: left;
-  position: relative;
-  left: 49px;
-}
-/* line 242, ../sass/views-styles.scss */
 .view-nodequeue-upcoming-events .translation-link {
   float: left;
   width: 100%;
