@@ -100,6 +100,11 @@
   #block-views-eebb22e852a8f93e943e8c7a212a3c68 .view-nodequeue-thematic-activities .views-field-body {
     min-height: 200px;
   }
+
+  /* line 124, ../../sass/layouts/responsive-sidebars.scss */
+  ul {
+    margin: 0;
+  }
 }
 @media all and (max-width: 650px) {
   /* line 129, ../../sass/layouts/responsive-sidebars.scss */

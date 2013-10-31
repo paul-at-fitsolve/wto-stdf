@@ -134,11 +134,12 @@ li a.active {
    clear: both;
    margin-bottom: 0; 
    ul.nice-menu-down {
+     li.menuparent.active-trail { text-decoration: underline; }
      li.menuparent { 
 	   border: none; 
 	   background-color: transparent;
 	   a {
-        font-family: $pt;
+            font-family: $pt;
 	    text-transform: uppercase; 
 	    color: #00345e;
 	    text-decoration: none;
