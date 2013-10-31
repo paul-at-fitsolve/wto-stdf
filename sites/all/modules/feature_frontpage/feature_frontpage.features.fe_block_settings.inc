@@ -252,6 +252,46 @@ function feature_frontpage_default_fe_block_settings() {
     'visibility' => 0,
   );
 
+  $export['stdffrontpage-copyright'] = array(
+    'cache' => -1,
+    'custom' => 0,
+    'delta' => 'copyright',
+    'i18n_block_language' => array(),
+    'i18n_mode' => 1,
+    'module' => 'stdffrontpage',
+    'node_types' => array(),
+    'pages' => '',
+    'roles' => array(),
+    'themes' => array(
+      'bartik' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'bartik',
+        'weight' => 0,
+      ),
+      'seven' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'seven',
+        'weight' => 0,
+      ),
+      'wto_stdf' => array(
+        'region' => 'bottom',
+        'status' => 1,
+        'theme' => 'wto_stdf',
+        'weight' => -29,
+      ),
+      'zen' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'zen',
+        'weight' => 0,
+      ),
+    ),
+    'title' => '<none>',
+    'visibility' => 0,
+  );
+
   $export['stdffrontpage-proposal_deadline'] = array(
     'cache' => -1,
     'custom' => 0,

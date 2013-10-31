@@ -412,8 +412,12 @@ span.field-label {
 .region-bottom {
   /* Wrapper for any blocks placed in the page bottom region */
 }
+/* line 381, ../sass/pages.scss */
+.region-bottom div.contextual-links-wrapper ul.contextual-links {
+  position: relative;
+}
 
-/* line 384, ../sass/pages.scss */
+/* line 385, ../sass/pages.scss */
 #block-views-front-carousel-block .views-field-body p, #block-views-front-carousel-block .views-field-body-1 p {
   font-family: "Lato", Verdana, "DejaVu Sans", sans-serif;
   color: #fff;
@@ -427,17 +431,17 @@ span.field-label {
   text-rendering: geometricPrecision;
 }
 
-/* line 399, ../sass/pages.scss */
+/* line 400, ../sass/pages.scss */
 #block-views-front-carousel-block .views-field-body p {
   margin: 0 12%;
 }
 
-/* line 405, ../sass/pages.scss */
+/* line 406, ../sass/pages.scss */
 #block-views-front-carousel-block .views-field-body-1 p {
   margin: 0 25%;
 }
 
-/* line 411, ../sass/pages.scss */
+/* line 412, ../sass/pages.scss */
 button, input[type="button"], input[type="reset"], input[type="submit"], .action-button, .view-footer a, .view-nodequeue-thematic-activities .views-field-view-node a {
   font-family: "Lato", Verdana, "DejaVu Sans", sans-serif;
   border: 1px solid #ccc;
@@ -448,19 +452,19 @@ button, input[type="button"], input[type="reset"], input[type="submit"], .action
   padding: 4px 8px;
   margin: 10px;
 }
-/* line 414, ../sass/pages.scss */
+/* line 415, ../sass/pages.scss */
 button:hover, input[type="button"]:hover, input[type="reset"]:hover, input[type="submit"]:hover, .action-button:hover, .view-footer a:hover, .view-nodequeue-thematic-activities .views-field-view-node a:hover {
   background: #99b4c9;
   border: 1px solid #7d97ac;
   color: white;
 }
 
-/* line 427, ../sass/pages.scss */
+/* line 428, ../sass/pages.scss */
 button, input[type="button"], input[type="reset"], input[type="submit"], .action-button, .view-nodequeue-thematic-activities .views-field-view-node a {
   float: right;
 }
 
-/* line 432, ../sass/pages.scss */
+/* line 433, ../sass/pages.scss */
 .action-button,
 .action-button:visited {
   text-decoration: none;
@@ -471,12 +475,12 @@ button, input[type="button"], input[type="reset"], input[type="submit"], .action
  *  JQuery UI overrides
  * 
  * */
-/* line 441, ../sass/pages.scss */
+/* line 442, ../sass/pages.scss */
 .ui-dialog {
   font-family: "Lato", Verdana, "DejaVu Sans", sans-serif !important;
 }
 
-/* line 444, ../sass/pages.scss */
+/* line 445, ../sass/pages.scss */
 .ui-dialog-titlebar.ui-widget-header {
   background: url(../images/fabric-big.png) top left repeat;
   border-radius: 0 0 0 0;
@@ -486,27 +490,27 @@ button, input[type="button"], input[type="reset"], input[type="submit"], .action
   font-weight: 700;
 }
 
-/* line 455, ../sass/pages.scss */
+/* line 456, ../sass/pages.scss */
 .node-event header h2 {
   line-height: 1em;
 }
-/* line 457, ../sass/pages.scss */
+/* line 458, ../sass/pages.scss */
 .node-event header h2 a {
   text-decoration: none;
   font-size: 0.65em;
 }
 
-/* line 466, ../sass/pages.scss */
+/* line 467, ../sass/pages.scss */
 .date-display-single {
   display: inline;
 }
 
-/* line 470, ../sass/pages.scss */
+/* line 471, ../sass/pages.scss */
 article.node a {
   color: #978a82;
 }
 
-/* line 475, ../sass/pages.scss */
+/* line 476, ../sass/pages.scss */
 .person img.image {
   float: left;
   max-width: 100%;
@@ -514,69 +518,69 @@ article.node a {
   margin: 0 10px 0 0;
 }
 
-/* line 480, ../sass/pages.scss */
+/* line 481, ../sass/pages.scss */
 img.center {
   margin: 0 auto;
   display: block;
 }
 
-/* line 482, ../sass/pages.scss */
+/* line 483, ../sass/pages.scss */
 .highlighted.border {
   border: 2px solid #d4dde6;
   padding: 2em;
 }
-/* line 485, ../sass/pages.scss */
+/* line 486, ../sass/pages.scss */
 .highlighted.border a {
   float: left;
   display: block;
   margin: 0 2em 0 0;
 }
-/* line 487, ../sass/pages.scss */
+/* line 488, ../sass/pages.scss */
 .highlighted.border a img {
   max-width: 100%;
   width: 150px;
 }
 
-/* line 500, ../sass/pages.scss */
+/* line 501, ../sass/pages.scss */
 .flexslider_views_slideshow_slide .views-field.views-field-body, .flexslider_views_slideshow_slide .views-field.views-field-body-1 {
   position: absolute;
   bottom: 15%;
 }
 
-/* line 508, ../sass/pages.scss */
+/* line 509, ../sass/pages.scss */
 .flexslider {
   border: 0;
   margin: 0 0 50px;
 }
 
-/* line 513, ../sass/pages.scss */
+/* line 514, ../sass/pages.scss */
 .border {
   border: 2px solid #d2dae2;
   padding: 2em;
 }
-/* line 516, ../sass/pages.scss */
+/* line 517, ../sass/pages.scss */
 .border a.book {
   float: left;
   margin: 0 2em 0 0;
   width: 100px;
 }
-/* line 517, ../sass/pages.scss */
+/* line 518, ../sass/pages.scss */
 .border p {
   margin-top: 0;
 }
 
-/* line 521, ../sass/pages.scss */
+/* line 522, ../sass/pages.scss */
 table.content-table {
   width: 100%;
 }
 
-/* line 523, ../sass/pages.scss */
+/* line 524, ../sass/pages.scss */
 #partners img {
   max-width: 100%;
   height: auto;
 }
 
-/* line 528, ../sass/pages.scss */
+/* line 529, ../sass/pages.scss */
 .day {
   float: left;
   margin: 0.25em 0 0 0.75em;
@@ -584,7 +588,7 @@ table.content-table {
   font-size: 110%;
 }
 
-/* line 535, ../sass/pages.scss */
+/* line 536, ../sass/pages.scss */
 .month {
   float: left;
   color: #978A82;
@@ -594,46 +598,46 @@ table.content-table {
   width: 45px;
 }
 
-/* line 544, ../sass/pages.scss */
+/* line 545, ../sass/pages.scss */
 .region-third-content {
   background: url("../images/partners_bg.png") repeat scroll 0 0 rgba(0, 0, 0, 0);
   clear: both;
 }
 
-/* line 549, ../sass/pages.scss */
+/* line 550, ../sass/pages.scss */
 .block {
   margin: 0 auto !important;
 }
 
-/* line 553, ../sass/pages.scss */
+/* line 554, ../sass/pages.scss */
 #copyright {
   text-align: center;
 }
-/* line 555, ../sass/pages.scss */
+/* line 556, ../sass/pages.scss */
 #copyright p {
   font-size: 10pt;
   color: #99b4c9;
 }
 
-/* line 560, ../sass/pages.scss */
+/* line 561, ../sass/pages.scss */
 body {
   overflow-x: hidden;
   overflow-y: scroll;
 }
 
-/* line 565, ../sass/pages.scss */
+/* line 566, ../sass/pages.scss */
 .doc_icon {
   float: left;
   margin-right: 5px;
 }
 
-/* line 570, ../sass/pages.scss */
+/* line 571, ../sass/pages.scss */
 .metadata_label {
   font-size: 10pt;
   font-weight: bold;
 }
 
-/* line 577, ../sass/pages.scss */
+/* line 578, ../sass/pages.scss */
 .search-results .title a {
   text-decoration: none;
   font-size: 14pt;
