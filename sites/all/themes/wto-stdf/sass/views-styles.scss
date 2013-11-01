@@ -135,40 +135,45 @@ li {
  }
 
 td.views-field {
-  border:3px solid white;
+  border:3px solid #fff;
 }
 
 th.views-field {
-  padding:0 1.25em;
-  background:url(../images/fabric_1px.png) repeat-x;
-  border:3px solid white;
-  text-transform:uppercase;
-  font-size:10pt;
+  padding: 1em 1.25em;
+  background: url(../images/fabric_1px.png) repeat-x;
+  border:3px solid #fff;
+  text-transform: uppercase;
+  font-size:12px;
+  line-height: 12px;
   a {
-    text-decoration:none;
-    color:white;
+    text-decoration: none;
+    color: #fff;
+    padding-right: 17px;
+    background: url('../images/arrow-down.png') 100% 50% no-repeat;
+      img { display: none;}
   }
+}
+th.views-field.active a { text-decoration: underline; }
+th.views-field-title {
+    max-width: 15%;
 }
 
 td.views-field {
-  text-decoration:none;
+  text-decoration: none;
   color: #668FAF;
-  font-size:10pt;
   padding:0 3px;
+  font-size: 12px;
   a {
-     text-decoration:none;
+     text-decoration: none;
      color: #668FAF;
-     font-size:10pt;
   }
 }
 
-.completed {
-  color:green !important;
-}
+.completed { color: #9abe0a !important; }
 
-.awaiting {
-  color: red !important;
-}
+.awaiting { color: #dc0005 !important; }
+
+.on-going { color: #d0b407 !important; }
 
 /* Animated throbber overrides css in modules/system/system.base.css*/
 html.js input.form-autocomplete {

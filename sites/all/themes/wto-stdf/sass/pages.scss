@@ -249,13 +249,8 @@ a.language-link  {
                  float:right;
                  }
 
-
-tr.even { /* Some tables have rows marked even or odd. */
-  /* background-color: #eee; */ /* Drupal core uses a #eee background */
-}
-
-tr.odd {
-  /* background-color: #eee; */ /* Drupal core uses a #eee background */
+tr.odd, tr.even, td.active {
+  background-color: #ecf1f4;
 }
 
 div.messages { /* Important messages (status, warning, and error) for the user. See also the declarations in messages.css. */
@@ -316,12 +311,26 @@ span.field-label { /* The inline field label used by the Fences module */
 .item-list .pager { /* A list of page numbers when more than 1 page of content is available */
   padding: 0;
 
-  li { /* Each page number in the pager list */
-    padding: 0 0.5em;
-  }
+    li { /* Each page number in the pager list */
+      padding: 0.2em 0.5em;
+      background-color: #eceeed;
+      border: 1px solid #d3d3d3;
+        a { 
+            text-decoration: none; 
+            color: #08356a;
+            padding: 0.2 0.5em;
+        }
+    }
+    li.pager-current {
+        background-color: #08356a;
+        border-color: #08356a;
+        color: #fff;
+        font-weight: 400;
+    }
 }
 
 .feed-icon { /* The link to the RSS or Atom feed for the current list of content */
+  display: none;
 }
 
 .more-link { /* Aggregator, blog, and forum more link */
