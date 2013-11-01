@@ -88,16 +88,6 @@ function feature_virtual_library_user_default_permissions() {
     'module' => 'file_entity',
   );
 
-  // Exported permission: delete any document files.
-  $permissions['delete any document files'] = array(
-    'name' => 'delete any document files',
-    'roles' => array(
-      'administrator' => 'administrator',
-      'content author' => 'content author',
-    ),
-    'module' => 'file_entity',
-  );
-
   // Exported permission: delete any image files.
   $permissions['delete any image files'] = array(
     'name' => 'delete any image files',
@@ -130,16 +120,6 @@ function feature_virtual_library_user_default_permissions() {
   // Exported permission: delete own audio files.
   $permissions['delete own audio files'] = array(
     'name' => 'delete own audio files',
-    'roles' => array(
-      'administrator' => 'administrator',
-      'content author' => 'content author',
-    ),
-    'module' => 'file_entity',
-  );
-
-  // Exported permission: delete own document files.
-  $permissions['delete own document files'] = array(
-    'name' => 'delete own document files',
     'roles' => array(
       'administrator' => 'administrator',
       'content author' => 'content author',
@@ -186,16 +166,6 @@ function feature_virtual_library_user_default_permissions() {
     'module' => 'file_entity',
   );
 
-  // Exported permission: download any document files.
-  $permissions['download any document files'] = array(
-    'name' => 'download any document files',
-    'roles' => array(
-      'administrator' => 'administrator',
-      'content author' => 'content author',
-    ),
-    'module' => 'file_entity',
-  );
-
   // Exported permission: download any image files.
   $permissions['download any image files'] = array(
     'name' => 'download any image files',
@@ -228,16 +198,6 @@ function feature_virtual_library_user_default_permissions() {
   // Exported permission: download own audio files.
   $permissions['download own audio files'] = array(
     'name' => 'download own audio files',
-    'roles' => array(
-      'administrator' => 'administrator',
-      'content author' => 'content author',
-    ),
-    'module' => 'file_entity',
-  );
-
-  // Exported permission: download own document files.
-  $permissions['download own document files'] = array(
-    'name' => 'download own document files',
     'roles' => array(
       'administrator' => 'administrator',
       'content author' => 'content author',
@@ -284,16 +244,6 @@ function feature_virtual_library_user_default_permissions() {
     'module' => 'file_entity',
   );
 
-  // Exported permission: edit any document files.
-  $permissions['edit any document files'] = array(
-    'name' => 'edit any document files',
-    'roles' => array(
-      'administrator' => 'administrator',
-      'content author' => 'content author',
-    ),
-    'module' => 'file_entity',
-  );
-
   // Exported permission: edit any image files.
   $permissions['edit any image files'] = array(
     'name' => 'edit any image files',
@@ -326,16 +276,6 @@ function feature_virtual_library_user_default_permissions() {
   // Exported permission: edit own audio files.
   $permissions['edit own audio files'] = array(
     'name' => 'edit own audio files',
-    'roles' => array(
-      'administrator' => 'administrator',
-      'content author' => 'content author',
-    ),
-    'module' => 'file_entity',
-  );
-
-  // Exported permission: edit own document files.
-  $permissions['edit own document files'] = array(
-    'name' => 'edit own document files',
     'roles' => array(
       'administrator' => 'administrator',
       'content author' => 'content author',

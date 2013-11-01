@@ -17,7 +17,6 @@ function feature_apache_solr_apachesolr_environments() {
   $environment->url = 'http://localhost:8983/solr';
   $environment->service_class = '';
   $environment->conf = array(
-    'apachesolr_access_always_add_grants' => 0,
     'apachesolr_index_last' => array(
       'comment' => array(
         'last_changed' => 0,
@@ -40,12 +39,12 @@ function feature_apache_solr_apachesolr_environments() {
         'last_entity_id' => 0,
       ),
       'node' => array(
-        'last_changed' => '1382819725',
-        'last_entity_id' => '466',
+        'last_changed' => '1383299058',
+        'last_entity_id' => '330',
       ),
       'file' => array(
-        'last_changed' => '1382819725',
-        'last_entity_id' => '1554',
+        'last_changed' => '1383230867',
+        'last_entity_id' => '2150',
       ),
       'taxonomy_term' => array(
         'last_changed' => 0,
@@ -64,17 +63,8 @@ function feature_apache_solr_apachesolr_environments() {
         'last_entity_id' => 0,
       ),
     ),
-    'apachesolr_index_updated' => 1382884593,
-    'apachesolr_last_optimize' => 1382884593,
-    'apachesolr_multilingual_index_settings' => array(
-      'apachesolr_multilingual_index' => 1,
-      'apachesolr_multilingual_map_language_neutral' => 'en',
-      'apachesolr_multilingual_clir' => array(
-        'apachesolr_multilingual_index_translations' => 0,
-        'apachesolr_multilingual_index_unpublished_translations' => 0,
-        'apachesolr_multilingual_index_term_translations' => 0,
-      ),
-    ),
+    'apachesolr_index_updated' => 1383300336,
+    'apachesolr_last_optimize' => 1383272256,
     'apachesolr_read_only' => '0',
     'apachesolr_search_facet_pages' => '',
   );

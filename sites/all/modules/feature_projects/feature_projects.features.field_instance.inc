@@ -10,75 +10,6 @@
 function feature_projects_field_default_field_instances() {
   $field_instances = array();
 
-  // Exported field_instance: 'field_collection_item-field_beneficiaries-field_beneficiary_link'
-  $field_instances['field_collection_item-field_beneficiaries-field_beneficiary_link'] = array(
-    'bundle' => 'field_beneficiaries',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'hidden',
-        'module' => 'entityreference',
-        'settings' => array(
-          'link' => FALSE,
-        ),
-        'type' => 'entityreference_label',
-        'weight' => 1,
-      ),
-    ),
-    'entity_type' => 'field_collection_item',
-    'field_name' => 'field_beneficiary_link',
-    'label' => 'Beneficiary Link',
-    'required' => FALSE,
-    'settings' => array(
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'module' => 'entityreference',
-      'settings' => array(
-        'match_operator' => 'CONTAINS',
-        'path' => '',
-        'size' => 60,
-      ),
-      'type' => 'entityreference_autocomplete',
-      'weight' => 2,
-    ),
-  );
-
-  // Exported field_instance: 'field_collection_item-field_beneficiaries-field_beneficiary_text'
-  $field_instances['field_collection_item-field_beneficiaries-field_beneficiary_text'] = array(
-    'bundle' => 'field_beneficiaries',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'hidden',
-        'module' => 'taxonomy',
-        'settings' => array(),
-        'type' => 'taxonomy_term_reference_plain',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'field_collection_item',
-    'field_name' => 'field_beneficiary_text',
-    'label' => 'Beneficiary Text',
-    'required' => FALSE,
-    'settings' => array(
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'module' => 'taxonomy',
-      'settings' => array(
-        'autocomplete_path' => 'taxonomy/autocomplete',
-        'size' => 60,
-      ),
-      'type' => 'taxonomy_autocomplete',
-      'weight' => 1,
-    ),
-  );
-
   // Exported field_instance: 'field_collection_item-field_slideshow-field_caption'
   $field_instances['field_collection_item-field_slideshow-field_caption'] = array(
     'bundle' => 'field_slideshow',
@@ -643,6 +574,97 @@ function feature_projects_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-project-field_agenda'
+  $field_instances['node-project-field_agenda'] = array(
+    'bundle' => 'project',
+    'deleted' => 0,
+    'description' => 'Please add an agenda to the project if required.',
+    'display' => array(
+      'briefings' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'default' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 13,
+      ),
+      'frontpage' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'publications' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'thematic' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_agenda',
+    'label' => 'Agenda',
+    'required' => 0,
+    'settings' => array(
+      'description_field' => 0,
+      'file_directory' => '',
+      'file_extensions' => 'pdf doc docx',
+      'max_filesize' => '',
+      'mediafront' => array(
+        'custom' => '',
+        'field_type' => 0,
+        'media_type' => 'media',
+        'preview' => 0,
+        'thumbnail' => 0,
+      ),
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'media',
+      'settings' => array(
+        'allowed_schemes' => array(
+          'private' => 0,
+          'public' => 'public',
+          'youtube' => 0,
+        ),
+        'allowed_types' => array(
+          'audio' => 0,
+          'document' => 'document',
+          'image' => 0,
+          'private_document' => 0,
+          'video' => 0,
+        ),
+        'browser_plugins' => array(
+          'media_default--media_browser_1' => 'media_default--media_browser_1',
+          'media_default--media_browser_my_files' => 0,
+          'media_internet' => 0,
+          'upload' => 'upload',
+          'youtube' => 0,
+        ),
+        'progress_indicator' => 'throbber',
+      ),
+      'type' => 'media_generic',
+      'weight' => 37,
+    ),
+  );
+
   // Exported field_instance: 'node-project-field_approval_date'
   $field_instances['node-project-field_approval_date'] = array(
     'bundle' => 'project',
@@ -788,7 +810,7 @@ function feature_projects_field_default_field_instances() {
     'bundle' => 'project',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => 'Enter the beneficiaries of this project. You can enter beneficiaries as text or as a link to a full beneficiary record. The latter is used to create a map showing the countries that constitute the beneficiary.',
+    'description' => '',
     'display' => array(
       'briefings' => array(
         'label' => 'above',
@@ -798,12 +820,12 @@ function feature_projects_field_default_field_instances() {
       ),
       'default' => array(
         'label' => 'above',
-        'module' => 'field_collection',
+        'module' => 'entityreference',
         'settings' => array(
-          'view_mode' => 'full',
+          'link' => FALSE,
         ),
-        'type' => 'field_collection_fields',
-        'weight' => 10,
+        'type' => 'entityreference_label',
+        'weight' => 45,
       ),
       'frontpage' => array(
         'label' => 'above',
@@ -845,11 +867,86 @@ function feature_projects_field_default_field_instances() {
       'user_register_form' => FALSE,
     ),
     'widget' => array(
+      'active' => 1,
+      'module' => 'entityreference',
+      'settings' => array(
+        'match_operator' => 'CONTAINS',
+        'path' => '',
+        'size' => 60,
+      ),
+      'type' => 'entityreference_autocomplete',
+      'weight' => 45,
+    ),
+  );
+
+  // Exported field_instance: 'node-project-field_beneficiary_text'
+  $field_instances['node-project-field_beneficiary_text'] = array(
+    'bundle' => 'project',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'briefings' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'default' => array(
+        'label' => 'above',
+        'module' => 'i18n_taxonomy',
+        'settings' => array(),
+        'type' => 'i18n_taxonomy_term_reference_link',
+        'weight' => 44,
+      ),
+      'frontpage' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'publications' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'thematic' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_beneficiary_text',
+    'label' => 'Beneficiary Text',
+    'required' => 0,
+    'settings' => array(
+      'mediafront' => array(
+        'custom' => '',
+        'field_type' => 0,
+        'media_type' => 'media',
+        'preview' => 0,
+        'thumbnail' => 0,
+      ),
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
       'active' => 0,
-      'module' => 'field_collection',
-      'settings' => array(),
-      'type' => 'field_collection_embed',
-      'weight' => 41,
+      'module' => 'taxonomy',
+      'settings' => array(
+        'autocomplete_path' => 'taxonomy/autocomplete',
+        'size' => 60,
+      ),
+      'type' => 'taxonomy_autocomplete',
+      'weight' => 44,
     ),
   );
 
@@ -1423,8 +1520,15 @@ function feature_projects_field_default_field_instances() {
     'settings' => array(
       'description_field' => 0,
       'file_directory' => '',
-      'file_extensions' => 'pdf doc docx rtf',
+      'file_extensions' => 'pdf doc docx rtf ppt pptx',
       'max_filesize' => '',
+      'mediafront' => array(
+        'custom' => '',
+        'field_type' => 0,
+        'media_type' => 'media',
+        'preview' => 0,
+        'thumbnail' => 0,
+      ),
       'user_register_form' => FALSE,
     ),
     'widget' => array(
@@ -1432,16 +1536,25 @@ function feature_projects_field_default_field_instances() {
       'module' => 'media',
       'settings' => array(
         'allowed_schemes' => array(
+          'private' => 0,
           'public' => 'public',
           'youtube' => 0,
         ),
         'allowed_types' => array(
           'audio' => 0,
-          'default' => 'default',
           'image' => 0,
+          'private_document' => 0,
+          'public_documents' => 'public_documents',
           'video' => 0,
+          'virtual_library_document' => 0,
         ),
-        'browser_plugins' => array(),
+        'browser_plugins' => array(
+          'media_default--media_browser_1' => 'media_default--media_browser_1',
+          'media_default--media_browser_my_files' => 0,
+          'media_internet' => 0,
+          'upload' => 'upload',
+          'youtube' => 0,
+        ),
         'progress_indicator' => 'throbber',
       ),
       'type' => 'media_generic',
@@ -2981,79 +3094,6 @@ function feature_projects_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-project-field_uncertain_dates'
-  $field_instances['node-project-field_uncertain_dates'] = array(
-    'bundle' => 'project',
-    'default_value' => array(
-      0 => array(
-        'value' => 0,
-      ),
-    ),
-    'deleted' => 0,
-    'description' => 'Specifies if the project has uncertain start, end and/or extension dates.',
-    'display' => array(
-      'briefings' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'default' => array(
-        'label' => 'inline',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 34,
-      ),
-      'frontpage' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'publications' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'thematic' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_uncertain_dates',
-    'label' => 'Uncertain Dates',
-    'required' => 0,
-    'settings' => array(
-      'mediafront' => array(
-        'custom' => '',
-        'field_type' => 0,
-        'media_type' => 'media',
-        'preview' => 0,
-        'thumbnail' => 0,
-      ),
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'options',
-      'settings' => array(
-        'display_label' => 0,
-      ),
-      'type' => 'options_onoff',
-      'weight' => 28,
-    ),
-  );
-
   // Translatables
   // Included for use with string extractors like potx.
   t('ACP');
@@ -3062,10 +3102,10 @@ function feature_projects_field_default_field_instances() {
   t('Actions Required');
   t('Actual End Date');
   t('Actual End Year');
+  t('Agenda');
   t('Approval Date');
   t('Approval Year');
   t('Beneficiaries');
-  t('Beneficiary Link');
   t('Beneficiary Text');
   t('Budget - Euros');
   t('Budget - Implementation');
@@ -3084,7 +3124,6 @@ function feature_projects_field_default_field_instances() {
   t('Description');
   t('Documents');
   t('Enter any actions since the last WG.');
-  t('Enter the beneficiaries of this project. You can enter beneficiaries as text or as a link to a full beneficiary record. The latter is used to create a map showing the countries that constitute the beneficiary.');
   t('Enter the reference number of the project, in the form STDF/PG/nnn for project grants and STDF/PPG/nnn for project preparation grants.');
   t('Expected Results');
   t('Extension Date');
@@ -3098,6 +3137,7 @@ function feature_projects_field_default_field_instances() {
   t('Overhead');
   t('PPG Outcome');
   t('Partner');
+  t('Please add an agenda to the project if required.');
   t('Please describe the project.');
   t('Please enter a budget amount in Euros, if applicable. ');
   t('Please enter a budget amount in Swiss Francs, if applicable.');
@@ -3133,14 +3173,12 @@ function feature_projects_field_default_field_instances() {
   t('Responsible');
   t('Sector');
   t('Slideshow or image');
-  t('Specifies if the project has uncertain start, end and/or extension dates.');
   t('Start Date');
   t('Start Year');
   t('Status');
   t('The value in this field is calculated from the Implementation Budget and the non-STDF Contribution.');
   t('The value in this field will be calculated as the sum of the Implementation Budget and the Supervision Budget.');
   t('Tick if ACP applies.');
-  t('Uncertain Dates');
 
   return $field_instances;
 }

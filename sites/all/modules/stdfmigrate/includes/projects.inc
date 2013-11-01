@@ -184,43 +184,9 @@ class StdfMigrationProjectMigration extends StdfMigration {
       $row->extension = date ( 'Y-m-d', strtotime ( $row->extension ) );
     }
     
-    /*
-    if ($row->total_stdf != NULL) {
-      $row->total_stdf = str_replace ( ',', '', trim ( $row->total_stdf, '$' ) );
+    if ($row->type == 'PG') {
+      $row->type = 'Project';
     }
-    
-    if ($row->implementation_budget != NULL) {
-      $row->implementation_budget = str_replace ( ',', '', trim ( $row->implementation_budget, '$' ) );
-    }
-    
-    if ($row->overhead != NULL) {
-      $row->overhead = str_replace ( ',', '', trim ( $row->overhead, '$' ) );
-    }
-    
-    if ($row->non_stdf_contribution == '') {
-      $row->non_stdf_contribution = NULL;
-    } else {
-      $row->non_stdf_contribution = str_replace ( ',', '', trim ( $row->non_stdf_contribution, '$' ) );
-    }
-    
-    if ($row->total_project_value == '') {
-      $row->total_project_value = NULL;
-    } else {
-      $row->total_project_value = str_replace ( ',', '', trim ( $row->total_project_value, '$' ) );
-    }
-    
-    if ($row->budget_eur == '') {
-      $row->budget_eur = NULL;
-    } else {
-      $row->budget_eur = str_replace ( ',', '', substr ( $row->budget_eur, 4 ) );
-    }
-    
-    if ($row->budget_chf == '') {
-      $row->budget_chf = NULL;
-    } else {
-      $row->budget_chf = str_replace ( ',', '', substr ( $row->budget_chf, 4 ) );
-    }
-    */
 
   }
 

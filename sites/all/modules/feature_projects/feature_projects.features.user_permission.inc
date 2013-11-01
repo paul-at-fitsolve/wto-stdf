@@ -41,6 +41,7 @@ function feature_projects_user_default_permissions() {
   $permissions['delete any project content'] = array(
     'name' => 'delete any project content',
     'roles' => array(
+      'administrator' => 'administrator',
       'content author' => 'content author',
     ),
     'module' => 'node',
@@ -59,9 +60,38 @@ function feature_projects_user_default_permissions() {
   $permissions['delete own project content'] = array(
     'name' => 'delete own project content',
     'roles' => array(
+      'administrator' => 'administrator',
       'content author' => 'content author',
     ),
     'module' => 'node',
+  );
+
+  // Exported permission: delete terms in 10.
+  $permissions['delete terms in 10'] = array(
+    'name' => 'delete terms in 10',
+    'roles' => array(
+      'anonymous user' => 'anonymous user',
+      'content author' => 'content author',
+    ),
+    'module' => 'taxonomy',
+  );
+
+  // Exported permission: delete terms in 4.
+  $permissions['delete terms in 4'] = array(
+    'name' => 'delete terms in 4',
+    'roles' => array(
+      'content author' => 'content author',
+    ),
+    'module' => 'taxonomy',
+  );
+
+  // Exported permission: delete terms in 8.
+  $permissions['delete terms in 8'] = array(
+    'name' => 'delete terms in 8',
+    'roles' => array(
+      'content author' => 'content author',
+    ),
+    'module' => 'taxonomy',
   );
 
   // Exported permission: edit any beneficiary content.
@@ -77,6 +107,7 @@ function feature_projects_user_default_permissions() {
   $permissions['edit any project content'] = array(
     'name' => 'edit any project content',
     'roles' => array(
+      'administrator' => 'administrator',
       'content author' => 'content author',
     ),
     'module' => 'node',
@@ -95,9 +126,38 @@ function feature_projects_user_default_permissions() {
   $permissions['edit own project content'] = array(
     'name' => 'edit own project content',
     'roles' => array(
+      'administrator' => 'administrator',
       'content author' => 'content author',
     ),
     'module' => 'node',
+  );
+
+  // Exported permission: edit terms in 10.
+  $permissions['edit terms in 10'] = array(
+    'name' => 'edit terms in 10',
+    'roles' => array(
+      'anonymous user' => 'anonymous user',
+      'content author' => 'content author',
+    ),
+    'module' => 'taxonomy',
+  );
+
+  // Exported permission: edit terms in 4.
+  $permissions['edit terms in 4'] = array(
+    'name' => 'edit terms in 4',
+    'roles' => array(
+      'content author' => 'content author',
+    ),
+    'module' => 'taxonomy',
+  );
+
+  // Exported permission: edit terms in 8.
+  $permissions['edit terms in 8'] = array(
+    'name' => 'edit terms in 8',
+    'roles' => array(
+      'content author' => 'content author',
+    ),
+    'module' => 'taxonomy',
   );
 
   return $permissions;

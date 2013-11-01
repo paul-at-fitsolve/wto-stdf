@@ -12,46 +12,6 @@ function feature_frontpage_default_fe_block_settings() {
 
   $export['version'] = '2.0';
 
-  $export['gmap_location-0'] = array(
-    'cache' => -1,
-    'custom' => 0,
-    'delta' => 0,
-    'i18n_block_language' => array(),
-    'i18n_mode' => 0,
-    'module' => 'gmap_location',
-    'node_types' => array(),
-    'pages' => '',
-    'roles' => array(),
-    'themes' => array(
-      'bartik' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'bartik',
-        'weight' => 0,
-      ),
-      'seven' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'seven',
-        'weight' => 0,
-      ),
-      'wto_stdf' => array(
-        'region' => 'content',
-        'status' => 1,
-        'theme' => 'wto_stdf',
-        'weight' => -27,
-      ),
-      'zen' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'zen',
-        'weight' => 0,
-      ),
-    ),
-    'title' => '',
-    'visibility' => 0,
-  );
-
   $export['locale-language'] = array(
     'cache' => -1,
     'custom' => 0,
@@ -89,6 +49,127 @@ function feature_frontpage_default_fe_block_settings() {
       ),
     ),
     'title' => '<none>',
+    'visibility' => 0,
+  );
+
+  $export['mailchimp_lists-stdf_mail_list'] = array(
+    'cache' => 2,
+    'custom' => 0,
+    'delta' => 'stdf_mail_list',
+    'i18n_block_language' => array(),
+    'i18n_mode' => 0,
+    'module' => 'mailchimp_lists',
+    'node_types' => array(),
+    'pages' => '',
+    'roles' => array(),
+    'themes' => array(
+      'bartik' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'bartik',
+        'weight' => 0,
+      ),
+      'seven' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'seven',
+        'weight' => 0,
+      ),
+      'wto_stdf' => array(
+        'region' => 'content',
+        'status' => 1,
+        'theme' => 'wto_stdf',
+        'weight' => -24,
+      ),
+      'zen' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'zen',
+        'weight' => 0,
+      ),
+    ),
+    'title' => '',
+    'visibility' => 0,
+  );
+
+  $export['menu_block-1'] = array(
+    'cache' => -1,
+    'custom' => 0,
+    'delta' => 1,
+    'i18n_block_language' => array(),
+    'i18n_mode' => 0,
+    'module' => 'menu_block',
+    'node_types' => array(),
+    'pages' => 'projectgrants
+projectpreparationgrants',
+    'roles' => array(),
+    'themes' => array(
+      'bartik' => array(
+        'region' => 'sidebar_first',
+        'status' => 1,
+        'theme' => 'bartik',
+        'weight' => -20,
+      ),
+      'seven' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'seven',
+        'weight' => 0,
+      ),
+      'wto_stdf' => array(
+        'region' => 'sidebar_first',
+        'status' => 1,
+        'theme' => 'wto_stdf',
+        'weight' => 0,
+      ),
+      'zen' => array(
+        'region' => 'sidebar_first',
+        'status' => 1,
+        'theme' => 'zen',
+        'weight' => 0,
+      ),
+    ),
+    'title' => 'Navigation',
+    'visibility' => 0,
+  );
+
+  $export['menu_block-2'] = array(
+    'cache' => -1,
+    'custom' => 0,
+    'delta' => 2,
+    'i18n_block_language' => array(),
+    'i18n_mode' => 0,
+    'module' => 'menu_block',
+    'node_types' => array(),
+    'pages' => '',
+    'roles' => array(),
+    'themes' => array(
+      'bartik' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'bartik',
+        'weight' => 0,
+      ),
+      'seven' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'seven',
+        'weight' => 0,
+      ),
+      'wto_stdf' => array(
+        'region' => 'footer',
+        'status' => 1,
+        'theme' => 'wto_stdf',
+        'weight' => -23,
+      ),
+      'zen' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'zen',
+        'weight' => 0,
+      ),
+    ),
+    'title' => 'Sitemap',
     'visibility' => 0,
   );
 
@@ -132,40 +213,43 @@ function feature_frontpage_default_fe_block_settings() {
     'visibility' => 0,
   );
 
-  $export['search-form'] = array(
+  $export['nice_menus-2'] = array(
     'cache' => -1,
     'custom' => 0,
-    'delta' => 'form',
+    'delta' => 2,
     'i18n_block_language' => array(),
     'i18n_mode' => 0,
-    'module' => 'search',
+    'module' => 'nice_menus',
     'node_types' => array(),
     'pages' => '',
-    'roles' => array(),
+    'roles' => array(
+      'content author' => 4,
+      'member' => 5,
+    ),
     'themes' => array(
       'bartik' => array(
-        'region' => 'sidebar_first',
-        'status' => 1,
+        'region' => '',
+        'status' => 0,
         'theme' => 'bartik',
-        'weight' => -1,
+        'weight' => 0,
       ),
       'seven' => array(
-        'region' => 'dashboard_sidebar',
-        'status' => 1,
+        'region' => '',
+        'status' => 0,
         'theme' => 'seven',
-        'weight' => -10,
+        'weight' => 0,
       ),
       'wto_stdf' => array(
         'region' => 'header',
         'status' => 1,
         'theme' => 'wto_stdf',
-        'weight' => -22,
+        'weight' => -12,
       ),
       'zen' => array(
-        'region' => 'header',
-        'status' => 1,
+        'region' => '',
+        'status' => 0,
         'theme' => 'zen',
-        'weight' => -20,
+        'weight' => 0,
       ),
     ),
     'title' => '',
@@ -176,12 +260,18 @@ function feature_frontpage_default_fe_block_settings() {
     'cache' => -1,
     'custom' => 0,
     'delta' => 'newsletter_signup',
-    'i18n_block_language' => array(),
-    'i18n_mode' => 0,
+    'i18n_block_language' => array(
+      0 => 'en',
+      1 => 'es',
+      2 => 'fr',
+    ),
+    'i18n_mode' => 1,
     'module' => 'stdfcustom',
     'node_types' => array(),
     'pages' => '',
-    'roles' => array(),
+    'roles' => array(
+      'anonymous user' => 1,
+    ),
     'themes' => array(
       'bartik' => array(
         'region' => '',
@@ -216,8 +306,12 @@ function feature_frontpage_default_fe_block_settings() {
     'cache' => -1,
     'custom' => 0,
     'delta' => 'contact_info',
-    'i18n_block_language' => array(),
-    'i18n_mode' => 0,
+    'i18n_block_language' => array(
+      0 => 'en',
+      1 => 'es',
+      2 => 'fr',
+    ),
+    'i18n_mode' => 1,
     'module' => 'stdffrontpage',
     'node_types' => array(),
     'pages' => '',
@@ -257,7 +351,7 @@ function feature_frontpage_default_fe_block_settings() {
     'custom' => 0,
     'delta' => 'copyright',
     'i18n_block_language' => array(),
-    'i18n_mode' => 1,
+    'i18n_mode' => 0,
     'module' => 'stdffrontpage',
     'node_types' => array(),
     'pages' => '',
@@ -279,7 +373,7 @@ function feature_frontpage_default_fe_block_settings() {
         'region' => 'bottom',
         'status' => 1,
         'theme' => 'wto_stdf',
-        'weight' => -29,
+        'weight' => 0,
       ),
       'zen' => array(
         'region' => '',
@@ -289,6 +383,46 @@ function feature_frontpage_default_fe_block_settings() {
       ),
     ),
     'title' => '<none>',
+    'visibility' => 0,
+  );
+
+  $export['stdffrontpage-partnerlogos'] = array(
+    'cache' => -1,
+    'custom' => 0,
+    'delta' => 'partnerlogos',
+    'i18n_block_language' => array(),
+    'i18n_mode' => 0,
+    'module' => 'stdffrontpage',
+    'node_types' => array(),
+    'pages' => '',
+    'roles' => array(),
+    'themes' => array(
+      'bartik' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'bartik',
+        'weight' => 0,
+      ),
+      'seven' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'seven',
+        'weight' => 0,
+      ),
+      'wto_stdf' => array(
+        'region' => 'third_content',
+        'status' => 1,
+        'theme' => 'wto_stdf',
+        'weight' => 0,
+      ),
+      'zen' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'zen',
+        'weight' => 0,
+      ),
+    ),
+    'title' => '',
     'visibility' => 0,
   );
 
@@ -323,7 +457,7 @@ function feature_frontpage_default_fe_block_settings() {
         'region' => 'content',
         'status' => 1,
         'theme' => 'wto_stdf',
-        'weight' => -24,
+        'weight' => -26,
       ),
       'zen' => array(
         'region' => '',
@@ -340,8 +474,12 @@ function feature_frontpage_default_fe_block_settings() {
     'cache' => -1,
     'custom' => 0,
     'delta' => 'publications',
-    'i18n_block_language' => array(),
-    'i18n_mode' => 0,
+    'i18n_block_language' => array(
+      0 => 'en',
+      1 => 'es',
+      2 => 'fr',
+    ),
+    'i18n_mode' => 1,
     'module' => 'stdffrontpage',
     'node_types' => array(),
     'pages' => '',
@@ -376,43 +514,43 @@ function feature_frontpage_default_fe_block_settings() {
     'visibility' => 0,
   );
 
-  $export['views-beneficiaries-block_1'] = array(
+  $export['user-login'] = array(
     'cache' => -1,
     'custom' => 0,
-    'delta' => 'beneficiaries-block_1',
+    'delta' => 'login',
     'i18n_block_language' => array(),
     'i18n_mode' => 0,
-    'module' => 'views',
+    'module' => 'user',
     'node_types' => array(),
-    'pages' => '',
+    'pages' => 'filedepot',
     'roles' => array(),
     'themes' => array(
       'bartik' => array(
-        'region' => '',
-        'status' => 0,
+        'region' => 'sidebar_first',
+        'status' => 1,
         'theme' => 'bartik',
-        'weight' => 0,
+        'weight' => -17,
       ),
       'seven' => array(
-        'region' => '',
-        'status' => 0,
+        'region' => 'content',
+        'status' => 1,
         'theme' => 'seven',
-        'weight' => 0,
+        'weight' => 10,
       ),
       'wto_stdf' => array(
-        'region' => '',
-        'status' => 0,
+        'region' => 'footer',
+        'status' => 1,
         'theme' => 'wto_stdf',
-        'weight' => -22,
+        'weight' => -19,
       ),
       'zen' => array(
-        'region' => '',
-        'status' => 0,
+        'region' => 'sidebar_first',
+        'status' => 1,
         'theme' => 'zen',
         'weight' => 0,
       ),
     ),
-    'title' => '',
+    'title' => 'Member login',
     'visibility' => 0,
   );
 
@@ -420,8 +558,12 @@ function feature_frontpage_default_fe_block_settings() {
     'cache' => -1,
     'custom' => 0,
     'delta' => 'eebb22e852a8f93e943e8c7a212a3c68',
-    'i18n_block_language' => array(),
-    'i18n_mode' => 0,
+    'i18n_block_language' => array(
+      0 => 'en',
+      1 => 'es',
+      2 => 'fr',
+    ),
+    'i18n_mode' => 1,
     'module' => 'views',
     'node_types' => array(),
     'pages' => '<front>',
@@ -443,7 +585,7 @@ function feature_frontpage_default_fe_block_settings() {
         'region' => 'content',
         'status' => 1,
         'theme' => 'wto_stdf',
-        'weight' => -8,
+        'weight' => -25,
       ),
       'zen' => array(
         'region' => '',

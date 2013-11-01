@@ -358,24 +358,24 @@ function feature_events_views_default_views() {
   $handler->display->display_options['pager']['type'] = 'some';
   $handler->display->display_options['pager']['options']['items_per_page'] = '100';
   $handler->display->display_options['style_plugin'] = 'table';
-  $handler->display->display_options['style_options']['grouping'] = array(
-    0 => array(
-      'field' => 'field_date_and_time',
-      'rendered' => 0,
-      'rendered_strip' => 1,
-    ),
-  );
   $handler->display->display_options['style_options']['columns'] = array(
+    'field_date_and_time_1' => 'field_date_and_time_1',
     'title' => 'title',
     'field_date_and_time' => 'field_date_and_time',
     'field_organizer' => 'field_organizer',
     'country' => 'country',
     'city' => 'city',
     'nothing' => 'nothing',
-    'field_date_and_time_1' => 'field_date_and_time_1',
   );
   $handler->display->display_options['style_options']['default'] = '-1';
   $handler->display->display_options['style_options']['info'] = array(
+    'field_date_and_time_1' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
     'title' => array(
       'sortable' => 0,
       'default_sort_order' => 'asc',
@@ -416,13 +416,6 @@ function feature_events_views_default_views() {
       'separator' => '',
       'empty_column' => 0,
     ),
-    'field_date_and_time_1' => array(
-      'sortable' => 0,
-      'default_sort_order' => 'asc',
-      'align' => '',
-      'separator' => '',
-      'empty_column' => 0,
-    ),
   );
   $handler->display->display_options['style_options']['sticky'] = TRUE;
   /* Field: Content: Date and Time */
@@ -431,7 +424,7 @@ function feature_events_views_default_views() {
   $handler->display->display_options['fields']['field_date_and_time_1']['field'] = 'field_date_and_time';
   $handler->display->display_options['fields']['field_date_and_time_1']['label'] = 'Date';
   $handler->display->display_options['fields']['field_date_and_time_1']['settings'] = array(
-    'format_type' => 'day_and_month',
+    'format_type' => 'long',
     'fromto' => 'both',
     'multiple_number' => '',
     'multiple_from' => '',
@@ -444,7 +437,6 @@ function feature_events_views_default_views() {
   $handler->display->display_options['fields']['title']['label'] = 'Name';
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
-  $handler->display->display_options['fields']['title']['link_to_node'] = FALSE;
   /* Field: Month */
   $handler->display->display_options['fields']['field_date_and_time']['id'] = 'field_date_and_time';
   $handler->display->display_options['fields']['field_date_and_time']['table'] = 'field_data_field_date_and_time';

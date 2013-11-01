@@ -31,7 +31,7 @@ function feature_genera_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 1,
+        'weight' => 0,
       ),
       'frontpage' => array(
         'label' => 'above',
@@ -107,11 +107,11 @@ function feature_genera_field_default_field_instances() {
         'weight' => 0,
       ),
       'default' => array(
-        'label' => 'hidden',
+        'label' => 'above',
         'module' => 'file',
         'settings' => array(),
         'type' => 'file_table',
-        'weight' => 0,
+        'weight' => 2,
       ),
       'frontpage' => array(
         'label' => 'above',
@@ -176,10 +176,12 @@ function feature_genera_field_default_field_instances() {
         ),
         'allowed_types' => array(
           'audio' => 0,
-          'document' => 'document',
+          'document' => 0,
           'image' => 0,
           'private_document' => 0,
+          'public_documents' => 'public_documents',
           'video' => 0,
+          'virtual_library_document' => 0,
         ),
         'browser_plugins' => array(
           'media_default--media_browser_1' => 'media_default--media_browser_1',
@@ -271,19 +273,20 @@ function feature_genera_field_default_field_instances() {
       'module' => 'media',
       'settings' => array(
         'allowed_schemes' => array(
-          'private' => 'private',
+          'private' => 0,
           'public' => 'public',
-          'youtube' => 0,
+          'youtube' => 'youtube',
         ),
         'allowed_types' => array(
           'audio' => 0,
           'document' => 0,
-          'image' => 'image',
-          'video' => 0,
+          'image' => 0,
+          'private_document' => 0,
+          'public_documents' => 0,
+          'video' => 'video',
+          'virtual_library_document' => 0,
         ),
         'browser_plugins' => array(
-          'media_browser_plus--media_browser_my_files' => 0,
-          'media_browser_plus--media_browser_thumbnails' => 0,
           'media_default--media_browser_1' => 0,
           'media_default--media_browser_my_files' => 0,
           'media_internet' => 0,
@@ -311,10 +314,14 @@ function feature_genera_field_default_field_instances() {
         'weight' => 4,
       ),
       'default' => array(
-        'label' => 'hidden',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 5,
+        'label' => 'above',
+        'module' => 'field_redirection',
+        'settings' => array(
+          '404_if_empty' => FALSE,
+          'code' => 301,
+        ),
+        'type' => 'field_redirection',
+        'weight' => 4,
       ),
       'frontpage' => array(
         'label' => 'above',
@@ -395,7 +402,7 @@ function feature_genera_field_default_field_instances() {
         'weight' => 2,
       ),
       'default' => array(
-        'label' => 'hidden',
+        'label' => 'above',
         'module' => 'field_slideshow',
         'settings' => array(
           'slideshow_caption' => '',
@@ -416,9 +423,9 @@ function feature_genera_field_default_field_instances() {
           'slideshow_controls' => 0,
           'slideshow_controls_pause' => 0,
           'slideshow_controls_position' => 'after',
-          'slideshow_field_collection_image' => '',
+          'slideshow_field_collection_image' => 'field_image',
           'slideshow_fx' => 'fade',
-          'slideshow_image_style' => '',
+          'slideshow_image_style' => 'medium',
           'slideshow_link' => '',
           'slideshow_order' => '',
           'slideshow_pager' => '',
@@ -430,7 +437,7 @@ function feature_genera_field_default_field_instances() {
           'slideshow_timeout' => 4000,
         ),
         'type' => 'slideshow',
-        'weight' => 2,
+        'weight' => 1,
       ),
       'frontpage' => array(
         'label' => 'hidden',

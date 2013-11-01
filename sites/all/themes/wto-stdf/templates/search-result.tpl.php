@@ -62,11 +62,25 @@
  * @see template_process()
  *
  * @ingroup themeable
- */
 
+
+
+
+ $to_be_removed = array('user/%/subscriptions', 'user/%/favorites');
+ foreach ($variables['tabs'] as $group_key => $tab_group) {
+  if (is_array($tab_group)) {
+   foreach ($tab_group as $key => $tab) {
+    if (isset($tab['#link']['path']) && in_array($tab['#link']['path'], $to_be_removed)){
+     unset($variables['tabs'][$group_key][$key]);
+    }
+   }
+  }
+ }
+}
+ */
 ?>
 <li class="<?php print $classes; ?>"<?php print $attributes; ?>>
-  <?php print render($title_prefix); ?>
+  <?php  print render($title_prefix); ?>
   <h3 class="title"<?php print $title_attributes; ?>>
     <a href="<?php print $url; ?>"><?php print $title; ?></a>
   </h3>
@@ -84,6 +98,7 @@
   <span class="metadata"><?php print implode(';', $variables['authors']); ?></span>
   Publisher<?php print ((count($variables['publishers'])>1)?'s':null) . ' :';?>
   <span class="metadata"><?php print implode(';', $variables['publishers']); ?></span>
+  Date: <span class="metadata"><?php print $variables['pub_date']; ?> </span>
   </div>
   <?php endif;?>
 </li>
