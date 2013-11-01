@@ -16,7 +16,7 @@ function feature_frontpage_flexslider_default_presets() {
   $preset->name = 'front_carousel';
   $preset->title = 'Front carousel';
   $preset->theme = 'classic';
-  $preset->imagestyle_normal = 'carousel-slides';
+  $preset->imagestyle_normal = '';
   $preset->imagestyle_thumbnail = 'flexslider_thumbnail';
   $preset->options = array(
     'namespace' => 'flex-',

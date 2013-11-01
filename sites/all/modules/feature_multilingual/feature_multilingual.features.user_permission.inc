@@ -15,6 +15,7 @@ function feature_multilingual_user_default_permissions() {
     'name' => 'administer content translations',
     'roles' => array(
       'administrator' => 'administrator',
+      'content author' => 'content author',
     ),
     'module' => 'i18n_node',
   );
@@ -34,6 +35,7 @@ function feature_multilingual_user_default_permissions() {
     'name' => 'display admin pages in another language',
     'roles' => array(
       'administrator' => 'administrator',
+      'content author' => 'content author',
     ),
     'module' => 'admin_language',
   );
@@ -43,6 +45,7 @@ function feature_multilingual_user_default_permissions() {
     'name' => 'translate admin strings',
     'roles' => array(
       'administrator' => 'administrator',
+      'content author' => 'content author',
     ),
     'module' => 'i18n_string',
   );
@@ -72,6 +75,7 @@ function feature_multilingual_user_default_permissions() {
     'name' => 'translate user-defined strings',
     'roles' => array(
       'administrator' => 'administrator',
+      'content author' => 'content author',
     ),
     'module' => 'i18n_string',
   );
@@ -81,6 +85,7 @@ function feature_multilingual_user_default_permissions() {
     'name' => 'use all enabled languages',
     'roles' => array(
       'administrator' => 'administrator',
+      'content author' => 'content author',
     ),
     'module' => 'admin_language',
   );

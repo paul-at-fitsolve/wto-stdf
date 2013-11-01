@@ -26,6 +26,7 @@ function feature_apache_solr_user_default_permissions() {
       'administrator' => 'administrator',
       'anonymous user' => 'anonymous user',
       'content author' => 'content author',
+      'member' => 'member',
     ),
     'module' => 'search',
   );
@@ -37,6 +38,7 @@ function feature_apache_solr_user_default_permissions() {
       'administrator' => 'administrator',
       'anonymous user' => 'anonymous user',
       'content author' => 'content author',
+      'member' => 'member',
     ),
     'module' => 'search',
   );

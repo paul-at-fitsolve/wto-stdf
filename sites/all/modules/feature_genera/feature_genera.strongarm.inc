@@ -117,7 +117,7 @@ function feature_genera_strongarm() {
       'display' => array(
         'language' => array(
           'default' => array(
-            'weight' => '4',
+            'weight' => '5',
             'visible' => FALSE,
           ),
           'teaser' => array(

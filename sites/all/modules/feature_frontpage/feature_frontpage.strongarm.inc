@@ -62,16 +62,6 @@ function feature_frontpage_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'contact_info';
-  $strongarm->value = array(
-    'value' => '<p>STDF Secretariat<br /> World Trade Organization<br /> Centre William Rappard<br /> Rue de Lausanne 154<br /> CH-1211 Geneva, Switzerland<br /><br /> Tel: +41(0)22 739 5295<br /> Fax: +41(0)22 739 5760 <a href="mailto:STDFSecretariat@wto.org">STDFSecretariat@wto.org</a></p>',
-    'format' => 'wysiwyg_filter',
-  );
-  $export['contact_info'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
   $strongarm->name = 'field_bundle_settings_node__responsive_slide';
   $strongarm->value = array(
     'view_modes' => array(
@@ -144,13 +134,6 @@ function feature_frontpage_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'i18n_sync_node_type_responsive_slide';
-  $strongarm->value = array();
-  $export['i18n_sync_node_type_responsive_slide'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
   $strongarm->name = 'language_content_type_responsive_slide';
   $strongarm->value = '2';
   $export['language_content_type_responsive_slide'] = $strongarm;
@@ -168,6 +151,76 @@ function feature_frontpage_strongarm() {
   $strongarm->name = 'menu_parent_responsive_slide';
   $strongarm->value = 'main-menu:0';
   $export['menu_parent_responsive_slide'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'nice_menus_depth_1';
+  $strongarm->value = '-1';
+  $export['nice_menus_depth_1'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'nice_menus_depth_2';
+  $strongarm->value = '-1';
+  $export['nice_menus_depth_2'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'nice_menus_menu_1';
+  $strongarm->value = 'main-menu:0';
+  $export['nice_menus_menu_1'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'nice_menus_menu_2';
+  $strongarm->value = 'user-menu:0';
+  $export['nice_menus_menu_2'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'nice_menus_name_1';
+  $strongarm->value = 'Nice menu 1';
+  $export['nice_menus_name_1'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'nice_menus_name_2';
+  $strongarm->value = 'Nice menu 2';
+  $export['nice_menus_name_2'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'nice_menus_respect_expand_1';
+  $strongarm->value = '0';
+  $export['nice_menus_respect_expand_1'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'nice_menus_respect_expand_2';
+  $strongarm->value = '0';
+  $export['nice_menus_respect_expand_2'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'nice_menus_type_1';
+  $strongarm->value = 'down';
+  $export['nice_menus_type_1'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'nice_menus_type_2';
+  $strongarm->value = 'down';
+  $export['nice_menus_type_2'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
@@ -191,70 +244,6 @@ function feature_frontpage_strongarm() {
   $strongarm->name = 'node_submitted_responsive_slide';
   $strongarm->value = 0;
   $export['node_submitted_responsive_slide'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'responsive_menus_css_selectors';
-  $strongarm->value = '.nice-menu-main-menu';
-  $export['responsive_menus_css_selectors'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'responsive_menus_disable_mouse_events';
-  $strongarm->value = array(
-    1 => 0,
-  );
-  $export['responsive_menus_disable_mouse_events'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'responsive_menus_ignore_admin';
-  $strongarm->value = array(
-    1 => '1',
-  );
-  $export['responsive_menus_ignore_admin'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'responsive_menus_media_size';
-  $strongarm->value = '960';
-  $export['responsive_menus_media_size'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'responsive_menus_remove_attributes';
-  $strongarm->value = array(
-    1 => '1',
-  );
-  $export['responsive_menus_remove_attributes'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'responsive_menus_simple_absolute';
-  $strongarm->value = array(
-    1 => 0,
-  );
-  $export['responsive_menus_simple_absolute'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'responsive_menus_simple_text';
-  $strongarm->value = '☰ Menu';
-  $export['responsive_menus_simple_text'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'responsive_menus_style';
-  $strongarm->value = 'mean_menu';
-  $export['responsive_menus_style'] = $strongarm;
 
   return $export;
 }

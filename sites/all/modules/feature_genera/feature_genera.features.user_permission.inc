@@ -23,6 +23,7 @@ function feature_genera_user_default_permissions() {
   $permissions['delete any general_content content'] = array(
     'name' => 'delete any general_content content',
     'roles' => array(
+      'administrator' => 'administrator',
       'content author' => 'content author',
     ),
     'module' => 'node',
@@ -32,6 +33,7 @@ function feature_genera_user_default_permissions() {
   $permissions['delete own general_content content'] = array(
     'name' => 'delete own general_content content',
     'roles' => array(
+      'administrator' => 'administrator',
       'content author' => 'content author',
     ),
     'module' => 'node',
@@ -41,6 +43,7 @@ function feature_genera_user_default_permissions() {
   $permissions['edit any general_content content'] = array(
     'name' => 'edit any general_content content',
     'roles' => array(
+      'administrator' => 'administrator',
       'content author' => 'content author',
     ),
     'module' => 'node',
@@ -50,6 +53,7 @@ function feature_genera_user_default_permissions() {
   $permissions['edit own general_content content'] = array(
     'name' => 'edit own general_content content',
     'roles' => array(
+      'administrator' => 'administrator',
       'content author' => 'content author',
     ),
     'module' => 'node',

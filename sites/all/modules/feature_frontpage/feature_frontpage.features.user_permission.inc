@@ -10,49 +10,31 @@
 function feature_frontpage_user_default_permissions() {
   $permissions = array();
 
-  // Exported permission: create responsive_slide content.
-  $permissions['create responsive_slide content'] = array(
-    'name' => 'create responsive_slide content',
+  // Exported permission: administer flexslider.
+  $permissions['administer flexslider'] = array(
+    'name' => 'administer flexslider',
     'roles' => array(
-      'content author' => 'content author',
+      'administrator' => 'administrator',
     ),
-    'module' => 'node',
+    'module' => 'flexslider',
   );
 
-  // Exported permission: delete any responsive_slide content.
-  $permissions['delete any responsive_slide content'] = array(
-    'name' => 'delete any responsive_slide content',
+  // Exported permission: administer mailchimp.
+  $permissions['administer mailchimp'] = array(
+    'name' => 'administer mailchimp',
     'roles' => array(
-      'content author' => 'content author',
+      'administrator' => 'administrator',
     ),
-    'module' => 'node',
+    'module' => 'mailchimp',
   );
 
-  // Exported permission: delete own responsive_slide content.
-  $permissions['delete own responsive_slide content'] = array(
-    'name' => 'delete own responsive_slide content',
+  // Exported permission: administer mailchimp campaigns.
+  $permissions['administer mailchimp campaigns'] = array(
+    'name' => 'administer mailchimp campaigns',
     'roles' => array(
-      'content author' => 'content author',
+      'administrator' => 'administrator',
     ),
-    'module' => 'node',
-  );
-
-  // Exported permission: edit any responsive_slide content.
-  $permissions['edit any responsive_slide content'] = array(
-    'name' => 'edit any responsive_slide content',
-    'roles' => array(
-      'content author' => 'content author',
-    ),
-    'module' => 'node',
-  );
-
-  // Exported permission: edit own responsive_slide content.
-  $permissions['edit own responsive_slide content'] = array(
-    'name' => 'edit own responsive_slide content',
-    'roles' => array(
-      'content author' => 'content author',
-    ),
-    'module' => 'node',
+    'module' => 'mailchimp_campaign',
   );
 
   return $permissions;

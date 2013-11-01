@@ -17,7 +17,7 @@ function feature_genera_wysiwyg_default_profiles() {
     'settings' => array(
       'default' => 1,
       'user_choose' => 0,
-      'show_toggle' => 1,
+      'show_toggle' => 0,
       'theme' => 'advanced',
       'language' => 'en',
       'buttons' => array(
@@ -53,6 +53,9 @@ function feature_genera_wysiwyg_default_profiles() {
         'paste' => array(
           'pasteword' => 1,
           'selectall' => 1,
+        ),
+        'table' => array(
+          'tablecontrols' => 1,
         ),
         'wordcount' => array(
           'wordcount' => 1,
