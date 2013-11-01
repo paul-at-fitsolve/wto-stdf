@@ -366,7 +366,10 @@ span.field-label { /* The inline field label used by the Fences module */
  */
 
 .region-bottom { /* Wrapper for any blocks placed in the page bottom region */
-    div.contextual-links-wrapper ul.contextual-links { position: relative; }
+    div.contextual-links-wrapper ul.contextual-links { 
+        position: relative;
+        top: -80px;
+    }
 }
 
 #block-views-front-carousel-block .views-field-body, #block-views-front-carousel-block .views-field-body-1 {
