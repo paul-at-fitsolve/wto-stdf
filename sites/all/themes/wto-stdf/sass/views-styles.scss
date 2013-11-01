@@ -106,11 +106,12 @@ li {
       background: url(../images/arrow.png) no-repeat right #d4dde5;
     }
     .form-autocomplete{
-      background-color:#D4DDE5;
-      color:#668FAF;
+      background-color: #D4DDE5;
+      color: #668FAF;
       border:0;
-      height:18px;
+      height:16px;
       padding:5px;
+      width: 280px;
     }
     .form-submit {
       height: 28px;
@@ -183,17 +184,22 @@ html.js input.throbbing {
   background-position: 100% -12px; /* LTR */
 }
 
-#edit-reset {
+.views-exposed-widget.views-submit-button,
+.views-exposed-widget.views-reset-button  { 
+  float: right;
+  padding: 0.5em 0;
+}
+
+#edit-reset, #edit-submit-projects {
   background:url(../images/cancel.png) no-repeat left center #EBEBEB;
 }
 
 #edit-submit-projects {
-  background:url(../images/submit.png) no-repeat left center #EBEBEB;
+  background-imge:url(../images/submit.png);
 }
 
 #edit-field-sector-value-wrapper {
-  left: 7px;
-  position: relative;
+  clear: left;
 }
 
 .view-nodequeue-upcoming-events {
