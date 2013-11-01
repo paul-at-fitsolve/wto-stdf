@@ -82,30 +82,25 @@ a.button { /* Buttons used by contrib modules like Media */
  */
 
 #block-search-form { /* Wrapper for the search form */
-float:right;
-}
-
-#block-search-form { /* Wrapper for the search form */
-float:right;
-
+    float: right;
 	.form-item, .form-actions
 	{
-		display: block; 
-		float: left; 
-		margin: 0;
-	}
-	
-	.form-type-textfield {
-		margin: 0 0.5em 0;
+            display: block; 
+            float: left; 
+            margin: 0;
 	}
 	
 	.form-text.form-autocomplete {
-		background-color: rgba(255, 255, 255, 0.5);
-		border: 1px solid #1f4e74;
-		background-position: 96% 6px;
-		min-height: 1.45em;
-	}
-	
+            background-color: rgba(255, 255, 255, 0.5);
+            border: 1px solid #1f4e74;
+            background-position: 96% 6px;
+            min-height: 1.45em;
+            width: 0;
+            padding: 1px 0;
+         }
+        .form-submit {
+            border-bottom: 1px solid #1f4e74;
+        }         
 }
 
 /*

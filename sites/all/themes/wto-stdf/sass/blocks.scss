@@ -144,14 +144,14 @@
       -moz-opacity: 0.73;
       -khtml-opacity: 0.73;
       opacity: 0.73;
-        &.active  {
+        &.active, &:hover {
           -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
           filter: alpha(opacity=100);
           -moz-opacity: 1;
           -khtml-opacity: 1;
           opacity: 1;
-          font-weight: 700;
-        }         
+        }
+        &.active { font-weight: 700; }
     }
   } 
 }

@@ -56,13 +56,10 @@ body {
 #header {
   position:absolute;
   z-index:100;
-  top:15px;
-  left:0;
   height: 151px;
   #block-search-form,
   #block-locale-language  {
     float:right;
-    clear:both;
     margin-bottom:0;
 	padding:0 0.3em 0 0;
     ul  {
@@ -132,23 +129,14 @@ body {
   font-size: 1em;
 }
 
-.region-header { /* Wrapper for any blocks placed in the header region */
-  float:right;
-  margin: 2em 0 0;
-}
-
 /*
  * Main (container for everything else)
  */
 
 .not-front  {
   #main {
-    position:relative;
-  }
-  
-  .region-header {
-	float: right; 
-	margin: 2em 0 0 0;
+    position: relative;
+    clear: both;
   }
   
   #inner-content { padding: 20px 0 0 0;}

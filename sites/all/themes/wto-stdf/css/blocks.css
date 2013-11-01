@@ -198,12 +198,15 @@
   opacity: 0.73;
 }
 /* line 147, ../sass/blocks.scss */
-#block-locale-language li a.language-link.active {
+#block-locale-language li a.language-link.active, #block-locale-language li a.language-link:hover {
   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
   filter: alpha(opacity=100);
   -moz-opacity: 1;
   -khtml-opacity: 1;
   opacity: 1;
+}
+/* line 154, ../sass/blocks.scss */
+#block-locale-language li a.language-link.active {
   font-weight: 700;
 }
 
