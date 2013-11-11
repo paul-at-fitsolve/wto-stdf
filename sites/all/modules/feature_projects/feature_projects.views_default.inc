@@ -310,33 +310,36 @@ function feature_projects_views_default_views() {
   $handler->display->display_options['exposed_form']['options']['reset_button'] = TRUE;
   $handler->display->display_options['exposed_form']['options']['reset_button_label'] = 'Remove filters';
   $handler->display->display_options['pager']['type'] = 'full';
-  $handler->display->display_options['pager']['options']['items_per_page'] = '25';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '6';
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['pager']['options']['id'] = '0';
-  $handler->display->display_options['pager']['options']['quantity'] = '9';
+  $handler->display->display_options['pager']['options']['quantity'] = '3';
+  $handler->display->display_options['pager']['options']['tags']['first'] = '<<';
+  $handler->display->display_options['pager']['options']['tags']['previous'] = '<';
+  $handler->display->display_options['pager']['options']['tags']['next'] = '>';
+  $handler->display->display_options['pager']['options']['tags']['last'] = '>>';
   $handler->display->display_options['style_plugin'] = 'table';
   $handler->display->display_options['style_options']['columns'] = array(
-    'field_reference_number' => 'view_node',
     'view_node' => 'view_node',
+    'field_reference_number' => 'field_reference_number',
     'title' => 'title',
+    'title_1' => 'title_1',
     'field_region' => 'field_region',
     'field_sector' => 'field_sector',
     'field_start_date' => 'field_start_date',
     'field_status' => 'field_status',
     'field_budget_total_project_value' => 'field_budget_total_project_value',
-    'field_beneficiaries' => 'field_beneficiaries',
-    'field_beneficiary_text' => 'field_beneficiary_text',
   );
   $handler->display->display_options['style_options']['default'] = '-1';
   $handler->display->display_options['style_options']['info'] = array(
+    'view_node' => array(
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 1,
+    ),
     'field_reference_number' => array(
       'sortable' => 1,
       'default_sort_order' => 'asc',
-      'align' => '',
-      'separator' => '',
-      'empty_column' => 0,
-    ),
-    'view_node' => array(
       'align' => '',
       'separator' => '',
       'empty_column' => 0,
@@ -348,68 +351,68 @@ function feature_projects_views_default_views() {
       'separator' => '',
       'empty_column' => 0,
     ),
-    'field_region' => array(
+    'title_1' => array(
       'sortable' => 1,
       'default_sort_order' => 'asc',
       'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'field_region' => array(
+      'sortable' => 1,
+      'default_sort_order' => 'asc',
+      'align' => 'views-align-center',
       'separator' => '',
       'empty_column' => 0,
     ),
     'field_sector' => array(
       'sortable' => 1,
       'default_sort_order' => 'asc',
-      'align' => '',
+      'align' => 'views-align-center',
       'separator' => '',
       'empty_column' => 0,
     ),
     'field_start_date' => array(
       'sortable' => 1,
       'default_sort_order' => 'asc',
-      'align' => '',
+      'align' => 'views-align-center',
       'separator' => '',
       'empty_column' => 0,
     ),
     'field_status' => array(
       'sortable' => 1,
       'default_sort_order' => 'asc',
-      'align' => '',
+      'align' => 'views-align-center',
       'separator' => '',
       'empty_column' => 0,
     ),
     'field_budget_total_project_value' => array(
       'sortable' => 1,
       'default_sort_order' => 'asc',
-      'align' => '',
+      'align' => 'views-align-center',
       'separator' => '',
       'empty_column' => 0,
     ),
-    'field_beneficiaries' => array(
-      'align' => '',
-      'separator' => '',
-      'empty_column' => 1,
-    ),
-    'field_beneficiary_text' => array(
-      'align' => '',
-      'separator' => '',
-      'empty_column' => 1,
-    ),
   );
-  $handler->display->display_options['style_options']['sticky'] = TRUE;
-  /* Field: Content: Reference Number */
-  $handler->display->display_options['fields']['field_reference_number']['id'] = 'field_reference_number';
-  $handler->display->display_options['fields']['field_reference_number']['table'] = 'field_data_field_reference_number';
-  $handler->display->display_options['fields']['field_reference_number']['field'] = 'field_reference_number';
-  $handler->display->display_options['fields']['field_reference_number']['label'] = 'Ref. #';
-  $handler->display->display_options['fields']['field_reference_number']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['field_reference_number']['element_label_colon'] = FALSE;
+  /* Relationship: Entity Reference: Referenced Entity */
+  $handler->display->display_options['relationships']['field_beneficiaries_target_id']['id'] = 'field_beneficiaries_target_id';
+  $handler->display->display_options['relationships']['field_beneficiaries_target_id']['table'] = 'field_data_field_beneficiaries';
+  $handler->display->display_options['relationships']['field_beneficiaries_target_id']['field'] = 'field_beneficiaries_target_id';
+  $handler->display->display_options['relationships']['field_beneficiaries_target_id']['label'] = 'Beneficiaries';
   /* Field: Content: Link */
   $handler->display->display_options['fields']['view_node']['id'] = 'view_node';
   $handler->display->display_options['fields']['view_node']['table'] = 'views_entity_node';
   $handler->display->display_options['fields']['view_node']['field'] = 'view_node';
-  $handler->display->display_options['fields']['view_node']['label'] = 'Ref #';
+  $handler->display->display_options['fields']['view_node']['label'] = 'Ref';
+  $handler->display->display_options['fields']['view_node']['exclude'] = TRUE;
   $handler->display->display_options['fields']['view_node']['alter']['alter_text'] = TRUE;
   $handler->display->display_options['fields']['view_node']['alter']['text'] = '[field_reference_number]';
   $handler->display->display_options['fields']['view_node']['alter']['make_link'] = TRUE;
+  /* Field: Content: Reference Number */
+  $handler->display->display_options['fields']['field_reference_number']['id'] = 'field_reference_number';
+  $handler->display->display_options['fields']['field_reference_number']['table'] = 'field_data_field_reference_number';
+  $handler->display->display_options['fields']['field_reference_number']['field'] = 'field_reference_number';
+  $handler->display->display_options['fields']['field_reference_number']['label'] = 'Ref #';
   /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
@@ -418,6 +421,14 @@ function feature_projects_views_default_views() {
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['title']['link_to_node'] = FALSE;
+  /* Field: Content: Title */
+  $handler->display->display_options['fields']['title_1']['id'] = 'title_1';
+  $handler->display->display_options['fields']['title_1']['table'] = 'node';
+  $handler->display->display_options['fields']['title_1']['field'] = 'title';
+  $handler->display->display_options['fields']['title_1']['relationship'] = 'field_beneficiaries_target_id';
+  $handler->display->display_options['fields']['title_1']['label'] = 'Beneficiaries';
+  $handler->display->display_options['fields']['title_1']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['title_1']['link_to_node'] = FALSE;
   /* Field: Content: Region */
   $handler->display->display_options['fields']['field_region']['id'] = 'field_region';
   $handler->display->display_options['fields']['field_region']['table'] = 'field_data_field_region';
@@ -428,20 +439,11 @@ function feature_projects_views_default_views() {
   $handler->display->display_options['fields']['field_sector']['table'] = 'field_data_field_sector';
   $handler->display->display_options['fields']['field_sector']['field'] = 'field_sector';
   $handler->display->display_options['fields']['field_sector']['element_label_colon'] = FALSE;
-  /* Field: Content: Beneficiary Text */
-  $handler->display->display_options['fields']['field_beneficiary_text']['id'] = 'field_beneficiary_text';
-  $handler->display->display_options['fields']['field_beneficiary_text']['table'] = 'field_data_field_beneficiary_text';
-  $handler->display->display_options['fields']['field_beneficiary_text']['field'] = 'field_beneficiary_text';
-  $handler->display->display_options['fields']['field_beneficiary_text']['label'] = 'Beneficiaries';
-  $handler->display->display_options['fields']['field_beneficiary_text']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_beneficiary_text']['hide_empty'] = TRUE;
-  $handler->display->display_options['fields']['field_beneficiary_text']['hide_alter_empty'] = FALSE;
-  $handler->display->display_options['fields']['field_beneficiary_text']['type'] = 'taxonomy_term_reference_plain';
-  $handler->display->display_options['fields']['field_beneficiary_text']['delta_offset'] = '0';
   /* Field: Content: Start Date */
   $handler->display->display_options['fields']['field_start_date']['id'] = 'field_start_date';
   $handler->display->display_options['fields']['field_start_date']['table'] = 'field_data_field_start_date';
   $handler->display->display_options['fields']['field_start_date']['field'] = 'field_start_date';
+  $handler->display->display_options['fields']['field_start_date']['label'] = 'Date';
   $handler->display->display_options['fields']['field_start_date']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_start_date']['settings'] = array(
     'format_type' => 'short',
@@ -511,6 +513,158 @@ function feature_projects_views_default_views() {
   $handler->display->display_options['filters']['field_region_value']['exposed'] = TRUE;
   $handler->display->display_options['filters']['field_region_value']['expose']['operator_id'] = 'field_region_value_op';
   $handler->display->display_options['filters']['field_region_value']['expose']['label'] = 'Region';
+  $handler->display->display_options['filters']['field_region_value']['expose']['description'] = 'Select one or more regions to filter by.';
+  $handler->display->display_options['filters']['field_region_value']['expose']['operator'] = 'field_region_value_op';
+  $handler->display->display_options['filters']['field_region_value']['expose']['identifier'] = 'field_region_value';
+  $handler->display->display_options['filters']['field_region_value']['expose']['multiple'] = TRUE;
+  $handler->display->display_options['filters']['field_region_value']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    3 => 0,
+    4 => 0,
+    5 => 0,
+    6 => 0,
+  );
+  $handler->display->display_options['filters']['field_region_value']['expose']['reduce'] = TRUE;
+  /* Filter criterion: Content: Status (field_status) */
+  $handler->display->display_options['filters']['field_status_value_1']['id'] = 'field_status_value_1';
+  $handler->display->display_options['filters']['field_status_value_1']['table'] = 'field_data_field_status';
+  $handler->display->display_options['filters']['field_status_value_1']['field'] = 'field_status_value';
+  $handler->display->display_options['filters']['field_status_value_1']['value'] = array(
+    'all' => 'all',
+    'Awaiting' => 'Awaiting',
+    'Completed' => 'Completed',
+    'On-going' => 'On-going',
+  );
+  $handler->display->display_options['filters']['field_status_value_1']['group'] = 1;
+  $handler->display->display_options['filters']['field_status_value_1']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_status_value_1']['expose']['operator_id'] = 'field_status_value_1_op';
+  $handler->display->display_options['filters']['field_status_value_1']['expose']['label'] = 'Status';
+  $handler->display->display_options['filters']['field_status_value_1']['expose']['description'] = 'FIlter by one or more project status types.';
+  $handler->display->display_options['filters']['field_status_value_1']['expose']['operator'] = 'field_status_value_1_op';
+  $handler->display->display_options['filters']['field_status_value_1']['expose']['identifier'] = 'field_status_value_1';
+  $handler->display->display_options['filters']['field_status_value_1']['expose']['remember'] = TRUE;
+  $handler->display->display_options['filters']['field_status_value_1']['expose']['multiple'] = TRUE;
+  $handler->display->display_options['filters']['field_status_value_1']['expose']['remember_roles'] = array(
+    2 => 0,
+    4 => '4',
+    1 => 0,
+    3 => 0,
+  );
+  $handler->display->display_options['filters']['field_status_value_1']['expose']['reduce'] = TRUE;
+  /* Filter criterion: Content: Sector (field_sector) */
+  $handler->display->display_options['filters']['field_sector_value']['id'] = 'field_sector_value';
+  $handler->display->display_options['filters']['field_sector_value']['table'] = 'field_data_field_sector';
+  $handler->display->display_options['filters']['field_sector_value']['field'] = 'field_sector_value';
+  $handler->display->display_options['filters']['field_sector_value']['value'] = array(
+    'all' => 'all',
+    'Animal Health' => 'Animal Health',
+    'Food Safety' => 'Food Safety',
+    'General SPS' => 'General SPS',
+    'Plant Health' => 'Plant Health',
+  );
+  $handler->display->display_options['filters']['field_sector_value']['group'] = 1;
+  $handler->display->display_options['filters']['field_sector_value']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_sector_value']['expose']['operator_id'] = 'field_sector_value_op';
+  $handler->display->display_options['filters']['field_sector_value']['expose']['label'] = 'Sector';
+  $handler->display->display_options['filters']['field_sector_value']['expose']['description'] = 'Filter by one or more project sectors.';
+  $handler->display->display_options['filters']['field_sector_value']['expose']['operator'] = 'field_sector_value_op';
+  $handler->display->display_options['filters']['field_sector_value']['expose']['identifier'] = 'field_sector_value';
+  $handler->display->display_options['filters']['field_sector_value']['expose']['remember'] = TRUE;
+  $handler->display->display_options['filters']['field_sector_value']['expose']['multiple'] = TRUE;
+  $handler->display->display_options['filters']['field_sector_value']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    3 => 0,
+    4 => 0,
+    5 => 0,
+    6 => 0,
+  );
+  $handler->display->display_options['filters']['field_sector_value']['expose']['reduce'] = TRUE;
+  /* Filter criterion: Content: Status (field_status) */
+  $handler->display->display_options['filters']['field_status_value']['id'] = 'field_status_value';
+  $handler->display->display_options['filters']['field_status_value']['table'] = 'field_data_field_status';
+  $handler->display->display_options['filters']['field_status_value']['field'] = 'field_status_value';
+  $handler->display->display_options['filters']['field_status_value']['operator'] = 'not';
+  $handler->display->display_options['filters']['field_status_value']['value'] = array(
+    'Revoked' => 'Revoked',
+  );
+  /* Filter criterion: Content: Title */
+  $handler->display->display_options['filters']['title']['id'] = 'title';
+  $handler->display->display_options['filters']['title']['table'] = 'node';
+  $handler->display->display_options['filters']['title']['field'] = 'title';
+  $handler->display->display_options['filters']['title']['relationship'] = 'field_beneficiaries_target_id';
+  $handler->display->display_options['filters']['title']['operator'] = 'contains';
+  $handler->display->display_options['filters']['title']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['title']['expose']['operator_id'] = 'title_op';
+  $handler->display->display_options['filters']['title']['expose']['label'] = 'Beneficiaries';
+  $handler->display->display_options['filters']['title']['expose']['description'] = 'Filter by one or more beneficiaries.';
+  $handler->display->display_options['filters']['title']['expose']['operator'] = 'title_op';
+  $handler->display->display_options['filters']['title']['expose']['identifier'] = 'title';
+  $handler->display->display_options['filters']['title']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    3 => 0,
+    4 => 0,
+  );
+  $handler->display->display_options['filters']['title']['expose']['autocomplete_filter'] = 1;
+  $handler->display->display_options['filters']['title']['expose']['autocomplete_items'] = '10';
+  $handler->display->display_options['filters']['title']['expose']['autocomplete_field'] = 'title_1';
+  $handler->display->display_options['filters']['title']['expose']['autocomplete_raw_suggestion'] = 1;
+  $handler->display->display_options['filters']['title']['expose']['autocomplete_raw_dropdown'] = 1;
+  $handler->display->display_options['filters']['title']['expose']['autocomplete_dependent'] = 0;
+  /* Filter criterion: Content: Language */
+  $handler->display->display_options['filters']['language']['id'] = 'language';
+  $handler->display->display_options['filters']['language']['table'] = 'node';
+  $handler->display->display_options['filters']['language']['field'] = 'language';
+  $handler->display->display_options['filters']['language']['value'] = array(
+    '***CURRENT_LANGUAGE***' => '***CURRENT_LANGUAGE***',
+  );
+
+  /* Display: Project Grants */
+  $handler = $view->new_display('page', 'Project Grants', 'page');
+  $handler->display->display_options['display_description'] = 'This page holds the view of project grants.';
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'project' => 'project',
+  );
+  $handler->display->display_options['filters']['type']['group'] = 1;
+  /* Filter criterion: Content: Project Type (field_type) */
+  $handler->display->display_options['filters']['field_type_value']['id'] = 'field_type_value';
+  $handler->display->display_options['filters']['field_type_value']['table'] = 'field_data_field_type';
+  $handler->display->display_options['filters']['field_type_value']['field'] = 'field_type_value';
+  $handler->display->display_options['filters']['field_type_value']['value'] = array(
+    'Project' => 'Project',
+  );
+  $handler->display->display_options['filters']['field_type_value']['group'] = 1;
+  /* Filter criterion: Content: Region (field_region) */
+  $handler->display->display_options['filters']['field_region_value']['id'] = 'field_region_value';
+  $handler->display->display_options['filters']['field_region_value']['table'] = 'field_data_field_region';
+  $handler->display->display_options['filters']['field_region_value']['field'] = 'field_region_value';
+  $handler->display->display_options['filters']['field_region_value']['value'] = array(
+    'all' => 'all',
+    '002' => '002',
+    142 => '142',
+    'Global' => 'Global',
+    'LAC' => 'LAC',
+    'Other' => 'Other',
+  );
+  $handler->display->display_options['filters']['field_region_value']['group'] = 1;
+  $handler->display->display_options['filters']['field_region_value']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_region_value']['expose']['operator_id'] = 'field_region_value_op';
+  $handler->display->display_options['filters']['field_region_value']['expose']['label'] = 'Region';
   $handler->display->display_options['filters']['field_region_value']['expose']['operator'] = 'field_region_value_op';
   $handler->display->display_options['filters']['field_region_value']['expose']['identifier'] = 'field_region_value';
   $handler->display->display_options['filters']['field_region_value']['expose']['remember'] = TRUE;
@@ -542,8 +696,8 @@ function feature_projects_views_default_views() {
   $handler->display->display_options['filters']['field_status_value_1']['expose']['remember_roles'] = array(
     2 => '2',
     1 => '1',
+    4 => '4',
     3 => 0,
-    4 => 0,
     5 => 0,
   );
   $handler->display->display_options['filters']['field_status_value_1']['expose']['reduce'] = TRUE;
@@ -573,6 +727,33 @@ function feature_projects_views_default_views() {
     5 => 0,
   );
   $handler->display->display_options['filters']['field_sector_value']['expose']['reduce'] = TRUE;
+  /* Filter criterion: Content: Title */
+  $handler->display->display_options['filters']['title']['id'] = 'title';
+  $handler->display->display_options['filters']['title']['table'] = 'node';
+  $handler->display->display_options['filters']['title']['field'] = 'title';
+  $handler->display->display_options['filters']['title']['relationship'] = 'field_beneficiaries_target_id';
+  $handler->display->display_options['filters']['title']['operator'] = 'contains';
+  $handler->display->display_options['filters']['title']['group'] = 1;
+  $handler->display->display_options['filters']['title']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['title']['expose']['operator_id'] = 'title_op';
+  $handler->display->display_options['filters']['title']['expose']['label'] = 'Beneficiaries';
+  $handler->display->display_options['filters']['title']['expose']['description'] = 'Start typing the beneficiary\'s name for suggestions.';
+  $handler->display->display_options['filters']['title']['expose']['operator'] = 'title_op';
+  $handler->display->display_options['filters']['title']['expose']['identifier'] = 'title';
+  $handler->display->display_options['filters']['title']['expose']['remember'] = TRUE;
+  $handler->display->display_options['filters']['title']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => '1',
+    3 => 0,
+    4 => 0,
+    5 => 0,
+  );
+  $handler->display->display_options['filters']['title']['expose']['autocomplete_filter'] = 1;
+  $handler->display->display_options['filters']['title']['expose']['autocomplete_items'] = '10';
+  $handler->display->display_options['filters']['title']['expose']['autocomplete_field'] = 'title_1';
+  $handler->display->display_options['filters']['title']['expose']['autocomplete_raw_suggestion'] = 1;
+  $handler->display->display_options['filters']['title']['expose']['autocomplete_raw_dropdown'] = 1;
+  $handler->display->display_options['filters']['title']['expose']['autocomplete_dependent'] = 0;
   /* Filter criterion: Content: Status (field_status) */
   $handler->display->display_options['filters']['field_status_value']['id'] = 'field_status_value';
   $handler->display->display_options['filters']['field_status_value']['table'] = 'field_data_field_status';
@@ -581,6 +762,7 @@ function feature_projects_views_default_views() {
   $handler->display->display_options['filters']['field_status_value']['value'] = array(
     'Revoked' => 'Revoked',
   );
+  $handler->display->display_options['filters']['field_status_value']['group'] = 1;
   /* Filter criterion: Content: Language */
   $handler->display->display_options['filters']['language']['id'] = 'language';
   $handler->display->display_options['filters']['language']['table'] = 'node';
@@ -588,30 +770,7 @@ function feature_projects_views_default_views() {
   $handler->display->display_options['filters']['language']['value'] = array(
     '***CURRENT_LANGUAGE***' => '***CURRENT_LANGUAGE***',
   );
-  /* Filter criterion: Content: Beneficiary Text (field_beneficiary_text) */
-  $handler->display->display_options['filters']['field_beneficiary_text_tid']['id'] = 'field_beneficiary_text_tid';
-  $handler->display->display_options['filters']['field_beneficiary_text_tid']['table'] = 'field_data_field_beneficiary_text';
-  $handler->display->display_options['filters']['field_beneficiary_text_tid']['field'] = 'field_beneficiary_text_tid';
-  $handler->display->display_options['filters']['field_beneficiary_text_tid']['value'] = '';
-  $handler->display->display_options['filters']['field_beneficiary_text_tid']['exposed'] = TRUE;
-  $handler->display->display_options['filters']['field_beneficiary_text_tid']['expose']['operator_id'] = 'field_beneficiary_text_tid_op';
-  $handler->display->display_options['filters']['field_beneficiary_text_tid']['expose']['label'] = 'Beneficiaries';
-  $handler->display->display_options['filters']['field_beneficiary_text_tid']['expose']['description'] = 'Start typing the beneficiary name to see suggestions.';
-  $handler->display->display_options['filters']['field_beneficiary_text_tid']['expose']['operator'] = 'field_beneficiary_text_tid_op';
-  $handler->display->display_options['filters']['field_beneficiary_text_tid']['expose']['identifier'] = 'field_beneficiary_text_tid';
-  $handler->display->display_options['filters']['field_beneficiary_text_tid']['expose']['remember_roles'] = array(
-    2 => '2',
-    1 => 0,
-    3 => 0,
-    4 => 0,
-    5 => 0,
-  );
-  $handler->display->display_options['filters']['field_beneficiary_text_tid']['vocabulary'] = 'beneficiaries';
-  $handler->display->display_options['filters']['field_beneficiary_text_tid']['error_message'] = FALSE;
-
-  /* Display: Project Grants */
-  $handler = $view->new_display('page', 'Project Grants', 'page');
-  $handler->display->display_options['display_description'] = 'This page holds the view of project grants.';
+  $handler->display->display_options['filters']['language']['group'] = 1;
   $handler->display->display_options['merge_rows'] = TRUE;
   $handler->display->display_options['field_config'] = array(
     'title' => array(
@@ -660,6 +819,276 @@ function feature_projects_views_default_views() {
     ),
   );
   $handler->display->display_options['path'] = 'projectgrants';
+  $handler->display->display_options['menu']['title'] = 'Projects';
+  $handler->display->display_options['menu']['description'] = 'Details of our projects.';
+  $handler->display->display_options['menu']['weight'] = '0';
+  $handler->display->display_options['menu']['name'] = 'main-menu';
+  $handler->display->display_options['menu']['context'] = 0;
+  $handler->display->display_options['menu']['context_only_inline'] = 0;
+
+  /* Display: Project Preparation Grants */
+  $handler = $view->new_display('page', 'Project Preparation Grants', 'page_1');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = 'Project Preparation Grants';
+  $handler->display->display_options['display_description'] = 'This page holds the view of project preparation grants.';
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Content: Reference Number */
+  $handler->display->display_options['fields']['field_reference_number']['id'] = 'field_reference_number';
+  $handler->display->display_options['fields']['field_reference_number']['table'] = 'field_data_field_reference_number';
+  $handler->display->display_options['fields']['field_reference_number']['field'] = 'field_reference_number';
+  $handler->display->display_options['fields']['field_reference_number']['label'] = 'Ref. #';
+  $handler->display->display_options['fields']['field_reference_number']['element_label_colon'] = FALSE;
+  /* Field: Content: Title */
+  $handler->display->display_options['fields']['title']['id'] = 'title';
+  $handler->display->display_options['fields']['title']['table'] = 'node';
+  $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
+  $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+  $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
+  /* Field: Content: Title */
+  $handler->display->display_options['fields']['title_1']['id'] = 'title_1';
+  $handler->display->display_options['fields']['title_1']['table'] = 'node';
+  $handler->display->display_options['fields']['title_1']['field'] = 'title';
+  $handler->display->display_options['fields']['title_1']['relationship'] = 'field_beneficiaries_target_id';
+  $handler->display->display_options['fields']['title_1']['label'] = 'Beneficiaries';
+  $handler->display->display_options['fields']['title_1']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['title_1']['link_to_node'] = FALSE;
+  /* Field: Content: Region */
+  $handler->display->display_options['fields']['field_region']['id'] = 'field_region';
+  $handler->display->display_options['fields']['field_region']['table'] = 'field_data_field_region';
+  $handler->display->display_options['fields']['field_region']['field'] = 'field_region';
+  $handler->display->display_options['fields']['field_region']['element_label_colon'] = FALSE;
+  /* Field: Content: Sector */
+  $handler->display->display_options['fields']['field_sector']['id'] = 'field_sector';
+  $handler->display->display_options['fields']['field_sector']['table'] = 'field_data_field_sector';
+  $handler->display->display_options['fields']['field_sector']['field'] = 'field_sector';
+  $handler->display->display_options['fields']['field_sector']['element_label_colon'] = FALSE;
+  /* Field: Content: Start Date */
+  $handler->display->display_options['fields']['field_start_date']['id'] = 'field_start_date';
+  $handler->display->display_options['fields']['field_start_date']['table'] = 'field_data_field_start_date';
+  $handler->display->display_options['fields']['field_start_date']['field'] = 'field_start_date';
+  $handler->display->display_options['fields']['field_start_date']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_start_date']['settings'] = array(
+    'format_type' => 'short',
+    'fromto' => 'value',
+    'multiple_number' => '',
+    'multiple_from' => '',
+    'multiple_to' => '',
+  );
+  /* Field: Content: Status */
+  $handler->display->display_options['fields']['field_status']['id'] = 'field_status';
+  $handler->display->display_options['fields']['field_status']['table'] = 'field_data_field_status';
+  $handler->display->display_options['fields']['field_status']['field'] = 'field_status';
+  $handler->display->display_options['fields']['field_status']['element_label_colon'] = FALSE;
+  /* Field: Content: Budget - Total Project Value */
+  $handler->display->display_options['fields']['field_budget_total_project_value']['id'] = 'field_budget_total_project_value';
+  $handler->display->display_options['fields']['field_budget_total_project_value']['table'] = 'field_data_field_budget_total_project_value';
+  $handler->display->display_options['fields']['field_budget_total_project_value']['field'] = 'field_budget_total_project_value';
+  $handler->display->display_options['fields']['field_budget_total_project_value']['label'] = 'Budget (US$)';
+  $handler->display->display_options['fields']['field_budget_total_project_value']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_budget_total_project_value']['settings'] = array(
+    'thousand_separator' => ' ',
+    'decimal_separator' => '.',
+    'scale' => '2',
+    'prefix_suffix' => 1,
+  );
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'project' => 'project',
+  );
+  $handler->display->display_options['filters']['type']['group'] = 1;
+  /* Filter criterion: Content: Project Type (field_type) */
+  $handler->display->display_options['filters']['field_type_value']['id'] = 'field_type_value';
+  $handler->display->display_options['filters']['field_type_value']['table'] = 'field_data_field_type';
+  $handler->display->display_options['filters']['field_type_value']['field'] = 'field_type_value';
+  $handler->display->display_options['filters']['field_type_value']['value'] = array(
+    'PPG' => 'PPG',
+  );
+  $handler->display->display_options['filters']['field_type_value']['group'] = 1;
+  /* Filter criterion: Content: Region (field_region) */
+  $handler->display->display_options['filters']['field_region_value']['id'] = 'field_region_value';
+  $handler->display->display_options['filters']['field_region_value']['table'] = 'field_data_field_region';
+  $handler->display->display_options['filters']['field_region_value']['field'] = 'field_region_value';
+  $handler->display->display_options['filters']['field_region_value']['value'] = array(
+    'all' => 'all',
+    '002' => '002',
+    142 => '142',
+    'Global' => 'Global',
+    'LAC' => 'LAC',
+    'Other' => 'Other',
+  );
+  $handler->display->display_options['filters']['field_region_value']['group'] = 1;
+  $handler->display->display_options['filters']['field_region_value']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_region_value']['expose']['operator_id'] = 'field_region_value_op';
+  $handler->display->display_options['filters']['field_region_value']['expose']['label'] = 'Region';
+  $handler->display->display_options['filters']['field_region_value']['expose']['operator'] = 'field_region_value_op';
+  $handler->display->display_options['filters']['field_region_value']['expose']['identifier'] = 'field_region_value';
+  $handler->display->display_options['filters']['field_region_value']['expose']['remember'] = TRUE;
+  $handler->display->display_options['filters']['field_region_value']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => '1',
+    3 => 0,
+    4 => 0,
+    5 => 0,
+  );
+  $handler->display->display_options['filters']['field_region_value']['expose']['reduce'] = TRUE;
+  /* Filter criterion: Content: Status (field_status) */
+  $handler->display->display_options['filters']['field_status_value_1']['id'] = 'field_status_value_1';
+  $handler->display->display_options['filters']['field_status_value_1']['table'] = 'field_data_field_status';
+  $handler->display->display_options['filters']['field_status_value_1']['field'] = 'field_status_value';
+  $handler->display->display_options['filters']['field_status_value_1']['value'] = array(
+    'all' => 'all',
+    'Awaiting' => 'Awaiting',
+    'Completed' => 'Completed',
+    'On-going' => 'On-going',
+  );
+  $handler->display->display_options['filters']['field_status_value_1']['group'] = 1;
+  $handler->display->display_options['filters']['field_status_value_1']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_status_value_1']['expose']['operator_id'] = 'field_status_value_1_op';
+  $handler->display->display_options['filters']['field_status_value_1']['expose']['label'] = 'Status';
+  $handler->display->display_options['filters']['field_status_value_1']['expose']['description'] = 'FIlter by one or more project status types.';
+  $handler->display->display_options['filters']['field_status_value_1']['expose']['operator'] = 'field_status_value_1_op';
+  $handler->display->display_options['filters']['field_status_value_1']['expose']['identifier'] = 'field_status_value_1';
+  $handler->display->display_options['filters']['field_status_value_1']['expose']['remember'] = TRUE;
+  $handler->display->display_options['filters']['field_status_value_1']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => '1',
+    4 => '4',
+    3 => 0,
+    5 => 0,
+  );
+  $handler->display->display_options['filters']['field_status_value_1']['expose']['reduce'] = TRUE;
+  /* Filter criterion: Content: Sector (field_sector) */
+  $handler->display->display_options['filters']['field_sector_value']['id'] = 'field_sector_value';
+  $handler->display->display_options['filters']['field_sector_value']['table'] = 'field_data_field_sector';
+  $handler->display->display_options['filters']['field_sector_value']['field'] = 'field_sector_value';
+  $handler->display->display_options['filters']['field_sector_value']['value'] = array(
+    'all' => 'all',
+    'Animal Health' => 'Animal Health',
+    'Food Safety' => 'Food Safety',
+    'General SPS' => 'General SPS',
+    'Plant Health' => 'Plant Health',
+  );
+  $handler->display->display_options['filters']['field_sector_value']['group'] = 1;
+  $handler->display->display_options['filters']['field_sector_value']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_sector_value']['expose']['operator_id'] = 'field_sector_value_op';
+  $handler->display->display_options['filters']['field_sector_value']['expose']['label'] = 'Sector';
+  $handler->display->display_options['filters']['field_sector_value']['expose']['description'] = 'Filter by one or more project sectors.';
+  $handler->display->display_options['filters']['field_sector_value']['expose']['operator'] = 'field_sector_value_op';
+  $handler->display->display_options['filters']['field_sector_value']['expose']['identifier'] = 'field_sector_value';
+  $handler->display->display_options['filters']['field_sector_value']['expose']['remember'] = TRUE;
+  $handler->display->display_options['filters']['field_sector_value']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => '1',
+    3 => 0,
+    4 => 0,
+    5 => 0,
+  );
+  $handler->display->display_options['filters']['field_sector_value']['expose']['reduce'] = TRUE;
+  /* Filter criterion: Content: Title */
+  $handler->display->display_options['filters']['title']['id'] = 'title';
+  $handler->display->display_options['filters']['title']['table'] = 'node';
+  $handler->display->display_options['filters']['title']['field'] = 'title';
+  $handler->display->display_options['filters']['title']['relationship'] = 'field_beneficiaries_target_id';
+  $handler->display->display_options['filters']['title']['operator'] = 'contains';
+  $handler->display->display_options['filters']['title']['group'] = 1;
+  $handler->display->display_options['filters']['title']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['title']['expose']['operator_id'] = 'title_op';
+  $handler->display->display_options['filters']['title']['expose']['label'] = 'Beneficiaries';
+  $handler->display->display_options['filters']['title']['expose']['description'] = 'Start typing the beneficiary\'s name for suggestions.';
+  $handler->display->display_options['filters']['title']['expose']['operator'] = 'title_op';
+  $handler->display->display_options['filters']['title']['expose']['identifier'] = 'title';
+  $handler->display->display_options['filters']['title']['expose']['remember'] = TRUE;
+  $handler->display->display_options['filters']['title']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => '1',
+    3 => 0,
+    4 => 0,
+    5 => 0,
+  );
+  $handler->display->display_options['filters']['title']['expose']['autocomplete_filter'] = 1;
+  $handler->display->display_options['filters']['title']['expose']['autocomplete_items'] = '10';
+  $handler->display->display_options['filters']['title']['expose']['autocomplete_field'] = 'title_1';
+  $handler->display->display_options['filters']['title']['expose']['autocomplete_raw_suggestion'] = 1;
+  $handler->display->display_options['filters']['title']['expose']['autocomplete_raw_dropdown'] = 1;
+  $handler->display->display_options['filters']['title']['expose']['autocomplete_dependent'] = 0;
+  /* Filter criterion: Content: Status (field_status) */
+  $handler->display->display_options['filters']['field_status_value']['id'] = 'field_status_value';
+  $handler->display->display_options['filters']['field_status_value']['table'] = 'field_data_field_status';
+  $handler->display->display_options['filters']['field_status_value']['field'] = 'field_status_value';
+  $handler->display->display_options['filters']['field_status_value']['operator'] = 'not';
+  $handler->display->display_options['filters']['field_status_value']['value'] = array(
+    'Revoked' => 'Revoked',
+  );
+  $handler->display->display_options['filters']['field_status_value']['group'] = 1;
+  /* Filter criterion: Content: Language */
+  $handler->display->display_options['filters']['language']['id'] = 'language';
+  $handler->display->display_options['filters']['language']['table'] = 'node';
+  $handler->display->display_options['filters']['language']['field'] = 'language';
+  $handler->display->display_options['filters']['language']['value'] = array(
+    '***CURRENT_LANGUAGE***' => '***CURRENT_LANGUAGE***',
+  );
+  $handler->display->display_options['filters']['language']['group'] = 1;
+  $handler->display->display_options['merge_rows'] = TRUE;
+  $handler->display->display_options['field_config'] = array(
+    'title' => array(
+      'merge_option' => 'filter',
+      'separator' => ', ',
+    ),
+    'field_reference_number' => array(
+      'merge_option' => 'merge_unique',
+      'separator' => ', ',
+    ),
+    'field_agenda' => array(
+      'merge_option' => 'merge_unique',
+      'separator' => ', ',
+    ),
+    'body' => array(
+      'merge_option' => 'merge_unique',
+      'separator' => ', ',
+    ),
+    'field_region' => array(
+      'merge_option' => 'merge_unique',
+      'separator' => ', ',
+    ),
+    'field_status' => array(
+      'merge_option' => 'merge_unique',
+      'separator' => ', ',
+    ),
+    'field_sector' => array(
+      'merge_option' => 'merge_unique',
+      'separator' => ', ',
+    ),
+    'field_start_date' => array(
+      'merge_option' => 'merge_unique',
+      'separator' => ', ',
+    ),
+    'field_illustration' => array(
+      'merge_option' => 'merge_unique',
+      'separator' => ', ',
+    ),
+    'field_status_1' => array(
+      'merge_option' => 'merge_unique',
+      'separator' => ', ',
+    ),
+    'title_1' => array(
+      'merge_option' => 'merge_unique',
+      'separator' => ', ',
+    ),
+  );
+  $handler->display->display_options['path'] = 'projectpreparationgrants';
   $handler->display->display_options['menu']['title'] = 'Projects';
   $handler->display->display_options['menu']['description'] = 'Details of our projects.';
   $handler->display->display_options['menu']['weight'] = '0';
@@ -872,6 +1301,152 @@ function feature_projects_views_default_views() {
   $handler->display->display_options['style_plugin'] = 'views_data_export_xls';
   $handler->display->display_options['style_options']['provide_file'] = 0;
   $handler->display->display_options['style_options']['parent_sort'] = 0;
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'project' => 'project',
+  );
+  $handler->display->display_options['filters']['type']['group'] = 1;
+  /* Filter criterion: Content: Project Type (field_type) */
+  $handler->display->display_options['filters']['field_type_value']['id'] = 'field_type_value';
+  $handler->display->display_options['filters']['field_type_value']['table'] = 'field_data_field_type';
+  $handler->display->display_options['filters']['field_type_value']['field'] = 'field_type_value';
+  $handler->display->display_options['filters']['field_type_value']['value'] = array(
+    'PPG' => 'PPG',
+  );
+  $handler->display->display_options['filters']['field_type_value']['group'] = 1;
+  /* Filter criterion: Content: Region (field_region) */
+  $handler->display->display_options['filters']['field_region_value']['id'] = 'field_region_value';
+  $handler->display->display_options['filters']['field_region_value']['table'] = 'field_data_field_region';
+  $handler->display->display_options['filters']['field_region_value']['field'] = 'field_region_value';
+  $handler->display->display_options['filters']['field_region_value']['value'] = array(
+    'all' => 'all',
+    '002' => '002',
+    142 => '142',
+    'Global' => 'Global',
+    'LAC' => 'LAC',
+    'Other' => 'Other',
+  );
+  $handler->display->display_options['filters']['field_region_value']['group'] = 1;
+  $handler->display->display_options['filters']['field_region_value']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_region_value']['expose']['operator_id'] = 'field_region_value_op';
+  $handler->display->display_options['filters']['field_region_value']['expose']['label'] = 'Region';
+  $handler->display->display_options['filters']['field_region_value']['expose']['description'] = 'Select one or more regions to filter by.';
+  $handler->display->display_options['filters']['field_region_value']['expose']['operator'] = 'field_region_value_op';
+  $handler->display->display_options['filters']['field_region_value']['expose']['identifier'] = 'field_region_value';
+  $handler->display->display_options['filters']['field_region_value']['expose']['remember'] = TRUE;
+  $handler->display->display_options['filters']['field_region_value']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => '1',
+    3 => 0,
+    4 => 0,
+    5 => 0,
+  );
+  $handler->display->display_options['filters']['field_region_value']['expose']['reduce'] = TRUE;
+  /* Filter criterion: Content: Status (field_status) */
+  $handler->display->display_options['filters']['field_status_value_1']['id'] = 'field_status_value_1';
+  $handler->display->display_options['filters']['field_status_value_1']['table'] = 'field_data_field_status';
+  $handler->display->display_options['filters']['field_status_value_1']['field'] = 'field_status_value';
+  $handler->display->display_options['filters']['field_status_value_1']['value'] = array(
+    'all' => 'all',
+    'Awaiting' => 'Awaiting',
+    'Completed' => 'Completed',
+    'On-going' => 'On-going',
+  );
+  $handler->display->display_options['filters']['field_status_value_1']['group'] = 1;
+  $handler->display->display_options['filters']['field_status_value_1']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_status_value_1']['expose']['operator_id'] = 'field_status_value_1_op';
+  $handler->display->display_options['filters']['field_status_value_1']['expose']['label'] = 'Status';
+  $handler->display->display_options['filters']['field_status_value_1']['expose']['description'] = 'FIlter by one or more project status types.';
+  $handler->display->display_options['filters']['field_status_value_1']['expose']['operator'] = 'field_status_value_1_op';
+  $handler->display->display_options['filters']['field_status_value_1']['expose']['identifier'] = 'field_status_value_1';
+  $handler->display->display_options['filters']['field_status_value_1']['expose']['remember'] = TRUE;
+  $handler->display->display_options['filters']['field_status_value_1']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => '1',
+    4 => '4',
+    3 => 0,
+    5 => 0,
+  );
+  $handler->display->display_options['filters']['field_status_value_1']['expose']['reduce'] = TRUE;
+  /* Filter criterion: Content: Sector (field_sector) */
+  $handler->display->display_options['filters']['field_sector_value']['id'] = 'field_sector_value';
+  $handler->display->display_options['filters']['field_sector_value']['table'] = 'field_data_field_sector';
+  $handler->display->display_options['filters']['field_sector_value']['field'] = 'field_sector_value';
+  $handler->display->display_options['filters']['field_sector_value']['value'] = array(
+    'all' => 'all',
+    'Animal Health' => 'Animal Health',
+    'Food Safety' => 'Food Safety',
+    'General SPS' => 'General SPS',
+    'Plant Health' => 'Plant Health',
+  );
+  $handler->display->display_options['filters']['field_sector_value']['group'] = 1;
+  $handler->display->display_options['filters']['field_sector_value']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_sector_value']['expose']['operator_id'] = 'field_sector_value_op';
+  $handler->display->display_options['filters']['field_sector_value']['expose']['label'] = 'Sector';
+  $handler->display->display_options['filters']['field_sector_value']['expose']['description'] = 'Filter by one or more project sectors.';
+  $handler->display->display_options['filters']['field_sector_value']['expose']['operator'] = 'field_sector_value_op';
+  $handler->display->display_options['filters']['field_sector_value']['expose']['identifier'] = 'field_sector_value';
+  $handler->display->display_options['filters']['field_sector_value']['expose']['remember'] = TRUE;
+  $handler->display->display_options['filters']['field_sector_value']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => '1',
+    3 => 0,
+    4 => 0,
+    5 => 0,
+  );
+  $handler->display->display_options['filters']['field_sector_value']['expose']['reduce'] = TRUE;
+  /* Filter criterion: Content: Status (field_status) */
+  $handler->display->display_options['filters']['field_status_value']['id'] = 'field_status_value';
+  $handler->display->display_options['filters']['field_status_value']['table'] = 'field_data_field_status';
+  $handler->display->display_options['filters']['field_status_value']['field'] = 'field_status_value';
+  $handler->display->display_options['filters']['field_status_value']['operator'] = 'not';
+  $handler->display->display_options['filters']['field_status_value']['value'] = array(
+    'Revoked' => 'Revoked',
+  );
+  /* Filter criterion: Content: Title */
+  $handler->display->display_options['filters']['title']['id'] = 'title';
+  $handler->display->display_options['filters']['title']['table'] = 'node';
+  $handler->display->display_options['filters']['title']['field'] = 'title';
+  $handler->display->display_options['filters']['title']['relationship'] = 'field_beneficiaries_target_id';
+  $handler->display->display_options['filters']['title']['operator'] = 'contains';
+  $handler->display->display_options['filters']['title']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['title']['expose']['operator_id'] = 'title_op';
+  $handler->display->display_options['filters']['title']['expose']['label'] = 'Beneficiaries';
+  $handler->display->display_options['filters']['title']['expose']['description'] = 'Filter by one or more beneficiaries.';
+  $handler->display->display_options['filters']['title']['expose']['operator'] = 'title_op';
+  $handler->display->display_options['filters']['title']['expose']['identifier'] = 'title';
+  $handler->display->display_options['filters']['title']['expose']['remember'] = TRUE;
+  $handler->display->display_options['filters']['title']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => '1',
+    3 => 0,
+    4 => 0,
+    5 => 0,
+  );
+  $handler->display->display_options['filters']['title']['expose']['autocomplete_items'] = '10';
+  $handler->display->display_options['filters']['title']['expose']['autocomplete_field'] = 'title_1';
+  $handler->display->display_options['filters']['title']['expose']['autocomplete_raw_suggestion'] = 1;
+  $handler->display->display_options['filters']['title']['expose']['autocomplete_raw_dropdown'] = 1;
+  $handler->display->display_options['filters']['title']['expose']['autocomplete_dependent'] = 0;
+  /* Filter criterion: Content: Language */
+  $handler->display->display_options['filters']['language']['id'] = 'language';
+  $handler->display->display_options['filters']['language']['table'] = 'node';
+  $handler->display->display_options['filters']['language']['field'] = 'language';
+  $handler->display->display_options['filters']['language']['value'] = array(
+    '***CURRENT_LANGUAGE***' => '***CURRENT_LANGUAGE***',
+  );
   $handler->display->display_options['merge_rows'] = TRUE;
   $handler->display->display_options['field_config'] = array(
     'field_reference_number' => array(
@@ -914,204 +1489,6 @@ function feature_projects_views_default_views() {
     'page' => 0,
   );
   $handler->display->display_options['sitename_title'] = 0;
-
-  /* Display: Project Preparation Grants */
-  $handler = $view->new_display('page', 'Project Preparation Grants', 'page_1');
-  $handler->display->display_options['defaults']['title'] = FALSE;
-  $handler->display->display_options['title'] = 'Project Preparation Grants';
-  $handler->display->display_options['display_description'] = 'This page holds the view of project grants.';
-  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
-  $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filter criterion: Content: Published */
-  $handler->display->display_options['filters']['status']['id'] = 'status';
-  $handler->display->display_options['filters']['status']['table'] = 'node';
-  $handler->display->display_options['filters']['status']['field'] = 'status';
-  $handler->display->display_options['filters']['status']['value'] = 1;
-  $handler->display->display_options['filters']['status']['group'] = 1;
-  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  /* Filter criterion: Content: Type */
-  $handler->display->display_options['filters']['type']['id'] = 'type';
-  $handler->display->display_options['filters']['type']['table'] = 'node';
-  $handler->display->display_options['filters']['type']['field'] = 'type';
-  $handler->display->display_options['filters']['type']['value'] = array(
-    'project' => 'project',
-  );
-  $handler->display->display_options['filters']['type']['group'] = 1;
-  /* Filter criterion: Content: Project Type (field_type) */
-  $handler->display->display_options['filters']['field_type_value']['id'] = 'field_type_value';
-  $handler->display->display_options['filters']['field_type_value']['table'] = 'field_data_field_type';
-  $handler->display->display_options['filters']['field_type_value']['field'] = 'field_type_value';
-  $handler->display->display_options['filters']['field_type_value']['value'] = array(
-    'PPG' => 'PPG',
-  );
-  $handler->display->display_options['filters']['field_type_value']['group'] = 1;
-  /* Filter criterion: Content: Region (field_region) */
-  $handler->display->display_options['filters']['field_region_value']['id'] = 'field_region_value';
-  $handler->display->display_options['filters']['field_region_value']['table'] = 'field_data_field_region';
-  $handler->display->display_options['filters']['field_region_value']['field'] = 'field_region_value';
-  $handler->display->display_options['filters']['field_region_value']['value'] = array(
-    'all' => 'all',
-    '002' => '002',
-    142 => '142',
-    'Global' => 'Global',
-    'LAC' => 'LAC',
-    'Other' => 'Other',
-  );
-  $handler->display->display_options['filters']['field_region_value']['group'] = 1;
-  $handler->display->display_options['filters']['field_region_value']['exposed'] = TRUE;
-  $handler->display->display_options['filters']['field_region_value']['expose']['operator_id'] = 'field_region_value_op';
-  $handler->display->display_options['filters']['field_region_value']['expose']['label'] = 'Region';
-  $handler->display->display_options['filters']['field_region_value']['expose']['operator'] = 'field_region_value_op';
-  $handler->display->display_options['filters']['field_region_value']['expose']['identifier'] = 'field_region_value';
-  $handler->display->display_options['filters']['field_region_value']['expose']['remember'] = TRUE;
-  $handler->display->display_options['filters']['field_region_value']['expose']['remember_roles'] = array(
-    2 => '2',
-    1 => '1',
-    3 => 0,
-    4 => 0,
-    5 => 0,
-  );
-  $handler->display->display_options['filters']['field_region_value']['expose']['reduce'] = TRUE;
-  /* Filter criterion: Content: Status (field_status) */
-  $handler->display->display_options['filters']['field_status_value_1']['id'] = 'field_status_value_1';
-  $handler->display->display_options['filters']['field_status_value_1']['table'] = 'field_data_field_status';
-  $handler->display->display_options['filters']['field_status_value_1']['field'] = 'field_status_value';
-  $handler->display->display_options['filters']['field_status_value_1']['value'] = array(
-    'all' => 'all',
-    'Awaiting' => 'Awaiting',
-    'Completed' => 'Completed',
-    'On-going' => 'On-going',
-  );
-  $handler->display->display_options['filters']['field_status_value_1']['group'] = 1;
-  $handler->display->display_options['filters']['field_status_value_1']['exposed'] = TRUE;
-  $handler->display->display_options['filters']['field_status_value_1']['expose']['operator_id'] = 'field_status_value_1_op';
-  $handler->display->display_options['filters']['field_status_value_1']['expose']['label'] = 'Status';
-  $handler->display->display_options['filters']['field_status_value_1']['expose']['operator'] = 'field_status_value_1_op';
-  $handler->display->display_options['filters']['field_status_value_1']['expose']['identifier'] = 'field_status_value_1';
-  $handler->display->display_options['filters']['field_status_value_1']['expose']['remember'] = TRUE;
-  $handler->display->display_options['filters']['field_status_value_1']['expose']['remember_roles'] = array(
-    2 => '2',
-    1 => '1',
-    4 => '4',
-    3 => 0,
-    5 => 0,
-  );
-  $handler->display->display_options['filters']['field_status_value_1']['expose']['reduce'] = TRUE;
-  /* Filter criterion: Content: Sector (field_sector) */
-  $handler->display->display_options['filters']['field_sector_value']['id'] = 'field_sector_value';
-  $handler->display->display_options['filters']['field_sector_value']['table'] = 'field_data_field_sector';
-  $handler->display->display_options['filters']['field_sector_value']['field'] = 'field_sector_value';
-  $handler->display->display_options['filters']['field_sector_value']['value'] = array(
-    'all' => 'all',
-    'Animal Health' => 'Animal Health',
-    'Food Safety' => 'Food Safety',
-    'General SPS' => 'General SPS',
-    'Plant Health' => 'Plant Health',
-  );
-  $handler->display->display_options['filters']['field_sector_value']['group'] = 1;
-  $handler->display->display_options['filters']['field_sector_value']['exposed'] = TRUE;
-  $handler->display->display_options['filters']['field_sector_value']['expose']['operator_id'] = 'field_sector_value_op';
-  $handler->display->display_options['filters']['field_sector_value']['expose']['label'] = 'Sector';
-  $handler->display->display_options['filters']['field_sector_value']['expose']['operator'] = 'field_sector_value_op';
-  $handler->display->display_options['filters']['field_sector_value']['expose']['identifier'] = 'field_sector_value';
-  $handler->display->display_options['filters']['field_sector_value']['expose']['remember'] = TRUE;
-  $handler->display->display_options['filters']['field_sector_value']['expose']['remember_roles'] = array(
-    2 => '2',
-    1 => '1',
-    3 => 0,
-    4 => 0,
-    5 => 0,
-  );
-  $handler->display->display_options['filters']['field_sector_value']['expose']['reduce'] = TRUE;
-  /* Filter criterion: Content: Status (field_status) */
-  $handler->display->display_options['filters']['field_status_value']['id'] = 'field_status_value';
-  $handler->display->display_options['filters']['field_status_value']['table'] = 'field_data_field_status';
-  $handler->display->display_options['filters']['field_status_value']['field'] = 'field_status_value';
-  $handler->display->display_options['filters']['field_status_value']['operator'] = 'not';
-  $handler->display->display_options['filters']['field_status_value']['value'] = array(
-    'Revoked' => 'Revoked',
-  );
-  $handler->display->display_options['filters']['field_status_value']['group'] = 1;
-  /* Filter criterion: Content: Language */
-  $handler->display->display_options['filters']['language']['id'] = 'language';
-  $handler->display->display_options['filters']['language']['table'] = 'node';
-  $handler->display->display_options['filters']['language']['field'] = 'language';
-  $handler->display->display_options['filters']['language']['value'] = array(
-    '***CURRENT_LANGUAGE***' => '***CURRENT_LANGUAGE***',
-  );
-  $handler->display->display_options['filters']['language']['group'] = 1;
-  /* Filter criterion: Content: Beneficiary Text (field_beneficiary_text) */
-  $handler->display->display_options['filters']['field_beneficiary_text_tid']['id'] = 'field_beneficiary_text_tid';
-  $handler->display->display_options['filters']['field_beneficiary_text_tid']['table'] = 'field_data_field_beneficiary_text';
-  $handler->display->display_options['filters']['field_beneficiary_text_tid']['field'] = 'field_beneficiary_text_tid';
-  $handler->display->display_options['filters']['field_beneficiary_text_tid']['value'] = '';
-  $handler->display->display_options['filters']['field_beneficiary_text_tid']['exposed'] = TRUE;
-  $handler->display->display_options['filters']['field_beneficiary_text_tid']['expose']['operator_id'] = 'field_beneficiary_text_tid_op';
-  $handler->display->display_options['filters']['field_beneficiary_text_tid']['expose']['label'] = 'Beneficiaries';
-  $handler->display->display_options['filters']['field_beneficiary_text_tid']['expose']['operator'] = 'field_beneficiary_text_tid_op';
-  $handler->display->display_options['filters']['field_beneficiary_text_tid']['expose']['identifier'] = 'field_beneficiary_text_tid';
-  $handler->display->display_options['filters']['field_beneficiary_text_tid']['expose']['remember_roles'] = array(
-    2 => '2',
-    1 => 0,
-    3 => 0,
-    4 => 0,
-    5 => 0,
-  );
-  $handler->display->display_options['filters']['field_beneficiary_text_tid']['vocabulary'] = 'beneficiaries';
-  $handler->display->display_options['merge_rows'] = TRUE;
-  $handler->display->display_options['field_config'] = array(
-    'title' => array(
-      'merge_option' => 'filter',
-      'separator' => ', ',
-    ),
-    'field_reference_number' => array(
-      'merge_option' => 'merge_unique',
-      'separator' => ', ',
-    ),
-    'field_agenda' => array(
-      'merge_option' => 'merge_unique',
-      'separator' => ', ',
-    ),
-    'body' => array(
-      'merge_option' => 'merge_unique',
-      'separator' => ', ',
-    ),
-    'field_region' => array(
-      'merge_option' => 'merge_unique',
-      'separator' => ', ',
-    ),
-    'field_status' => array(
-      'merge_option' => 'merge_unique',
-      'separator' => ', ',
-    ),
-    'field_sector' => array(
-      'merge_option' => 'merge_unique',
-      'separator' => ', ',
-    ),
-    'field_start_date' => array(
-      'merge_option' => 'merge_unique',
-      'separator' => ', ',
-    ),
-    'field_illustration' => array(
-      'merge_option' => 'merge_unique',
-      'separator' => ', ',
-    ),
-    'field_status_1' => array(
-      'merge_option' => 'merge_unique',
-      'separator' => ', ',
-    ),
-    'title_1' => array(
-      'merge_option' => 'merge_unique',
-      'separator' => ', ',
-    ),
-  );
-  $handler->display->display_options['path'] = 'projectpreparationgrants';
-  $handler->display->display_options['menu']['title'] = 'Projects';
-  $handler->display->display_options['menu']['description'] = 'Details of our projects.';
-  $handler->display->display_options['menu']['weight'] = '0';
-  $handler->display->display_options['menu']['name'] = 'main-menu';
-  $handler->display->display_options['menu']['context'] = 0;
-  $handler->display->display_options['menu']['context_only_inline'] = 0;
   $translatables['projects'] = array(
     t('Master'),
     t('Project Grants'),
@@ -1124,29 +1501,32 @@ function feature_projects_views_default_views() {
     t('Items per page'),
     t('- All -'),
     t('Offset'),
-    t('« first'),
-    t('‹ previous'),
-    t('next ›'),
-    t('last »'),
-    t('Ref. #'),
-    t('Ref #'),
+    t('<<'),
+    t('<'),
+    t('>'),
+    t('>>'),
+    t('Beneficiaries'),
+    t('Ref'),
     t('[field_reference_number]'),
+    t('Ref #'),
     t('Title'),
     t('Region'),
     t('Sector'),
-    t('Beneficiaries'),
-    t('Start Date'),
+    t('Date'),
     t('Status'),
     t('Budget (US$)'),
-    t('Start typing the beneficiary name to see suggestions.'),
-    t('This page holds the view of project grants.'),
-    t('Project Grants Download'),
     t('Select one or more regions to filter by.'),
     t('FIlter by one or more project status types.'),
     t('Filter by one or more project sectors.'),
     t('Filter by one or more beneficiaries.'),
-    t('Project Preparation Grants Download'),
+    t('This page holds the view of project grants.'),
+    t('Start typing the beneficiary\'s name for suggestions.'),
     t('Project Preparation Grants'),
+    t('This page holds the view of project preparation grants.'),
+    t('Ref. #'),
+    t('Start Date'),
+    t('Project Grants Download'),
+    t('Project Preparation Grants Download'),
   );
   $export['projects'] = $view;
 

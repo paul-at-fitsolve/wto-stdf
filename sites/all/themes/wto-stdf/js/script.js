@@ -12,8 +12,15 @@
 // - http://www.adequatelygood.com/2010/3/JavaScript-Module-Pattern-In-Depth
 (function ($, Drupal, window, document, undefined) {
 
-
-// Place your code here.
-
+$(function() {
+$("#block-search-form").mouseenter(
+    function(){ 
+        $(".form-text.form-autocomplete").stop().animate({width:'200px'},'fast');
+    });
+$("#block-search-form").mouseleave(
+    function(e) {
+        $(".form-text.form-autocomplete").stop().animate({width:'0'},'fast');
+    });
+})
 
 })(jQuery, Drupal, this, this.document);

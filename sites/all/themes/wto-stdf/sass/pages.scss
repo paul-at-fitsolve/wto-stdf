@@ -56,13 +56,10 @@ body {
 #header {
   position:absolute;
   z-index:100;
-  top:15px;
-  left:0;
   height: 151px;
   #block-search-form,
   #block-locale-language  {
     float:right;
-    clear:both;
     margin-bottom:0;
 	padding:0 0.3em 0 0;
     ul  {
@@ -132,23 +129,14 @@ body {
   font-size: 1em;
 }
 
-.region-header { /* Wrapper for any blocks placed in the header region */
-  float:right;
-  margin: 2em 0 0;
-}
-
 /*
  * Main (container for everything else)
  */
 
 .not-front  {
   #main {
-    position:relative;
-  }
-  
-  .region-header {
-	float: right; 
-	margin: 2em 0 0 0;
+    position: relative;
+    clear: both;
   }
   
   #inner-content { padding: 20px 0 0 0;}
@@ -261,13 +249,8 @@ a.language-link  {
                  float:right;
                  }
 
-
-tr.even { /* Some tables have rows marked even or odd. */
-  /* background-color: #eee; */ /* Drupal core uses a #eee background */
-}
-
-tr.odd {
-  /* background-color: #eee; */ /* Drupal core uses a #eee background */
+tr.odd, tr.even, td.active {
+  background-color: #ecf1f4;
 }
 
 div.messages { /* Important messages (status, warning, and error) for the user. See also the declarations in messages.css. */
@@ -328,12 +311,26 @@ span.field-label { /* The inline field label used by the Fences module */
 .item-list .pager { /* A list of page numbers when more than 1 page of content is available */
   padding: 0;
 
-  li { /* Each page number in the pager list */
-    padding: 0 0.5em;
-  }
+    li { /* Each page number in the pager list */
+      padding: 0.2em 0.5em;
+      background-color: #eceeed;
+      border: 1px solid #d3d3d3;
+        a { 
+            text-decoration: none; 
+            color: #08356a;
+            padding: 0.2 0.5em;
+        }
+    }
+    li.pager-current {
+        background-color: #08356a;
+        border-color: #08356a;
+        color: #fff;
+        font-weight: 400;
+    }
 }
 
 .feed-icon { /* The link to the RSS or Atom feed for the current list of content */
+  display: none;
 }
 
 .more-link { /* Aggregator, blog, and forum more link */
@@ -378,7 +375,10 @@ span.field-label { /* The inline field label used by the Fences module */
  */
 
 .region-bottom { /* Wrapper for any blocks placed in the page bottom region */
-    div.contextual-links-wrapper ul.contextual-links { position: relative; }
+    div.contextual-links-wrapper ul.contextual-links { 
+        position: relative;
+        top: -80px;
+    }
 }
 
 #block-views-front-carousel-block .views-field-body, #block-views-front-carousel-block .views-field-body-1 {
@@ -398,7 +398,7 @@ span.field-label { /* The inline field label used by the Fences module */
 
 #block-views-front-carousel-block .views-field-body {
   p {
-    margin:0 12%;
+    margin:0 16%;
     }
 }
 

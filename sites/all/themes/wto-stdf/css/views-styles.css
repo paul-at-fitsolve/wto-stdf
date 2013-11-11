@@ -116,10 +116,11 @@
   background-color: #D4DDE5;
   color: #668FAF;
   border: 0;
-  height: 18px;
+  height: 16px;
   padding: 5px;
+  width: 280px;
 }
-/* line 115, ../sass/views-styles.scss */
+/* line 116, ../sass/views-styles.scss */
 .view-projects .form-submit {
   height: 28px;
   position: relative;
@@ -127,7 +128,7 @@
   left: 8px;
   width: 126px;
 }
-/* line 122, ../sass/views-styles.scss */
+/* line 123, ../sass/views-styles.scss */
 .view-projects select {
   background: transparent;
   width: 312px;
@@ -141,108 +142,135 @@
   cursor: pointer;
 }
 
-/* line 137, ../sass/views-styles.scss */
+/* line 138, ../sass/views-styles.scss */
 td.views-field {
-  border: 3px solid white;
+  border: 3px solid #fff;
 }
 
-/* line 141, ../sass/views-styles.scss */
+/* line 142, ../sass/views-styles.scss */
 th.views-field {
-  padding: 0 1.25em;
+  padding: 1em 1.25em;
   background: url(../images/fabric_1px.png) repeat-x;
-  border: 3px solid white;
+  border: 3px solid #fff;
   text-transform: uppercase;
-  font-size: 10pt;
+  font-size: 12px;
+  line-height: 12px;
 }
-/* line 147, ../sass/views-styles.scss */
+/* line 149, ../sass/views-styles.scss */
 th.views-field a {
   text-decoration: none;
-  color: white;
+  color: #fff;
+  padding-right: 17px;
+  background: url("../images/arrow-down.png") 100% 50% no-repeat;
+}
+/* line 154, ../sass/views-styles.scss */
+th.views-field a img {
+  display: none;
 }
 
-/* line 153, ../sass/views-styles.scss */
+/* line 157, ../sass/views-styles.scss */
+th.views-field.active a {
+  text-decoration: underline;
+}
+
+/* line 158, ../sass/views-styles.scss */
+th.views-field-title {
+  max-width: 15%;
+}
+
+/* line 162, ../sass/views-styles.scss */
 td.views-field {
   text-decoration: none;
   color: #668FAF;
-  font-size: 10pt;
   padding: 0 3px;
+  font-size: 12px;
 }
-/* line 158, ../sass/views-styles.scss */
+/* line 167, ../sass/views-styles.scss */
 td.views-field a {
   text-decoration: none;
   color: #668FAF;
-  font-size: 10pt;
 }
 
-/* line 165, ../sass/views-styles.scss */
+/* line 173, ../sass/views-styles.scss */
 .completed {
-  color: green !important;
+  color: #9abe0a !important;
 }
 
-/* line 169, ../sass/views-styles.scss */
+/* line 175, ../sass/views-styles.scss */
 .awaiting {
-  color: red !important;
+  color: #dc0005 !important;
+}
+
+/* line 177, ../sass/views-styles.scss */
+.on-going {
+  color: #d0b407 !important;
 }
 
 /* Animated throbber overrides css in modules/system/system.base.css*/
-/* line 174, ../sass/views-styles.scss */
+/* line 180, ../sass/views-styles.scss */
 html.js input.form-autocomplete {
   background-position: 100% 8px;
   /* LTR */
 }
 
-/* line 177, ../sass/views-styles.scss */
+/* line 183, ../sass/views-styles.scss */
 html.js input.throbbing {
   background-position: 100% -12px;
   /* LTR */
 }
 
-/* line 181, ../sass/views-styles.scss */
-#edit-reset {
+/* line 188, ../sass/views-styles.scss */
+.views-exposed-widget.views-submit-button,
+.views-exposed-widget.views-reset-button {
+  float: right;
+  padding: 0.5em 0;
+}
+
+/* line 193, ../sass/views-styles.scss */
+#edit-reset, #edit-submit-projects {
   background: url(../images/cancel.png) no-repeat left center #ebebeb;
 }
 
-/* line 185, ../sass/views-styles.scss */
+/* line 197, ../sass/views-styles.scss */
 #edit-submit-projects {
-  background: url(../images/submit.png) no-repeat left center #ebebeb;
+  background-imge: url(../images/submit.png);
 }
 
-/* line 189, ../sass/views-styles.scss */
+/* line 201, ../sass/views-styles.scss */
 #edit-field-sector-value-wrapper {
-  left: 7px;
-  position: relative;
+  clear: left;
 }
 
-/* line 196, ../sass/views-styles.scss */
+/* line 207, ../sass/views-styles.scss */
 .view-nodequeue-upcoming-events li {
   list-style: none;
 }
-/* line 201, ../sass/views-styles.scss */
+/* line 212, ../sass/views-styles.scss */
 .view-nodequeue-upcoming-events .locality, .view-nodequeue-upcoming-events .country-name, .view-nodequeue-upcoming-events .geo, .view-nodequeue-upcoming-events .map-link {
   display: none;
 }
-/* line 203, ../sass/views-styles.scss */
+/* line 214, ../sass/views-styles.scss */
 .view-nodequeue-upcoming-events .views-row {
   margin: 1em 0 0 0;
   border-bottom: 1px dotted #b3b3b3;
   padding: 0;
 }
-/* line 208, ../sass/views-styles.scss */
+/* line 219, ../sass/views-styles.scss */
 .view-nodequeue-upcoming-events .node-event {
   margin: 0 0 0 61px;
 }
-/* line 211, ../sass/views-styles.scss */
+/* line 222, ../sass/views-styles.scss */
 .view-nodequeue-upcoming-events h2.node-title a {
   text-transform: none;
   padding-right: 40px;
 }
-/* line 214, ../sass/views-styles.scss */
+/* line 225, ../sass/views-styles.scss */
 .view-nodequeue-upcoming-events h2.node-title a img {
   position: absolute;
   right: 6%;
   top: 50%;
 }
-/* line 223, ../sass/views-styles.scss */
+/* line 234, ../sass/views-styles.scss */
 .view-nodequeue-upcoming-events .field-name-field-organizer,
 .view-nodequeue-upcoming-events .field-name-field-location,
 .view-nodequeue-upcoming-events .field-name-field-date-and-time {
@@ -250,7 +278,7 @@ html.js input.throbbing {
   margin: 0 0.8em 0 0;
   float: left;
 }
-/* line 229, ../sass/views-styles.scss */
+/* line 240, ../sass/views-styles.scss */
 .view-nodequeue-upcoming-events .translation-link {
   float: left;
   width: 100%;
