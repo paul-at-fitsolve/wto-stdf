@@ -2,190 +2,190 @@
  * @file
  * Block Styling
  */
-/* line 9, ../sass/blocks.scss */
+/* line 8, ../sass/blocks.scss */
 .block {
   /* Block wrapper */
   margin-bottom: 1.5em;
 }
-/* line 12, ../sass/blocks.scss */
+/* line 11, ../sass/blocks.scss */
 .block.first {
   /* The first block in the region */
 }
-/* line 15, ../sass/blocks.scss */
+/* line 14, ../sass/blocks.scss */
 .block.last {
   /* The last block in the region */
 }
-/* line 18, ../sass/blocks.scss */
+/* line 17, ../sass/blocks.scss */
 .block.odd {
   /* Zebra striping for each block in the region */
 }
-/* line 21, ../sass/blocks.scss */
+/* line 20, ../sass/blocks.scss */
 .block.even {
   /* Zebra striping for each block in the region */
 }
-/* line 24, ../sass/blocks.scss */
+/* line 23, ../sass/blocks.scss */
 .block h2.block-title {
   /* Block title */
 }
 
-/* line 29, ../sass/blocks.scss */
+/* line 27, ../sass/blocks.scss */
 #block-aggregator-category-1 {
   /* Block for the latest news items in the first category */
 }
 
-/* line 32, ../sass/blocks.scss */
+/* line 30, ../sass/blocks.scss */
 #block-aggregator-feed-1 {
   /* Block for the latest news items in the first feed */
 }
 
-/* line 35, ../sass/blocks.scss */
+/* line 33, ../sass/blocks.scss */
 #block-block-1 {
   /* First block created with "Add block" link */
 }
 
-/* line 38, ../sass/blocks.scss */
+/* line 36, ../sass/blocks.scss */
 #block-blog-recent {
   /* "Recent blog posts" block */
 }
 
-/* line 41, ../sass/blocks.scss */
+/* line 39, ../sass/blocks.scss */
 #block-book-navigation {
   /* "Book navigation" block for the current book's table of contents */
 }
 
-/* line 44, ../sass/blocks.scss */
+/* line 42, ../sass/blocks.scss */
 #block-comment-recent {
   /* "Recent comments" block */
 }
 
-/* line 47, ../sass/blocks.scss */
+/* line 45, ../sass/blocks.scss */
 #block-forum-active {
   /* "Active forum topics" block */
 }
 
-/* line 50, ../sass/blocks.scss */
+/* line 48, ../sass/blocks.scss */
 #block-forum-new {
   /* "New forum topics" block */
 }
 
-/* line 53, ../sass/blocks.scss */
+/* line 51, ../sass/blocks.scss */
 #block-locale-language {
   /* Language switcher block */
 }
 
-/* line 56, ../sass/blocks.scss */
+/* line 54, ../sass/blocks.scss */
 #block-menu-menu-NAME {
   /* Custom menu block */
 }
 
-/* line 59, ../sass/blocks.scss */
+/* line 57, ../sass/blocks.scss */
 #block-node-recent {
   /* "Recent content" block */
 }
 
-/* line 62, ../sass/blocks.scss */
+/* line 60, ../sass/blocks.scss */
 #block-node-syndicate {
   /* "Syndicate" block for primary RSS feed; see also page.css's .feed-icon */
 }
 
-/* line 65, ../sass/blocks.scss */
+/* line 63, ../sass/blocks.scss */
 #block-poll-recent {
   /* "Most recent poll" block */
 }
 
-/* line 68, ../sass/blocks.scss */
+/* line 66, ../sass/blocks.scss */
 #block-profile-author-information {
   /* "Author information" block for the profile of the page's author */
 }
 
-/* line 71, ../sass/blocks.scss */
+/* line 69, ../sass/blocks.scss */
 #block-search-form {
   /* "Search form" block */
 }
 
-/* line 74, ../sass/blocks.scss */
+/* line 72, ../sass/blocks.scss */
 #block-shortcut-shortcuts {
   /* "Shortcuts" block */
 }
 
-/* line 77, ../sass/blocks.scss */
+/* line 75, ../sass/blocks.scss */
 #block-statistics-popular {
   /* "Popular content" block */
 }
 
-/* line 80, ../sass/blocks.scss */
+/* line 78, ../sass/blocks.scss */
 #block-system-main-menu {
   /* "Main menu" block */
 }
 
-/* line 83, ../sass/blocks.scss */
+/* line 81, ../sass/blocks.scss */
 #block-system-management {
   /* "Management" block for Drupal management menu */
 }
 
-/* line 86, ../sass/blocks.scss */
+/* line 84, ../sass/blocks.scss */
 #block-system-navigation {
   /* "Navigation" block for Drupal navigation menu */
 }
 
-/* line 89, ../sass/blocks.scss */
+/* line 87, ../sass/blocks.scss */
 #block-system-user-menu {
   /* "User menu" block for Drupal user menu */
 }
 
-/* line 92, ../sass/blocks.scss */
+/* line 90, ../sass/blocks.scss */
 #block-system-help {
   /* "System help" block */
 }
 
-/* line 95, ../sass/blocks.scss */
+/* line 93, ../sass/blocks.scss */
 #block-system-main {
   /* "Main page content" block */
 }
 
-/* line 98, ../sass/blocks.scss */
+/* line 96, ../sass/blocks.scss */
 #block-system-powered-by {
   /* "Powered by Drupal" block */
 }
 
-/* line 101, ../sass/blocks.scss */
+/* line 99, ../sass/blocks.scss */
 #block-user-login {
   /* "User login form" block */
 }
 
-/* line 104, ../sass/blocks.scss */
+/* line 102, ../sass/blocks.scss */
 #block-user-new {
   /* "Who's new" block for a list of the newest users */
 }
 
-/* line 107, ../sass/blocks.scss */
+/* line 105, ../sass/blocks.scss */
 #block-user-online {
   /* "Who's online" block for a list of the online users */
 }
 
-/* line 113, ../sass/blocks.scss */
+/* line 109, ../sass/blocks.scss */
 #footer .block h2.block-title {
   text-align: center;
   background: #99b4c9;
   color: #fff;
   text-transform: uppercase;
   font-size: 1em;
-  font-weight: normal;
+  font-weight: 400;
 }
 
 /*Appnovation code starts here - these are all our custom blocks */
-/* line 129, ../sass/blocks.scss */
+/* line 121, ../sass/blocks.scss */
 #block-views-front-carousel-block {
   /*Front carousel block with slideshow */
   width: 100%;
 }
 
-/* line 134, ../sass/blocks.scss */
+/* line 126, ../sass/blocks.scss */
 #block-locale-language li {
   display: inline;
   list-style: none;
 }
-/* line 137, ../sass/blocks.scss */
+/* line 129, ../sass/blocks.scss */
 #block-locale-language li a.language-link {
   font-size: 0.75em;
   text-decoration: none;
@@ -197,7 +197,7 @@
   -khtml-opacity: 0.73;
   opacity: 0.73;
 }
-/* line 147, ../sass/blocks.scss */
+/* line 139, ../sass/blocks.scss */
 #block-locale-language li a.language-link.active, #block-locale-language li a.language-link:hover {
   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
   filter: alpha(opacity=100);
@@ -205,66 +205,62 @@
   -khtml-opacity: 1;
   opacity: 1;
 }
-/* line 154, ../sass/blocks.scss */
+/* line 146, ../sass/blocks.scss */
 #block-locale-language li a.language-link.active {
   font-weight: 700;
 }
 
-/* line 160, ../sass/blocks.scss */
+/* line 152, ../sass/blocks.scss */
 #block-views-eebb22e852a8f93e943e8c7a212a3c68 h2.block-title {
   text-align: center;
 }
-/* line 164, ../sass/blocks.scss */
+/* line 156, ../sass/blocks.scss */
 #block-views-eebb22e852a8f93e943e8c7a212a3c68 .view-nodequeue-thematic-activities p {
   font-size: 0.8em;
   text-align: justify;
 }
-/* line 170, ../sass/blocks.scss */
+/* line 162, ../sass/blocks.scss */
 #block-views-eebb22e852a8f93e943e8c7a212a3c68 td {
   float: left;
 }
-/* line 172, ../sass/blocks.scss */
+/* line 164, ../sass/blocks.scss */
 #block-views-eebb22e852a8f93e943e8c7a212a3c68 td .views-field-title {
   font-size: 14pt;
-  font-weight: bold;
+  font-weight: 700;
   min-height: 47px;
 }
-/* line 177, ../sass/blocks.scss */
+/* line 168, ../sass/blocks.scss */
 #block-views-eebb22e852a8f93e943e8c7a212a3c68 td .views-field-title a {
   text-decoration: none;
   color: #00335c;
 }
-/* line 183, ../sass/blocks.scss */
-#block-views-eebb22e852a8f93e943e8c7a212a3c68 h2 {
-  text-align: center;
-}
 
-/* line 190, ../sass/blocks.scss */
+/* line 178, ../sass/blocks.scss */
 #header #block-search-form {
   margin: 0 0 0.8em 0;
 }
 
-/* line 197, ../sass/blocks.scss */
+/* line 182, ../sass/blocks.scss */
 footer .block a {
   color: #978a82;
 }
 
-/* line 199, ../sass/blocks.scss */
+/* line 184, ../sass/blocks.scss */
 #block-stdffrontpage-contact-info .menu-block-wrapper {
   font-size: 0.9em;
   margin: 0.8em 0 0 0;
 }
 
-/* line 201, ../sass/blocks.scss */
+/* line 186, ../sass/blocks.scss */
 #block-menu-block-2 li {
   background: url("../images/bullet-footer-menu.png") no-repeat scroll right center transparent;
 }
-/* line 204, ../sass/blocks.scss */
+/* line 189, ../sass/blocks.scss */
 #block-menu-block-2 a {
   text-transform: uppercase;
 }
 
-/* line 211, ../sass/blocks.scss */
+/* line 195, ../sass/blocks.scss */
 #block-stdfcustom-newsletter-signup input {
   margin: 1em 0 0 0;
   background: #fff;
@@ -273,54 +269,115 @@ footer .block a {
   width: 100%;
 }
 
-/* line 227, ../sass/blocks.scss */
+/* line 205, ../sass/blocks.scss */
 #block-user-login .form-item {
   margin: 0.7em 0 0 0;
 }
-/* line 233, ../sass/blocks.scss */
+/* line 208, ../sass/blocks.scss */
 #block-user-login input.form-text {
   width: 100%;
   background: #fff;
   border: 2px solid #d4dde6;
 }
-/* line 234, ../sass/blocks.scss */
+/* line 209, ../sass/blocks.scss */
 #block-user-login .item-list {
   font-size: 0.69em;
   text-transform: uppercase;
 }
-/* line 235, ../sass/blocks.scss */
+/* line 210, ../sass/blocks.scss */
 #block-user-login #edit-actions--2 {
   float: right;
   margin: 0;
 }
 
-/* line 241, ../sass/blocks.scss */
-#block-views-nodequeue-upcoming-events-block .view-nodequeue-upcoming-events .item-list ul {
+/* line 216, ../sass/blocks.scss */
+#block-views-nodequeue-upcoming-events-block .view-nodequeue-upcoming-events .item-list ul,
+#block-stdffrontpage-publications .view-nodequeue-upcoming-events .item-list ul {
   margin: 0;
   padding: 0;
 }
-/* line 245, ../sass/blocks.scss */
-#block-views-nodequeue-upcoming-events-block .block-title {
+/* line 221, ../sass/blocks.scss */
+#block-views-nodequeue-upcoming-events-block .block-title,
+#block-stdffrontpage-publications .block-title {
   text-align: center;
-  line-height: 3em;
   background: url(../images/title_bg.png) repeat-x center;
   text-transform: uppercase;
-  color: white;
+  color: #fff;
+  line-height: 3em;
 }
-/* line 251, ../sass/blocks.scss */
-#block-views-nodequeue-upcoming-events-block .block-title img {
-  position: relative;
-  left: -50%;
-  top: 15px;
+/* line 228, ../sass/blocks.scss */
+#block-views-nodequeue-upcoming-events-block .block-title:before,
+#block-stdffrontpage-publications .block-title:before {
+  background: url(../images/eventsicon_bg.png) no-repeat;
+  width: 50px;
+  height: 50px;
+  content: "";
+  display: block;
+  float: left;
+  position: absolute;
+  margin: 11px 0 0 7px;
 }
 
-/* line 260, ../sass/blocks.scss */
+/* line 241, ../sass/blocks.scss */
+#block-stdffrontpage-publications li {
+  height: 33px;
+  text-indent: 50px;
+  list-style: none;
+  padding: 0 0 2.5em 0;
+  border-bottom: 1px dotted #B3B3B3;
+}
+/* line 248, ../sass/blocks.scss */
+#block-stdffrontpage-publications a {
+  position: relative;
+  top: 1.5em;
+  text-decoration: none;
+  color: #978A82;
+  text-size: 1.25em;
+}
+/* line 255, ../sass/blocks.scss */
+#block-stdffrontpage-publications li.newsletter {
+  background: url(../images/newsletter_bg.png) center left no-repeat;
+}
+/* line 258, ../sass/blocks.scss */
+#block-stdffrontpage-publications li.newsletter a img {
+  position: relative;
+  left: 60%;
+}
+/* line 264, ../sass/blocks.scss */
+#block-stdffrontpage-publications li.briefings {
+  background: url(../images/briefings_bg.png) center left no-repeat;
+}
+/* line 267, ../sass/blocks.scss */
+#block-stdffrontpage-publications li.briefings a img {
+  position: relative;
+  left: 63.5%;
+}
+/* line 273, ../sass/blocks.scss */
+#block-stdffrontpage-publications li.publications {
+  background: url(../images/publications_bg.png) center left no-repeat;
+}
+/* line 276, ../sass/blocks.scss */
+#block-stdffrontpage-publications li.publications a img {
+  position: relative;
+  left: 58%;
+}
+/* line 282, ../sass/blocks.scss */
+#block-stdffrontpage-publications li.videos {
+  background: url(../images/videos_bg.png) center left no-repeat;
+}
+/* line 285, ../sass/blocks.scss */
+#block-stdffrontpage-publications li.videos a img {
+  position: relative;
+  left: 66%;
+}
+
+/* line 293, ../sass/blocks.scss */
 #block-block-2 {
   width: 100%;
   margin: 0 auto;
 }
 
-/* line 267, ../sass/blocks.scss */
+/* line 299, ../sass/blocks.scss */
 #block-stdffrontpage-proposal-deadline {
   position: relative;
   top: -50px;
@@ -332,88 +389,21 @@ footer .block a {
   width: 100%;
 }
 
-/* line 279, ../sass/blocks.scss */
-#block-stdffrontpage-publications .block-title {
-  text-align: center;
-  line-height: 3em;
-  background: url(../images/title_bg.png) repeat-x center;
-  text-transform: uppercase;
-  color: white;
-}
-/* line 285, ../sass/blocks.scss */
-#block-stdffrontpage-publications .block-title img {
-  position: relative;
-  left: -50%;
-  top: 15px;
-}
-/* line 291, ../sass/blocks.scss */
-#block-stdffrontpage-publications li {
-  height: 33px;
-  text-indent: 50px;
-  list-style: none;
-  padding: 0 0 2.5em 0;
-  border-bottom: 1px dotted #B3B3B3;
-}
-/* line 298, ../sass/blocks.scss */
-#block-stdffrontpage-publications a {
-  position: relative;
-  top: 1.5em;
-  text-decoration: none;
-  color: #978A82;
-  text-size: 1.25em;
-}
-/* line 305, ../sass/blocks.scss */
-#block-stdffrontpage-publications li.newsletter {
-  background: url(../images/newsletter_bg.png) center left no-repeat;
-}
-/* line 308, ../sass/blocks.scss */
-#block-stdffrontpage-publications li.newsletter a img {
-  position: relative;
-  left: 60%;
-}
-/* line 314, ../sass/blocks.scss */
-#block-stdffrontpage-publications li.briefings {
-  background: url(../images/briefings_bg.png) center left no-repeat;
-}
-/* line 317, ../sass/blocks.scss */
-#block-stdffrontpage-publications li.briefings a img {
-  position: relative;
-  left: 63.5%;
-}
-/* line 323, ../sass/blocks.scss */
-#block-stdffrontpage-publications li.publications {
-  background: url(../images/publications_bg.png) center left no-repeat;
-}
-/* line 326, ../sass/blocks.scss */
-#block-stdffrontpage-publications li.publications a img {
-  position: relative;
-  left: 58%;
-}
-/* line 332, ../sass/blocks.scss */
-#block-stdffrontpage-publications li.videos {
-  background: url(../images/videos_bg.png) center left no-repeat;
-}
-/* line 335, ../sass/blocks.scss */
-#block-stdffrontpage-publications li.videos a img {
-  position: relative;
-  left: 66%;
-}
-
-/* line 343, ../sass/blocks.scss */
+/* line 310, ../sass/blocks.scss */
 #block-stdffrontpage-partnerlogos {
   max-width: 960px;
   margin-bottom: 1em !important;
 }
-/* line 346, ../sass/blocks.scss */
+/* line 313, ../sass/blocks.scss */
 #block-stdffrontpage-partnerlogos h2 {
   text-align: center;
 }
-/* line 349, ../sass/blocks.scss */
+/* line 316, ../sass/blocks.scss */
 #block-stdffrontpage-partnerlogos img {
   margin: 0 2.8em;
 }
 
-/* line 354, ../sass/blocks.scss */
+/* line 321, ../sass/blocks.scss */
 #block-nice-menus-2 {
   background: url("images/bkg.png") repeat-x scroll left bottom #101010;
   left: 0;
@@ -428,14 +418,14 @@ footer .block a {
   top: 0;
   z-index: 1000;
 }
-/* line 355, ../sass/blocks.scss */
+/* line 322, ../sass/blocks.scss */
 #block-nice-menus-2 .block-title {
   color: white;
   float: right;
   font-size: 1em;
   font-weight: normal;
 }
-/* line 373, ../sass/blocks.scss */
+/* line 340, ../sass/blocks.scss */
 #block-nice-menus-2 ul {
   line-height: 1.4em;
   list-style: none outside none;
@@ -443,13 +433,13 @@ footer .block a {
   padding: 0;
   z-index: 999;
 }
-/* line 379, ../sass/blocks.scss */
+/* line 346, ../sass/blocks.scss */
 #block-nice-menus-2 ul li {
   float: left;
   background-color: black !important;
   border: none !important;
 }
-/* line 383, ../sass/blocks.scss */
+/* line 350, ../sass/blocks.scss */
 #block-nice-menus-2 ul li a {
   text-decoration: none;
   margin-bottom: 4px;

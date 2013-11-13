@@ -56,9 +56,6 @@ $zen-auto-include-item-base: true;
 	max-width: 960px; 
   }
 
-  
-  
-
 /*
  * Apply the shared properties of grid items in a single, efficient ruleset.
  */
@@ -83,7 +80,6 @@ $zen-auto-include-item-base: true;
   @include zen-grid-container();
 }
 
-
 @media all and (max-width: 960px) {
   #block-stdffrontpage-publications{ 
        margin-top:3em;
@@ -99,12 +95,15 @@ $zen-auto-include-item-base: true;
 
 @media all and (min-width: 960px) {
   #block-stdffrontpage-publications{ 
-    width:50%;
-    float:right;
+    width: 48%;
+    float: right;
+    margin: 0 0 10px 2%;
+      ul { padding: 0; }
   }
   #block-views-nodequeue-upcoming-events-block{
-    width:50%;
-    float:left;
+    width: 48%;
+    float: left;
+    margin: 0 2% 10px 0;
     .view-nodequeue-upcoming-events{
       .view-footer{
         p{
@@ -178,8 +177,8 @@ $zen-auto-include-item-base: true;
 	  margin-left:auto;
 	  max-width:960px;	
     td {
-      width:12em;
-      padding:1em;
+      width: 23%;
+      padding: 1%;
     }
   }
 }
@@ -311,15 +310,7 @@ $zen-auto-include-item-base: true;
 		#block-block-1 {
 			@include zen-grid-item(1, 2);
 		}
-		
-		#block-views-nodequeue-upcoming-events-block {
-			@include zen-grid-item(1, 1);
-		}
-		
-		
-		
-		
-	
+
   }
   
     .region-third-content {
