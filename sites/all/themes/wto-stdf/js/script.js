@@ -18,9 +18,10 @@ $("#block-search-form").mouseenter(
         $(".form-text.form-autocomplete").stop().animate({width:'200px'},'fast');
     });
 $("#block-search-form").mouseleave(
-    function(e) {
-        $(".form-text.form-autocomplete").stop().animate({width:'0'},'fast');
-    });
+    function() {
+    if($(".form-text.form-autocomplete").val().length ==0) {
+      $(".form-text.form-autocomplete").stop().animate({width:'0'},'fast');
+    }});
 })
 
 })(jQuery, Drupal, this, this.document);
