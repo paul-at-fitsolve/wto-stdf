@@ -39,12 +39,12 @@ function feature_apache_solr_apachesolr_environments() {
         'last_entity_id' => 0,
       ),
       'node' => array(
-        'last_changed' => '1383299058',
-        'last_entity_id' => '330',
+        'last_changed' => '1384182959',
+        'last_entity_id' => '435',
       ),
       'file' => array(
-        'last_changed' => '1383230867',
-        'last_entity_id' => '2150',
+        'last_changed' => '1383906227',
+        'last_entity_id' => '2476',
       ),
       'taxonomy_term' => array(
         'last_changed' => 0,
@@ -63,9 +63,8 @@ function feature_apache_solr_apachesolr_environments() {
         'last_entity_id' => 0,
       ),
     ),
-    'apachesolr_index_updated' => 1383300336,
-    'apachesolr_last_optimize' => 1383272256,
-    'apachesolr_read_only' => '0',
+    'apachesolr_index_updated' => 1384249016,
+    'apachesolr_last_optimize' => 1384189073,
     'apachesolr_search_facet_pages' => '',
   );
   $environment->index_bundles = array(
