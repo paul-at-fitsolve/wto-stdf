@@ -17,11 +17,6 @@
 				});	
 				$('#block-stdffrontpage-publications > ul > li > a').append('<img src="sites/all/themes/wto-stdf/images/linkarrow.png" />');
 				$('.node-event > header > h2 > a').append('<img src="sites/all/themes/wto-stdf/images/linkarrow.png" />');
-			    var event = $('#block-views-nodequeue-upcoming-events-block > h2');
-			    event.append('<img src="sites/all/themes/wto-stdf/images/eventsicon_bg.png" />');
-			    var pub = $('#block-stdffrontpage-publications > h2');
-			    pub.append('<img src="sites/all/themes/wto-stdf/images/pubicon_bg.png" />');
-			    
 				}
 			    
 			    if (!$.browser.msie) {

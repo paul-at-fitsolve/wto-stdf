@@ -5,7 +5,6 @@
 
 @import "base";
 
-
 .block { /* Block wrapper */
   margin-bottom: 1.5em;
 
@@ -24,7 +23,6 @@
   h2.block-title { /* Block title */
   }
 }
-
 
 #block-aggregator-category-1 { /* Block for the latest news items in the first category */
 }
@@ -107,22 +105,16 @@
 #block-user-online { /* "Who's online" block for a list of the online users */
 }
 
-
 #footer .block {
-	
 	h2.block-title {
-	
-		text-align:center; 
+		text-align: center; 
 		background: #99b4c9; 
 		color: #fff; 
 		text-transform: uppercase; 
 		font-size: 1em;
-		font-weight: normal;
-	
+		font-weight: 400;
 	}
-
 }
-
 
 /*Appnovation code starts here - these are all our custom blocks */
 
@@ -131,14 +123,14 @@
 }
 
 #block-locale-language {
-  li{
-    display:inline;
-    list-style:none;
+  li {
+    display: inline;
+    list-style: none;
     a.language-link  {
-      font-size:0.75em;
+      font-size: 0.75em;
       text-decoration: none;
-      text-transform:uppercase;
-      color:#00335c;
+      text-transform: uppercase;
+      color: #00335c;
       -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=73)";
       filter: alpha(opacity=73);
       -moz-opacity: 0.73;
@@ -163,36 +155,29 @@
   .view-nodequeue-thematic-activities {	
     p {	
       font-size: 0.8em; 
-	  text-align: justify;
+      text-align: justify;
     }		
   }
-
+  
     td {
-     float:left;
-     .views-field-title{
-       font-size:14pt;
-       font-weight:bold;
+     float: left;
+     .views-field-title {
+       font-size: 14pt;
+       font-weight: 700;
        min-height:47px;
-       
        a {
          text-decoration:none;
          color:#00335c; 
        }
        }
     }
-    h2 {
-     text-align:center;
-    }
 }
 
 
 
 #header #block-search-form {
-
-margin: 0 0 0.8em 0;
-
+ margin: 0 0 0.8em 0;
 }
-
 
 footer .block a { color: #978a82; }
 
@@ -207,91 +192,56 @@ footer .block a { color: #978a82; }
 }
 
 #block-stdfcustom-newsletter-signup {
-	
 	input {
-	
 		margin: 1em 0 0 0;
 		background: #fff; 
 		border: 2px solid #d4dde6;
 		font-size: 0.8em;
 		width: 100%;
-	
 	}
-	
-
 }
 
-
 #block-user-login {
-
 	.form-item {
 		margin: 0.7em 0 0 0;
-		
-		
 	}
-	
 	input.form-text { width: 100%; background: #fff; border: 2px solid #d4dde6;}
 	.item-list { font-size: 0.69em; text-transform: uppercase; }
 	#edit-actions--2 { float: right; margin: 0;}
-
 }
 
-#block-views-nodequeue-upcoming-events-block {
-    .view-nodequeue-upcoming-events {
-	.item-list ul {
-		margin: 0; padding: 0;
-	}
+#block-views-nodequeue-upcoming-events-block,
+#block-stdffrontpage-publications {
+  .view-nodequeue-upcoming-events {
+    .item-list ul {
+      margin: 0; 
+      padding: 0;
     }
-    .block-title{
-      text-align: center;
-      line-height:3em;
-      background:url(../images/title_bg.png) repeat-x center;
-      text-transform:uppercase;
-      color:white;
-       img{
-        position:relative;
-        left:-50%;
-        top:15px;
-        } 
-    }
-
-}
-
-#block-block-2 {
-
-	width: 100%; 
-	margin: 0 auto;
-
-}
-
-#block-stdffrontpage-proposal-deadline{
-  position:relative;
-  top:-50px;
-  float:left;
-  background-image:url('../images/fabric-big.png');
-  text-align:center;
-  text-transform:uppercase;
-  font-size:125%;
-  width:100%;
-}
-
-#block-stdffrontpage-publications{ 
-  .block-title{
-      text-align: center;
-      line-height:3em;
-      background:url(../images/title_bg.png) repeat-x center;
-      text-transform:uppercase;
-      color:white;
-      img{
-        position:relative;
-        left:-50%;
-        top:15px;
-        }
   }
+  .block-title{
+    text-align: center;
+    background: url(../images/title_bg.png) repeat-x center;
+    text-transform: uppercase;
+    color: #fff;
+    line-height: 3em;
+  }
+  .block-title:before {
+    background: url(../images/eventsicon_bg.png) no-repeat;
+    width: 50px;
+    height: 50px;
+    content: "";
+    display: block;
+    float: left;
+    position: absolute;
+    margin: 11px 0 0 7px;
+  }
+}
+
+#block-stdffrontpage-publications { 
   li {
     height:33px;
     text-indent:50px;
-    list-style:none;
+    list-style: none;
     padding:0 0 2.5em 0;
     border-bottom:1px dotted #B3B3B3;
   }
@@ -338,6 +288,23 @@ footer .block a { color: #978a82; }
       }
     }
   }
+}
+
+#block-block-2 {
+	width: 100%; 
+	margin: 0 auto;
+
+}
+
+#block-stdffrontpage-proposal-deadline{
+  position:relative;
+  top:-50px;
+  float:left;
+  background-image:url('../images/fabric-big.png');
+  text-align:center;
+  text-transform:uppercase;
+  font-size:125%;
+  width:100%;
 }
 
 #block-stdffrontpage-partnerlogos{

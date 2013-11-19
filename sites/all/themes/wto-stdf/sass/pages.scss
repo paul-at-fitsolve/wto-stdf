@@ -441,14 +441,24 @@ button, input[type="button"], input[type="reset"], input[type="submit"],.action-
  * */
 .ui-dialog  {
   font-family:$lato !important;
+  font-size: 1em;
+    .ui-dialog-title {
+      overflow: visible;
+      white-space: normal;
+    }
 }
 .ui-dialog-titlebar.ui-widget-header {
-  background:url(../images/fabric-big.png) top left repeat;
-  border-radius:0 0 0 0;
-  border:none;
-  font-size:$base-font-size + 4px;
-  text-transform:uppercase;
+  background: url(../images/fabric-big.png) top left repeat;
+  border-radius: 0 0 0 0;
+  border: none;
+  font-size: $base-font-size + 4px;
+  text-transform: uppercase;
   font-weight:700;
+}
+
+.block-mailchimp-lists {
+  h2.block-title,
+  #edit-mailchimp-lists-mailchimp-stdf-mail-list-title { display: none; }
 }
 
  .date-display-single{
