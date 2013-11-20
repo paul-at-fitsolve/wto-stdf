@@ -84,5 +84,30 @@ function feature_projects_taxonomy_default_vocabularies() {
         ),
       ),
     ),
+    'region' => array(
+      'name' => 'Region',
+      'machine_name' => 'region',
+      'description' => 'Holds regions relating to projects.',
+      'hierarchy' => 0,
+      'module' => 'taxonomy',
+      'weight' => 0,
+      'language' => 'und',
+      'i18n_mode' => 4,
+      'rdf_mapping' => array(
+        'rdftype' => array(
+          0 => 'skos:ConceptScheme',
+        ),
+        'name' => array(
+          'predicates' => array(
+            0 => 'dc:title',
+          ),
+        ),
+        'description' => array(
+          'predicates' => array(
+            0 => 'rdfs:comment',
+          ),
+        ),
+      ),
+    ),
   );
 }

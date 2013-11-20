@@ -1050,26 +1050,32 @@ function feature_projects_field_default_field_bases() {
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_region',
-    'foreign keys' => array(),
+    'foreign keys' => array(
+      'tid' => array(
+        'columns' => array(
+          'tid' => 'tid',
+        ),
+        'table' => 'taxonomy_term_data',
+      ),
+    ),
     'indexes' => array(
-      'value' => array(
-        0 => 'value',
+      'tid' => array(
+        0 => 'tid',
       ),
     ),
     'locked' => 0,
-    'module' => 'list',
+    'module' => 'taxonomy',
     'settings' => array(
       'allowed_values' => array(
-        '002' => 'Africa',
-        142 => 'Asia',
-        'Global' => 'Global',
-        'LAC' => 'Latin America',
-        'Other' => 'Other',
+        0 => array(
+          'vocabulary' => 'region',
+          'parent' => 0,
+        ),
       ),
-      'allowed_values_function' => '',
+      'options_list_callback' => 'i18n_taxonomy_allowed_values',
     ),
     'translatable' => 0,
-    'type' => 'list_text',
+    'type' => 'taxonomy_term_reference',
   );
 
   // Exported field_base: 'field_responsible'

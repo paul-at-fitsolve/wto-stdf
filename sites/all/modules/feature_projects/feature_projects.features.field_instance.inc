@@ -507,7 +507,7 @@ function feature_projects_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 29,
+      'weight' => 28,
     ),
   );
 
@@ -570,7 +570,7 @@ function feature_projects_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 30,
+      'weight' => 29,
     ),
   );
 
@@ -661,7 +661,7 @@ function feature_projects_field_default_field_instances() {
         'progress_indicator' => 'throbber',
       ),
       'type' => 'media_generic',
-      'weight' => 37,
+      'weight' => 36,
     ),
   );
 
@@ -875,7 +875,7 @@ function feature_projects_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'entityreference_autocomplete',
-      'weight' => 45,
+      'weight' => 43,
     ),
   );
 
@@ -946,7 +946,7 @@ function feature_projects_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'taxonomy_autocomplete',
-      'weight' => 44,
+      'weight' => 42,
     ),
   );
 
@@ -1010,7 +1010,7 @@ function feature_projects_field_default_field_instances() {
       'module' => 'number',
       'settings' => array(),
       'type' => 'number',
-      'weight' => 35,
+      'weight' => 34,
     ),
   );
 
@@ -1074,7 +1074,7 @@ function feature_projects_field_default_field_instances() {
       'module' => 'number',
       'settings' => array(),
       'type' => 'number',
-      'weight' => 31,
+      'weight' => 30,
     ),
   );
 
@@ -1138,7 +1138,7 @@ function feature_projects_field_default_field_instances() {
       'module' => 'number',
       'settings' => array(),
       'type' => 'number',
-      'weight' => 33,
+      'weight' => 32,
     ),
   );
 
@@ -1202,7 +1202,7 @@ function feature_projects_field_default_field_instances() {
       'module' => 'number',
       'settings' => array(),
       'type' => 'number',
-      'weight' => 36,
+      'weight' => 35,
     ),
   );
 
@@ -1272,7 +1272,7 @@ function feature_projects_field_default_field_instances() {
       'module' => 'number',
       'settings' => array(),
       'type' => 'number',
-      'weight' => 34,
+      'weight' => 33,
     ),
   );
 
@@ -1342,7 +1342,7 @@ function feature_projects_field_default_field_instances() {
       'module' => 'number',
       'settings' => array(),
       'type' => 'number',
-      'weight' => 32,
+      'weight' => 31,
     ),
   );
 
@@ -2540,13 +2540,9 @@ function feature_projects_field_default_field_instances() {
   // Exported field_instance: 'node-project-field_region'
   $field_instances['node-project-field_region'] = array(
     'bundle' => 'project',
-    'default_value' => array(
-      0 => array(
-        'value' => 'Global',
-      ),
-    ),
+    'default_value' => NULL,
     'deleted' => 0,
-    'description' => '',
+    'description' => 'Identifies the region that applies to the project.',
     'display' => array(
       'briefings' => array(
         'label' => 'above',
@@ -2555,10 +2551,11 @@ function feature_projects_field_default_field_instances() {
         'weight' => 0,
       ),
       'default' => array(
-        'label' => 'inline',
+        'label' => 'above',
+        'module' => 'i18n_taxonomy',
         'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 13,
+        'type' => 'i18n_taxonomy_term_reference_link',
+        'weight' => 46,
       ),
       'frontpage' => array(
         'label' => 'above',
@@ -2590,13 +2587,23 @@ function feature_projects_field_default_field_instances() {
     'label' => 'Region',
     'required' => 0,
     'settings' => array(
+      'mediafront' => array(
+        'custom' => '',
+        'field_type' => 0,
+        'media_type' => 'media',
+        'preview' => 0,
+        'thumbnail' => 0,
+      ),
       'user_register_form' => FALSE,
     ),
     'widget' => array(
-      'active' => 1,
-      'module' => 'options',
-      'settings' => array(),
-      'type' => 'options_select',
+      'active' => 0,
+      'module' => 'taxonomy',
+      'settings' => array(
+        'autocomplete_path' => 'taxonomy/autocomplete',
+        'size' => 60,
+      ),
+      'type' => 'taxonomy_autocomplete',
       'weight' => 11,
     ),
   );
@@ -3127,6 +3134,7 @@ function feature_projects_field_default_field_instances() {
   t('Enter the reference number of the project, in the form STDF/PG/nnn for project grants and STDF/PPG/nnn for project preparation grants.');
   t('Expected Results');
   t('Extension Date');
+  t('Identifies the region that applies to the project.');
   t('If applicable, then please enter the non STDF Contribution in USD');
   t('If the project is extended then enter the extension day, month, and year.');
   t('Image');

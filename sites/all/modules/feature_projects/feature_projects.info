@@ -121,6 +121,7 @@ features[node][] = project
 features[taxonomy][] = beneficiaries
 features[taxonomy][] = implementing_entity
 features[taxonomy][] = partners
+features[taxonomy][] = region
 features[user_permission][] = create beneficiary content
 features[user_permission][] = create project content
 features[user_permission][] = delete any beneficiary content
