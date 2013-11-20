@@ -6,6 +6,7 @@ php = 5.2.4
 version = 7.x-1.0
 project = feature_genera
 dependencies[] = ctools
+dependencies[] = feature_projects
 dependencies[] = features
 dependencies[] = field_collection
 dependencies[] = field_redirection

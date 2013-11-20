@@ -154,6 +154,15 @@ th.views-field {
       img { display: none;}
   }
 }
+
+th.views-field-field-budget-total-project-value,th.views-field-field-start-date {
+  width:100px;
+}
+
+th.views-field-field-beneficiary-text,th.views-field-view-node,th.views-field-view-node-1{
+  color:#fff;
+}
+
 th.views-field.active a { text-decoration: underline; }
 th.views-field-title {
     max-width: 15%;

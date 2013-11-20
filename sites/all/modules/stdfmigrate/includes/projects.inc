@@ -66,6 +66,7 @@ class StdfMigrationProjectMigration extends StdfMigration {
     $this->addFieldMapping ( 'field_status', 'status' );
     $this->addFieldMapping ( 'field_ppg_outcome', 'ppg_outcome' );
     $this->addFieldMapping ( 'field_region', 'region' );
+    $this->addFieldMapping ( 'field_region:create_term' )->defaultValue ( TRUE );
     $this->addFieldMapping ( 'title', 'title' );
     $this->addFieldMapping ( 'field_dac', 'dac' );
     $this->addFieldMapping ( 'field_acp', 'acp' );

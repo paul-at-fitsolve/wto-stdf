@@ -308,7 +308,7 @@ function feature_projects_views_default_views() {
   $handler->display->display_options['query']['type'] = 'views_query';
   $handler->display->display_options['exposed_form']['type'] = 'basic';
   $handler->display->display_options['exposed_form']['options']['reset_button'] = TRUE;
-  $handler->display->display_options['exposed_form']['options']['reset_button_label'] = 'Remove filters';
+  $handler->display->display_options['exposed_form']['options']['reset_button_label'] = 'CLEAR';
   $handler->display->display_options['pager']['type'] = 'full';
   $handler->display->display_options['pager']['options']['items_per_page'] = '6';
   $handler->display->display_options['pager']['options']['offset'] = '0';
@@ -320,27 +320,22 @@ function feature_projects_views_default_views() {
   $handler->display->display_options['pager']['options']['tags']['last'] = '>>';
   $handler->display->display_options['style_plugin'] = 'table';
   $handler->display->display_options['style_options']['columns'] = array(
-    'view_node' => 'view_node',
     'field_reference_number' => 'field_reference_number',
     'title' => 'title',
-    'title_1' => 'title_1',
+    'field_beneficiary_text' => 'field_beneficiary_text',
     'field_region' => 'field_region',
     'field_sector' => 'field_sector',
     'field_start_date' => 'field_start_date',
     'field_status' => 'field_status',
     'field_budget_total_project_value' => 'field_budget_total_project_value',
+    'view_node' => 'view_node',
   );
-  $handler->display->display_options['style_options']['default'] = '-1';
+  $handler->display->display_options['style_options']['default'] = 'field_reference_number';
   $handler->display->display_options['style_options']['info'] = array(
-    'view_node' => array(
-      'align' => '',
-      'separator' => '',
-      'empty_column' => 1,
-    ),
     'field_reference_number' => array(
       'sortable' => 1,
-      'default_sort_order' => 'asc',
-      'align' => '',
+      'default_sort_order' => 'desc',
+      'align' => 'views-align-center',
       'separator' => '',
       'empty_column' => 0,
     ),
@@ -351,9 +346,7 @@ function feature_projects_views_default_views() {
       'separator' => '',
       'empty_column' => 0,
     ),
-    'title_1' => array(
-      'sortable' => 1,
-      'default_sort_order' => 'asc',
+    'field_beneficiary_text' => array(
       'align' => '',
       'separator' => '',
       'empty_column' => 0,
@@ -375,7 +368,7 @@ function feature_projects_views_default_views() {
     'field_start_date' => array(
       'sortable' => 1,
       'default_sort_order' => 'asc',
-      'align' => 'views-align-center',
+      'align' => '',
       'separator' => '',
       'empty_column' => 0,
     ),
@@ -393,21 +386,12 @@ function feature_projects_views_default_views() {
       'separator' => '',
       'empty_column' => 0,
     ),
+    'view_node' => array(
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
   );
-  /* Relationship: Entity Reference: Referenced Entity */
-  $handler->display->display_options['relationships']['field_beneficiaries_target_id']['id'] = 'field_beneficiaries_target_id';
-  $handler->display->display_options['relationships']['field_beneficiaries_target_id']['table'] = 'field_data_field_beneficiaries';
-  $handler->display->display_options['relationships']['field_beneficiaries_target_id']['field'] = 'field_beneficiaries_target_id';
-  $handler->display->display_options['relationships']['field_beneficiaries_target_id']['label'] = 'Beneficiaries';
-  /* Field: Content: Link */
-  $handler->display->display_options['fields']['view_node']['id'] = 'view_node';
-  $handler->display->display_options['fields']['view_node']['table'] = 'views_entity_node';
-  $handler->display->display_options['fields']['view_node']['field'] = 'view_node';
-  $handler->display->display_options['fields']['view_node']['label'] = 'Ref';
-  $handler->display->display_options['fields']['view_node']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['view_node']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['view_node']['alter']['text'] = '[field_reference_number]';
-  $handler->display->display_options['fields']['view_node']['alter']['make_link'] = TRUE;
   /* Field: Content: Reference Number */
   $handler->display->display_options['fields']['field_reference_number']['id'] = 'field_reference_number';
   $handler->display->display_options['fields']['field_reference_number']['table'] = 'field_data_field_reference_number';
@@ -421,19 +405,20 @@ function feature_projects_views_default_views() {
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['title']['link_to_node'] = FALSE;
-  /* Field: Content: Title */
-  $handler->display->display_options['fields']['title_1']['id'] = 'title_1';
-  $handler->display->display_options['fields']['title_1']['table'] = 'node';
-  $handler->display->display_options['fields']['title_1']['field'] = 'title';
-  $handler->display->display_options['fields']['title_1']['relationship'] = 'field_beneficiaries_target_id';
-  $handler->display->display_options['fields']['title_1']['label'] = 'Beneficiaries';
-  $handler->display->display_options['fields']['title_1']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['title_1']['link_to_node'] = FALSE;
+  /* Field: Content: Beneficiary Text */
+  $handler->display->display_options['fields']['field_beneficiary_text']['id'] = 'field_beneficiary_text';
+  $handler->display->display_options['fields']['field_beneficiary_text']['table'] = 'field_data_field_beneficiary_text';
+  $handler->display->display_options['fields']['field_beneficiary_text']['field'] = 'field_beneficiary_text';
+  $handler->display->display_options['fields']['field_beneficiary_text']['label'] = 'Beneficiaries';
+  $handler->display->display_options['fields']['field_beneficiary_text']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_beneficiary_text']['type'] = 'taxonomy_term_reference_plain';
+  $handler->display->display_options['fields']['field_beneficiary_text']['delta_offset'] = '0';
   /* Field: Content: Region */
   $handler->display->display_options['fields']['field_region']['id'] = 'field_region';
   $handler->display->display_options['fields']['field_region']['table'] = 'field_data_field_region';
   $handler->display->display_options['fields']['field_region']['field'] = 'field_region';
   $handler->display->display_options['fields']['field_region']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_region']['type'] = 'taxonomy_term_reference_plain';
   /* Field: Content: Sector */
   $handler->display->display_options['fields']['field_sector']['id'] = 'field_sector';
   $handler->display->display_options['fields']['field_sector']['table'] = 'field_data_field_sector';
@@ -443,7 +428,6 @@ function feature_projects_views_default_views() {
   $handler->display->display_options['fields']['field_start_date']['id'] = 'field_start_date';
   $handler->display->display_options['fields']['field_start_date']['table'] = 'field_data_field_start_date';
   $handler->display->display_options['fields']['field_start_date']['field'] = 'field_start_date';
-  $handler->display->display_options['fields']['field_start_date']['label'] = 'Date';
   $handler->display->display_options['fields']['field_start_date']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_start_date']['settings'] = array(
     'format_type' => 'short',
@@ -469,6 +453,13 @@ function feature_projects_views_default_views() {
     'scale' => '0',
     'prefix_suffix' => 1,
   );
+  /* Field: Content: Link */
+  $handler->display->display_options['fields']['view_node_1']['id'] = 'view_node_1';
+  $handler->display->display_options['fields']['view_node_1']['table'] = 'views_entity_node';
+  $handler->display->display_options['fields']['view_node_1']['field'] = 'view_node';
+  $handler->display->display_options['fields']['view_node_1']['label'] = 'Details';
+  $handler->display->display_options['fields']['view_node_1']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['view_node_1']['text'] = 'View';
   /* Sort criterion: Content: Post date */
   $handler->display->display_options['sorts']['created']['id'] = 'created';
   $handler->display->display_options['sorts']['created']['table'] = 'node';
@@ -497,7 +488,7 @@ function feature_projects_views_default_views() {
     'PPG' => 'PPG',
   );
   $handler->display->display_options['filters']['field_type_value']['group'] = 1;
-  /* Filter criterion: Content: Region (field_region) */
+  /* Filter criterion: Broken/missing handler */
   $handler->display->display_options['filters']['field_region_value']['id'] = 'field_region_value';
   $handler->display->display_options['filters']['field_region_value']['table'] = 'field_data_field_region';
   $handler->display->display_options['filters']['field_region_value']['field'] = 'field_region_value';
@@ -525,7 +516,6 @@ function feature_projects_views_default_views() {
     5 => 0,
     6 => 0,
   );
-  $handler->display->display_options['filters']['field_region_value']['expose']['reduce'] = TRUE;
   /* Filter criterion: Content: Status (field_status) */
   $handler->display->display_options['filters']['field_status_value_1']['id'] = 'field_status_value_1';
   $handler->display->display_options['filters']['field_status_value_1']['table'] = 'field_data_field_status';
@@ -589,30 +579,6 @@ function feature_projects_views_default_views() {
   $handler->display->display_options['filters']['field_status_value']['value'] = array(
     'Revoked' => 'Revoked',
   );
-  /* Filter criterion: Content: Title */
-  $handler->display->display_options['filters']['title']['id'] = 'title';
-  $handler->display->display_options['filters']['title']['table'] = 'node';
-  $handler->display->display_options['filters']['title']['field'] = 'title';
-  $handler->display->display_options['filters']['title']['relationship'] = 'field_beneficiaries_target_id';
-  $handler->display->display_options['filters']['title']['operator'] = 'contains';
-  $handler->display->display_options['filters']['title']['exposed'] = TRUE;
-  $handler->display->display_options['filters']['title']['expose']['operator_id'] = 'title_op';
-  $handler->display->display_options['filters']['title']['expose']['label'] = 'Beneficiaries';
-  $handler->display->display_options['filters']['title']['expose']['description'] = 'Filter by one or more beneficiaries.';
-  $handler->display->display_options['filters']['title']['expose']['operator'] = 'title_op';
-  $handler->display->display_options['filters']['title']['expose']['identifier'] = 'title';
-  $handler->display->display_options['filters']['title']['expose']['remember_roles'] = array(
-    2 => '2',
-    1 => 0,
-    3 => 0,
-    4 => 0,
-  );
-  $handler->display->display_options['filters']['title']['expose']['autocomplete_filter'] = 1;
-  $handler->display->display_options['filters']['title']['expose']['autocomplete_items'] = '10';
-  $handler->display->display_options['filters']['title']['expose']['autocomplete_field'] = 'title_1';
-  $handler->display->display_options['filters']['title']['expose']['autocomplete_raw_suggestion'] = 1;
-  $handler->display->display_options['filters']['title']['expose']['autocomplete_raw_dropdown'] = 1;
-  $handler->display->display_options['filters']['title']['expose']['autocomplete_dependent'] = 0;
   /* Filter criterion: Content: Language */
   $handler->display->display_options['filters']['language']['id'] = 'language';
   $handler->display->display_options['filters']['language']['table'] = 'node';
@@ -650,32 +616,34 @@ function feature_projects_views_default_views() {
   );
   $handler->display->display_options['filters']['field_type_value']['group'] = 1;
   /* Filter criterion: Content: Region (field_region) */
-  $handler->display->display_options['filters']['field_region_value']['id'] = 'field_region_value';
-  $handler->display->display_options['filters']['field_region_value']['table'] = 'field_data_field_region';
-  $handler->display->display_options['filters']['field_region_value']['field'] = 'field_region_value';
-  $handler->display->display_options['filters']['field_region_value']['value'] = array(
-    'all' => 'all',
-    '002' => '002',
-    142 => '142',
-    'Global' => 'Global',
-    'LAC' => 'LAC',
-    'Other' => 'Other',
+  $handler->display->display_options['filters']['field_region_tid']['id'] = 'field_region_tid';
+  $handler->display->display_options['filters']['field_region_tid']['table'] = 'field_data_field_region';
+  $handler->display->display_options['filters']['field_region_tid']['field'] = 'field_region_tid';
+  $handler->display->display_options['filters']['field_region_tid']['value'] = array(
+    1930 => '1930',
+    1927 => '1927',
+    1954 => '1954',
+    1925 => '1925',
+    1931 => '1931',
+    1934 => '1934',
   );
-  $handler->display->display_options['filters']['field_region_value']['group'] = 1;
-  $handler->display->display_options['filters']['field_region_value']['exposed'] = TRUE;
-  $handler->display->display_options['filters']['field_region_value']['expose']['operator_id'] = 'field_region_value_op';
-  $handler->display->display_options['filters']['field_region_value']['expose']['label'] = 'Region';
-  $handler->display->display_options['filters']['field_region_value']['expose']['operator'] = 'field_region_value_op';
-  $handler->display->display_options['filters']['field_region_value']['expose']['identifier'] = 'field_region_value';
-  $handler->display->display_options['filters']['field_region_value']['expose']['remember'] = TRUE;
-  $handler->display->display_options['filters']['field_region_value']['expose']['remember_roles'] = array(
+  $handler->display->display_options['filters']['field_region_tid']['group'] = 1;
+  $handler->display->display_options['filters']['field_region_tid']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_region_tid']['expose']['operator_id'] = 'field_region_tid_op';
+  $handler->display->display_options['filters']['field_region_tid']['expose']['label'] = 'Region';
+  $handler->display->display_options['filters']['field_region_tid']['expose']['operator'] = 'field_region_tid_op';
+  $handler->display->display_options['filters']['field_region_tid']['expose']['identifier'] = 'field_region_tid';
+  $handler->display->display_options['filters']['field_region_tid']['expose']['remember'] = TRUE;
+  $handler->display->display_options['filters']['field_region_tid']['expose']['remember_roles'] = array(
     2 => '2',
     1 => '1',
     3 => 0,
     4 => 0,
     5 => 0,
   );
-  $handler->display->display_options['filters']['field_region_value']['expose']['reduce'] = TRUE;
+  $handler->display->display_options['filters']['field_region_tid']['expose']['reduce'] = TRUE;
+  $handler->display->display_options['filters']['field_region_tid']['type'] = 'select';
+  $handler->display->display_options['filters']['field_region_tid']['vocabulary'] = 'region';
   /* Filter criterion: Content: Status (field_status) */
   $handler->display->display_options['filters']['field_status_value_1']['id'] = 'field_status_value_1';
   $handler->display->display_options['filters']['field_status_value_1']['table'] = 'field_data_field_status';
@@ -727,33 +695,6 @@ function feature_projects_views_default_views() {
     5 => 0,
   );
   $handler->display->display_options['filters']['field_sector_value']['expose']['reduce'] = TRUE;
-  /* Filter criterion: Content: Title */
-  $handler->display->display_options['filters']['title']['id'] = 'title';
-  $handler->display->display_options['filters']['title']['table'] = 'node';
-  $handler->display->display_options['filters']['title']['field'] = 'title';
-  $handler->display->display_options['filters']['title']['relationship'] = 'field_beneficiaries_target_id';
-  $handler->display->display_options['filters']['title']['operator'] = 'contains';
-  $handler->display->display_options['filters']['title']['group'] = 1;
-  $handler->display->display_options['filters']['title']['exposed'] = TRUE;
-  $handler->display->display_options['filters']['title']['expose']['operator_id'] = 'title_op';
-  $handler->display->display_options['filters']['title']['expose']['label'] = 'Beneficiaries';
-  $handler->display->display_options['filters']['title']['expose']['description'] = 'Start typing the beneficiary\'s name for suggestions.';
-  $handler->display->display_options['filters']['title']['expose']['operator'] = 'title_op';
-  $handler->display->display_options['filters']['title']['expose']['identifier'] = 'title';
-  $handler->display->display_options['filters']['title']['expose']['remember'] = TRUE;
-  $handler->display->display_options['filters']['title']['expose']['remember_roles'] = array(
-    2 => '2',
-    1 => '1',
-    3 => 0,
-    4 => 0,
-    5 => 0,
-  );
-  $handler->display->display_options['filters']['title']['expose']['autocomplete_filter'] = 1;
-  $handler->display->display_options['filters']['title']['expose']['autocomplete_items'] = '10';
-  $handler->display->display_options['filters']['title']['expose']['autocomplete_field'] = 'title_1';
-  $handler->display->display_options['filters']['title']['expose']['autocomplete_raw_suggestion'] = 1;
-  $handler->display->display_options['filters']['title']['expose']['autocomplete_raw_dropdown'] = 1;
-  $handler->display->display_options['filters']['title']['expose']['autocomplete_dependent'] = 0;
   /* Filter criterion: Content: Status (field_status) */
   $handler->display->display_options['filters']['field_status_value']['id'] = 'field_status_value';
   $handler->display->display_options['filters']['field_status_value']['table'] = 'field_data_field_status';
@@ -771,6 +712,26 @@ function feature_projects_views_default_views() {
     '***CURRENT_LANGUAGE***' => '***CURRENT_LANGUAGE***',
   );
   $handler->display->display_options['filters']['language']['group'] = 1;
+  /* Filter criterion: Content: Beneficiary Text (field_beneficiary_text) */
+  $handler->display->display_options['filters']['field_beneficiary_text_tid']['id'] = 'field_beneficiary_text_tid';
+  $handler->display->display_options['filters']['field_beneficiary_text_tid']['table'] = 'field_data_field_beneficiary_text';
+  $handler->display->display_options['filters']['field_beneficiary_text_tid']['field'] = 'field_beneficiary_text_tid';
+  $handler->display->display_options['filters']['field_beneficiary_text_tid']['value'] = '';
+  $handler->display->display_options['filters']['field_beneficiary_text_tid']['group'] = 1;
+  $handler->display->display_options['filters']['field_beneficiary_text_tid']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_beneficiary_text_tid']['expose']['operator_id'] = 'field_beneficiary_text_tid_op';
+  $handler->display->display_options['filters']['field_beneficiary_text_tid']['expose']['label'] = 'Beneficiaries';
+  $handler->display->display_options['filters']['field_beneficiary_text_tid']['expose']['operator'] = 'field_beneficiary_text_tid_op';
+  $handler->display->display_options['filters']['field_beneficiary_text_tid']['expose']['identifier'] = 'field_beneficiary_text_tid';
+  $handler->display->display_options['filters']['field_beneficiary_text_tid']['expose']['remember'] = TRUE;
+  $handler->display->display_options['filters']['field_beneficiary_text_tid']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => '1',
+    3 => 0,
+    4 => 0,
+    5 => 0,
+  );
+  $handler->display->display_options['filters']['field_beneficiary_text_tid']['vocabulary'] = 'beneficiaries';
   $handler->display->display_options['merge_rows'] = TRUE;
   $handler->display->display_options['field_config'] = array(
     'title' => array(
@@ -845,14 +806,14 @@ function feature_projects_views_default_views() {
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
-  /* Field: Content: Title */
-  $handler->display->display_options['fields']['title_1']['id'] = 'title_1';
-  $handler->display->display_options['fields']['title_1']['table'] = 'node';
-  $handler->display->display_options['fields']['title_1']['field'] = 'title';
-  $handler->display->display_options['fields']['title_1']['relationship'] = 'field_beneficiaries_target_id';
-  $handler->display->display_options['fields']['title_1']['label'] = 'Beneficiaries';
-  $handler->display->display_options['fields']['title_1']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['title_1']['link_to_node'] = FALSE;
+  $handler->display->display_options['fields']['title']['link_to_node'] = FALSE;
+  /* Field: Content: Beneficiary Text */
+  $handler->display->display_options['fields']['field_beneficiary_text']['id'] = 'field_beneficiary_text';
+  $handler->display->display_options['fields']['field_beneficiary_text']['table'] = 'field_data_field_beneficiary_text';
+  $handler->display->display_options['fields']['field_beneficiary_text']['field'] = 'field_beneficiary_text';
+  $handler->display->display_options['fields']['field_beneficiary_text']['label'] = 'Beneficiaries';
+  $handler->display->display_options['fields']['field_beneficiary_text']['type'] = 'taxonomy_term_reference_plain';
+  $handler->display->display_options['fields']['field_beneficiary_text']['delta_offset'] = '0';
   /* Field: Content: Region */
   $handler->display->display_options['fields']['field_region']['id'] = 'field_region';
   $handler->display->display_options['fields']['field_region']['table'] = 'field_data_field_region';
@@ -892,6 +853,12 @@ function feature_projects_views_default_views() {
     'scale' => '2',
     'prefix_suffix' => 1,
   );
+  /* Field: Content: Link */
+  $handler->display->display_options['fields']['view_node']['id'] = 'view_node';
+  $handler->display->display_options['fields']['view_node']['table'] = 'views_entity_node';
+  $handler->display->display_options['fields']['view_node']['field'] = 'view_node';
+  $handler->display->display_options['fields']['view_node']['label'] = 'Details';
+  $handler->display->display_options['fields']['view_node']['text'] = 'View';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Content: Published */
@@ -918,32 +885,34 @@ function feature_projects_views_default_views() {
   );
   $handler->display->display_options['filters']['field_type_value']['group'] = 1;
   /* Filter criterion: Content: Region (field_region) */
-  $handler->display->display_options['filters']['field_region_value']['id'] = 'field_region_value';
-  $handler->display->display_options['filters']['field_region_value']['table'] = 'field_data_field_region';
-  $handler->display->display_options['filters']['field_region_value']['field'] = 'field_region_value';
-  $handler->display->display_options['filters']['field_region_value']['value'] = array(
-    'all' => 'all',
-    '002' => '002',
-    142 => '142',
-    'Global' => 'Global',
-    'LAC' => 'LAC',
-    'Other' => 'Other',
+  $handler->display->display_options['filters']['field_region_tid']['id'] = 'field_region_tid';
+  $handler->display->display_options['filters']['field_region_tid']['table'] = 'field_data_field_region';
+  $handler->display->display_options['filters']['field_region_tid']['field'] = 'field_region_tid';
+  $handler->display->display_options['filters']['field_region_tid']['value'] = array(
+    1930 => '1930',
+    1927 => '1927',
+    1954 => '1954',
+    1925 => '1925',
+    1931 => '1931',
+    1934 => '1934',
   );
-  $handler->display->display_options['filters']['field_region_value']['group'] = 1;
-  $handler->display->display_options['filters']['field_region_value']['exposed'] = TRUE;
-  $handler->display->display_options['filters']['field_region_value']['expose']['operator_id'] = 'field_region_value_op';
-  $handler->display->display_options['filters']['field_region_value']['expose']['label'] = 'Region';
-  $handler->display->display_options['filters']['field_region_value']['expose']['operator'] = 'field_region_value_op';
-  $handler->display->display_options['filters']['field_region_value']['expose']['identifier'] = 'field_region_value';
-  $handler->display->display_options['filters']['field_region_value']['expose']['remember'] = TRUE;
-  $handler->display->display_options['filters']['field_region_value']['expose']['remember_roles'] = array(
+  $handler->display->display_options['filters']['field_region_tid']['group'] = 1;
+  $handler->display->display_options['filters']['field_region_tid']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_region_tid']['expose']['operator_id'] = 'field_region_tid_op';
+  $handler->display->display_options['filters']['field_region_tid']['expose']['label'] = 'Region';
+  $handler->display->display_options['filters']['field_region_tid']['expose']['operator'] = 'field_region_tid_op';
+  $handler->display->display_options['filters']['field_region_tid']['expose']['identifier'] = 'field_region_tid';
+  $handler->display->display_options['filters']['field_region_tid']['expose']['remember'] = TRUE;
+  $handler->display->display_options['filters']['field_region_tid']['expose']['remember_roles'] = array(
     2 => '2',
     1 => '1',
     3 => 0,
     4 => 0,
     5 => 0,
   );
-  $handler->display->display_options['filters']['field_region_value']['expose']['reduce'] = TRUE;
+  $handler->display->display_options['filters']['field_region_tid']['expose']['reduce'] = TRUE;
+  $handler->display->display_options['filters']['field_region_tid']['type'] = 'select';
+  $handler->display->display_options['filters']['field_region_tid']['vocabulary'] = 'region';
   /* Filter criterion: Content: Status (field_status) */
   $handler->display->display_options['filters']['field_status_value_1']['id'] = 'field_status_value_1';
   $handler->display->display_options['filters']['field_status_value_1']['table'] = 'field_data_field_status';
@@ -997,33 +966,6 @@ function feature_projects_views_default_views() {
     5 => 0,
   );
   $handler->display->display_options['filters']['field_sector_value']['expose']['reduce'] = TRUE;
-  /* Filter criterion: Content: Title */
-  $handler->display->display_options['filters']['title']['id'] = 'title';
-  $handler->display->display_options['filters']['title']['table'] = 'node';
-  $handler->display->display_options['filters']['title']['field'] = 'title';
-  $handler->display->display_options['filters']['title']['relationship'] = 'field_beneficiaries_target_id';
-  $handler->display->display_options['filters']['title']['operator'] = 'contains';
-  $handler->display->display_options['filters']['title']['group'] = 1;
-  $handler->display->display_options['filters']['title']['exposed'] = TRUE;
-  $handler->display->display_options['filters']['title']['expose']['operator_id'] = 'title_op';
-  $handler->display->display_options['filters']['title']['expose']['label'] = 'Beneficiaries';
-  $handler->display->display_options['filters']['title']['expose']['description'] = 'Start typing the beneficiary\'s name for suggestions.';
-  $handler->display->display_options['filters']['title']['expose']['operator'] = 'title_op';
-  $handler->display->display_options['filters']['title']['expose']['identifier'] = 'title';
-  $handler->display->display_options['filters']['title']['expose']['remember'] = TRUE;
-  $handler->display->display_options['filters']['title']['expose']['remember_roles'] = array(
-    2 => '2',
-    1 => '1',
-    3 => 0,
-    4 => 0,
-    5 => 0,
-  );
-  $handler->display->display_options['filters']['title']['expose']['autocomplete_filter'] = 1;
-  $handler->display->display_options['filters']['title']['expose']['autocomplete_items'] = '10';
-  $handler->display->display_options['filters']['title']['expose']['autocomplete_field'] = 'title_1';
-  $handler->display->display_options['filters']['title']['expose']['autocomplete_raw_suggestion'] = 1;
-  $handler->display->display_options['filters']['title']['expose']['autocomplete_raw_dropdown'] = 1;
-  $handler->display->display_options['filters']['title']['expose']['autocomplete_dependent'] = 0;
   /* Filter criterion: Content: Status (field_status) */
   $handler->display->display_options['filters']['field_status_value']['id'] = 'field_status_value';
   $handler->display->display_options['filters']['field_status_value']['table'] = 'field_data_field_status';
@@ -1041,6 +983,26 @@ function feature_projects_views_default_views() {
     '***CURRENT_LANGUAGE***' => '***CURRENT_LANGUAGE***',
   );
   $handler->display->display_options['filters']['language']['group'] = 1;
+  /* Filter criterion: Content: Beneficiary Text (field_beneficiary_text) */
+  $handler->display->display_options['filters']['field_beneficiary_text_tid']['id'] = 'field_beneficiary_text_tid';
+  $handler->display->display_options['filters']['field_beneficiary_text_tid']['table'] = 'field_data_field_beneficiary_text';
+  $handler->display->display_options['filters']['field_beneficiary_text_tid']['field'] = 'field_beneficiary_text_tid';
+  $handler->display->display_options['filters']['field_beneficiary_text_tid']['value'] = '';
+  $handler->display->display_options['filters']['field_beneficiary_text_tid']['group'] = 1;
+  $handler->display->display_options['filters']['field_beneficiary_text_tid']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_beneficiary_text_tid']['expose']['operator_id'] = 'field_beneficiary_text_tid_op';
+  $handler->display->display_options['filters']['field_beneficiary_text_tid']['expose']['label'] = 'Beneficiaries';
+  $handler->display->display_options['filters']['field_beneficiary_text_tid']['expose']['operator'] = 'field_beneficiary_text_tid_op';
+  $handler->display->display_options['filters']['field_beneficiary_text_tid']['expose']['identifier'] = 'field_beneficiary_text_tid';
+  $handler->display->display_options['filters']['field_beneficiary_text_tid']['expose']['remember'] = TRUE;
+  $handler->display->display_options['filters']['field_beneficiary_text_tid']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => '1',
+    3 => 0,
+    4 => 0,
+    5 => 0,
+  );
+  $handler->display->display_options['filters']['field_beneficiary_text_tid']['vocabulary'] = 'beneficiaries';
   $handler->display->display_options['merge_rows'] = TRUE;
   $handler->display->display_options['field_config'] = array(
     'title' => array(
@@ -1129,7 +1091,7 @@ function feature_projects_views_default_views() {
     'Project' => 'Project',
   );
   $handler->display->display_options['filters']['field_type_value']['group'] = 1;
-  /* Filter criterion: Content: Region (field_region) */
+  /* Filter criterion: Broken/missing handler */
   $handler->display->display_options['filters']['field_region_value']['id'] = 'field_region_value';
   $handler->display->display_options['filters']['field_region_value']['table'] = 'field_data_field_region';
   $handler->display->display_options['filters']['field_region_value']['field'] = 'field_region_value';
@@ -1156,7 +1118,6 @@ function feature_projects_views_default_views() {
     4 => 0,
     5 => 0,
   );
-  $handler->display->display_options['filters']['field_region_value']['expose']['reduce'] = TRUE;
   /* Filter criterion: Content: Status (field_status) */
   $handler->display->display_options['filters']['field_status_value_1']['id'] = 'field_status_value_1';
   $handler->display->display_options['filters']['field_status_value_1']['table'] = 'field_data_field_status';
@@ -1326,7 +1287,7 @@ function feature_projects_views_default_views() {
     'PPG' => 'PPG',
   );
   $handler->display->display_options['filters']['field_type_value']['group'] = 1;
-  /* Filter criterion: Content: Region (field_region) */
+  /* Filter criterion: Broken/missing handler */
   $handler->display->display_options['filters']['field_region_value']['id'] = 'field_region_value';
   $handler->display->display_options['filters']['field_region_value']['table'] = 'field_data_field_region';
   $handler->display->display_options['filters']['field_region_value']['field'] = 'field_region_value';
@@ -1353,7 +1314,6 @@ function feature_projects_views_default_views() {
     4 => 0,
     5 => 0,
   );
-  $handler->display->display_options['filters']['field_region_value']['expose']['reduce'] = TRUE;
   /* Filter criterion: Content: Status (field_status) */
   $handler->display->display_options['filters']['field_status_value_1']['id'] = 'field_status_value_1';
   $handler->display->display_options['filters']['field_status_value_1']['table'] = 'field_data_field_status';
@@ -1494,7 +1454,7 @@ function feature_projects_views_default_views() {
     t('Project Grants'),
     t('more'),
     t('Apply'),
-    t('Remove filters'),
+    t('CLEAR'),
     t('Sort by'),
     t('Asc'),
     t('Desc'),
@@ -1505,27 +1465,25 @@ function feature_projects_views_default_views() {
     t('<'),
     t('>'),
     t('>>'),
-    t('Beneficiaries'),
-    t('Ref'),
-    t('[field_reference_number]'),
     t('Ref #'),
     t('Title'),
+    t('Beneficiaries'),
     t('Region'),
     t('Sector'),
-    t('Date'),
+    t('Start Date'),
     t('Status'),
     t('Budget (US$)'),
+    t('Details'),
+    t('View'),
     t('Select one or more regions to filter by.'),
     t('FIlter by one or more project status types.'),
     t('Filter by one or more project sectors.'),
-    t('Filter by one or more beneficiaries.'),
     t('This page holds the view of project grants.'),
-    t('Start typing the beneficiary\'s name for suggestions.'),
     t('Project Preparation Grants'),
     t('This page holds the view of project preparation grants.'),
     t('Ref. #'),
-    t('Start Date'),
     t('Project Grants Download'),
+    t('Filter by one or more beneficiaries.'),
     t('Project Preparation Grants Download'),
   );
   $export['projects'] = $view;

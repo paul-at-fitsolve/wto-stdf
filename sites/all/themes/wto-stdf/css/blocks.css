@@ -210,14 +210,18 @@
   font-weight: 700;
 }
 
-/* line 152, ../sass/blocks.scss */
+/* line 151, ../sass/blocks.scss */
+#block-views-eebb22e852a8f93e943e8c7a212a3c68 {
+  position: relative;
+  top: -30px;
+}
+/* line 154, ../sass/blocks.scss */
 #block-views-eebb22e852a8f93e943e8c7a212a3c68 h2.block-title {
   text-align: center;
 }
-/* line 156, ../sass/blocks.scss */
+/* line 158, ../sass/blocks.scss */
 #block-views-eebb22e852a8f93e943e8c7a212a3c68 .view-nodequeue-thematic-activities p {
   font-size: 0.8em;
-  text-align: justify;
 }
 /* line 162, ../sass/blocks.scss */
 #block-views-eebb22e852a8f93e943e8c7a212a3c68 td {
@@ -382,10 +386,10 @@ footer .block a {
   position: relative;
   top: -50px;
   float: left;
-  background-image: url("../images/fabric-big.png");
+  background-image: url("../images/bg-proposals.png");
   text-align: center;
   text-transform: uppercase;
-  font-size: 125%;
+  font-size: 107%;
   width: 100%;
 }
 
