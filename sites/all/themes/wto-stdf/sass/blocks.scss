@@ -149,16 +149,16 @@
 }
 
 #block-views-eebb22e852a8f93e943e8c7a212a3c68{
+  position: relative;
+  top: -30px;
   h2.block-title { 
     text-align: center;
   }
   .view-nodequeue-thematic-activities {	
     p {	
       font-size: 0.8em; 
-      text-align: left;
     }		
   }
-  
     td {
      float: left;
      .views-field-title {
@@ -297,14 +297,14 @@ footer .block a { color: #978a82; }
 }
 
 #block-stdffrontpage-proposal-deadline{
-  position:relative;
-  top:-50px;
-  float:left;
-  background-image:url('../images/fabric-big.png');
-  text-align:center;
-  text-transform:uppercase;
-  font-size:125%;
-  width:100%;
+  position: relative;
+  top: -50px;
+  float: left;
+  background-image:url('../images/bg-proposals.png');
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 107%;
+  width: 100%;
 }
 
 #block-stdffrontpage-partnerlogos{
