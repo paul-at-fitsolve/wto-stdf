@@ -52,7 +52,7 @@
 			$("#block-mailchimp-lists-stdf-mail-list").dialog({
 				autoOpen : false,
 				dialogClass : 'dialogFixed',
-				title : Drupal.t("Signup For Newsletter"),
+				title : Drupal.t("STDF Mailing List / Liste de distribution du STDF / Lista de distribución del STDF"),
 				zindex : 1000,
 				width : 600,
 				modal : true,

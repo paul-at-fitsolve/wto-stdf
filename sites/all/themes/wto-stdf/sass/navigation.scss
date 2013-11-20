@@ -104,14 +104,11 @@ li a.active {
 .block-menu-block {
 
 	ul.menu {
-	  padding: 0; 
-	  border-bottom: 1px dotted #a5a6a9;
+	  padding: 0 0 10px;
 	  a {
-	  
 		color: #668faf;
 		text-decoration: none; 
 		font-family: $font-menu;
-		
 	  }
 	  
 	  a.active { color: #205c8c;}
@@ -125,8 +122,6 @@ li a.active {
 		border: none; 
 	  }
 	}
-	
-	
 }
 
 #block-nice-menus-1{

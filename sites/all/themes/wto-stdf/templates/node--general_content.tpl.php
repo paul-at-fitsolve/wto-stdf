@@ -108,7 +108,8 @@ switch($view_mode) {
     // We hide the comments and links now so that we can render them later.
     hide($content['comments']);
     hide($content['links']);
-    print render($content['body']);
+  	print render($content['field_slideshow']); 
+	print render($content['body']);
   ?>
   <?php print render($content['links']); ?>
   <?php print render($content['comments']); ?>
