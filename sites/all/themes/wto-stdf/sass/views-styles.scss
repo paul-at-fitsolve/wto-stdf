@@ -141,7 +141,7 @@ td.views-field {
 
 th.views-field {
   padding: 1em 1.25em;
-  background: url(../images/fabric_1px.png) repeat-x;
+  background-color: ##99b4c9;
   border:3px solid #fff;
   text-transform: uppercase;
   font-size:12px;
@@ -165,7 +165,7 @@ th.views-field-field-beneficiary-text,th.views-field-view-node,th.views-field-vi
 
 th.views-field.active a { text-decoration: underline; }
 th.views-field-title {
-    max-width: 15%;
+    width: 20%;
 }
 
 td.views-field {
@@ -178,6 +178,8 @@ td.views-field {
      color: #668FAF;
   }
 }
+td.views-field-view-node,
+td.views-field-field-start-date { text-align: center; }
 
 .completed { color: #9abe0a !important; }
 
@@ -199,12 +201,12 @@ html.js input.throbbing {
   padding: 0.5em 0;
 }
 
-#edit-reset, #edit-submit-projects {
-  background:url(../images/cancel.png) no-repeat left center #EBEBEB;
+#edit-reset {
+  background: url(../images/cancel.png) no-repeat left center #EBEBEB;
 }
 
 #edit-submit-projects {
-  background-imge:url(../images/submit.png);
+  background: url(../images/submit.png) no-repeat left center #EBEBEB;
 }
 
 #edit-field-sector-value-wrapper {
