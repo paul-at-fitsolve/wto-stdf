@@ -8,70 +8,60 @@
   padding: 0px 5px 0px 5px;
 }
 
-/* line 16, ../sass/forms.scss */
+/* line 14, ../sass/forms.scss */
 .ui-front {
   z-index: 1000 !important;
 }
 
-/* line 19, ../sass/forms.scss */
+/* line 17, ../sass/forms.scss */
 .form-item {
   /* Wrapper for a form element (or group of form elements) and its label */
   margin: 1.5em 0;
 }
-/* line 24, ../sass/forms.scss */
+/* line 22, ../sass/forms.scss */
 .form-item input.error,
 .form-item textarea.error,
 .form-item select.error {
   /* Highlight the form elements that caused a form submission error */
   border: 1px solid #c00;
 }
-/* line 28, ../sass/forms.scss */
+/* line 26, ../sass/forms.scss */
 .form-item label {
   /* The label for a form element */
   display: block;
-  font-weight: bold;
+  font-weight: 700;
 }
-/* line 33, ../sass/forms.scss */
+/* line 31, ../sass/forms.scss */
 .form-item label.option {
   /* The label for a radio button or checkbox */
   display: inline;
-  font-weight: normal;
+  font-weight: 400;
 }
-/* line 38, ../sass/forms.scss */
+/* line 36, ../sass/forms.scss */
 .form-item .form-required {
   /* The part of the label that indicates a required field */
   color: #c00;
 }
-/* line 42, ../sass/forms.scss */
+/* line 40, ../sass/forms.scss */
 .form-item .description {
   /* The descriptive help text (separate from the label) */
   font-size: 0.85em;
 }
-/* line 47, ../sass/forms.scss */
+/* line 45, ../sass/forms.scss */
 .form-checkboxes .form-item, .form-radios .form-item {
   /* Pack groups of checkboxes and radio buttons closer together */
   margin: 0;
   /* Drupal core uses "0.4em 0" */
 }
 
-/* line 54, ../sass/forms.scss */
-.form-submit {
-  /* The submit button */
-}
-
-/* line 59, ../sass/forms.scss */
+/* line 52, ../sass/forms.scss */
 .container-inline div,
 .container-inline label {
   /* Inline labels and form divs */
   display: inline;
 }
 
-/* line 64, ../sass/forms.scss */
-.tips {
-  /* Tips for Drupal's input formats */
-}
-
-/* line 67, ../sass/forms.scss */
+/* line 57, ../sass/forms.scss */
 a.button {
   /* Buttons used by contrib modules like Media */
   -webkit-appearance: button;
@@ -82,7 +72,7 @@ a.button {
 /*
  * Password confirmation
  */
-/* line 76, ../sass/forms.scss */
+/* line 66, ../sass/forms.scss */
 .password-parent,
 .confirm-parent {
   margin: 0;
@@ -91,18 +81,18 @@ a.button {
 /*
  * Search (search-block-form.tpl.php)
  */
-/* line 84, ../sass/forms.scss */
+/* line 74, ../sass/forms.scss */
 #block-search-form {
   /* Wrapper for the search form */
   float: right;
 }
-/* line 87, ../sass/forms.scss */
+/* line 77, ../sass/forms.scss */
 #block-search-form .form-item, #block-search-form .form-actions {
   display: block;
   float: left;
   margin: 0;
 }
-/* line 93, ../sass/forms.scss */
+/* line 83, ../sass/forms.scss */
 #block-search-form .form-text.form-autocomplete {
   background-color: rgba(255, 255, 255, 0.5);
   border: 1px solid #1f4e74;
@@ -111,7 +101,7 @@ a.button {
   width: 0;
   padding: 1px 0;
 }
-/* line 101, ../sass/forms.scss */
+/* line 91, ../sass/forms.scss */
 #block-search-form .form-submit {
   border-bottom: 1px solid #1f4e74;
 }
@@ -119,7 +109,7 @@ a.button {
 /*
  * Drupal's default login form block
  */
-/* line 110, ../sass/forms.scss */
+/* line 100, ../sass/forms.scss */
 #user-login-form {
   text-align: left;
   /*
@@ -129,13 +119,13 @@ a.button {
    * styling of list items.
    */
 }
-/* line 120, ../sass/forms.scss */
+/* line 110, ../sass/forms.scss */
 #user-login-form ul {
   /* OpenID creates a new ul above the login form's links. */
   margin-bottom: 0;
   /* Position OpenID's ul next to the rest of the links. */
 }
-/* line 125, ../sass/forms.scss */
+/* line 115, ../sass/forms.scss */
 html.js #user-login-form li.openid-link,
 #user-login-form li.openid-link {
   /* The "Log in using OpenID" link. */
@@ -143,13 +133,13 @@ html.js #user-login-form li.openid-link,
   margin-left: -20px;
   /* Un-do some of the padding on the ul list. */
 }
-/* line 130, ../sass/forms.scss */
+/* line 120, ../sass/forms.scss */
 #user-login-form li.user-link {
   /* The "Cancel OpenID login" link. */
   margin-top: 1.5em;
 }
 
-/* line 135, ../sass/forms.scss */
+/* line 125, ../sass/forms.scss */
 #user-login ul {
   margin: 1.5em 0;
 }
@@ -160,21 +150,21 @@ html.js #user-login-form li.openid-link,
  * We overrode these styles in normalize.css, but restore them for the admin
  * section of the site.
  */
-/* line 147, ../sass/forms.scss */
+/* line 137, ../sass/forms.scss */
 form th {
   text-align: left;
   padding-right: 1em;
   border-bottom: 3px solid #ccc;
 }
-/* line 153, ../sass/forms.scss */
+/* line 143, ../sass/forms.scss */
 form tbody {
   border-top: 1px solid #ccc;
 }
-/* line 157, ../sass/forms.scss */
+/* line 147, ../sass/forms.scss */
 form tr.even {
   background-color: #fff;
 }
-/* line 161, ../sass/forms.scss */
+/* line 151, ../sass/forms.scss */
 form table .item-list ul {
   margin: 0;
 }
@@ -182,7 +172,50 @@ form table .item-list ul {
 /*
  * Drupal core wrongly puts this in system.menus.css. Since we override that, add it back.
  */
-/* line 180, ../sass/forms.scss */
+/* line 170, ../sass/forms.scss */
 td.menu-disabled {
   background: #ccc;
+}
+
+/* Search forms */
+/* line 179, ../sass/forms.scss */
+#-stdfcustom-solrsearch-form-advanced label,
+#-stdfcustom-solrsearch-form-simple label {
+  float: left;
+  width: 160px;
+  padding: 0 0 0 22px;
+  font-weight: 400;
+}
+/* line 185, ../sass/forms.scss */
+#-stdfcustom-solrsearch-form-advanced .form-item,
+#-stdfcustom-solrsearch-form-simple .form-item {
+  margin: 0.8em 0;
+}
+/* line 188, ../sass/forms.scss */
+#-stdfcustom-solrsearch-form-advanced .form-textarea-wrapper textarea,
+#-stdfcustom-solrsearch-form-simple .form-textarea-wrapper textarea {
+  width: auto;
+  margin-left: 182px;
+}
+/* line 193, ../sass/forms.scss */
+#-stdfcustom-solrsearch-form-advanced .form-radios,
+#-stdfcustom-solrsearch-form-advanced .form-checkboxes,
+#-stdfcustom-solrsearch-form-simple .form-radios,
+#-stdfcustom-solrsearch-form-simple .form-checkboxes {
+  margin-left: 182px;
+}
+/* line 195, ../sass/forms.scss */
+#-stdfcustom-solrsearch-form-advanced .form-radios label,
+#-stdfcustom-solrsearch-form-advanced .form-checkboxes label,
+#-stdfcustom-solrsearch-form-simple .form-radios label,
+#-stdfcustom-solrsearch-form-simple .form-checkboxes label {
+  float: none;
+  padding-left: 10px;
+}
+/* line 199, ../sass/forms.scss */
+#-stdfcustom-solrsearch-form-advanced .form-radios .form-item,
+#-stdfcustom-solrsearch-form-advanced .form-checkboxes .form-item,
+#-stdfcustom-solrsearch-form-simple .form-radios .form-item,
+#-stdfcustom-solrsearch-form-simple .form-checkboxes .form-item {
+  margin: 0.4em 0;
 }

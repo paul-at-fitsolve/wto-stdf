@@ -32,9 +32,25 @@ div.field-slideshow-caption {
 #header {
   margin-right:2em;
   #logo {
-    padding-top:2.5em;
+    padding-top: 70px;
   }
   #block-search-form  {
     display:none;
   }
+  #block-locale-language ul li { padding: 0 1em 0 0; }
+}
+#block-views-front-carousel-block {
+    img {
+      min-height: 250px;
+    }
+}
+body.not-front {
+  background-image: none;
+    #header {
+      height: 120px;
+      #logo { padding-top: 20px;}
+  }
+  #block-locale-language { display: none; }
+  .region-sidebar-first { background-image: none; }
+  #footer { margin: 1em 0 0;}
 }

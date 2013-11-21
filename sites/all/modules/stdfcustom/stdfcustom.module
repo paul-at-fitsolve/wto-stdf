@@ -365,7 +365,18 @@ function _stdfcustom_solrsearch_form_advanced_submit($form, &$form_state) {
  * Produce some HTML for the newsletter block. It's a javaScript call to a Mailchimp archive.
  */
 function _stdfcustom_newsletter_list() {
-  return '<div id="mailchimp_div"><p>The STDF newsletter provides an overview of ongoing activities of the STDF and its partners. It gives an update of the major developments in the area of SPS standard setting and implementation. It also aims to provide SPS practitioners with links to useful resources and with information about forthcoming events.</p> <script language="javascript" src="http://us4.campaign-archive2.com/generate-js/?u=1dd65e410f4f874eaf3175abc&fid=6825&show=10" type="text/javascript"></script></div>';
+  global $language;
+  
+  if ($language->language == 'en') {
+    $script = '<script language="javascript" src="http://us4.campaign-archive2.com/generate-js/?u=1dd65e410f4f874eaf3175abc&fid=4273&show=10" type="text/javascript"></script>';
+  } elseif ($language->language == 'fr') {
+    $script = '<script language="javascript" src="http://us4.campaign-archive1.com/generate-js/?u=1dd65e410f4f874eaf3175abc&fid=4281&show=10" type="text/javascript"></script>';
+  } else {
+    $script = '<script language="javascript" src="http://us4.campaign-archive2.com/generate-js/?u=1dd65e410f4f874eaf3175abc&fid=4277&show=10" type="text/javascript"></script>';
+  }
+  return '<div id="mailchimp_div"><p>'. t('The STDF newsletter provides an overview of ongoing activities of the STDF and its partners.
+       It gives an update of the major developments in the area of SPS standard setting and implementation. 
+      It also aims to provide SPS practitioners with links to useful resources and with information about forthcoming events.') .'</p>' .$script . '</script></div>';
 }
 
 /*
