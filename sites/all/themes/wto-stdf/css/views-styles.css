@@ -1,72 +1,301 @@
+/**
+ * @file
+ * Views Styling
+ */
 /*
-Syntax error: Invalid CSS after "...kground-color: ": expected expression (e.g. 1px, bold), was "##99b4c9;"
-        on line 144 of /Users/robwild/Sites/Appnovation/wto/stdf/sites/all/themes/wto-stdf/sass/views-styles.scss
+ * Views' admin tabs
+ *
+ * The views admin tabs use the same classes as the secondary tabs. We prevent
+ * some of our tab styling from bleeding into (and breaking) the Views admin
+ * pages. If your sub-theme isn't used for admin pages, you can remove this
+ * entire section.
+ */
+/* line 18, ../sass/views-styles.scss */
+.views-displays .secondary li {
+  float: none;
+  margin: 0 6px 0;
+}
+/* line 24, ../sass/views-styles.scss */
+.views-displays .secondary a:link,
+.views-displays .secondary a:visited {
+  text-shadow: none;
+  padding: 2px 7px 3px;
+}
+/* line 29, ../sass/views-styles.scss */
+.views-displays .secondary .open > a {
+  -webkit-border-radius: 7px 7px 0 0;
+  -moz-border-radius: 7px 7px 0 0;
+  -ms-border-radius: 7px 7px 0 0;
+  -o-border-radius: 7px 7px 0 0;
+  border-radius: 7px 7px 0 0;
+}
+/* line 31, ../sass/views-styles.scss */
+.views-displays .secondary .open > a:hover {
+  color: #333;
+}
+/* line 36, ../sass/views-styles.scss */
+.views-displays .secondary .action-list li {
+  margin: 0;
+}
+/* line 38, ../sass/views-styles.scss */
+.views-displays .secondary .action-list li:first-child {
+  -webkit-border-radius: 0 7px 0 0;
+  -moz-border-radius: 0 7px 0 0;
+  -ms-border-radius: 0 7px 0 0;
+  -o-border-radius: 0 7px 0 0;
+  border-radius: 0 7px 0 0;
+}
+/* line 41, ../sass/views-styles.scss */
+.views-displays .secondary .action-list li:last-child {
+  -webkit-border-radius: 0 0 7px 7px;
+  -moz-border-radius: 0 0 7px 7px;
+  -ms-border-radius: 0 0 7px 7px;
+  -o-border-radius: 0 0 7px 7px;
+  border-radius: 0 0 7px 7px;
+}
 
-Backtrace:
-/Users/robwild/Sites/Appnovation/wto/stdf/sites/all/themes/wto-stdf/sass/views-styles.scss:144
-/Library/Ruby/Gems/1.8/gems/sass-3.2.12/lib/sass/../sass/scss/parser.rb:1148:in `expected'
-/Library/Ruby/Gems/1.8/gems/sass-3.2.12/lib/sass/../sass/script/lexer.rb:199:in `expected!'
-/Library/Ruby/Gems/1.8/gems/sass-3.2.12/lib/sass/../sass/script/parser.rb:471:in `assert_expr'
-/Library/Ruby/Gems/1.8/gems/sass-3.2.12/lib/sass/../sass/script/parser.rb:49:in `parse'
-/Library/Ruby/Gems/1.8/gems/sass-3.2.12/lib/sass/../sass/scss/parser.rb:1021:in `send'
-/Library/Ruby/Gems/1.8/gems/sass-3.2.12/lib/sass/../sass/scss/parser.rb:1021:in `sass_script'
-/Library/Ruby/Gems/1.8/gems/sass-3.2.12/lib/sass/../sass/scss/parser.rb:881:in `value!'
-/Library/Ruby/Gems/1.8/gems/sass-3.2.12/lib/sass/../sass/scss/parser.rb:858:in `declaration'
-/Library/Ruby/Gems/1.8/gems/sass-3.2.12/lib/sass/../sass/scss/parser.rb:581:in `declaration_or_ruleset'
-/Library/Ruby/Gems/1.8/gems/sass-3.2.12/lib/sass/../sass/scss/parser.rb:1122:in `call'
-/Library/Ruby/Gems/1.8/gems/sass-3.2.12/lib/sass/../sass/scss/parser.rb:1122:in `rethrow'
-/Library/Ruby/Gems/1.8/gems/sass-3.2.12/lib/sass/../sass/scss/parser.rb:591:in `declaration_or_ruleset'
-/Library/Ruby/Gems/1.8/gems/sass-3.2.12/lib/sass/../sass/scss/parser.rb:553:in `block_child'
-/Library/Ruby/Gems/1.8/gems/sass-3.2.12/lib/sass/../sass/scss/parser.rb:545:in `block_contents'
-/Library/Ruby/Gems/1.8/gems/sass-3.2.12/lib/sass/../sass/scss/parser.rb:534:in `block'
-/Library/Ruby/Gems/1.8/gems/sass-3.2.12/lib/sass/../sass/scss/parser.rb:528:in `ruleset'
-/Library/Ruby/Gems/1.8/gems/sass-3.2.12/lib/sass/../sass/scss/parser.rb:552:in `block_child'
-/Library/Ruby/Gems/1.8/gems/sass-3.2.12/lib/sass/../sass/scss/parser.rb:545:in `block_contents'
-/Library/Ruby/Gems/1.8/gems/sass-3.2.12/lib/sass/../sass/scss/parser.rb:82:in `stylesheet'
-/Library/Ruby/Gems/1.8/gems/sass-3.2.12/lib/sass/../sass/scss/parser.rb:27:in `parse'
-/Library/Ruby/Gems/1.8/gems/sass-3.2.12/lib/sass/../sass/engine.rb:342:in `_to_tree'
-/Library/Ruby/Gems/1.8/gems/sass-3.2.12/lib/sass/../sass/engine.rb:315:in `_render'
-/Library/Ruby/Gems/1.8/gems/sass-3.2.12/lib/sass/../sass/engine.rb:262:in `render'
-/Library/Ruby/Gems/1.8/gems/compass-0.12.2/lib/compass/compiler.rb:140:in `compile'
-/Library/Ruby/Gems/1.8/gems/compass-0.12.2/lib/compass/compiler.rb:126:in `timed'
-/Library/Ruby/Gems/1.8/gems/compass-0.12.2/lib/compass/compiler.rb:139:in `compile'
-/Library/Ruby/Gems/1.8/gems/compass-0.12.2/lib/compass/logger.rb:45:in `red'
-/Library/Ruby/Gems/1.8/gems/compass-0.12.2/lib/compass/compiler.rb:138:in `compile'
-/Library/Ruby/Gems/1.8/gems/compass-0.12.2/lib/compass/compiler.rb:118:in `compile_if_required'
-/Library/Ruby/Gems/1.8/gems/compass-0.12.2/lib/compass/compiler.rb:103:in `run'
-/Library/Ruby/Gems/1.8/gems/compass-0.12.2/lib/compass/compiler.rb:101:in `each'
-/Library/Ruby/Gems/1.8/gems/compass-0.12.2/lib/compass/compiler.rb:101:in `run'
-/Library/Ruby/Gems/1.8/gems/compass-0.12.2/lib/compass/compiler.rb:126:in `timed'
-/Library/Ruby/Gems/1.8/gems/compass-0.12.2/lib/compass/compiler.rb:100:in `run'
-/Library/Ruby/Gems/1.8/gems/compass-0.12.2/lib/compass/commands/watch_project.rb:147:in `recompile'
-/Library/Ruby/Site/1.8/rubygems/core_ext/kernel_require.rb:55:in `to_proc'
-/Library/Ruby/Gems/1.8/gems/fssm-0.2.10/lib/fssm/path.rb:73:in `call'
-/Library/Ruby/Gems/1.8/gems/fssm-0.2.10/lib/fssm/path.rb:73:in `run_callback'
-/Library/Ruby/Gems/1.8/gems/fssm-0.2.10/lib/fssm/path.rb:55:in `callback_action'
-/Library/Ruby/Gems/1.8/gems/fssm-0.2.10/lib/fssm/path.rb:35:in `update'
-/Library/Ruby/Gems/1.8/gems/fssm-0.2.10/lib/fssm/state/directory.rb:39:in `modified'
-/Library/Ruby/Gems/1.8/gems/fssm-0.2.10/lib/fssm/state/directory.rb:37:in `each'
-/Library/Ruby/Gems/1.8/gems/fssm-0.2.10/lib/fssm/state/directory.rb:37:in `modified'
-/Library/Ruby/Gems/1.8/gems/fssm-0.2.10/lib/fssm/state/directory.rb:18:in `refresh'
-/Library/Ruby/Gems/1.8/gems/fssm-0.2.10/lib/fssm/backends/polling.rb:17:in `run'
-/Library/Ruby/Gems/1.8/gems/fssm-0.2.10/lib/fssm/backends/polling.rb:17:in `each'
-/Library/Ruby/Gems/1.8/gems/fssm-0.2.10/lib/fssm/backends/polling.rb:17:in `run'
-/Library/Ruby/Gems/1.8/gems/fssm-0.2.10/lib/fssm/backends/polling.rb:15:in `loop'
-/Library/Ruby/Gems/1.8/gems/fssm-0.2.10/lib/fssm/backends/polling.rb:15:in `run'
-/Library/Ruby/Gems/1.8/gems/fssm-0.2.10/lib/fssm/monitor.rb:26:in `run'
-/Library/Ruby/Gems/1.8/gems/fssm-0.2.10/lib/fssm.rb:70:in `monitor'
-/Library/Ruby/Gems/1.8/gems/compass-0.12.2/lib/compass/commands/watch_project.rb:87:in `perform'
-/Library/Ruby/Gems/1.8/gems/compass-0.12.2/lib/compass/commands/base.rb:18:in `execute'
-/Library/Ruby/Gems/1.8/gems/compass-0.12.2/lib/compass/commands/project_base.rb:19:in `execute'
-/Library/Ruby/Gems/1.8/gems/compass-0.12.2/lib/compass/exec/sub_command_ui.rb:43:in `perform!'
-/Library/Ruby/Gems/1.8/gems/compass-0.12.2/lib/compass/exec/sub_command_ui.rb:15:in `run!'
-/Library/Ruby/Gems/1.8/gems/compass-0.12.2/bin/compass:30
-/Library/Ruby/Gems/1.8/gems/compass-0.12.2/bin/compass:44:in `call'
-/Library/Ruby/Gems/1.8/gems/compass-0.12.2/bin/compass:44
-/usr/bin/compass:23:in `load'
-/usr/bin/compass:23
-*/
-body:before {
-  white-space: pre;
-  font-family: monospace;
-  content: "Syntax error: Invalid CSS after \"...kground-color: \": expected expression (e.g. 1px, bold), was \"##99b4c9;\"\A         on line 144 of /Users/robwild/Sites/Appnovation/wto/stdf/sites/all/themes/wto-stdf/sass/views-styles.scss"; }
+/* line 52, ../sass/views-styles.scss */
+.view-nodequeue-recent-thematic-activities table {
+  margin: 0 auto;
+}
+/* line 55, ../sass/views-styles.scss */
+.view-nodequeue-recent-thematic-activities td {
+  margin: 0;
+  padding: 0;
+  margin-right: 20px;
+  width: 25%;
+  vertical-align: top;
+  max-width: 220px;
+  padding-right: 20px;
+  color: #00335c;
+  font-size: 85%;
+}
+/* line 66, ../sass/views-styles.scss */
+.view-nodequeue-recent-thematic-activities td .field-slideshow,
+.view-nodequeue-recent-thematic-activities td img {
+  max-width: 100%;
+  height: auto !important;
+  width: auto !important;
+}
+
+/* line 76, ../sass/views-styles.scss */
+.view-display-id-mini_upcoming .views-label-field-location {
+  float: left;
+  font-weight: bold;
+  padding-right: 1em;
+}
+
+/* line 84, ../sass/views-styles.scss */
+.view-nodequeue-upcoming-events li {
+  list-style: none;
+}
+
+/* line 88, ../sass/views-styles.scss */
+.date-display-single {
+  display: inline;
+}
+
+/* line 93, ../sass/views-styles.scss */
+.views-exposed-widget .description {
+  font-size: 75%;
+}
+
+/* line 99, ../sass/views-styles.scss */
+.view-projects label {
+  text-transform: uppercase;
+}
+/* line 102, ../sass/views-styles.scss */
+.view-projects .form-type-select {
+  width: 290px;
+  overflow: hidden;
+  height: auto;
+  background: url(../images/arrow.png) no-repeat right #d4dde5;
+}
+/* line 108, ../sass/views-styles.scss */
+.view-projects .form-autocomplete {
+  background-color: #D4DDE5;
+  color: #668FAF;
+  border: 0;
+  height: 16px;
+  padding: 5px;
+  width: 280px;
+}
+/* line 116, ../sass/views-styles.scss */
+.view-projects .form-submit {
+  height: 28px;
+  position: relative;
+  top: -2px;
+  left: 8px;
+  width: 126px;
+}
+/* line 123, ../sass/views-styles.scss */
+.view-projects select {
+  background: transparent;
+  width: 312px;
+  padding: 5px;
+  font-size: 14px;
+  line-height: 1;
+  border: 0;
+  -webkit-appearance: none;
+  text-transform: uppercase;
+  color: #668FAF;
+  cursor: pointer;
+}
+
+/* line 138, ../sass/views-styles.scss */
+td.views-field {
+  border: 3px solid #fff;
+}
+
+/* line 142, ../sass/views-styles.scss */
+th.views-field {
+  padding: 1em 1.25em;
+  background-color: #99b4c9;
+  border: 3px solid #fff;
+  text-transform: uppercase;
+  font-size: 12px;
+  line-height: 12px;
+}
+/* line 149, ../sass/views-styles.scss */
+th.views-field a {
+  text-decoration: none;
+  color: #fff;
+  padding-right: 17px;
+  background: url("../images/arrow-down.png") 100% 50% no-repeat;
+}
+/* line 154, ../sass/views-styles.scss */
+th.views-field a img {
+  display: none;
+}
+
+/* line 158, ../sass/views-styles.scss */
+th.views-field-field-budget-total-project-value, th.views-field-field-start-date {
+  width: 100px;
+}
+
+/* line 162, ../sass/views-styles.scss */
+th.views-field-field-beneficiary-text, th.views-field-view-node, th.views-field-view-node-1 {
+  color: #fff;
+}
+
+/* line 166, ../sass/views-styles.scss */
+th.views-field.active a {
+  text-decoration: underline;
+}
+
+/* line 167, ../sass/views-styles.scss */
+th.views-field-title {
+  width: 20%;
+}
+
+/* line 171, ../sass/views-styles.scss */
+td.views-field {
+  text-decoration: none;
+  color: #668FAF;
+  padding: 0 3px;
+  font-size: 12px;
+}
+/* line 176, ../sass/views-styles.scss */
+td.views-field a {
+  text-decoration: none;
+  color: #668FAF;
+}
+
+/* line 182, ../sass/views-styles.scss */
+td.views-field-view-node,
+td.views-field-field-start-date {
+  text-align: center;
+}
+
+/* line 184, ../sass/views-styles.scss */
+.completed {
+  color: #9abe0a !important;
+}
+
+/* line 186, ../sass/views-styles.scss */
+.awaiting {
+  color: #dc0005 !important;
+}
+
+/* line 188, ../sass/views-styles.scss */
+.on-going {
+  color: #d0b407 !important;
+}
+
+/* Animated throbber overrides css in modules/system/system.base.css*/
+/* line 191, ../sass/views-styles.scss */
+html.js input.form-autocomplete {
+  background-position: 100% 8px;
+  /* LTR */
+}
+
+/* line 194, ../sass/views-styles.scss */
+html.js input.throbbing {
+  background-position: 100% -12px;
+  /* LTR */
+}
+
+/* line 199, ../sass/views-styles.scss */
+.views-exposed-widget.views-submit-button,
+.views-exposed-widget.views-reset-button {
+  float: right;
+  padding: 0.5em 0;
+}
+
+/* line 204, ../sass/views-styles.scss */
+#edit-reset {
+  background: url(../images/cancel.png) no-repeat left center #ebebeb;
+}
+
+/* line 208, ../sass/views-styles.scss */
+#edit-submit-projects {
+  background: url(../images/submit.png) no-repeat left center #ebebeb;
+}
+
+/* line 212, ../sass/views-styles.scss */
+#edit-field-sector-value-wrapper {
+  clear: left;
+}
+
+/* line 218, ../sass/views-styles.scss */
+.view-nodequeue-upcoming-events li {
+  list-style: none;
+}
+/* line 223, ../sass/views-styles.scss */
+.view-nodequeue-upcoming-events .locality, .view-nodequeue-upcoming-events .country-name, .view-nodequeue-upcoming-events .geo, .view-nodequeue-upcoming-events .map-link {
+  display: none;
+}
+/* line 225, ../sass/views-styles.scss */
+.view-nodequeue-upcoming-events .views-row {
+  margin: 1em 0 0 0;
+  border-bottom: 1px dotted #b3b3b3;
+  padding: 0;
+}
+/* line 230, ../sass/views-styles.scss */
+.view-nodequeue-upcoming-events .node-event {
+  margin: 0 0 0 61px;
+}
+/* line 233, ../sass/views-styles.scss */
+.view-nodequeue-upcoming-events h2.node-title a {
+  text-transform: none;
+  padding-right: 40px;
+}
+/* line 236, ../sass/views-styles.scss */
+.view-nodequeue-upcoming-events h2.node-title a img {
+  position: absolute;
+  right: 6%;
+  top: 50%;
+}
+/* line 245, ../sass/views-styles.scss */
+.view-nodequeue-upcoming-events .field-name-field-organizer,
+.view-nodequeue-upcoming-events .field-name-field-location,
+.view-nodequeue-upcoming-events .field-name-field-date-and-time {
+  font-size: 0.7em;
+  margin: 0 0.8em 0 0;
+  float: left;
+}
+/* line 251, ../sass/views-styles.scss */
+.view-nodequeue-upcoming-events .translation-link {
+  float: left;
+  width: 100%;
+}
