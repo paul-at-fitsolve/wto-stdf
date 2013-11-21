@@ -68,8 +68,9 @@
        the classpath, this is useful for including all jars in a
        directory.
     -->
-  <lib dir="../../contrib/extraction/lib" />
+
   <lib dir="../../contrib/clustering/lib/" />
+  <lib dir="../../../contrib/extraction/lib" regex=".*\.jar" />
   <!-- The velocity library has been known to crash Solr in some
        instances when deployed as a war file to Tomcat. Therefore all
        references have been removed from the default configuration.
