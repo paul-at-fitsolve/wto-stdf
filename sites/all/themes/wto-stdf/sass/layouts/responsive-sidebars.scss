@@ -95,15 +95,13 @@ $zen-auto-include-item-base: true;
 
 @media all and (min-width: 960px) {
   #block-stdffrontpage-publications{ 
-    width: 48%;
+    width: 49%;
     float: right;
-    margin: 0 0 10px 2%;
       ul { padding: 0; }
   }
   #block-views-nodequeue-upcoming-events-block{
-    width: 48%;
+    width: 49%;
     float: left;
-    margin: 0 2% 10px 0;
     .view-nodequeue-upcoming-events{
       .view-footer{
         p{
@@ -138,7 +136,6 @@ $zen-auto-include-item-base: true;
 	  max-width:80%;	
     td {
       width:80%;
-      padding: 0 0 0 10%;
       border-bottom:1px dotted #668faf;
       margin-bottom:1em;
     }
@@ -279,7 +276,7 @@ $zen-auto-include-item-base: true;
     }
   }
   
-  #logo { margin: 32px 0 0 0;}
+  #logo { margin: 68px 0 0 0;}
 }
 
 @media all and (min-width: 960px) {
