@@ -49,9 +49,43 @@ div.field-slideshow-caption {
 }
 /* line 34, ../sass/phone.scss */
 #header #logo {
-  padding-top: 2.5em;
+  padding-top: 70px;
 }
 /* line 37, ../sass/phone.scss */
 #header #block-search-form {
   display: none;
+}
+/* line 40, ../sass/phone.scss */
+#header #block-locale-language ul li {
+  padding: 0 1em 0 0;
+}
+
+/* line 43, ../sass/phone.scss */
+#block-views-front-carousel-block img {
+  min-height: 250px;
+}
+
+/* line 47, ../sass/phone.scss */
+body.not-front {
+  background-image: none;
+}
+/* line 49, ../sass/phone.scss */
+body.not-front #header {
+  height: 120px;
+}
+/* line 51, ../sass/phone.scss */
+body.not-front #header #logo {
+  padding-top: 20px;
+}
+/* line 53, ../sass/phone.scss */
+body.not-front #block-locale-language {
+  display: none;
+}
+/* line 54, ../sass/phone.scss */
+body.not-front .region-sidebar-first {
+  background-image: none;
+}
+/* line 55, ../sass/phone.scss */
+body.not-front #footer {
+  margin: 1em 0 0;
 }
