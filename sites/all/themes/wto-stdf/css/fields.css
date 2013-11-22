@@ -46,44 +46,169 @@
 /*
  * Named fields
  */
-/* line 106, ../sass/fields.scss */
-article.node-project .field-label {
-  color: #1f4e74;
-}
-/* line 109, ../sass/fields.scss */
-article.node-project .field, article.node-project .view {
-  float: left;
-  padding: 1em;
-  width: auto;
-}
-/* line 114, ../sass/fields.scss */
-article.node-project .field-name-field-reference-number {
-  font-size: 150%;
-  width: 100%;
-}
-/* line 118, ../sass/fields.scss */
-article.node-project .field-name-field-key-objective {
-  background-color: #acc828;
-  background-color: #acc828;
-  -webkit-box-shadow: inset 0px 0px 4px 0px #000000;
-  box-shadow: inset 0px 0px 4px 0px #000000;
-  -webkit-border-radius: 12px;
-  border-radius: 12px;
-  background-clip: padding-box;
-  width: 80%;
-  margin: 0 auto;
-}
-/* line 128, ../sass/fields.scss */
-article.node-project .field-name-field-key-objective p {
-  color: #ffffff;
+/* line 104, ../sass/fields.scss */
+.node-type-project h1.title {
+  display: none;
 }
 
+/* line 107, ../sass/fields.scss */
+article.node-project .region-sidebar-second .field-label {
+  text-align: center;
+  background: url(../images/title_bg.png) repeat-x center;
+  color: #fff;
+  text-transform: uppercase;
+  margin: 1px 0 0;
+  font-weight: 400;
+}
+/* line 115, ../sass/fields.scss */
+article.node-project .region-sidebar-second .field-items {
+  background-color: #e9eef2;
+  padding: 0.8em 0.3em;
+  text-align: center;
+}
+/* line 121, ../sass/fields.scss */
+article.node-project .region-sidebar-second .field-name-field-reference-number .field-items {
+  color: #fff;
+  background-color: #00335b;
+  text-align: center;
+  font-size: 135%;
+  padding: 0.4em;
+}
+/* line 128, ../sass/fields.scss */
+article.node-project .region-sidebar-second .field-name-field-reference-number .field-label {
+  display: none;
+}
+/* line 132, ../sass/fields.scss */
+article.node-project .field-name-field-slideshow .field-label {
+  display: none;
+}
 /* line 134, ../sass/fields.scss */
+article.node-project .projectcontent {
+  /* position: relative prevents IE scroll bug (element with position: relative inside container with overflow: auto appear as "fixed") */
+  /* first selector in group seems obsolete, but required to overcome bug in Opera applying cursor: text overall if defined elsewhere... */
+}
+/* line 135, ../sass/fields.scss */
+article.node-project .projectcontent h1 {
+  margin: 0.5em 0;
+  line-height: 1.2em;
+  font-size: 140%;
+  text-transform: uppercase;
+}
+/* line 141, ../sass/fields.scss */
+article.node-project .projectcontent .field-type-datetime {
+  color: #668faf;
+}
+/* line 143, ../sass/fields.scss */
+article.node-project .projectcontent .field-type-datetime .field-label {
+  font-weight: 400;
+  float: left;
+}
+/* line 149, ../sass/fields.scss */
+article.node-project .projectcontent .field-name-field-key-objective .field-label {
+  border-bottom: 1px solid #00335c;
+}
+/* line 153, ../sass/fields.scss */
+article.node-project .projectcontent #tabs {
+  font-size: 90%;
+}
+/* line 156, ../sass/fields.scss */
+article.node-project .projectcontent #tabs ul .field-items {
+  display: none;
+}
+/* line 158, ../sass/fields.scss */
+article.node-project .projectcontent #tabs .ui-widget-header, article.node-project .projectcontent #tabs .ui-state-default {
+  background: none;
+  border: none;
+}
+/* line 164, ../sass/fields.scss */
+article.node-project .projectcontent #tabs .ui-state-default a {
+  font-weight: 400;
+  color: #333;
+  padding: 0.5em;
+  background: url("../images/partners_bg.png") repeat;
+  margin-right: 1px;
+  border-bottom: 1px solid #fff;
+}
+/* line 171, ../sass/fields.scss */
+article.node-project .projectcontent #tabs .ui-state-default a .field-label {
+  font-weight: 400;
+  font-size: 100%;
+}
+/* line 180, ../sass/fields.scss */
+article.node-project .projectcontent #tabs .ui-tabs-active a {
+  background-image: none;
+  background-color: #eef1f6;
+  border-bottom: 1px solid #eef1f6;
+}
+/* line 186, ../sass/fields.scss */
+article.node-project .projectcontent .ui-widget-content {
+  border: none;
+  color: #00335c;
+}
+/* line 190, ../sass/fields.scss */
+article.node-project .projectcontent .tabcontent {
+  background-color: #eef1f6;
+  padding: 0.8em;
+}
+/* line 193, ../sass/fields.scss */
+article.node-project .projectcontent .tabcontent .field-label {
+  display: none;
+}
+/* line 194, ../sass/fields.scss */
+article.node-project .projectcontent .tabcontent table {
+  width: 100%;
+}
+/* line 197, ../sass/fields.scss */
+article.node-project .projectcontent .ui-tabs {
+  position: relative;
+  zoom: 1;
+}
+/* line 198, ../sass/fields.scss */
+article.node-project .projectcontent .ui-tabs .ui-tabs-nav li {
+  list-style: none;
+  float: left;
+  position: relative;
+  top: 1px;
+  border-bottom: 0 !important;
+  padding: 0;
+  white-space: nowrap;
+}
+/* line 199, ../sass/fields.scss */
+article.node-project .projectcontent .ui-tabs .ui-tabs-nav li a {
+  float: left;
+  padding: 0;
+  text-decoration: none;
+}
+/* line 200, ../sass/fields.scss */
+article.node-project .projectcontent .ui-tabs .ui-tabs-nav li.ui-tabs-selected {
+  margin-bottom: 0;
+  padding-bottom: 1px;
+}
+/* line 201, ../sass/fields.scss */
+article.node-project .projectcontent .ui-tabs .ui-tabs-nav li.ui-tabs-selected a, article.node-project .projectcontent .ui-tabs .ui-tabs-nav li.ui-state-disabled a, article.node-project .projectcontent .ui-tabs .ui-tabs-nav li.ui-state-processing a {
+  cursor: text;
+}
+/* line 202, ../sass/fields.scss */
+article.node-project .projectcontent .ui-tabs .ui-tabs-nav li a, article.node-project .projectcontent .ui-tabs.ui-tabs-collapsible .ui-tabs-nav li.ui-tabs-selected a {
+  cursor: pointer;
+}
+/* line 203, ../sass/fields.scss */
+article.node-project .projectcontent .ui-tabs .ui-tabs-panel {
+  display: block;
+  border-width: 0;
+  background-color: #eef1f6;
+}
+/* line 204, ../sass/fields.scss */
+article.node-project .projectcontent .ui-tabs .ui-tabs-hide {
+  display: none !important;
+}
+
+/* line 211, ../sass/fields.scss */
 #field-slideshow-1-controls {
   align: center;
 }
 
-/* line 137, ../sass/fields.scss */
+/* line 214, ../sass/fields.scss */
 .field-name-field-FIELDNAME {
   /* Underscores in field name are replaced with dashes. */
 }
