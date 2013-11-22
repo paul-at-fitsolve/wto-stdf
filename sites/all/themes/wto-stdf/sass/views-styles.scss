@@ -141,7 +141,7 @@ td.views-field {
 
 th.views-field {
   padding: 1em 1.25em;
-  background: url(../images/title_bg.png) repeat-x center;
+  background-color: #99b4c9;
   border:3px solid #fff;
   text-transform: uppercase;
   font-size:12px;
@@ -180,7 +180,6 @@ td.views-field {
 }
 td.views-field-view-node,
 td.views-field-field-start-date { text-align: center; }
-td.views-field-view-node a { text-decoration: underline; }
 
 .completed { color: #9abe0a !important; }
 
@@ -220,6 +219,7 @@ li {
  list-style:none;
  }
 
+   
 	.locality, .country-name, .geo, .map-link { display: none; }
 	
 	.views-row { 
@@ -242,7 +242,7 @@ li {
 	
 	.field-name-field-organizer,
         .field-name-field-location,
-        .field-name-field-date-and-time{
+        .field-name-field-date{
             font-size: 0.7em;
             margin: 0 0.8em 0 0;
             float: left;

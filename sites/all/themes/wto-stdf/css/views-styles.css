@@ -150,7 +150,7 @@ td.views-field {
 /* line 142, ../sass/views-styles.scss */
 th.views-field {
   padding: 1em 1.25em;
-  background: url(../images/title_bg.png) repeat-x center;
+  background-color: #99b4c9;
   border: 3px solid #fff;
   text-transform: uppercase;
   font-size: 12px;
@@ -207,62 +207,57 @@ td.views-field-field-start-date {
   text-align: center;
 }
 
-/* line 183, ../sass/views-styles.scss */
-td.views-field-view-node a {
-  text-decoration: underline;
-}
-
-/* line 185, ../sass/views-styles.scss */
+/* line 184, ../sass/views-styles.scss */
 .completed {
   color: #9abe0a !important;
 }
 
-/* line 187, ../sass/views-styles.scss */
+/* line 186, ../sass/views-styles.scss */
 .awaiting {
   color: #dc0005 !important;
 }
 
-/* line 189, ../sass/views-styles.scss */
+/* line 188, ../sass/views-styles.scss */
 .on-going {
   color: #d0b407 !important;
 }
 
 /* Animated throbber overrides css in modules/system/system.base.css*/
-/* line 192, ../sass/views-styles.scss */
+/* line 191, ../sass/views-styles.scss */
 html.js input.form-autocomplete {
   background-position: 100% 8px;
   /* LTR */
 }
 
-/* line 195, ../sass/views-styles.scss */
+/* line 194, ../sass/views-styles.scss */
 html.js input.throbbing {
   background-position: 100% -12px;
   /* LTR */
 }
 
-/* line 200, ../sass/views-styles.scss */
+/* line 199, ../sass/views-styles.scss */
 .views-exposed-widget.views-submit-button,
 .views-exposed-widget.views-reset-button {
   float: right;
   padding: 0.5em 0;
 }
 
-/* line 205, ../sass/views-styles.scss */
+/* line 204, ../sass/views-styles.scss */
 #edit-reset {
   background: url(../images/cancel.png) no-repeat left center #ebebeb;
 }
 
-/* line 209, ../sass/views-styles.scss */
+/* line 208, ../sass/views-styles.scss */
 #edit-submit-projects {
   background: url(../images/submit.png) no-repeat left center #ebebeb;
 }
 
-/* line 213, ../sass/views-styles.scss */
+/* line 212, ../sass/views-styles.scss */
 #edit-field-sector-value-wrapper {
   clear: left;
 }
 
-/* line 219, ../sass/views-styles.scss */
+/* line 218, ../sass/views-styles.scss */
 .view-nodequeue-upcoming-events li {
   list-style: none;
 }
@@ -294,7 +289,7 @@ html.js input.throbbing {
 /* line 245, ../sass/views-styles.scss */
 .view-nodequeue-upcoming-events .field-name-field-organizer,
 .view-nodequeue-upcoming-events .field-name-field-location,
-.view-nodequeue-upcoming-events .field-name-field-date-and-time {
+.view-nodequeue-upcoming-events .field-name-field-date {
   font-size: 0.7em;
   margin: 0 0.8em 0 0;
   float: left;
