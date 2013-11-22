@@ -18,7 +18,7 @@ function stdffrontpage_variable_info($options) {
   $variables ['Contact Information'] = array (
       'type' => 'string',
       'title' => t ( 'Contact Information' ),
-      'default' => 'Not set',
+      'default' => t('Not set'),
       'description' => t ( 'Holds the contact information for the site', array (), $options ),
       'required' => TRUE,
       'localize' => TRUE 
@@ -49,8 +49,8 @@ function stdffrontpage_form_alter(&$form, &$form_state, $form_id) {
   }
   
   if ($form_id == 'views_exposed_form') {
-    $form ['submit'] ['#value'] = 'OK';
-    $form ['reset'] ['#value'] = 'CLEAR';
+    $form ['submit'] ['#value'] = t('OK');
+    $form ['reset'] ['#value'] = t('CLEAR');
   }
 }
 function stdffrontpage_submit(&$form, $form_state) {
@@ -60,18 +60,7 @@ function stdffrontpage_submit(&$form, $form_state) {
 
 /**
  * Implements
- * hook_entity_info_alter().
- * Let's
- * setup
- * the
- * custom
- * view
- * modes
- * we
- * need
- * on
- * the
- * frontpage!
+ * hook_entity_info_alter().Let's setup the custom viewmodes we need on the frontpage!
  */
 function stdffrontpage_entity_info_alter(&$entity_info) {
   $entity_info ['node'] ['view modes'] ['frontpage'] = array (

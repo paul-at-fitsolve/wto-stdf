@@ -4,6 +4,7 @@
 		attach : function(context, settings) {
 			$(document).ready(function() {
 				
+							
 				if (!$('#ajax-response').length && !$('.ajaxerror').length) {
 			 
 				//This code adds the date widget.

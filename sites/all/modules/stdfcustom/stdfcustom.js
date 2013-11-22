@@ -23,6 +23,8 @@
 			// Stop top menu items from having active links.
 			$(".menuparent > a").attr('href', 'javascript:void(0)');
 		
+			//Hide signup/password reset links.
+			$('#user-login-form > div > div.item-list').hide();
 
 			// Hide search tabs
 			if (document.URL.indexOf('search') != -1) {
@@ -47,7 +49,7 @@
 			$("#block-mailchimp-lists-stdf-mail-list").dialog({
 				autoOpen : false,
 				dialogClass : 'dialogFixed',
-				title : Drupal.t("STDF Mailing List / Liste de distribution du STDF / Lista de distribución del STDF"),
+				title : Drupal.t("STDF Mailing List"),
 				zindex : 1000,
 				width : 600,
 				modal : true,
