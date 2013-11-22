@@ -128,7 +128,7 @@ function stdfcustom_menu() {
  */
 function stdfcustom_block_info() {
   $blocks ['newsletter_signup'] = array (
-      'info' => t ( 'Signup For Newsletter' ),
+      'info' => t ( 'Mailing List' ),
       'cache' => DRUPAL_NO_CACHE 
   );
   
@@ -141,8 +141,9 @@ function stdfcustom_block_info() {
 function stdfcustom_block_view($delta) {
   $block = array ();
   switch ($delta) {
-    case 'newsletter_signup' :
-      $block ['content'] = '<input id = "signup_button" type="submit" value="' . t ( 'Signup for our newsletter' ) . '"/>';
+    case 'newsletter_signup':
+      $block['subject'] = t('Mailing List');
+      $block ['content'] = '<input id = "signup_button" type="submit" value="' . t ( 'Signup' ) . '"/>';
       break;
   }
   return $block;
@@ -184,7 +185,7 @@ function _stdfcustom_solrsearch_form_simple($form, &$form_state) {
   
   $form ['submit'] = array (
       '#type' => 'submit',
-      '#value' => 'Search' 
+      '#value' => t('Search'), 
   );
   
   return $form;
@@ -327,7 +328,7 @@ function _stdfcustom_solrsearch_form_advanced($form, $form_state) {
   
   $form ['submit'] = array (
       '#type' => 'submit',
-      '#value' => 'Search' 
+      '#value' => t('Search'), 
   );
   
   return $form;
@@ -374,9 +375,7 @@ function _stdfcustom_newsletter_list() {
   } else {
     $script = '<script language="javascript" src="http://us4.campaign-archive2.com/generate-js/?u=1dd65e410f4f874eaf3175abc&fid=4277&show=10" type="text/javascript"></script>';
   }
-  return '<div id="mailchimp_div"><p>'. t('The STDF newsletter provides an overview of ongoing activities of the STDF and its partners.
-       It gives an update of the major developments in the area of SPS standard setting and implementation. 
-      It also aims to provide SPS practitioners with links to useful resources and with information about forthcoming events.') .'</p>' .$script . '</script></div>';
+  return '<div id="mailchimp_div"><p>'. t('The STDF newsletter provides an overview of ongoing activities of the STDF and its partners.It gives an update of the major developments in the area of SPS standard setting and implementation.It also aims to provide SPS practitioners with links to useful resources and with information about forthcoming events.') .'</p>' .$script . '</script></div>';
 }
 
 /*
@@ -402,7 +401,7 @@ function stdfcustom_form_project_node_form_alter(&$form, &$form_state, $form_id)
 function stdfcustom_project_node_form_validate(&$form, &$form_state) {
   // Lookup the supplied code and reject if it already exists.
   // Only validate when the node is being created not when edited.
-  if ($form_state ['values'] ['nid'] == null) {
+  if (($form_state ['values'] ['nid'] == null) && !(isset($_REQUEST['translation']))) {
     $query = db_select ( 'field_data_field_reference_number', 'no' );
     $query->addField ( 'no', 'field_reference_number_value' );
     $query->condition ( 'no.field_reference_number_value', $form_state ['values'] ['field_reference_number'] ['und'] [0] ['value'] );
@@ -575,7 +574,7 @@ function _stdfcustom_mailchimp_form_callback($form, $form_state) {
         '#commands' => $commands 
     );
   } else {
-    return '<div id="test-ajax">Thank You for signing up.</div><div id="ajax-response"></div>';
+    return '<div id="test-ajax">' . t('Thank You for signing up.') .'</div><div id="ajax-response"></div>';
   }
 }
 

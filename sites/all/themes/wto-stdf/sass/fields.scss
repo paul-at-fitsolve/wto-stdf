@@ -101,35 +101,112 @@
 
 .field-name-field-tags {
 }
-
+.node-type-project h1.title { display: none; }
 article.node-project {
-  .field-label {
-    color:#1f4e74;
-  }
-  .field,.view{
-    float:left;
-    padding:1em;
-    width:auto;
-  }
-  .field-name-field-reference-number{
-    font-size:150%;
-    width:100%;
-  }
-  .field-name-field-key-objective {
-    background-color:#acc828;
-    background-color: #acc828;
-    -webkit-box-shadow: inset 0px 0px 4px 0px #000000;
-    box-shadow: inset 0px 0px 4px 0px #000000;
-    -webkit-border-radius: 12px;
-    border-radius: 12px;
-    background-clip: padding-box;
-    width:80%;
-    margin: 0 auto;
-    p {
-      color:#ffffff;
+  .region-sidebar-second {
+    .field-label {
+      text-align: center;
+      background: url(../images/title_bg.png) repeat-x center;
+      color: #fff;
+      text-transform: uppercase;
+      margin: 1px 0 0;
+      font-weight: 400;
+    }
+    .field-items {
+      background-color: #e9eef2;
+      padding: 0.8em 0.3em;
+      text-align: center;
+    }
+    .field-name-field-reference-number {
+      .field-items {
+        color: #fff;
+        background-color: #00335b;
+        text-align: center;
+        font-size: 135%;
+        padding: 0.4em; 
+      }
+      .field-label { display: none; }
     }
   }
-}
+  .field-name-field-slideshow {
+    .field-label { display: none; }
+  }
+  .projectcontent {
+    h1 {
+      margin: 0.5em 0;
+      line-height: 1.2em;
+      font-size: 140%;
+      text-transform: uppercase;
+    }
+    .field-type-datetime {
+      color: #668faf;
+       .field-label { 
+        font-weight: 400;
+        float: left;
+       }
+    }
+    .field-name-field-key-objective {
+      .field-label {
+        border-bottom: 1px solid #00335c;
+      }
+    }
+    #tabs {
+      font-size: 90%;
+      ul {
+        .field-items { display: none; }
+      }
+      .ui-widget-header, .ui-state-default {
+        background: none;
+        border: none;
+        
+      }
+      .ui-state-default {
+        a {
+          font-weight: 400;
+          color: #333;
+          padding: 0.5em;
+          background: url("../images/partners_bg.png") repeat;
+          margin-right: 1px;
+          border-bottom: 1px solid #fff;
+          .field-label { 
+            font-weight: 400;
+            font-size: 100%;            
+          }
+        }
+      }
+      .ui-state-default a:link, 
+      .ui-state-default a:visited {
+      }
+      .ui-tabs-active a {
+        background-image: none;
+        background-color: #eef1f6;
+        border-bottom: 1px solid #eef1f6;
+      }
+    }
+    .ui-widget-content {
+      border: none;
+      color: #00335c;
+    }
+    .tabcontent {
+      background-color: #eef1f6;
+      padding: 0.8em;
+        .field-label { display: none; }
+        table { width: 100%; }
+    }
+
+.ui-tabs { position: relative; zoom: 1; } /* position: relative prevents IE scroll bug (element with position: relative inside container with overflow: auto appear as "fixed") */
+.ui-tabs .ui-tabs-nav li { list-style: none; float: left; position: relative; top: 1px;  border-bottom: 0 !important; padding: 0; white-space: nowrap; }
+.ui-tabs .ui-tabs-nav li a { float: left; padding: 0; text-decoration: none; }
+.ui-tabs .ui-tabs-nav li.ui-tabs-selected { margin-bottom: 0; padding-bottom: 1px; }
+.ui-tabs .ui-tabs-nav li.ui-tabs-selected a, .ui-tabs .ui-tabs-nav li.ui-state-disabled a, .ui-tabs .ui-tabs-nav li.ui-state-processing a { cursor: text; }
+.ui-tabs .ui-tabs-nav li a, .ui-tabs.ui-tabs-collapsible .ui-tabs-nav li.ui-tabs-selected a { cursor: pointer; } /* first selector in group seems obsolete, but required to overcome bug in Opera applying cursor: text overall if defined elsewhere... */
+.ui-tabs .ui-tabs-panel { display: block; border-width: 0; background-color: #eef1f6; }
+.ui-tabs .ui-tabs-hide { display: none !important; }
+    
+  }
+ 
+  }
+
 
 #field-slideshow-1-controls {
 	align:center;
