@@ -24,4 +24,8 @@ $("#block-search-form").mouseleave(
     }});
 })
 
+$(function() {
+  $( "#tabs" ).tabs();
+});
+
 })(jQuery, Drupal, this, this.document);

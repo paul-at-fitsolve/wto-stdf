@@ -141,7 +141,7 @@ td.views-field {
 
 th.views-field {
   padding: 1em 1.25em;
-  background-color: #99b4c9;
+  background: url(../images/title_bg.png) repeat-x center;
   border:3px solid #fff;
   text-transform: uppercase;
   font-size:12px;
@@ -180,6 +180,7 @@ td.views-field {
 }
 td.views-field-view-node,
 td.views-field-field-start-date { text-align: center; }
+td.views-field-view-node a { text-decoration: underline; }
 
 .completed { color: #9abe0a !important; }
 
@@ -219,7 +220,6 @@ li {
  list-style:none;
  }
 
-   
 	.locality, .country-name, .geo, .map-link { display: none; }
 	
 	.views-row { 

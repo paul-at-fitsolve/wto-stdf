@@ -435,3 +435,16 @@ $zen-auto-include-item-base: true;
   max-width:960px;
   margin:0 auto;
 }
+
+.node-project {
+  .projectcontent {
+    width: 70%;
+    float: left;
+    margin-right: 5%;
+  }
+  .region-sidebar-second {
+    padding: 0;
+    float: left;
+    width: 25%;
+  }
+}
