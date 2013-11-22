@@ -141,22 +141,24 @@ li a.active {
   font-family: "PT Sans Narrow", sans-serif;
   text-transform: uppercase;
   color: #00345e;
+  font-weight: bold;
   text-decoration: none;
 }
-/* line 141, ../sass/navigation.scss */
+/* line 142, ../sass/navigation.scss */
 #block-nice-menus-1 ul.nice-menu-down li.menuparent a:hover {
   text-decoration: underline;
 }
-/* line 146, ../sass/navigation.scss */
+/* line 147, ../sass/navigation.scss */
 #block-nice-menus-1 ul.nice-menu-down li.menuparent ul li {
   background-color: rgba(153, 180, 201, 0.9);
   border-bottom: 1px solid rgba(153, 180, 201, 0.9);
 }
-/* line 149, ../sass/navigation.scss */
+/* line 150, ../sass/navigation.scss */
 #block-nice-menus-1 ul.nice-menu-down li.menuparent ul li a {
   text-transform: none;
+  font-weight: normal;
 }
-/* line 151, ../sass/navigation.scss */
+/* line 153, ../sass/navigation.scss */
 #block-nice-menus-1 ul.nice-menu-down li.menuparent ul li a:hover {
   background-color: rgba(153, 180, 201, 0.9);
   color: white;
