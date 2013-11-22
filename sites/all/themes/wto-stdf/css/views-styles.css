@@ -266,32 +266,32 @@ html.js input.throbbing {
 .view-nodequeue-upcoming-events li {
   list-style: none;
 }
-/* line 224, ../sass/views-styles.scss */
+/* line 223, ../sass/views-styles.scss */
 .view-nodequeue-upcoming-events .locality, .view-nodequeue-upcoming-events .country-name, .view-nodequeue-upcoming-events .geo, .view-nodequeue-upcoming-events .map-link {
   display: none;
 }
-/* line 226, ../sass/views-styles.scss */
+/* line 225, ../sass/views-styles.scss */
 .view-nodequeue-upcoming-events .views-row {
   margin: 1em 0 0 0;
   border-bottom: 1px dotted #b3b3b3;
   padding: 0;
 }
-/* line 231, ../sass/views-styles.scss */
+/* line 230, ../sass/views-styles.scss */
 .view-nodequeue-upcoming-events .node-event {
   margin: 0 0 0 61px;
 }
-/* line 234, ../sass/views-styles.scss */
+/* line 233, ../sass/views-styles.scss */
 .view-nodequeue-upcoming-events h2.node-title a {
   text-transform: none;
   padding-right: 40px;
 }
-/* line 237, ../sass/views-styles.scss */
+/* line 236, ../sass/views-styles.scss */
 .view-nodequeue-upcoming-events h2.node-title a img {
   position: absolute;
   right: 6%;
   top: 50%;
 }
-/* line 246, ../sass/views-styles.scss */
+/* line 245, ../sass/views-styles.scss */
 .view-nodequeue-upcoming-events .field-name-field-organizer,
 .view-nodequeue-upcoming-events .field-name-field-location,
 .view-nodequeue-upcoming-events .field-name-field-date-and-time {
@@ -299,7 +299,7 @@ html.js input.throbbing {
   margin: 0 0.8em 0 0;
   float: left;
 }
-/* line 252, ../sass/views-styles.scss */
+/* line 251, ../sass/views-styles.scss */
 .view-nodequeue-upcoming-events .translation-link {
   float: left;
   width: 100%;

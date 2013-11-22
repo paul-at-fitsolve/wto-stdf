@@ -105,8 +105,8 @@ function stdffrontpage_block_info() {
       'cache' => DRUPAL_NO_CACHE 
   );
   
-  $blocks ['publications'] = array (
-      'info' => t ( 'Publications' ),
+  $blocks ['resources'] = array (
+      'info' => t ( 'Resources' ),
       'cache' => DRUPAL_NO_CACHE 
   );
   
@@ -137,8 +137,8 @@ function stdffrontpage_block_view($delta) {
       $block ['content'] .= i18n_variable_get ( 'proposal_deadline', $language->language )['value'];
       $block ['content'] .= "</div>";
       break;
-    case 'publications' :
-      $block ['content'] .= _stdffrontpage_publications ();
+    case 'resources' :
+      $block ['content'] .= _stdffrontpage_resources ();
       break;
     case 'partnerlogos' :
       $block ['subject'] = t ( 'Our Partners' );
@@ -153,7 +153,7 @@ function stdffrontpage_block_view($delta) {
   }
   return $block;
 }
-function _stdffrontpage_publications() {
+function _stdffrontpage_resources() {
   $links = array (
       'newsletter' => array (
           'title' => t ( 'Newsletter' ),
@@ -174,7 +174,7 @@ function _stdffrontpage_publications() {
   );
   
   $heading = array (
-      'text' => t ( 'Publications' ),
+      'text' => t ( 'Resources' ),
       'level' => 'h2',
       'class' => 'block-title' 
   );

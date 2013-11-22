@@ -67,7 +67,7 @@
 
 @media all and (max-width: 960px) {
   /* line 84, ../../sass/layouts/responsive-sidebars.scss */
-  #block-stdffrontpage-publications {
+  #block-stdffrontpage-resources {
     margin-top: 3em;
     max-width: 90%;
     margin: 0 auto;
@@ -81,12 +81,12 @@
 }
 @media all and (min-width: 960px) {
   /* line 97, ../../sass/layouts/responsive-sidebars.scss */
-  #block-stdffrontpage-publications {
+  #block-stdffrontpage-resources {
     width: 49%;
     float: right;
   }
   /* line 100, ../../sass/layouts/responsive-sidebars.scss */
-  #block-stdffrontpage-publications ul {
+  #block-stdffrontpage-resources ul {
     padding: 0;
   }
 
