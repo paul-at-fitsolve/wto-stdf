@@ -134,9 +134,10 @@ li a.active {
 	   border: none; 
 	   background-color: transparent;
 	   a {
-            font-family: $pt;
+        font-family: $pt;
 	    text-transform: uppercase; 
 	    color: #00345e;
+	    font-weight:bold;
 	    text-decoration: none;
 	    &:hover {
 	      text-decoration: underline;	   
@@ -148,6 +149,7 @@ li a.active {
            border-bottom: 1px solid $menu_background;	
            a {
             text-transform: none;
+            font-weight:normal;
             &:hover {
              background-color: $menu_background;
 	         color:white;	
