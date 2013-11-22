@@ -211,7 +211,7 @@ footer .block a { color: #978a82; }
 }
 
 #block-views-nodequeue-upcoming-events-block,
-#block-stdffrontpage-publications {
+#block-stdffrontpage-resources {
   .view-nodequeue-upcoming-events {
     .item-list ul {
       margin: 0; 
@@ -225,7 +225,10 @@ footer .block a { color: #978a82; }
     color: #fff;
     line-height: 3em;
   }
-  .block-title:before {
+}
+
+#block-views-nodequeue-upcoming-events-block {
+.block-title:before {
     background: url(../images/eventsicon_bg.png) no-repeat;
     width: 50px;
     height: 50px;
@@ -237,7 +240,20 @@ footer .block a { color: #978a82; }
   }
 }
 
-#block-stdffrontpage-publications { 
+#block-stdffrontpage-resources {
+.block-title:before {
+    background: url(../images/pubicon_bg.png) no-repeat;
+    width: 50px;
+    height: 50px;
+    content: "";
+    display: block;
+    float: left;
+    position: absolute;
+    margin: 11px 0 0 7px;
+  }
+}
+
+#block-stdffrontpage-resources { 
   li {
     height:33px;
     text-indent:50px;
