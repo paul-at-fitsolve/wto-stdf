@@ -163,14 +163,14 @@ function stdfcustom_countries_alter(&$countries) {
  */
 function _stdfcustom_solrsearch_form_simple($form, &$form_state) {
   $form ['term'] = array (
+      '#title' => t('Search for'),
       '#type' => 'textarea',
       '#size' => 225,
       '#resizable' => FALSE,
-      '#default_value' => variable_get ( 'searchval' ) 
   );
   $form ['search_type'] = array (
       '#type' => 'radios',
-      '#default_value' => variable_get ( 'search_type', 0 ),
+      '#default_value' => 0,
       '#options' => array (
           t ( 'Any of these words' ),
           t ( 'All of these words' ),
@@ -245,14 +245,14 @@ function _stdfcustom_process_tokens($option, $rawtokens) {
  */
 function _stdfcustom_solrsearch_form_advanced($form, $form_state) {
   $form ['term'] = array (
+      '#title' => t('Search for'),
       '#type' => 'textarea',
       '#size' => 225,
       '#resizable' => FALSE,
-      '#default_value' => variable_get ( 'searchval' ) 
   );
   $form ['search_type'] = array (
       '#type' => 'radios',
-      '#default_value' => variable_get ( 'search_type', 0 ),
+      '#default_value' => 0,
       '#options' => array (
           t ( 'Any of these words' ),
           t ( 'All of these words' ),
@@ -310,7 +310,7 @@ function _stdfcustom_solrsearch_form_advanced($form, $form_state) {
   );
   
   $form ['keywords'] = array (
-      '#type' => 'checkboxes',
+      '#type' => 'select',
       '#title' => t ( 'Keywords' ),
       '#multiple' => true,
       '#options' => drupal_map_assoc ( _stdfcustom_keywords_autocomplete () ) 
