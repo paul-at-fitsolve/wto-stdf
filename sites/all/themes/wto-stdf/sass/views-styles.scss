@@ -141,10 +141,10 @@ td.views-field {
 
 th.views-field {
   padding: 1em 1.25em;
-  background-color: #99b4c9;
+  background-image: url('../images/fabric-sm.png');
   border:3px solid #fff;
   text-transform: uppercase;
-  font-size:12px;
+  font-size:11px;
   line-height: 12px;
   a {
     text-decoration: none;
@@ -170,11 +170,11 @@ th.views-field-title {
 
 td.views-field {
   text-decoration: none;
-  color: #668FAF;
+  color: #336a93;
   padding:0 3px;
   font-size: 12px;
   a {
-     text-decoration: none;
+     text-decoration: underline;
      color: #668FAF;
   }
 }
