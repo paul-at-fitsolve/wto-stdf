@@ -150,10 +150,10 @@ td.views-field {
 /* line 142, ../sass/views-styles.scss */
 th.views-field {
   padding: 1em 1.25em;
-  background-color: #99b4c9;
+  background-image: url("../images/fabric-sm.png");
   border: 3px solid #fff;
   text-transform: uppercase;
-  font-size: 12px;
+  font-size: 11px;
   line-height: 12px;
 }
 /* line 149, ../sass/views-styles.scss */
@@ -191,13 +191,13 @@ th.views-field-title {
 /* line 171, ../sass/views-styles.scss */
 td.views-field {
   text-decoration: none;
-  color: #668FAF;
+  color: #336a93;
   padding: 0 3px;
   font-size: 12px;
 }
 /* line 176, ../sass/views-styles.scss */
 td.views-field a {
-  text-decoration: none;
+  text-decoration: underline;
   color: #668FAF;
 }
 
