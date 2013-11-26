@@ -406,10 +406,15 @@
 
     <!-- This field is used to build the spellchecker index -->
     <field name="spell" type="textSpell" indexed="true" stored="true" multiValued="true"/>
+    
+    <!-- This field is used to hold the title of the entity as a string rather than a tokenised text field -->
+    <field name="title" type="string" indexed="true" stored="true" multiValued="false"/>
+    <copyField source="label" dest="title"/>
 
     <!-- copyField commands copy one field to another at the time a document
          is added to the index.  It's used either to index the same field differently,
          or to add multiple fields to the same field for easier/faster searching.  -->
+         
     <copyField source="label" dest="spell"/>
     <copyField source="content" dest="spell"/>
 

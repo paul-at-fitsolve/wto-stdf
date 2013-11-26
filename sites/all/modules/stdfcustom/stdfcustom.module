@@ -25,6 +25,21 @@ function stdfcustom_init() {
  */
 function stdfcustom_menu() {
   // Menu definition for the Solr query that returns autocomplete suggestions
+  // for titles.
+  $items ['ajax/gettitles'] = array (
+      'title' => 'Solr titles autocomplete',
+      'page callback' => '_stdfcustom_titles_autocomplete',
+      'page arguments' => array (
+          2 
+      ),
+      'access callback' => 'user_access',
+      'access arguments' => array (
+          'access content' 
+      ),
+      'type' => MENU_CALLBACK 
+  );
+  
+  // Menu definition for the Solr query that returns autocomplete suggestions
   // for author.
   $items ['ajax/getauthors'] = array (
       'title' => 'Solr authors autocomplete',
@@ -74,6 +89,21 @@ function stdfcustom_menu() {
   $items ['ajax/getkeywords'] = array (
       'title' => 'Solr keywords autocomplete',
       'page callback' => '_stdfcustom_keywords_autocomplete',
+      'page arguments' => array (
+          2 
+      ),
+      'access callback' => 'user_access',
+      'access arguments' => array (
+          'access content' 
+      ),
+      'type' => MENU_CALLBACK 
+  );
+  
+    // Menu definition for the Solr query that returns autocomplete suggestions
+  // for countries.
+  $items ['ajax/getcountries'] = array (
+      'title' => 'Solr keywords autocomplete',
+      'page callback' => '_stdfcustom_countries_autocomplete',
       'page arguments' => array (
           2 
       ),
@@ -269,7 +299,8 @@ function _stdfcustom_solrsearch_form_advanced($form, $form_state) {
       '#type' => 'textfield',
       '#title' => t ( 'Title' ),
       '#size' => 60,
-      '#maxlength' => 128 
+      '#maxlength' => 128,
+      '#autocomplete_path' => 'ajax/gettitles' 
   );
   
   $form ['author'] = array (
@@ -306,7 +337,8 @@ function _stdfcustom_solrsearch_form_advanced($form, $form_state) {
       '#type' => 'textfield',
       '#title' => t ( 'Country' ),
       '#size' => 60,
-      '#maxlength' => 128 
+      '#maxlength' => 128,
+      '#autocomplete_path' => 'ajax/getcountries'  
   );
   
   $form ['keywords'] = array (
@@ -446,25 +478,55 @@ function _stdfcustom_authors_autocomplete($value) {
 }
 
 /*
- * This looks up publication dates on the Solr index via facets. Gives a list of dates and the number of results per date.
+ * Use Solr facet search to provide values to autocomplete on the advanced search form. This looks up titles.
  */
-function _stdfcustom_dates_autocomplete($value) {
+function _stdfcustom_titles_autocomplete($value) {
   $results = array ();
   $suggestions = array ();
   
   $host = 'localhost';
   $port = '8983';
   $path = '/solr';
-  $url = $host . ':' . $port . $path . '/select?name&rows=0&q=*:*&facet=true&facet.range=ds_field_publication_date&facet.range.start=1900-01-01T00:00:00Z&facet.range.end=NOW&facet.range.gap=%2B1YEAR&facet.mincount=1&wt=json';
-  $response = json_decode ( _stdfcustom_get_url_contents ( $url ) );
-  foreach ( $response->facet_counts->facet_ranges->ds_field_publication_date->counts as $key => $suggestion ) {
+  $url = $host . ':' . $port . $path . '/select?name&rows=0&q=*:*&facet=true&facet.field=title&facet.mincount=1&facet.prefix=' . $value . '&wt=json';
+  $response = json_decode (_stdfcustom_get_url_contents($url));
+  
+  foreach ($response->facet_counts->facet_fields->title as $key => $suggestion ) {
     if ($key % 2 == 0) {
-      $hold = substr ( $suggestion, 0, 4 );
+      $hold = $suggestion;
     } else {
-      $results [$hold] = $hold . ' (' . $suggestion . ')';
+      $results [$hold] = $hold;
     }
   }
   
+  drupal_json_output ( $results );
+}
+  
+  /*
+ * This looks up publication dates on the Solr index via facets. Gives a list of dates and the number of results per date.
+ */
+function _stdfcustom_dates_autocomplete($value) {
+  if (! (is_numeric ( $value ))) {
+    $results = array ();
+  } else {
+    //Deal with truncated years - pad out with 0's and 9's to delimit an appropriate range.
+    //So 1 searches between 1000 and 1999 , 19 between 1900 and 1999, 199 between 1990 and 1999, etc..
+    $start_value = str_pad ( $value, 4 , '0' );
+    $end_value = str_pad ( $value, 4 , '9' );
+    $results = array ();
+    $suggestions = array ();
+    $host = 'localhost';
+    $port = '8983';
+    $path = '/solr';
+    $url = $host . ':' . $port . $path . '/select?name&rows=0&q=*:*&facet=true&facet.range=ds_field_publication_date&facet.range.start=' . $start_value . '-01-01T00:00:00Z&facet.range.end=' . $end_value . '-12-31T00:00:00Z&facet.range.gap=%2B1YEAR&facet.mincount=1&wt=json';
+    $response = json_decode ( _stdfcustom_get_url_contents ( $url ) );
+    foreach ( $response->facet_counts->facet_ranges->ds_field_publication_date->counts as $key => $suggestion ) {
+      if ($key % 2 == 0) {
+        $hold = substr ( $suggestion, 0, 4 );
+      } else {
+        $results [$hold] = $hold . ' (' . $suggestion . ')';
+      }
+    }
+  }
   drupal_json_output ( $results );
 }
 
@@ -505,6 +567,26 @@ function _stdfcustom_keywords_autocomplete() {
     $options [$term->tid] = $term->name;
   }
   return $options;
+}
+  
+  /*
+ * We translate countries and so we get them from the database.
+ */
+function _stdfcustom_countries_autocomplete($value) {
+  /**
+   * returns a array for use with #options in a form field
+   */
+  $options = array();
+  $v = taxonomy_vocabulary_machine_name_load ( 'country' );
+  $terms = taxonomy_get_tree ( $v->vid );
+  foreach ( $terms as $term ) {
+    $pos = strpos ( $term->name, $value );
+    if ($pos !== false) {
+      $options [$term->tid] = $term->name;
+    }
+  }
+  drupal_json_output ( $options );
+  // return $options;
 }
 
 /**
