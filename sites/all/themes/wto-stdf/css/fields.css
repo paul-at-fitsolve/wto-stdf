@@ -204,11 +204,26 @@ article.node-project .projectcontent .ui-tabs .ui-tabs-hide {
 }
 
 /* line 211, ../sass/fields.scss */
+.ui-accordion .ui-state-default {
+  background: url(../images/title_bg.png) repeat-x center;
+  border: none;
+}
+/* line 215, ../sass/fields.scss */
+.ui-accordion a.ui-accordion-header, .ui-accordion .ui-accordion-header a {
+  color: #00335c;
+}
+/* line 216, ../sass/fields.scss */
+.ui-accordion .ui-widget-content {
+  border: none;
+  padding: 0;
+}
+
+/* line 223, ../sass/fields.scss */
 #field-slideshow-1-controls {
   align: center;
 }
 
-/* line 214, ../sass/fields.scss */
+/* line 226, ../sass/fields.scss */
 .field-name-field-FIELDNAME {
   /* Underscores in field name are replaced with dashes. */
 }
