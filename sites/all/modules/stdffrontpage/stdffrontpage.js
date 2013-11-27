@@ -16,7 +16,7 @@
 			      var date = raw.split(" ");
 			      $(this).parent().prepend('<div class="date"><span class="day">' + date[0] + '</span><span class="month">' + date[1].substr(0,3) + '</span></div>');
 				});	
-				$('#block-stdffrontpage-publications > ul > li > a').append('<img src="sites/all/themes/wto-stdf/images/linkarrow.png" />');
+				$('#block-stdffrontpage-resources > ul > li > a').append('<img src="sites/all/themes/wto-stdf/images/linkarrow.png" />');
 				$('.node-event > header > h2 > a').append('<img src="sites/all/themes/wto-stdf/images/linkarrow.png" />');
 				}
 			    
