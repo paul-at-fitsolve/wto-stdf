@@ -288,7 +288,7 @@ html.js input.throbbing {
 .view-nodequeue-upcoming-events h2.node-title a img {
   position: absolute;
   right: 6%;
-  top: 50%;
+  top: 18px;
 }
 /* line 248, ../sass/views-styles.scss */
 .view-nodequeue-upcoming-events .field-name-field-organizer,
