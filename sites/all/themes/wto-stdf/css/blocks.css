@@ -267,38 +267,33 @@ footer .block a {
 }
 
 /* line 197, ../sass/blocks.scss */
-#block-stdfcustom-newsletter-signup input {
-  font-size: 0.8em;
-}
-
-/* line 203, ../sass/blocks.scss */
 #block-user-login .form-item {
   margin: 0.7em 0 0 0;
 }
-/* line 206, ../sass/blocks.scss */
+/* line 200, ../sass/blocks.scss */
 #block-user-login input.form-text {
   width: 100%;
   background: #fff;
   border: 2px solid #d4dde6;
 }
-/* line 207, ../sass/blocks.scss */
+/* line 201, ../sass/blocks.scss */
 #block-user-login .item-list {
   font-size: 0.69em;
   text-transform: uppercase;
 }
-/* line 208, ../sass/blocks.scss */
+/* line 202, ../sass/blocks.scss */
 #block-user-login #edit-actions--2 {
   float: right;
   margin: 0;
 }
 
-/* line 214, ../sass/blocks.scss */
+/* line 208, ../sass/blocks.scss */
 #block-views-nodequeue-upcoming-events-block .view-nodequeue-upcoming-events .item-list ul,
 #block-stdffrontpage-resources .view-nodequeue-upcoming-events .item-list ul {
   margin: 0;
   padding: 0;
 }
-/* line 219, ../sass/blocks.scss */
+/* line 213, ../sass/blocks.scss */
 #block-views-nodequeue-upcoming-events-block .block-title,
 #block-stdffrontpage-resources .block-title {
   text-align: center;
@@ -308,7 +303,7 @@ footer .block a {
   line-height: 3em;
 }
 
-/* line 229, ../sass/blocks.scss */
+/* line 223, ../sass/blocks.scss */
 #block-views-nodequeue-upcoming-events-block .block-title:before {
   background: url(../images/eventsicon_bg.png) no-repeat;
   width: 50px;
@@ -320,7 +315,7 @@ footer .block a {
   margin: 11px 0 0 7px;
 }
 
-/* line 242, ../sass/blocks.scss */
+/* line 236, ../sass/blocks.scss */
 #block-stdffrontpage-resources .block-title:before {
   background: url(../images/pubicon_bg.png) no-repeat;
   width: 50px;
@@ -332,7 +327,7 @@ footer .block a {
   margin: 11px 0 0 7px;
 }
 
-/* line 255, ../sass/blocks.scss */
+/* line 249, ../sass/blocks.scss */
 #block-stdffrontpage-resources li {
   height: 33px;
   text-indent: 50px;
@@ -340,7 +335,7 @@ footer .block a {
   padding: 0 0 2.5em 0;
   border-bottom: 1px dotted #B3B3B3;
 }
-/* line 262, ../sass/blocks.scss */
+/* line 256, ../sass/blocks.scss */
 #block-stdffrontpage-resources a {
   position: relative;
   top: 1.5em;
@@ -348,50 +343,50 @@ footer .block a {
   color: #978A82;
   text-size: 1.25em;
 }
-/* line 269, ../sass/blocks.scss */
+/* line 263, ../sass/blocks.scss */
 #block-stdffrontpage-resources li.newsletter {
   background: url(../images/newsletter_bg.png) center left no-repeat;
 }
-/* line 272, ../sass/blocks.scss */
+/* line 266, ../sass/blocks.scss */
 #block-stdffrontpage-resources li.newsletter a img {
   position: relative;
   left: 60%;
 }
-/* line 278, ../sass/blocks.scss */
+/* line 272, ../sass/blocks.scss */
 #block-stdffrontpage-resources li.briefings {
   background: url(../images/briefings_bg.png) center left no-repeat;
 }
-/* line 281, ../sass/blocks.scss */
+/* line 275, ../sass/blocks.scss */
 #block-stdffrontpage-resources li.briefings a img {
   position: relative;
   left: 63.5%;
 }
-/* line 287, ../sass/blocks.scss */
+/* line 281, ../sass/blocks.scss */
 #block-stdffrontpage-resources li.publications {
   background: url(../images/publications_bg.png) center left no-repeat;
 }
-/* line 290, ../sass/blocks.scss */
+/* line 284, ../sass/blocks.scss */
 #block-stdffrontpage-resources li.publications a img {
   position: relative;
   left: 58%;
 }
-/* line 296, ../sass/blocks.scss */
+/* line 290, ../sass/blocks.scss */
 #block-stdffrontpage-resources li.videos {
   background: url(../images/videos_bg.png) center left no-repeat;
 }
-/* line 299, ../sass/blocks.scss */
+/* line 293, ../sass/blocks.scss */
 #block-stdffrontpage-resources li.videos a img {
   position: relative;
   left: 66%;
 }
 
-/* line 307, ../sass/blocks.scss */
+/* line 301, ../sass/blocks.scss */
 #block-block-2 {
   width: 100%;
   margin: 0 auto;
 }
 
-/* line 313, ../sass/blocks.scss */
+/* line 307, ../sass/blocks.scss */
 #block-stdffrontpage-proposal-deadline {
   position: relative;
   top: -50px;
@@ -403,23 +398,23 @@ footer .block a {
   width: 100%;
 }
 
-/* line 324, ../sass/blocks.scss */
+/* line 318, ../sass/blocks.scss */
 #block-stdffrontpage-partnerlogos {
   max-width: 960px;
   margin-bottom: 1em !important;
 }
-/* line 327, ../sass/blocks.scss */
+/* line 321, ../sass/blocks.scss */
 #block-stdffrontpage-partnerlogos h2 {
   text-align: center;
   text-transform: uppercase;
   font-size: 18pt;
 }
-/* line 332, ../sass/blocks.scss */
+/* line 326, ../sass/blocks.scss */
 #block-stdffrontpage-partnerlogos img {
   margin: 0 2.8em;
 }
 
-/* line 337, ../sass/blocks.scss */
+/* line 331, ../sass/blocks.scss */
 #block-nice-menus-2 {
   background: url("images/bkg.png") repeat-x scroll left bottom #101010;
   left: 0;
@@ -434,14 +429,14 @@ footer .block a {
   top: 0;
   z-index: 1000;
 }
-/* line 338, ../sass/blocks.scss */
+/* line 332, ../sass/blocks.scss */
 #block-nice-menus-2 .block-title {
   color: white;
   float: right;
   font-size: 1em;
   font-weight: normal;
 }
-/* line 356, ../sass/blocks.scss */
+/* line 350, ../sass/blocks.scss */
 #block-nice-menus-2 ul {
   line-height: 1.4em;
   list-style: none outside none;
@@ -449,13 +444,13 @@ footer .block a {
   padding: 0;
   z-index: 999;
 }
-/* line 362, ../sass/blocks.scss */
+/* line 356, ../sass/blocks.scss */
 #block-nice-menus-2 ul li {
   float: left;
   background-color: black !important;
   border: none !important;
 }
-/* line 366, ../sass/blocks.scss */
+/* line 360, ../sass/blocks.scss */
 #block-nice-menus-2 ul li a {
   text-decoration: none;
   margin-bottom: 4px;

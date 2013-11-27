@@ -214,8 +214,6 @@ h3.title { /* Comment title */
 	text-transform: uppercase; 
 }
 
-.node-type-general-content h1 { border-bottom: 1px solid #00335c; }
-
 h2.node-title a {text-decoration: none;
                  text-transform:uppercase;  }
                  
@@ -419,9 +417,17 @@ button, input[type="button"], input[type="reset"], input[type="submit"],.action-
   text-decoration: none;
   color: #00335c;
   text-transform: uppercase;
-  padding: 4px 8px;
   margin: 10px;
-  font-size: 12px;
+  font-size:11pt;
+  height:30px;
+ }
+ 
+ .view-nodequeue-thematic-activities .views-field-view-node a {
+   padding: 4px 7px 0 7px;
+ }
+ 
+ button, input[type="button"], input[type="reset"], input[type="submit"],.action-button,.view-footer a {
+   padding:4px 7px;
  }
  
  button, input[type="button"], input[type="reset"], input[type="submit"],.action-button,.view-nodequeue-thematic-activities .views-field-view-node a {

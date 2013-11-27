@@ -94,49 +94,51 @@ li a.active {
 }
 /* line 108, ../sass/navigation.scss */
 .block-menu-block ul.menu a {
-  color: #668faf;
+  color: #00335c;
   text-decoration: none;
-  font-family: "PT Sans Narrow", sans-serif;
+  font-family: "Lato", Verdana, "DejaVu Sans", sans-serif;
+  font-size: 12pt;
+  font-weight: bold;
 }
-/* line 114, ../sass/navigation.scss */
+/* line 116, ../sass/navigation.scss */
 .block-menu-block ul.menu a.active {
   color: #205c8c;
 }
-/* line 115, ../sass/navigation.scss */
+/* line 117, ../sass/navigation.scss */
 .block-menu-block ul.menu a:hover {
   color: #87a9c4;
 }
-/* line 117, ../sass/navigation.scss */
+/* line 119, ../sass/navigation.scss */
 .block-menu-block ul.menu li {
   border-top: 1px dotted #a5a6a9;
   padding: 0.2em 0;
 }
-/* line 118, ../sass/navigation.scss */
+/* line 120, ../sass/navigation.scss */
 .block-menu-block ul.menu li.collapsed {
   background: url("../images/bullet-sidebar-menu.png") no-repeat right center;
 }
-/* line 120, ../sass/navigation.scss */
+/* line 122, ../sass/navigation.scss */
 .block-menu-block ul.menu ul.menu {
   padding: 0 0 0 1.2em;
   border: none;
 }
 
-/* line 128, ../sass/navigation.scss */
+/* line 130, ../sass/navigation.scss */
 #block-nice-menus-1 ul.nice-menu-down {
   float: right;
   margin-top: 9px;
   clear: both;
 }
-/* line 132, ../sass/navigation.scss */
+/* line 134, ../sass/navigation.scss */
 #block-nice-menus-1 ul.nice-menu-down li.menuparent.active-trail {
   text-decoration: underline;
 }
-/* line 133, ../sass/navigation.scss */
+/* line 135, ../sass/navigation.scss */
 #block-nice-menus-1 ul.nice-menu-down li.menuparent {
   border: none;
   background-color: transparent;
 }
-/* line 136, ../sass/navigation.scss */
+/* line 138, ../sass/navigation.scss */
 #block-nice-menus-1 ul.nice-menu-down li.menuparent a {
   font-family: "PT Sans Narrow", sans-serif;
   text-transform: uppercase;
@@ -144,21 +146,21 @@ li a.active {
   font-weight: bold;
   text-decoration: none;
 }
-/* line 142, ../sass/navigation.scss */
+/* line 144, ../sass/navigation.scss */
 #block-nice-menus-1 ul.nice-menu-down li.menuparent a:hover {
   text-decoration: underline;
 }
-/* line 147, ../sass/navigation.scss */
+/* line 149, ../sass/navigation.scss */
 #block-nice-menus-1 ul.nice-menu-down li.menuparent ul li {
   background-color: rgba(153, 180, 201, 0.9);
   border-bottom: 1px solid rgba(153, 180, 201, 0.9);
 }
-/* line 150, ../sass/navigation.scss */
+/* line 152, ../sass/navigation.scss */
 #block-nice-menus-1 ul.nice-menu-down li.menuparent ul li a {
   text-transform: none;
   font-weight: normal;
 }
-/* line 153, ../sass/navigation.scss */
+/* line 155, ../sass/navigation.scss */
 #block-nice-menus-1 ul.nice-menu-down li.menuparent ul li a:hover {
   background-color: rgba(153, 180, 201, 0.9);
   color: white;

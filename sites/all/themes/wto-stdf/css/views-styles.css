@@ -273,7 +273,7 @@ html.js input.throbbing {
 .view-nodequeue-upcoming-events .views-row {
   margin: 1em 0 0 0;
   border-bottom: 1px dotted #b3b3b3;
-  padding: 0;
+  padding: 0 0 5px 0;
 }
 /* line 233, ../sass/views-styles.scss */
 .view-nodequeue-upcoming-events .node-event {
@@ -302,4 +302,9 @@ html.js input.throbbing {
 .view-nodequeue-upcoming-events .translation-link {
   float: left;
   width: 100%;
+}
+
+/* line 261, ../sass/views-styles.scss */
+div.views-field-view-node input {
+  padding: 4px 7px 0 7px;
 }
