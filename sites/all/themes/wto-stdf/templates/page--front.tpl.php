@@ -87,6 +87,7 @@
 	</div>
 
   </header>
+
 	<div id="main" class="front">
 		<?php  
             unset($page['content']['system_main']['default_message']); 
