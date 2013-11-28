@@ -106,7 +106,7 @@
 
   /* line 116, ../../sass/layouts/responsive-sidebars.scss */
   #block-views-eebb22e852a8f93e943e8c7a212a3c68 .view-nodequeue-thematic-activities .views-field-body {
-    min-height: 200px;
+    min-height: 175px;
   }
 
   /* line 121, ../../sass/layouts/responsive-sidebars.scss */
@@ -709,17 +709,4 @@
 #partners {
   max-width: 960px;
   margin: 0 auto;
-}
-
-/* line 440, ../../sass/layouts/responsive-sidebars.scss */
-.node-project .projectcontent {
-  width: 70%;
-  float: left;
-  margin-right: 5%;
-}
-/* line 445, ../../sass/layouts/responsive-sidebars.scss */
-.node-project .region-sidebar-second {
-  padding: 0;
-  float: left;
-  width: 25%;
 }
