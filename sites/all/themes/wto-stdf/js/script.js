@@ -15,13 +15,17 @@
 $(function() {
 $("#block-search-form").mouseenter(
     function(){ 
-        $("#edit-search-block-form--2").stop().animate({width:'200px'},'fast');
+        $(".form-text.form-autocomplete").stop().animate({width:'200px'},'fast');
     });
 $("#block-search-form").mouseleave(
     function() {
-    if($("#edit-search-block-form--2").val().length ==0) {
-      $("#edit-search-block-form--2").stop().animate({width:'0'},'fast');
+    if($(".form-text.form-autocomplete").val().length ==0) {
+      $(".form-text.form-autocomplete").stop().animate({width:'0'},'fast');
     }});
 })
+
+$(function() {
+  $( "#tabs" ).tabs();
+});
 
 })(jQuery, Drupal, this, this.document);

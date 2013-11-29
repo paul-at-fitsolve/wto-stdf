@@ -86,44 +86,62 @@
 ?>
 <article class="node-<?php print $node->nid; ?> <?php print $classes; ?> clearfix"<?php print $attributes; ?>>
 
-  <?php if ($title_prefix || $title_suffix || $display_submitted || $unpublished || !$page && $title): ?>
-    <header>
-      <?php print render($title_prefix); ?>
-      <?php if (!$page && $title): ?>
-        <h2<?php print $title_attributes; ?>><a href="<?php print $node_url; ?>"><?php print $title; ?></a></h2>
-      <?php endif; ?>
-      <?php print render($title_suffix); ?>
-
-      <?php if ($display_submitted): ?>
-        <p class="submitted">
-          <?php print $user_picture; ?>
-          <?php print $submitted; ?>
-        </p>
-      <?php endif; ?>
-
-      <?php if ($unpublished): ?>
-        <p class="unpublished"><?php print t('Unpublished'); ?></p>
-      <?php endif; ?>
-    </header>
-  <?php endif; ?>
-
   <?php
     // We hide the comments and links now so that we can render them later.
     hide($content['comments']);
     hide($content['links']);
-   // hide($content['field_status']);
     //If there is no image and there is a beneficiary or beneficiaries then overwrite the
     //set the image to be the map produced by the beneficiaries view.
     if (!isset($content['field_slideshow']) && isset($content['field_beneficiaries'])) {
        $content['field_slideshow'] = module_invoke('views', 'block_view', 'beneficiaries-block_1');
-    }  
-    $content['field_status']["#items"][0]['value'] = t($content['field_status']["#items"][0]['value']);
-     
-    print render($content);
-  ?>
+    }    
+    ?>
+  
+  <?php print render($content['field_slideshow']); ?>
+  
+  <div class="projectcontent">
+  <?php
+      // print render($content);
+    
+    print render($content['field_start_date']);
+    print render($content['field_end_date']);
+    
+    ?>
+    
+    <h1><?php print $title; ?></h1>
+ 
+ 
+  <?php print render($content['field_key_objective']); ?>
+
+  
+  <div id="tabs">
+   <ul>
+    <li><a href="#tabs-1"><?php print render($content['body']); ?></a></li>
+    <li><a href="#tabs-2"><?php print render($content['field_project_achievements']); ?></a></li>
+    <li><a href="#tabs-3"><?php print render($content['field_lessons_learned']); ?></a></li>
+    <li><a href="#tabs-4"><?php print render($content['field_documents']); ?></a></li>    
+  </ul>
+  <div id="tabs-1"><div class="tabcontent"><?php print render($content['body']); ?></div></div>
+  <div id="tabs-2"><div class="tabcontent"><?php print render($content['field_project_achievements']); ?></div></div>
+  <div id="tabs-3"><div class="tabcontent"><?php print render($content['field_lessons_learned']); ?></div></div>
+  <div id="tabs-4"><div class="tabcontent"><?php print render($content['field_documents']); ?></div></div>
+  </div>
+  
 
   <?php print render($content['links']); ?>
 
   <?php print render($content['comments']); ?>
+  </div>
+  
+     <section class="region-sidebar-second">
+     <?php
+    print render($content['field_reference_number']);
+    print render($content['field_status']);
+    print render($content['field_budget_total_project_value']);
+    print render($content['field_budget_total_stdf']);
+    print render($content['field_beneficiaries']);
+    print render($content['field_partner']);
+    ?>
+  </section><!-- region__sidebar -->
 
 </article><!-- /.node -->
