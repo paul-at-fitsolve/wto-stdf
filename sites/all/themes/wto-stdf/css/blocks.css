@@ -456,3 +456,14 @@ footer .block a {
   margin-bottom: 4px;
   color: white;
 }
+
+/* line 369, ../sass/blocks.scss */
+#block-menu-block-1 a {
+  font-weight: normal;
+  color: #668faf;
+}
+/* line 373, ../sass/blocks.scss */
+#block-menu-block-1 a.active {
+  font-weight: normal;
+  color: #00335c;
+}
