@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Feature_Mailchimp_Integration feature.
+ */
+
+include_once 'feature_mailchimp_integration.features.inc';

@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Feature_Node_Queue feature.
+ */
+
+include_once 'feature_node_queue.features.inc';

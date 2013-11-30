@@ -424,7 +424,6 @@ function _stdfcustom_newsletter_list() {
  * Implements hook_form_x_alter. This code alters the project creation/edit form to disable the calculated input fields.
  */
 function stdfcustom_form_project_node_form_alter(&$form, &$form_state, $form_id) {
-  dpm($form);
   $form ['field_budget_total_stdf'] ['#disabled'] = TRUE;
   $form ['field_budget_total_project_value'] ['#disabled'] = TRUE;
   $form ['#attached'] = array (
