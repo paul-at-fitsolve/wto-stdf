@@ -1,7 +1,0 @@
-<?php
-/**
- * @file
- * Code for the WTO theme settings feature.
- */
-
-include_once 'wto_theme_settings.features.inc';

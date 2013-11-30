@@ -1,7 +1,0 @@
-<?php
-/**
- * @file
- * Code for the Feature_Members_Content feature.
- */
-
-include_once 'feature_members_content.features.inc';

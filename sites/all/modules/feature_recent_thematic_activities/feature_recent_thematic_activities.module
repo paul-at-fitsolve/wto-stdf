@@ -1,7 +1,0 @@
-<?php
-/**
- * @file
- * Code for the Feature_Recent_Thematic_Activities feature.
- */
-
-include_once 'feature_recent_thematic_activities.features.inc';

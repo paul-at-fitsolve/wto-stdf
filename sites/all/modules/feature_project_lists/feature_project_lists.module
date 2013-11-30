@@ -1,7 +1,0 @@
-<?php
-/**
- * @file
- * Code for the Feature_Project_Lists feature.
- */
-
-include_once 'feature_project_lists.features.inc';
