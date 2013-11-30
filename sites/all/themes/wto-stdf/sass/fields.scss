@@ -203,9 +203,20 @@ article.node-project {
 .ui-tabs .ui-tabs-panel { display: block; border-width: 0; background-color: #eef1f6; }
 .ui-tabs .ui-tabs-hide { display: none !important; }
     
+  } 
+}
+
+.ui-accordion {
+  .ui-state-default { 
+    background: url(../images/title_bg.png) repeat-x center;
+    border: none;
   }
- 
+  a.ui-accordion-header, .ui-accordion-header a { color: #00335c; }
+  .ui-widget-content { 
+    border: none;
+    padding: 0;
   }
+}
 
 
 #field-slideshow-1-controls {

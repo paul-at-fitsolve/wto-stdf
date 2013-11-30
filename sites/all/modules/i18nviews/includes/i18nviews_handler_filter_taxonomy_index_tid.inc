@@ -35,7 +35,9 @@ class i18nviews_handler_filter_taxonomy_index_tid extends views_handler_filter_t
       );
 
       if ($this->options['limit']) {
-        $form['value']['#autocomplete_path'] = 'i18n/taxonomy/autocomplete/language/' . $vocabulary->vid;
+        global $language;
+        //$form['value']['#autocomplete_path'] = 'i18n/taxonomy/autocomplete/language/' . $vocabulary->vid;
+        $form['value']['#autocomplete_path'] = 'i18n/taxonomy/autocomplete/language/' . $language->language . '/' . $vocabulary->vid;
       }
     }
     else {
@@ -141,7 +143,6 @@ class i18nviews_handler_filter_taxonomy_index_tid extends views_handler_filter_t
     if (!$names) {
       return;
     }
-
     $query = db_select('taxonomy_term_data', 'td');
     $query->innerJoin('taxonomy_vocabulary', 'tv', 'td.vid = tv.vid');
     $query->fields('td');
@@ -150,17 +151,16 @@ class i18nviews_handler_filter_taxonomy_index_tid extends views_handler_filter_t
     $query->addTag('term_access');
     $result = $query->execute();
     foreach ($result as $term) {
-      unset($missing[strtolower(i18n_taxonomy_term_name($term->name))]);
+      unset($missing[strtolower($term->name)]);
+      //unset($missing[strtolower(i18n_taxonomy_term_name($term->name))]);
       $tids[] = $term->tid;
     }
-
     if ($missing && !empty($this->options['error_message'])) {
       form_error($form, format_plural(count($missing), 'Unable to find term: @terms', 'Unable to find terms: @terms', array('@terms' => implode(', ', array_keys($missing)))));
     }
     elseif ($missing && empty($this->options['error_message'])) {
       $tids = array(0);
     }
-
     return $tids;
 
   }

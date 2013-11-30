@@ -114,7 +114,12 @@ function i18n_taxonomy_autocomplete_field($field_name, $tags_typed = '') {
  * Helper function for autocompletion. Select by language
  */
 function i18n_taxonomy_autocomplete_language($langcode, $vocabulary, $tags_typed = '') {
-  $vids = $vocabulary ? array($vocabulary->vid) : NULL;
+  if (!is_numeric($vocabulary)) {
+    $vids = (is_object($vocabulary)) ? array($vocabulary->vid) : NULL;
+  }else {
+    $vids = $vocabulary;
+  }
+
   return _i18n_taxonomy_autocomplete($langcode, $vids, $tags_typed);
 }
 

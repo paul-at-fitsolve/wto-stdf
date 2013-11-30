@@ -96,6 +96,7 @@ class StdfMigrationProjectMigration extends StdfMigration {
     $this->addFieldMapping ( 'field_comments', 'comments' );
     $this->addFieldMapping ( 'field_beneficiary_text', 'beneficiary' )->separator(';');
     $this->addFieldMapping ( 'field_beneficiary_text:create_term' )->defaultValue ( TRUE );
+    $this->addFieldMapping ( 'language' )->defaultValue ( 'en' );
     
     $this->addFieldMapping ( 'field_documents', 'link1' )->separator ( ';' );
     

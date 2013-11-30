@@ -215,7 +215,7 @@ function _stdfcustom_solrsearch_form_simple($form, &$form_state) {
   
   $form ['reset'] = array (
       '#type' => 'markup',
-      '#markup' => '<input type="reset" value="Reset All Values" class="form-submit">' 
+      '#markup' => '<input type="reset" value="' . t('Reset'). '" class="form-submit">' 
   );
   
   $form ['submit'] = array (
@@ -365,7 +365,7 @@ function _stdfcustom_solrsearch_form_advanced($form, $form_state) {
   
   $form ['reset'] = array (
       '#type' => 'markup',
-      '#markup' => '<input type="reset" value="Reset All Values" class="form-submit">' 
+      '#markup' => '<input type="reset" value="' . t('Reset'). '" class="form-submit">' 
   );
   
   $form ['submit'] = array (
@@ -424,6 +424,7 @@ function _stdfcustom_newsletter_list() {
  * Implements hook_form_x_alter. This code alters the project creation/edit form to disable the calculated input fields.
  */
 function stdfcustom_form_project_node_form_alter(&$form, &$form_state, $form_id) {
+  dpm($form);
   $form ['field_budget_total_stdf'] ['#disabled'] = TRUE;
   $form ['field_budget_total_project_value'] ['#disabled'] = TRUE;
   $form ['#attached'] = array (
@@ -432,6 +433,7 @@ function stdfcustom_form_project_node_form_alter(&$form, &$form_state, $form_id)
           'data' => drupal_get_path ( 'module', 'stdfcustom' ) . '/stdfcustom.js' 
       ) 
   );
+
   
   $form ['#validate'] [] = 'stdfcustom_project_node_form_validate';
   $form ['#submit'] [] = 'stdfcustom_project_node_form_submit';
