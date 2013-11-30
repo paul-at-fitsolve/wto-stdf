@@ -203,12 +203,38 @@ article.node-project .projectcontent .ui-tabs .ui-tabs-hide {
   display: none !important;
 }
 
-/* line 211, ../sass/fields.scss */
+/* line 210, ../sass/fields.scss */
+.ui-accordion .ui-state-default {
+  background: url(../images/partners_bg.png) repeat-x center;
+  border: none;
+}
+/* line 214, ../sass/fields.scss */
+.ui-accordion a.ui-accordion-header, .ui-accordion .ui-accordion-header a {
+  color: #00335c;
+}
+/* line 215, ../sass/fields.scss */
+.ui-accordion .ui-widget-content {
+  border: none;
+  padding: 0;
+  background: #EEF1F6;
+  color: #00335C;
+}
+/* line 221, ../sass/fields.scss */
+.ui-accordion .ui-state-active {
+  background: #EEF1F6;
+}
+
+/* line 226, ../sass/fields.scss */
+.ui-widget {
+  font-family: "Lato", Verdana, "DejaVu Sans", sans-serif;
+}
+
+/* line 230, ../sass/fields.scss */
 #field-slideshow-1-controls {
   align: center;
 }
 
-/* line 214, ../sass/fields.scss */
+/* line 233, ../sass/fields.scss */
 .field-name-field-FIELDNAME {
   /* Underscores in field name are replaced with dashes. */
 }

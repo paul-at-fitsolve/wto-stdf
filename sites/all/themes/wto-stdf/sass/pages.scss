@@ -212,6 +212,8 @@ h3.title { /* Comment title */
 	font-family: $base-font-family;
 	font-weight: normal;
 	text-transform: uppercase; 
+	border-bottom: 1px solid;
+	margin-bottom: 20px;
 }
 
 h2.node-title a {text-decoration: none;

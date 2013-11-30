@@ -208,16 +208,24 @@ article.node-project {
 
 .ui-accordion {
   .ui-state-default { 
-    background: url(../images/title_bg.png) repeat-x center;
+    background: url(../images/partners_bg.png) repeat-x center;
     border: none;
   }
   a.ui-accordion-header, .ui-accordion-header a { color: #00335c; }
   .ui-widget-content { 
     border: none;
     padding: 0;
+    background: #EEF1F6;
+    color: #00335C;
+  }
+  .ui-state-active {
+    background: #EEF1F6;
   }
 }
 
+.ui-widget {
+  font-family:$lato;
+}
 
 #field-slideshow-1-controls {
 	align:center;
