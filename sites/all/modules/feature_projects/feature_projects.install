@@ -1,0 +1,10 @@
+<?php
+
+/**
+ * @file
+ * Install file for the projects feature.
+ */
+
+function feature_projects_update_7200(){
+    module_enable(array('print'));
+}
