@@ -213,14 +213,14 @@ function _stdfcustom_solrsearch_form_simple($form, &$form_state) {
       ) 
   );
   
+    $form ['submit'] = array (
+      '#type' => 'submit',
+      '#value' => t ( 'Search' ) 
+  );
+  
   $form ['reset'] = array (
       '#type' => 'markup',
       '#markup' => '<input type="reset" value="' . t('Reset'). '" class="form-submit">' 
-  );
-  
-  $form ['submit'] = array (
-      '#type' => 'submit',
-      '#value' => t ( 'Search' ) 
   );
   
   return $form;
@@ -363,14 +363,14 @@ function _stdfcustom_solrsearch_form_advanced($form, $form_state) {
       '#title' => t ( 'Filter by language' ) 
   );
   
+   $form ['submit'] = array (
+      '#type' => 'submit',
+      '#value' => t ( 'Search' ) 
+  );
+  
   $form ['reset'] = array (
       '#type' => 'markup',
       '#markup' => '<input type="reset" value="' . t('Reset'). '" class="form-submit">' 
-  );
-  
-  $form ['submit'] = array (
-      '#type' => 'submit',
-      '#value' => t ( 'Search' ) 
   );
   
   return $form;
