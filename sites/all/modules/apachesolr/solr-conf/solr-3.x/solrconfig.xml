@@ -49,28 +49,16 @@
     -->
   <luceneMatchVersion>${luceneVersion:LUCENE_35}</luceneMatchVersion>
 
-  <!-- lib directives can be used to instruct Solr to load an Jars
-       identified and use them to resolve any "plugins" specified in
-       your solrconfig.xml or schema.xml (ie: Analyzers, Request
-       Handlers, etc...).
-
-       All directories and paths are resolved relative to the
-       instanceDir.
-
-       If a "./lib" directory exists in your instanceDir, all files
-       found in it are included as if you had used the following
-       syntax...
        
               <lib dir="./lib" />
-    -->
 
+<lib dir="../../dist/" regex="apache-solr-cell-\d.*\.jar" />
   <!-- A dir option by itself adds any files found in the directory to
        the classpath, this is useful for including all jars in a
        directory.
     -->
-
+  <lib dir="../../contrib/extraction/lib/" />
   <lib dir="../../contrib/clustering/lib/" />
-  <lib dir="../../../contrib/extraction/lib" regex=".*\.jar" />
   <!-- The velocity library has been known to crash Solr in some
        instances when deployed as a war file to Tomcat. Therefore all
        references have been removed from the default configuration.

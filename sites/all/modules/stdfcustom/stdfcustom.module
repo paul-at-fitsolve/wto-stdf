@@ -592,7 +592,7 @@ function _stdfcustom_countries_autocomplete($value) {
   $terms = taxonomy_get_tree ( $v->vid );
   foreach ( $terms as $term ) {
     $pos = strpos ( $term->name, $value );
-    if ($pos !== false) {
+    if ($pos === 0) {
       $options [$term->tid] = $term->name;
     }
   }
