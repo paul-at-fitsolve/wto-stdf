@@ -17,7 +17,7 @@ function feature_genera_wysiwyg_default_profiles() {
     'settings' => array(
       'default' => 1,
       'user_choose' => 0,
-      'show_toggle' => 0,
+      'show_toggle' => 1,
       'theme' => 'advanced',
       'language' => 'en',
       'buttons' => array(
@@ -69,7 +69,7 @@ function feature_genera_wysiwyg_default_profiles() {
       'path_loc' => 'bottom',
       'resizing' => 1,
       'verify_html' => 1,
-      'preformatted' => 0,
+      'preformatted' => 1,
       'convert_fonts_to_spans' => 1,
       'remove_linebreaks' => 0,
       'apply_source_formatting' => 0,
