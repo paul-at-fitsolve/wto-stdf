@@ -32,7 +32,6 @@ features[fe_block_settings][] = stdffrontpage-contact_info
 features[fe_block_settings][] = stdffrontpage-copyright
 features[fe_block_settings][] = stdffrontpage-partnerlogos
 features[fe_block_settings][] = stdffrontpage-proposal_deadline
-features[fe_block_settings][] = stdffrontpage-publications
 features[fe_block_settings][] = user-login
 features[fe_block_settings][] = views-eebb22e852a8f93e943e8c7a212a3c68
 features[fe_block_settings][] = views-front_carousel-block

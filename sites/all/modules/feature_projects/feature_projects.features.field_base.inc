@@ -751,7 +751,7 @@ function feature_projects_field_default_field_bases() {
     'locked' => 0,
     'module' => 'image',
     'settings' => array(
-      'default_image' => 213,
+      'default_image' => 2482,
       'uri_scheme' => 'public',
     ),
     'translatable' => 0,

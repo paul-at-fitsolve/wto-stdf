@@ -470,50 +470,6 @@ projectpreparationgrants',
     'visibility' => 1,
   );
 
-  $export['stdffrontpage-publications'] = array(
-    'cache' => -1,
-    'custom' => 0,
-    'delta' => 'publications',
-    'i18n_block_language' => array(
-      0 => 'en',
-      1 => 'es',
-      2 => 'fr',
-    ),
-    'i18n_mode' => 1,
-    'module' => 'stdffrontpage',
-    'node_types' => array(),
-    'pages' => '',
-    'roles' => array(),
-    'themes' => array(
-      'bartik' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'bartik',
-        'weight' => 0,
-      ),
-      'seven' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'seven',
-        'weight' => 0,
-      ),
-      'wto_stdf' => array(
-        'region' => 'second_content',
-        'status' => 1,
-        'theme' => 'wto_stdf',
-        'weight' => 0,
-      ),
-      'zen' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'zen',
-        'weight' => 0,
-      ),
-    ),
-    'title' => '',
-    'visibility' => 0,
-  );
-
   $export['user-login'] = array(
     'cache' => -1,
     'custom' => 0,

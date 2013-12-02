@@ -35,7 +35,7 @@ function feature_frontpage_image_default_styles() {
   $styles['thematic_thumbnail'] = array(
     'name' => 'thematic_thumbnail',
     'effects' => array(
-      6 => array(
+      7 => array(
         'label' => 'Scale and crop',
         'help' => 'Scale and crop will maintain the aspect-ratio of the original image, then crop the larger dimension. This is most useful for creating perfectly square thumbnails without stretching the image.',
         'effect callback' => 'image_scale_and_crop_effect',

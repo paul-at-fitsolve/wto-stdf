@@ -44,7 +44,9 @@ function feature_frontpage_views_default_views() {
   $handler->display->display_options['style_options']['widgets']['top']['views_slideshow_pager']['weight'] = '1';
   $handler->display->display_options['style_options']['widgets']['top']['views_slideshow_pager']['type'] = 'views_slideshow_pager_fields';
   $handler->display->display_options['style_options']['widgets']['top']['views_slideshow_pager']['views_slideshow_pager_fields_fields'] = array(
-    'title' => 0,
+    'field_slide' => 0,
+    'body' => 0,
+    'body_1' => 0,
   );
   $handler->display->display_options['style_options']['widgets']['top']['views_slideshow_controls']['weight'] = '1';
   $handler->display->display_options['style_options']['widgets']['top']['views_slideshow_controls']['type'] = 'views_slideshow_controls_text';
@@ -52,7 +54,9 @@ function feature_frontpage_views_default_views() {
   $handler->display->display_options['style_options']['widgets']['bottom']['views_slideshow_pager']['weight'] = '1';
   $handler->display->display_options['style_options']['widgets']['bottom']['views_slideshow_pager']['type'] = 'views_slideshow_pager_fields';
   $handler->display->display_options['style_options']['widgets']['bottom']['views_slideshow_pager']['views_slideshow_pager_fields_fields'] = array(
-    'title' => 0,
+    'field_slide' => 0,
+    'body' => 0,
+    'body_1' => 0,
   );
   $handler->display->display_options['style_options']['widgets']['bottom']['views_slideshow_controls']['weight'] = '1';
   $handler->display->display_options['style_options']['widgets']['bottom']['views_slideshow_controls']['type'] = 'views_slideshow_controls_text';
@@ -118,17 +122,6 @@ function feature_frontpage_views_default_views() {
 
   /* Display: Block */
   $handler = $view->new_display('block', 'Block', 'block');
-  $translatables['front_carousel'] = array(
-    t('Master'),
-    t('Front Carousel'),
-    t('more'),
-    t('Apply'),
-    t('Reset'),
-    t('Sort by'),
-    t('Asc'),
-    t('Desc'),
-    t('Block'),
-  );
   $export['front_carousel'] = $view;
 
   return $export;

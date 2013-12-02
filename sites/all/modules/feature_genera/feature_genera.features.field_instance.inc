@@ -425,7 +425,7 @@ function feature_genera_field_default_field_instances() {
           'slideshow_controls_position' => 'after',
           'slideshow_field_collection_image' => 'field_image',
           'slideshow_fx' => 'fade',
-          'slideshow_image_style' => 'flexslider_full',
+          'slideshow_image_style' => 'thematic_widescreen',
           'slideshow_link' => 'field_link',
           'slideshow_order' => '',
           'slideshow_pager' => '',

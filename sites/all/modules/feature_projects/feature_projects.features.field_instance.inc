@@ -74,7 +74,7 @@ function feature_projects_field_default_field_instances() {
     'required' => 1,
     'settings' => array(
       'alt_field' => 0,
-      'default_image' => 212,
+      'default_image' => 2481,
       'file_directory' => '',
       'file_extensions' => 'png gif jpg jpeg',
       'max_filesize' => '',
@@ -101,10 +101,11 @@ function feature_projects_field_default_field_instances() {
         ),
         'allowed_types' => array(
           'audio' => 0,
-          'document' => 0,
           'image' => 'image',
           'private_document' => 0,
+          'public_documents' => 0,
           'video' => 0,
+          'virtual_library_document' => 0,
         ),
         'browser_plugins' => array(
           'media_default--media_browser_1' => 'media_default--media_browser_1',
@@ -723,6 +724,7 @@ function feature_projects_field_default_field_instances() {
       'active' => 1,
       'module' => 'date',
       'settings' => array(
+        'display_all_day' => 0,
         'increment' => 15,
         'input_format' => 'd/m/Y - H:i:s',
         'input_format_custom' => '',
@@ -1627,6 +1629,7 @@ function feature_projects_field_default_field_instances() {
       'active' => 1,
       'module' => 'date',
       'settings' => array(
+        'display_all_day' => 0,
         'increment' => 15,
         'input_format' => 'd/m/Y - H:i:s',
         'input_format_custom' => '',
@@ -1714,7 +1717,7 @@ function feature_projects_field_default_field_instances() {
     'bundle' => 'project',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => 'Please enter the expected results of the project.',
+    'description' => '',
     'display' => array(
       'briefings' => array(
         'label' => 'above',
@@ -1766,7 +1769,7 @@ function feature_projects_field_default_field_instances() {
         'preview' => 0,
         'thumbnail' => 0,
       ),
-      'text_processing' => 0,
+      'text_processing' => 1,
       'user_register_form' => FALSE,
     ),
     'widget' => array(
@@ -1838,6 +1841,7 @@ function feature_projects_field_default_field_instances() {
       'active' => 1,
       'module' => 'date',
       'settings' => array(
+        'display_all_day' => 0,
         'increment' => 15,
         'input_format' => 'd/m/Y - H:i:s',
         'input_format_custom' => '',
@@ -2041,7 +2045,7 @@ function feature_projects_field_default_field_instances() {
         'preview' => 0,
         'thumbnail' => 0,
       ),
-      'text_processing' => 0,
+      'text_processing' => 1,
       'user_register_form' => FALSE,
     ),
     'widget' => array(
@@ -2384,7 +2388,7 @@ function feature_projects_field_default_field_instances() {
         'preview' => 0,
         'thumbnail' => 0,
       ),
-      'text_processing' => 0,
+      'text_processing' => 1,
       'user_register_form' => FALSE,
     ),
     'widget' => array(
@@ -2455,7 +2459,7 @@ function feature_projects_field_default_field_instances() {
         'preview' => 0,
         'thumbnail' => 0,
       ),
-      'text_processing' => 0,
+      'text_processing' => 1,
       'user_register_form' => FALSE,
     ),
     'widget' => array(
@@ -2894,6 +2898,7 @@ function feature_projects_field_default_field_instances() {
       'active' => 1,
       'module' => 'date',
       'settings' => array(
+        'display_all_day' => 0,
         'increment' => 15,
         'input_format' => 'd/m/Y - H:i:s',
         'input_format_custom' => '',
@@ -3157,7 +3162,6 @@ function feature_projects_field_default_field_instances() {
   t('Please enter the caption which should accompany the image.');
   t('Please enter the day, month and year that the project started or is planned to start. Then enter the day, month, and year that it is or was planned to end.');
   t('Please enter the day, month and year that the project was approved.');
-  t('Please enter the expected results of the project.');
   t('Please enter the final end date of the project.');
   t('Please enter the implementation budget in USD.');
   t('Please enter the lessons learned on the project, these will appear in a separate tab.');

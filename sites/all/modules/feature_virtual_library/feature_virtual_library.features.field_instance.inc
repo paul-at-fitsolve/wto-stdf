@@ -287,7 +287,7 @@ function feature_virtual_library_field_default_field_instances() {
     'entity_type' => 'file',
     'field_name' => 'field_language',
     'label' => 'Language',
-    'required' => 0,
+    'required' => 1,
     'settings' => array(
       'mediafront' => array(
         'custom' => '',
@@ -369,6 +369,7 @@ function feature_virtual_library_field_default_field_instances() {
       'active' => 1,
       'module' => 'date',
       'settings' => array(
+        'display_all_day' => 0,
         'increment' => 15,
         'input_format' => 'd/m/Y - H:i:s',
         'input_format_custom' => '',

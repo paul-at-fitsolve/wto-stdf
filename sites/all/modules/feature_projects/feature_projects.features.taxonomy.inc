@@ -17,7 +17,7 @@ function feature_projects_taxonomy_default_vocabularies() {
       'module' => 'taxonomy',
       'weight' => 0,
       'language' => 'und',
-      'i18n_mode' => 1,
+      'i18n_mode' => 4,
       'rdf_mapping' => array(
         'rdftype' => array(
           0 => 'skos:ConceptScheme',
