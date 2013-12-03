@@ -210,7 +210,9 @@ h3.title { /* Comment title */
 
 .not-front h1.title {
 	font-family: $base-font-family;
-	font-weight: normal;
+	font-weight: 300;
+	font-size:30pt;
+	color:#00335c;
 	text-transform: uppercase; 
 	border-bottom: 1px solid;
 	margin-bottom: 20px;
