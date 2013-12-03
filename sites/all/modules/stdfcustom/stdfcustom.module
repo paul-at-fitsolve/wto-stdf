@@ -593,7 +593,7 @@ function _stdfcustom_countries_autocomplete($value) {
   foreach ( $terms as $term ) {
     $pos = strpos ( $term->name, $value );
     if ($pos === 0) {
-      $options [$term->tid] = $term->name;
+      $options [$term->name] = $term->name;
     }
   }
   drupal_json_output ( $options );
@@ -697,7 +697,7 @@ function stdfcustom_apachesolr_query_alter($query) {
   
   $compiled_filter = new SolrFilterSubQuery ( 'AND' );
   if ($_SESSION ['advanced'] ['title'] != '') {
-    $compiled_filter->addFilter ( 'label', $_SESSION ['advanced'] ['title'] );
+    $compiled_filter->addFilter ( 'title', $_SESSION ['advanced'] ['title'] );
   }
   
   if ($_SESSION ['advanced'] ['author'] != '') {
@@ -709,8 +709,9 @@ function stdfcustom_apachesolr_query_alter($query) {
   }
   
   if ($_SESSION ['advanced'] ['country'] != '') {
-    $compiled_filter->addFilter ( 'sm_vid_Publisher', $_SESSION ['advanced'] ['country'] );
+    $compiled_filter->addFilter ( 'sm_vid_Country', $_SESSION ['advanced'] ['country'] );
   }
+  
   if ($_SESSION ['advanced'] ['publication_date_from'] != '') {
     $range = '[' . $_SESSION ['advanced'] ['publication_date_from'] . '-01-01T00:00:00.000Z TO';
   } else {
@@ -747,7 +748,7 @@ function stdfcustom_apachesolr_query_alter($query) {
   $compiled_filter->addFilterSubQuery ( $keyword_filter );
   
   $query->addFilterSubQuery ( $compiled_filter );
-  // dpm($query->getParams());
+  //dpm($query->getParams());
   unset ( $_SESSION ['advanced'] );
 }
 function stdfcustom_block_view_nice_menus_2_alter(&$data, $block) {
