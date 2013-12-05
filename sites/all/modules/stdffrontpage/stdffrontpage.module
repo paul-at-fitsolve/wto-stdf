@@ -27,14 +27,13 @@ function stdffrontpage_variable_info($options) {
 }
 function stdffrontpage_form_alter(&$form, &$form_state, $form_id) {
   if ($form_id == 'system_site_information_settings') {
-    global $language;
     $form ['contact_info'] = array (
         '#title' => t ( 'Contact Information' ),
         '#type' => 'text_format',
         '#base_type' => 'textarea',
         '#format' => 'wysiwyg_filter',
         '#description' => t ( 'The site\'s contact information, which can be translated if required.' ),
-        '#default_value' => i18n_variable_get ( 'contact_info', $_GET ['variable_realm_key_language'] )['value'] 
+        '#default_value' => i18n_variable_get ( 'contact_info', $_GET ['variable_realm_key_language']),
     );
     $form ['proposal_deadline'] = array (
         '#title' => t ( 'Proposal Deadline' ),
@@ -42,10 +41,11 @@ function stdffrontpage_form_alter(&$form, &$form_state, $form_id) {
         '#base_type' => 'textarea',
         '#format' => 'wysiwyg_filter',
         '#description' => t ( 'The deadline for proposals, which can be translated if required.' ),
-        '#default_value' => i18n_variable_get ( 'proposal_deadline', $_GET ['variable_realm_key_language'] )['value'] 
+        '#default_value' => i18n_variable_get ( 'proposal_deadline', $_GET ['variable_realm_key_language']),     
     );
     
     $form ['#submit'] [] = 'stdffrontpage_submit';
+    
   }
   
   if ($form_id == 'views_exposed_form') {
@@ -54,8 +54,8 @@ function stdffrontpage_form_alter(&$form, &$form_state, $form_id) {
   }
 }
 function stdffrontpage_submit(&$form, $form_state) {
-  i18n_variable_set ( 'contact_info', $form_state ['values'] ['contact_info'], $_GET ['variable_realm_key_language'] );
-  i18n_variable_set ( 'proposal_deadline', $form_state ['values'] ['proposal_deadline'], $_GET ['variable_realm_key_language'] );
+  i18n_variable_set ( 'contact_info', $form_state ['values'] ['contact_info']['value'], $_GET ['variable_realm_key_language'] );
+  i18n_variable_set ( 'proposal_deadline', $form_state ['values'] ['proposal_deadline']['value'], $_GET ['variable_realm_key_language'] );
 }
 
 /**
@@ -118,12 +118,12 @@ function stdffrontpage_block_view($delta) {
     case 'contact_info' :
       $block ['subject'] = t ( 'Contact Info' );
       $block ['content'] .= "<div class='menu-block-wrapper'>";
-      $block ['content'] .= i18n_variable_get ( 'contact_info', $language->language )['value'];
+      $block ['content'] .= i18n_variable_get ( 'contact_info', $language->language);
       $block ['content'] .= "</div>";
       break;
     case 'proposal_deadline' :
       $block ['content'] .= "<div class='menu-block-wrapper'>";
-      $block ['content'] .= i18n_variable_get ( 'proposal_deadline', $language->language )['value'];
+      $block ['content'] .= i18n_variable_get ( 'proposal_deadline', $language->language);
       $block ['content'] .= "</div>";
       break;
     case 'resources' :
