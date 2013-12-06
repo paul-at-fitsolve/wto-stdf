@@ -263,6 +263,13 @@ function feature_projects_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 0,
       ),
+      'full' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 3,
+      ),
       'publications' => array(
         'label' => 'above',
         'settings' => array(),
@@ -338,6 +345,12 @@ function feature_projects_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 0,
       ),
+      'full' => array(
+        'label' => 'inline',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 28,
+      ),
       'publications' => array(
         'label' => 'above',
         'settings' => array(),
@@ -404,6 +417,12 @@ function feature_projects_field_default_field_instances() {
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 0,
+      ),
+      'full' => array(
+        'label' => 'inline',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 25,
       ),
       'publications' => array(
         'label' => 'above',
@@ -474,6 +493,12 @@ function feature_projects_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 0,
       ),
+      'full' => array(
+        'label' => 'inline',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 18,
+      ),
       'publications' => array(
         'label' => 'above',
         'settings' => array(),
@@ -537,6 +562,12 @@ function feature_projects_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 0,
       ),
+      'full' => array(
+        'label' => 'inline',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 24,
+      ),
       'publications' => array(
         'label' => 'above',
         'settings' => array(),
@@ -598,6 +629,12 @@ function feature_projects_field_default_field_instances() {
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 0,
+      ),
+      'full' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 13,
       ),
       'publications' => array(
         'label' => 'above',
@@ -690,6 +727,12 @@ function feature_projects_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 0,
       ),
+      'full' => array(
+        'label' => 'inline',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 16,
+      ),
       'publications' => array(
         'label' => 'above',
         'settings' => array(),
@@ -761,6 +804,12 @@ function feature_projects_field_default_field_instances() {
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 0,
+      ),
+      'full' => array(
+        'label' => 'inline',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 37,
       ),
       'publications' => array(
         'label' => 'above',
@@ -835,6 +884,15 @@ function feature_projects_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 0,
       ),
+      'full' => array(
+        'label' => 'above',
+        'module' => 'entityreference',
+        'settings' => array(
+          'link' => FALSE,
+        ),
+        'type' => 'entityreference_label',
+        'weight' => 45,
+      ),
       'publications' => array(
         'label' => 'above',
         'settings' => array(),
@@ -907,6 +965,13 @@ function feature_projects_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 0,
       ),
+      'full' => array(
+        'label' => 'above',
+        'module' => 'i18n_taxonomy',
+        'settings' => array(),
+        'type' => 'i18n_taxonomy_term_reference_link',
+        'weight' => 44,
+      ),
       'publications' => array(
         'label' => 'above',
         'settings' => array(),
@@ -977,6 +1042,12 @@ function feature_projects_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 0,
       ),
+      'full' => array(
+        'label' => 'inline',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 20,
+      ),
       'publications' => array(
         'label' => 'above',
         'settings' => array(),
@@ -1040,6 +1111,12 @@ function feature_projects_field_default_field_instances() {
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 0,
+      ),
+      'full' => array(
+        'label' => 'inline',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 19,
       ),
       'publications' => array(
         'label' => 'above',
@@ -1105,6 +1182,12 @@ function feature_projects_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 0,
       ),
+      'full' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 11,
+      ),
       'publications' => array(
         'label' => 'above',
         'settings' => array(),
@@ -1168,6 +1251,12 @@ function feature_projects_field_default_field_instances() {
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 0,
+      ),
+      'full' => array(
+        'label' => 'inline',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 21,
       ),
       'publications' => array(
         'label' => 'above',
@@ -1239,6 +1328,18 @@ function feature_projects_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 0,
       ),
+      'full' => array(
+        'label' => 'above',
+        'module' => 'number',
+        'settings' => array(
+          'decimal_separator' => '.',
+          'prefix_suffix' => TRUE,
+          'scale' => 2,
+          'thousand_separator' => ' ',
+        ),
+        'type' => 'number_decimal',
+        'weight' => 7,
+      ),
       'publications' => array(
         'label' => 'above',
         'settings' => array(),
@@ -1309,6 +1410,18 @@ function feature_projects_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 0,
       ),
+      'full' => array(
+        'label' => 'above',
+        'module' => 'number',
+        'settings' => array(
+          'decimal_separator' => '.',
+          'prefix_suffix' => TRUE,
+          'scale' => 2,
+          'thousand_separator' => ' ',
+        ),
+        'type' => 'number_decimal',
+        'weight' => 8,
+      ),
       'publications' => array(
         'label' => 'above',
         'settings' => array(),
@@ -1373,6 +1486,12 @@ function feature_projects_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 0,
       ),
+      'full' => array(
+        'label' => 'inline',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 22,
+      ),
       'publications' => array(
         'label' => 'above',
         'settings' => array(),
@@ -1436,6 +1555,12 @@ function feature_projects_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 0,
       ),
+      'full' => array(
+        'label' => 'inline',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 30,
+      ),
       'publications' => array(
         'label' => 'above',
         'settings' => array(),
@@ -1495,6 +1620,13 @@ function feature_projects_field_default_field_instances() {
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 0,
+      ),
+      'full' => array(
+        'label' => 'above',
+        'module' => 'file',
+        'settings' => array(),
+        'type' => 'file_table',
+        'weight' => 4,
       ),
       'publications' => array(
         'label' => 'above',
@@ -1588,6 +1720,12 @@ function feature_projects_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 0,
       ),
+      'full' => array(
+        'label' => 'inline',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 23,
+      ),
       'publications' => array(
         'label' => 'above',
         'settings' => array(),
@@ -1667,6 +1805,12 @@ function feature_projects_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 0,
       ),
+      'full' => array(
+        'label' => 'inline',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 36,
+      ),
       'publications' => array(
         'label' => 'above',
         'settings' => array(),
@@ -1738,6 +1882,13 @@ function feature_projects_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 0,
       ),
+      'full' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 41,
+      ),
       'publications' => array(
         'label' => 'above',
         'settings' => array(),
@@ -1806,6 +1957,12 @@ function feature_projects_field_default_field_instances() {
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 0,
+      ),
+      'full' => array(
+        'label' => 'inline',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 17,
       ),
       'publications' => array(
         'label' => 'above',
@@ -1879,6 +2036,12 @@ function feature_projects_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 0,
       ),
+      'full' => array(
+        'label' => 'inline',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 12,
+      ),
       'publications' => array(
         'label' => 'above',
         'settings' => array(),
@@ -1942,6 +2105,13 @@ function feature_projects_field_default_field_instances() {
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 0,
+      ),
+      'full' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 2,
       ),
       'publications' => array(
         'label' => 'above',
@@ -2014,6 +2184,13 @@ function feature_projects_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 0,
       ),
+      'full' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 39,
+      ),
       'publications' => array(
         'label' => 'above',
         'settings' => array(),
@@ -2083,6 +2260,12 @@ function feature_projects_field_default_field_instances() {
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 0,
+      ),
+      'full' => array(
+        'label' => 'inline',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 33,
       ),
       'publications' => array(
         'label' => 'above',
@@ -2156,6 +2339,13 @@ function feature_projects_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 0,
       ),
+      'full' => array(
+        'label' => 'above',
+        'module' => 'taxonomy',
+        'settings' => array(),
+        'type' => 'taxonomy_term_reference_plain',
+        'weight' => 9,
+      ),
       'publications' => array(
         'label' => 'above',
         'settings' => array(),
@@ -2226,6 +2416,12 @@ function feature_projects_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 0,
       ),
+      'full' => array(
+        'label' => 'inline',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 29,
+      ),
       'publications' => array(
         'label' => 'above',
         'settings' => array(),
@@ -2285,6 +2481,12 @@ function feature_projects_field_default_field_instances() {
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 0,
+      ),
+      'full' => array(
+        'label' => 'inline',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 32,
       ),
       'publications' => array(
         'label' => 'above',
@@ -2357,6 +2559,13 @@ function feature_projects_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 0,
       ),
+      'full' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 38,
+      ),
       'publications' => array(
         'label' => 'above',
         'settings' => array(),
@@ -2427,6 +2636,13 @@ function feature_projects_field_default_field_instances() {
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 0,
+      ),
+      'full' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 40,
       ),
       'publications' => array(
         'label' => 'above',
@@ -2503,6 +2719,13 @@ function feature_projects_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 0,
       ),
+      'full' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 5,
+      ),
       'publications' => array(
         'label' => 'above',
         'settings' => array(),
@@ -2566,6 +2789,13 @@ function feature_projects_field_default_field_instances() {
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 0,
+      ),
+      'full' => array(
+        'label' => 'above',
+        'module' => 'i18n_taxonomy',
+        'settings' => array(),
+        'type' => 'i18n_taxonomy_term_reference_link',
+        'weight' => 46,
       ),
       'publications' => array(
         'label' => 'above',
@@ -2637,6 +2867,12 @@ function feature_projects_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 0,
       ),
+      'full' => array(
+        'label' => 'inline',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 27,
+      ),
       'publications' => array(
         'label' => 'above',
         'settings' => array(),
@@ -2699,6 +2935,12 @@ function feature_projects_field_default_field_instances() {
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 0,
+      ),
+      'full' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 14,
       ),
       'publications' => array(
         'label' => 'above',
@@ -2791,6 +3033,44 @@ function feature_projects_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 0,
       ),
+      'full' => array(
+        'label' => 'above',
+        'module' => 'field_slideshow',
+        'settings' => array(
+          'slideshow_caption' => 'field_caption',
+          'slideshow_caption_link' => '',
+          'slideshow_carousel_circular' => 0,
+          'slideshow_carousel_follow' => 0,
+          'slideshow_carousel_image_style' => '',
+          'slideshow_carousel_scroll' => 1,
+          'slideshow_carousel_skin' => '',
+          'slideshow_carousel_speed' => 500,
+          'slideshow_carousel_vertical' => 0,
+          'slideshow_carousel_visible' => 3,
+          'slideshow_colorbox_image_style' => '',
+          'slideshow_colorbox_slideshow' => '',
+          'slideshow_colorbox_slideshow_speed' => 4000,
+          'slideshow_colorbox_speed' => 350,
+          'slideshow_colorbox_transition' => 'elastic',
+          'slideshow_controls' => 1,
+          'slideshow_controls_pause' => 0,
+          'slideshow_controls_position' => 'after',
+          'slideshow_field_collection_image' => 'field_image',
+          'slideshow_fx' => 'fade',
+          'slideshow_image_style' => 'large',
+          'slideshow_link' => 'field_link',
+          'slideshow_order' => '',
+          'slideshow_pager' => '',
+          'slideshow_pager_image_style' => '',
+          'slideshow_pager_position' => 'after',
+          'slideshow_pause' => 0,
+          'slideshow_speed' => 1000,
+          'slideshow_start_on_hover' => 0,
+          'slideshow_timeout' => 4000,
+        ),
+        'type' => 'slideshow',
+        'weight' => 0,
+      ),
       'publications' => array(
         'label' => 'above',
         'settings' => array(),
@@ -2856,6 +3136,19 @@ function feature_projects_field_default_field_instances() {
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 0,
+      ),
+      'full' => array(
+        'label' => 'above',
+        'module' => 'date',
+        'settings' => array(
+          'format_type' => 'short',
+          'fromto' => 'both',
+          'multiple_from' => '',
+          'multiple_number' => '',
+          'multiple_to' => '',
+        ),
+        'type' => 'date_default',
+        'weight' => 1,
       ),
       'publications' => array(
         'label' => 'above',
@@ -2936,6 +3229,12 @@ function feature_projects_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 0,
       ),
+      'full' => array(
+        'label' => 'inline',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 35,
+      ),
       'publications' => array(
         'label' => 'above',
         'settings' => array(),
@@ -3007,6 +3306,13 @@ function feature_projects_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 0,
       ),
+      'full' => array(
+        'label' => 'above',
+        'module' => 'list',
+        'settings' => array(),
+        'type' => 'list_default',
+        'weight' => 6,
+      ),
       'publications' => array(
         'label' => 'above',
         'settings' => array(),
@@ -3070,6 +3376,12 @@ function feature_projects_field_default_field_instances() {
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 0,
+      ),
+      'full' => array(
+        'label' => 'inline',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 26,
       ),
       'publications' => array(
         'label' => 'above',

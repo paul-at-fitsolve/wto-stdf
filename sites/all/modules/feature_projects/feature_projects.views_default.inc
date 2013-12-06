@@ -144,6 +144,7 @@ function feature_projects_views_default_views() {
   $handler->display->display_options['fields']['field_sector']['table'] = 'field_data_field_sector';
   $handler->display->display_options['fields']['field_sector']['field'] = 'field_sector';
   $handler->display->display_options['fields']['field_sector']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_sector']['type'] = 'i18n_list_default';
   /* Field: Content: Start Date */
   $handler->display->display_options['fields']['field_start_date']['id'] = 'field_start_date';
   $handler->display->display_options['fields']['field_start_date']['table'] = 'field_data_field_start_date';

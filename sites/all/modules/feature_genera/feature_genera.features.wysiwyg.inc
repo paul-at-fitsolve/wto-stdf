@@ -38,6 +38,7 @@ function feature_genera_wysiwyg_default_profiles() {
           'redo' => 1,
           'link' => 1,
           'unlink' => 1,
+          'image' => 1,
           'fontselect' => 1,
           'fontsizeselect' => 1,
           'forecolor' => 1,
@@ -46,6 +47,9 @@ function feature_genera_wysiwyg_default_profiles() {
           'sub' => 1,
           'blockquote' => 1,
           'help' => 1,
+        ),
+        'emotions' => array(
+          'emotions' => 1,
         ),
         'fullscreen' => array(
           'fullscreen' => 1,
@@ -59,9 +63,6 @@ function feature_genera_wysiwyg_default_profiles() {
         ),
         'wordcount' => array(
           'wordcount' => 1,
-        ),
-        'drupal' => array(
-          'media' => 1,
         ),
       ),
       'toolbar_loc' => 'top',
