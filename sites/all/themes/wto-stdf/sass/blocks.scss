@@ -183,7 +183,11 @@
 
 footer .block a { color: #978a82; }
 
-#block-stdffrontpage-contact-info .menu-block-wrapper { font-size: 0.9em; margin: 0.8em 0 0 0;}
+#block-stdffrontpage-contact-info .menu-block-wrapper { 
+  font-size: 0.9em; 
+  margin: 0.8em 0 0 0;
+  line-height:0;
+  }
 #block-menu-block-2 {
 	li {
 		background: url("../images/bullet-footer-menu.png") no-repeat scroll right center transparent;
