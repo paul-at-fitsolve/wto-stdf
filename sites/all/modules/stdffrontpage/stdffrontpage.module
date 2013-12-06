@@ -117,25 +117,25 @@ function stdffrontpage_block_view($delta) {
   switch ($delta) {
     case 'contact_info' :
       $block ['subject'] = t ( 'Contact Info' );
-      $block ['content'] .= "<div class='menu-block-wrapper'>";
-      $block ['content'] .= i18n_variable_get ( 'contact_info', $language->language);
+      $block ['content'] = "<div class='menu-block-wrapper'>";
+      $block ['content'] .= i18n_variable_get ( 'contact_info', $language->language,'Please set this value.');
       $block ['content'] .= "</div>";
       break;
     case 'proposal_deadline' :
-      $block ['content'] .= "<div class='menu-block-wrapper'>";
-      $block ['content'] .= i18n_variable_get ( 'proposal_deadline', $language->language);
+      $block ['content'] = "<div class='menu-block-wrapper'>";
+      $block ['content'] .= i18n_variable_get ( 'proposal_deadline', $language->language,'Please set this value.');
       $block ['content'] .= "</div>";
       break;
     case 'resources' :
-      $block ['content'] .= _stdffrontpage_resources ();
+      $block ['content'] = _stdffrontpage_resources ();
       break;
     case 'partnerlogos' :
       $block ['subject'] = t ( 'Our Partners' );
-      $block ['content'] .= _stdffrontpage_partners ();
+      $block ['content'] = _stdffrontpage_partners ();
       break;
     case 'copyright' :
       $block ['subject'] = t ( 'Copyright' );
-      $block ['content'] .= '<div id="copyright"><p>';
+      $block ['content'] = '<div id="copyright"><p>';
       $block ['content'] .= t('&copy; 2013 Standards and Trade Development Facility - All Rights Reserved.');
       $block ['content'] .= '</div>';
       break;
@@ -183,7 +183,7 @@ function _stdffrontpage_partners() {
       'path' => path_to_theme () . '/images/partner1.png' 
   );
   
-  $html .= l ( theme ( 'image', $image ), 'http://www.fao.org/home/' . $language->language, array (
+  $html = l ( theme ( 'image', $image ), 'http://www.fao.org/home/' . $language->language, array (
       'attributes' => array (
           'target' => '_blank' 
       ),
