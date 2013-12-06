@@ -235,7 +235,7 @@ function wto_stdf_preprocess_search_result(&$variables) {
   if ($variables['result']['entity_type'] == 'file'){
     $file = file_load($variables['result']['fields']['entity_id']);
      $variables['url'] = file_create_url($file->uri);
-     $variables['title_prefix']['icon'] = array('#children' => '<img src="/' . path_to_theme() . '/images/' . substr($file->filemime,-3) .'.gif" />',
+     $variables['title_prefix']['icon'] = array('#children' => '<img src="/' . path_to_theme() . '/images/' . substr($file->uri,-3) .'.gif" />',
                                               '#prefix' => '<span class="doc_icon">',
                                               '#suffix' => '</span>',
                                               );

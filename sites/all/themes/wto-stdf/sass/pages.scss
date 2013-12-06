@@ -594,7 +594,7 @@ body {
 
 .doc_icon {
   float:left;
-  margin-right:5px;
+  margin-right:15px;
 }
 
 .metadata_label {
@@ -614,6 +614,9 @@ body {
 .search-results {
   ol { padding: 0; }
   search-snippet-info { padding-left: 0; }
+  li {
+    min-height:100px;
+  }
   .title {
     a {
      text-decoration: none;

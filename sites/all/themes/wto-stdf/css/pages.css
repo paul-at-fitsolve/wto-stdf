@@ -667,7 +667,7 @@ body {
 /* line 595, ../sass/pages.scss */
 .doc_icon {
   float: left;
-  margin-right: 5px;
+  margin-right: 15px;
 }
 
 /* line 600, ../sass/pages.scss */
@@ -703,14 +703,18 @@ body {
 .search-results search-snippet-info {
   padding-left: 0;
 }
-/* line 618, ../sass/pages.scss */
+/* line 617, ../sass/pages.scss */
+.search-results li {
+  min-height: 100px;
+}
+/* line 621, ../sass/pages.scss */
 .search-results .title a {
   text-decoration: none;
   font-size: 14pt;
   font-weight: 700;
   color: #00335c;
 }
-/* line 625, ../sass/pages.scss */
+/* line 628, ../sass/pages.scss */
 .search-results .search-info {
   display: none;
 }
