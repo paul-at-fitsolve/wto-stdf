@@ -699,7 +699,7 @@ function feature_projects_field_default_field_instances() {
         'progress_indicator' => 'throbber',
       ),
       'type' => 'media_generic',
-      'weight' => 36,
+      'weight' => 37,
     ),
   );
 
@@ -1083,7 +1083,7 @@ function feature_projects_field_default_field_instances() {
       'module' => 'number',
       'settings' => array(),
       'type' => 'number',
-      'weight' => 34,
+      'weight' => 35,
     ),
   );
 
@@ -1223,7 +1223,7 @@ function feature_projects_field_default_field_instances() {
       'module' => 'number',
       'settings' => array(),
       'type' => 'number',
-      'weight' => 32,
+      'weight' => 33,
     ),
   );
 
@@ -1293,7 +1293,7 @@ function feature_projects_field_default_field_instances() {
       'module' => 'number',
       'settings' => array(),
       'type' => 'number',
-      'weight' => 35,
+      'weight' => 36,
     ),
   );
 
@@ -1375,7 +1375,7 @@ function feature_projects_field_default_field_instances() {
       'module' => 'number',
       'settings' => array(),
       'type' => 'number',
-      'weight' => 33,
+      'weight' => 34,
     ),
   );
 
@@ -1384,7 +1384,7 @@ function feature_projects_field_default_field_instances() {
     'bundle' => 'project',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => 'The value in this field will be calculated as the sum of the Implementation Budget and the Supervision Budget.',
+    'description' => 'The value in this field will be calculated as the sum of the Implementation Budget and the Overhead.',
     'display' => array(
       'briefings' => array(
         'label' => 'above',
@@ -1447,6 +1447,13 @@ function feature_projects_field_default_field_instances() {
     'required' => 0,
     'settings' => array(
       'max' => '',
+      'mediafront' => array(
+        'custom' => '',
+        'field_type' => 0,
+        'media_type' => 'media',
+        'preview' => 0,
+        'thumbnail' => 0,
+      ),
       'min' => 0,
       'prefix' => '$',
       'suffix' => '',
@@ -1457,7 +1464,7 @@ function feature_projects_field_default_field_instances() {
       'module' => 'number',
       'settings' => array(),
       'type' => 'number',
-      'weight' => 31,
+      'weight' => 32,
     ),
   );
 
@@ -2309,7 +2316,7 @@ function feature_projects_field_default_field_instances() {
       'module' => 'number',
       'settings' => array(),
       'type' => 'number',
-      'weight' => 37,
+      'weight' => 31,
     ),
   );
 
@@ -3501,7 +3508,7 @@ function feature_projects_field_default_field_instances() {
   t('Start Year');
   t('Status');
   t('The value in this field is calculated from the Implementation Budget and the non-STDF Contribution.');
-  t('The value in this field will be calculated as the sum of the Implementation Budget and the Supervision Budget.');
+  t('The value in this field will be calculated as the sum of the Implementation Budget and the Overhead.');
   t('Tick if ACP applies.');
 
   return $field_instances;

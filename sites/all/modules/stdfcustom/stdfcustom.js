@@ -95,82 +95,34 @@
 					.prepend('<div id="email_error"></div>');
 
 			// Perform the calculations on the project form
-			$('#edit-field-budget-implementation-und-0-value')
-					.focusout(
-							function() {
-								if (!(Drupal.stdfcustom
-										.isNumber($(
-												'#edit-field-budget-implementation-und-0-value')
-												.val()))) {
-									$(
-											'#edit-field-budget-implementation-und-0-value')
-											.val('0');
-								}
-								var supbudget = $(
-										'#edit-field-budget-supervision-impleme-und-0-value')
-										.val();
-								var nonstdf = $(
-										'#edit-field-budget-non-stdf-contributi-und-0-value')
-										.val();
-								$('#edit-field-budget-total-stdf-und-0-value')
-										.val(
-												+$(
-														'#edit-field-budget-implementation-und-0-value')
-														.val()
-														+ +supbudget);
-								$(
-										'#edit-field-budget-total-project-value-und-0-value')
-										.val(
-												+$(
-														'#edit-field-budget-implementation-und-0-value')
-														.val()
-														+ +nonstdf);
-							});
+			$('#edit-field-budget-implementation-und-0-value').change(
+					function() {
+						if (!(Drupal.stdfcustom.isNumber($('#edit-field-budget-implementation-und-0-value').val()))) {
+							$('#edit-field-budget-implementation-und-0-value').val('0');
+						}
+						var overhead = $('#edit-field-overhead-und-0-value').val();
+						var nonstdf = $('#edit-field-budget-non-stdf-contributi-und-0-value').val();
+						$('#edit-field-budget-total-stdf-und-0-value').val(+$('#edit-field-budget-implementation-und-0-value').val() + + overhead);
+						$('#edit-field-budget-total-project-value-und-0-value').val(+$('#edit-field-budget-implementation-und-0-value').val() + + nonstdf);
+			});
 
-			$('#edit-field-budget-supervision-impleme-und-0-value')
-					.focusout(
-							function() {
-								if (!(Drupal.stdfcustom
-										.isNumber($(
-												'#edit-field-budget-supervision-impleme-und-0-value')
-												.val()))) {
-									$(
-											'#edit-field-budget-supervision-impleme-und-0-value')
-											.val('0');
-								}
-								var impbudget = $(
-										'#edit-field-budget-implementation-und-0-value')
-										.val();
-								$('#edit-field-budget-total-stdf-und-0-value')
-										.val(
-												+$(
-														'#edit-field-budget-supervision-impleme-und-0-value')
-														.val()
-														+ +impbudget);
-							});
+			$('#edit-field-overhead-und-0-value').change(
+					function() {
+						if (!(Drupal.stdfcustom.isNumber($('#edit-field-overhead-und-0-value').val()))) {
+							$('#edit-field-overhead-und-0-value').val('0');
+						}
+					var impbudget = $('#edit-field-budget-implementation-und-0-value').val();
+					$('#edit-field-budget-total-stdf-und-0-value').val(+$('#edit-field-overhead-und-0-value	').val() + + impbudget);
+			});
 
-			$('#edit-field-budget-non-stdf-contributi-und-0-value')
-					.focusout(
-							function() {
-								if (!(Drupal.stdfcustom
-										.isNumber($(
-												'#edit-field-budget-non-stdf-contributi-und-0-value')
-												.val()))) {
-									$(
-											'#edit-field-budget-non-stdf-contributi-und-0-value')
-											.val('0');
-								}
-								var impbudget = $(
-										'#edit-field-budget-implementation-und-0-value')
-										.val();
-								$(
-										'#edit-field-budget-total-project-value-und-0-value')
-										.val(
-												+$(
-														'#edit-field-budget-non-stdf-contributi-und-0-value')
-														.val()
-														+ +impbudget);
-							});
+			$('#edit-field-budget-non-stdf-contributi-und-0-value').change(
+					function() {
+						if (!(Drupal.stdfcustom.isNumber($('#edit-field-budget-non-stdf-contributi-und-0-value').val()))) {
+							$('#edit-field-budget-non-stdf-contributi-und-0-value').val('0');
+						}
+						var impbudget = $('#edit-field-budget-implementation-und-0-value').val();
+						$('#edit-field-budget-total-project-value-und-0-value').val(+$('#edit-field-budget-non-stdf-contributi-und-0-value').val() + + impbudget);
+					});
 		}
 	};
 })(jQuery);
