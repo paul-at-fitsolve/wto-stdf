@@ -219,3 +219,12 @@ td.menu-disabled {
 #-stdfcustom-solrsearch-form-simple .form-checkboxes .form-item {
   margin: 0.4em 0;
 }
+
+/* line 206, ../sass/forms.scss */
+#-stdfcustom-solrsearch-form-advanced .form-item-keywords {
+  height: 260px;
+}
+/* line 208, ../sass/forms.scss */
+#-stdfcustom-solrsearch-form-advanced .form-item-keywords label {
+  float: none;
+}

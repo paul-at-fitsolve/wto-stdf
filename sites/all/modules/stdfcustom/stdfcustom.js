@@ -122,7 +122,9 @@
 						}
 						var impbudget = $('#edit-field-budget-implementation-und-0-value').val();
 						$('#edit-field-budget-total-project-value-und-0-value').val(+$('#edit-field-budget-non-stdf-contributi-und-0-value').val() + + impbudget);
-					});
+			});
+			
+			//Extract the year from
 		}
 	};
 })(jQuery);
