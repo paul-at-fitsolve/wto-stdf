@@ -339,14 +339,14 @@ function _stdfcustom_solrsearch_form_advanced($form, $form_state) {
       '#maxlength' => 128,
       '#autocomplete_path' => 'ajax/getcountries' 
   );
-  
+  /*
   $form ['keywords'] = array (
       '#type' => 'select',
       '#title' => t ( 'Keywords' ),
       '#multiple' => true,
       '#options' => drupal_map_assoc ( _stdfcustom_keywords_autocomplete () ) 
   );
-  
+  */
   $form ['language'] = array (
       '#type' => 'checkboxes',
       '#options' => drupal_map_assoc ( array (
@@ -390,7 +390,7 @@ function _stdfcustom_solrsearch_form_advanced_submit($form, &$form_state) {
   $_SESSION ['advanced'] ['publisher'] = $form_state ['values'] ['publisher'];
   $_SESSION ['advanced'] ['publication_year'] = $form_state ['values'] ['publication_year'];
   $_SESSION ['advanced'] ['country'] = $form_state ['values'] ['country'];
-  $_SESSION ['advanced'] ['keywords'] = $form_state ['values'] ['keywords'];
+ // $_SESSION ['advanced'] ['keywords'] = $form_state ['values'] ['keywords'];
   $_SESSION ['advanced'] ['language'] = $form_state ['values'] ['language'];
   $form_state ['values'] ['term'] = _stdfcustom_process_tokens ( $form_state ['values'] ['search_type'], $form_state ['values'] ['term'] );
   
@@ -563,11 +563,11 @@ function _stdfcustom_publishers_autocomplete($value) {
 
 /*
  * We translate keywords and so we get them from the database.
- */
+
 function _stdfcustom_keywords_autocomplete() {
   /**
    * returns a array for use with #options in a form field
-   */
+  
   $v = taxonomy_vocabulary_machine_name_load ( 'keywords' );
   $terms = taxonomy_get_tree ( $v->vid );
   foreach ( $terms as $term ) {
@@ -575,7 +575,7 @@ function _stdfcustom_keywords_autocomplete() {
   }
   return $options;
 }
-
+ */
 /*
  * We translate countries and so we get them from the database.
  */
@@ -728,14 +728,14 @@ function stdfcustom_apachesolr_query_alter($query) {
   }
   
   $compiled_filter->addFilterSubQuery ( $language_filter );
-  $keyword_filter = new SolrFilterSubQuery ( 'OR' );
-  foreach ( $_SESSION ['advanced'] ['keywords'] as $keyword ) {
-    if (! $keyword == 0) {
-      $keyword_filter->addFilter ( 'sm_vid_Keywords', $keyword );
-    }
-  }
+  //$keyword_filter = new SolrFilterSubQuery ( 'OR' );
+  //foreach ( $_SESSION ['advanced'] ['keywords'] as $keyword ) {
+   // if (! $keyword == 0) {
+    //  $keyword_filter->addFilter ( 'sm_vid_Keywords', $keyword );
+   // }
+  //}
   
-  $compiled_filter->addFilterSubQuery ( $keyword_filter );
+  //$compiled_filter->addFilterSubQuery ( $keyword_filter );
   
   $query->addFilterSubQuery ( $compiled_filter );
   //dpm($query->getParams());
