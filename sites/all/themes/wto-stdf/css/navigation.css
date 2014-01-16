@@ -97,7 +97,7 @@ li a.active {
   color: #00335c;
   text-decoration: none;
   font-family: "Lato", Verdana, "DejaVu Sans", sans-serif;
-  font-size: 12pt;
+  font-size: 0.9em;
   font-weight: bold;
 }
 /* line 116, ../sass/navigation.scss */
