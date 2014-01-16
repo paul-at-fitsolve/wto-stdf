@@ -419,9 +419,9 @@ function _stdfcustom_newsletter_list() {
 function stdfcustom_form_project_node_form_alter(&$form, &$form_state, $form_id) {
   $form ['field_budget_total_stdf'] ['#disabled'] = TRUE;
   $form ['field_budget_total_project_value'] ['#disabled'] = TRUE;
-  $form['field_start_year']['#disabled'] = TRUE;
-  $form['field_end_year']['#disabled'] = TRUE;
-  $form['field_approval_year']['#disabled'] = TRUE;
+  //$form['field_start_year']['#disabled'] = TRUE;
+  //$form['field_end_year']['#disabled'] = TRUE;
+  //$form['field_approval_year']['#disabled'] = TRUE;
   $form ['#attached'] = array (
       'js' => array (
           'type' => 'file',
