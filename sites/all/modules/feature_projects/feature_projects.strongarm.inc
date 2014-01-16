@@ -203,7 +203,7 @@ function feature_projects_strongarm() {
             'visible' => FALSE,
           ),
           'full' => array(
-            'weight' => '31',
+            'weight' => '36',
             'visible' => FALSE,
           ),
         ),
