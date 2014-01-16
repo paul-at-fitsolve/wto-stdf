@@ -341,9 +341,9 @@ function _stdfcustom_solrsearch_form_advanced($form, $form_state) {
   );
   
   $form ['keywords'] = array (
-      '#type' => 'multiselect',
+      '#type' => 'select',
       '#title' => t ( 'Keywords' ),
-      //'#multiple' => true,
+      '#multiple' => true,
       '#options' => drupal_map_assoc ( _stdfcustom_keywords_autocomplete () ) 
   );
   
