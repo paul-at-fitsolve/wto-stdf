@@ -199,7 +199,7 @@ function feature_projects_strongarm() {
       'display' => array(
         'language' => array(
           'default' => array(
-            'weight' => '31',
+            'weight' => '36',
             'visible' => FALSE,
           ),
           'full' => array(

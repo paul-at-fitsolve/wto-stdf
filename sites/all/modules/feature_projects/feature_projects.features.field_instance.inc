@@ -337,7 +337,7 @@ function feature_projects_field_default_field_instances() {
         'label' => 'inline',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 28,
+        'weight' => 33,
       ),
       'frontpage' => array(
         'label' => 'above',
@@ -410,7 +410,7 @@ function feature_projects_field_default_field_instances() {
         'label' => 'inline',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 25,
+        'weight' => 30,
       ),
       'frontpage' => array(
         'label' => 'above',
@@ -485,7 +485,7 @@ function feature_projects_field_default_field_instances() {
         'label' => 'inline',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 18,
+        'weight' => 23,
       ),
       'frontpage' => array(
         'label' => 'above',
@@ -554,7 +554,7 @@ function feature_projects_field_default_field_instances() {
         'label' => 'inline',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 24,
+        'weight' => 29,
       ),
       'frontpage' => array(
         'label' => 'above',
@@ -622,7 +622,7 @@ function feature_projects_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 13,
+        'weight' => 19,
       ),
       'frontpage' => array(
         'label' => 'above',
@@ -719,7 +719,7 @@ function feature_projects_field_default_field_instances() {
         'label' => 'inline',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 16,
+        'weight' => 21,
       ),
       'frontpage' => array(
         'label' => 'above',
@@ -797,7 +797,7 @@ function feature_projects_field_default_field_instances() {
         'label' => 'inline',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 37,
+        'weight' => 41,
       ),
       'frontpage' => array(
         'label' => 'above',
@@ -861,7 +861,7 @@ function feature_projects_field_default_field_instances() {
     'bundle' => 'project',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => '',
+    'description' => 'If you want to display a map showing beneficiaries then you should link this project to the required beneficiaries by selecting them here.',
     'display' => array(
       'briefings' => array(
         'label' => 'above',
@@ -870,13 +870,13 @@ function feature_projects_field_default_field_instances() {
         'weight' => 0,
       ),
       'default' => array(
-        'label' => 'above',
+        'label' => 'hidden',
         'module' => 'entityreference',
         'settings' => array(
           'link' => FALSE,
         ),
         'type' => 'entityreference_label',
-        'weight' => 45,
+        'weight' => 16,
       ),
       'frontpage' => array(
         'label' => 'above',
@@ -885,13 +885,13 @@ function feature_projects_field_default_field_instances() {
         'weight' => 0,
       ),
       'full' => array(
-        'label' => 'above',
+        'label' => 'hidden',
         'module' => 'entityreference',
         'settings' => array(
           'link' => FALSE,
         ),
         'type' => 'entityreference_label',
-        'weight' => 16,
+        'weight' => 17,
       ),
       'publications' => array(
         'label' => 'above',
@@ -914,7 +914,7 @@ function feature_projects_field_default_field_instances() {
     ),
     'entity_type' => 'node',
     'field_name' => 'field_beneficiaries',
-    'label' => 'Beneficiaries',
+    'label' => 'Beneficiaries for maps',
     'required' => 0,
     'settings' => array(
       'mediafront' => array(
@@ -944,7 +944,7 @@ function feature_projects_field_default_field_instances() {
     'bundle' => 'project',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => '',
+    'description' => 'If you don\'t want to show a map of beneficiaries for this project then you can select or add the beneficiaries names here.',
     'display' => array(
       'briefings' => array(
         'label' => 'above',
@@ -956,8 +956,8 @@ function feature_projects_field_default_field_instances() {
         'label' => 'above',
         'module' => 'i18n_taxonomy',
         'settings' => array(),
-        'type' => 'i18n_taxonomy_term_reference_link',
-        'weight' => 44,
+        'type' => 'i18n_taxonomy_term_reference_plain',
+        'weight' => 14,
       ),
       'frontpage' => array(
         'label' => 'above',
@@ -969,7 +969,7 @@ function feature_projects_field_default_field_instances() {
         'label' => 'above',
         'module' => 'i18n_taxonomy',
         'settings' => array(),
-        'type' => 'i18n_taxonomy_term_reference_link',
+        'type' => 'i18n_taxonomy_term_reference_plain',
         'weight' => 15,
       ),
       'publications' => array(
@@ -993,7 +993,7 @@ function feature_projects_field_default_field_instances() {
     ),
     'entity_type' => 'node',
     'field_name' => 'field_beneficiary_text',
-    'label' => 'Beneficiary Text',
+    'label' => 'Beneficiaries',
     'required' => 0,
     'settings' => array(
       'mediafront' => array(
@@ -1034,7 +1034,7 @@ function feature_projects_field_default_field_instances() {
         'label' => 'inline',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 20,
+        'weight' => 25,
       ),
       'frontpage' => array(
         'label' => 'above',
@@ -1104,7 +1104,7 @@ function feature_projects_field_default_field_instances() {
         'label' => 'inline',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 19,
+        'weight' => 24,
       ),
       'frontpage' => array(
         'label' => 'above',
@@ -1174,7 +1174,7 @@ function feature_projects_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 11,
+        'weight' => 17,
       ),
       'frontpage' => array(
         'label' => 'above',
@@ -1244,7 +1244,7 @@ function feature_projects_field_default_field_instances() {
         'label' => 'inline',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 21,
+        'weight' => 26,
       ),
       'frontpage' => array(
         'label' => 'above',
@@ -1485,7 +1485,7 @@ function feature_projects_field_default_field_instances() {
         'label' => 'inline',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 22,
+        'weight' => 27,
       ),
       'frontpage' => array(
         'label' => 'above',
@@ -1554,7 +1554,7 @@ function feature_projects_field_default_field_instances() {
         'label' => 'inline',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 30,
+        'weight' => 35,
       ),
       'frontpage' => array(
         'label' => 'above',
@@ -1719,7 +1719,7 @@ function feature_projects_field_default_field_instances() {
         'label' => 'inline',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 23,
+        'weight' => 28,
       ),
       'frontpage' => array(
         'label' => 'above',
@@ -1811,7 +1811,7 @@ function feature_projects_field_default_field_instances() {
         'label' => 'inline',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 36,
+        'weight' => 40,
       ),
       'frontpage' => array(
         'label' => 'above',
@@ -1888,7 +1888,7 @@ function feature_projects_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 41,
+        'weight' => 13,
       ),
       'frontpage' => array(
         'label' => 'above',
@@ -1964,7 +1964,7 @@ function feature_projects_field_default_field_instances() {
         'label' => 'inline',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 17,
+        'weight' => 22,
       ),
       'frontpage' => array(
         'label' => 'above',
@@ -2042,7 +2042,7 @@ function feature_projects_field_default_field_instances() {
         'label' => 'inline',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 12,
+        'weight' => 18,
       ),
       'frontpage' => array(
         'label' => 'above',
@@ -2190,7 +2190,7 @@ function feature_projects_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 39,
+        'weight' => 11,
       ),
       'frontpage' => array(
         'label' => 'above',
@@ -2267,7 +2267,7 @@ function feature_projects_field_default_field_instances() {
         'label' => 'inline',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 33,
+        'weight' => 38,
       ),
       'frontpage' => array(
         'label' => 'above',
@@ -2342,9 +2342,9 @@ function feature_projects_field_default_field_instances() {
       ),
       'default' => array(
         'label' => 'above',
-        'module' => 'taxonomy',
+        'module' => 'i18n_taxonomy',
         'settings' => array(),
-        'type' => 'taxonomy_term_reference_plain',
+        'type' => 'i18n_taxonomy_term_reference_plain',
         'weight' => 9,
       ),
       'frontpage' => array(
@@ -2355,9 +2355,9 @@ function feature_projects_field_default_field_instances() {
       ),
       'full' => array(
         'label' => 'above',
-        'module' => 'taxonomy',
+        'module' => 'i18n_taxonomy',
         'settings' => array(),
-        'type' => 'taxonomy_term_reference_plain',
+        'type' => 'i18n_taxonomy_term_reference_plain',
         'weight' => 10,
       ),
       'publications' => array(
@@ -2422,7 +2422,7 @@ function feature_projects_field_default_field_instances() {
         'label' => 'inline',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 29,
+        'weight' => 34,
       ),
       'frontpage' => array(
         'label' => 'above',
@@ -2488,7 +2488,7 @@ function feature_projects_field_default_field_instances() {
         'label' => 'inline',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 32,
+        'weight' => 37,
       ),
       'frontpage' => array(
         'label' => 'above',
@@ -2565,7 +2565,7 @@ function feature_projects_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 38,
+        'weight' => 10,
       ),
       'frontpage' => array(
         'label' => 'above',
@@ -2643,7 +2643,7 @@ function feature_projects_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 40,
+        'weight' => 12,
       ),
       'frontpage' => array(
         'label' => 'above',
@@ -2795,8 +2795,8 @@ function feature_projects_field_default_field_instances() {
         'label' => 'above',
         'module' => 'i18n_taxonomy',
         'settings' => array(),
-        'type' => 'i18n_taxonomy_term_reference_link',
-        'weight' => 46,
+        'type' => 'i18n_taxonomy_term_reference_plain',
+        'weight' => 15,
       ),
       'frontpage' => array(
         'label' => 'above',
@@ -2808,8 +2808,8 @@ function feature_projects_field_default_field_instances() {
         'label' => 'above',
         'module' => 'i18n_taxonomy',
         'settings' => array(),
-        'type' => 'i18n_taxonomy_term_reference_link',
-        'weight' => 17,
+        'type' => 'i18n_taxonomy_term_reference_plain',
+        'weight' => 16,
       ),
       'publications' => array(
         'label' => 'above',
@@ -2873,7 +2873,7 @@ function feature_projects_field_default_field_instances() {
         'label' => 'inline',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 27,
+        'weight' => 32,
       ),
       'frontpage' => array(
         'label' => 'above',
@@ -2942,7 +2942,7 @@ function feature_projects_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 14,
+        'weight' => 20,
       ),
       'frontpage' => array(
         'label' => 'above',
@@ -3235,7 +3235,7 @@ function feature_projects_field_default_field_instances() {
         'label' => 'inline',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 35,
+        'weight' => 39,
       ),
       'frontpage' => array(
         'label' => 'above',
@@ -3383,7 +3383,7 @@ function feature_projects_field_default_field_instances() {
         'label' => 'inline',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 26,
+        'weight' => 31,
       ),
       'frontpage' => array(
         'label' => 'above',
@@ -3443,7 +3443,7 @@ function feature_projects_field_default_field_instances() {
   t('Approval Date');
   t('Approval Year');
   t('Beneficiaries');
-  t('Beneficiary Text');
+  t('Beneficiaries for maps');
   t('Budget - Euros');
   t('Budget - Implementation');
   t('Budget - Non STDF Contribution');
@@ -3468,6 +3468,8 @@ function feature_projects_field_default_field_instances() {
   t('Identifies the region that applies to the project.');
   t('If applicable, then please enter the non STDF Contribution in USD');
   t('If the project is extended then enter the extension day, month, and year.');
+  t('If you don\'t want to show a map of beneficiaries for this project then you can select or add the beneficiaries names here.');
+  t('If you want to display a map showing beneficiaries then you should link this project to the required beneficiaries by selecting them here.');
   t('Image');
   t('Implementing Entity');
   t('Lessons Learned');

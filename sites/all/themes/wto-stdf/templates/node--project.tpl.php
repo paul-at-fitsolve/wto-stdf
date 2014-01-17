@@ -90,10 +90,10 @@
     // We hide the comments and links now so that we can render them later.
     hide($content['comments']);
     hide($content['links']);
-    //If there is no image and there is a beneficiary or beneficiaries then overwrite the
+    //If there are no images but there are entity references to beneficiary entities then
     //set the image to be the map produced by the beneficiaries view.
     if (!isset($content['field_slideshow']) && isset($content['field_beneficiaries'])) {
-       $content['field_slideshow'] = module_invoke('views', 'block_view', 'beneficiaries-block_1');
+       $content['field_slideshow'] = views_embed_view('beneficiaries', 'default', $node->nid);
     }    
     ?>
   
@@ -138,7 +138,7 @@
     print render($content['field_status']);
     print render($content['field_budget_total_project_value']);
     print render($content['field_budget_total_stdf']);
-    print render($content['field_beneficiaries']);
+    print render($content['field_beneficiary_text']);
     print render($content['field_partner']);
     ?>
   </section><!-- region__sidebar -->

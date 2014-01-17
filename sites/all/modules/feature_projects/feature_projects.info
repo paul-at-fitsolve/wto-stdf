@@ -169,6 +169,7 @@ features[variable][] = node_preview_beneficiary
 features[variable][] = node_preview_project
 features[variable][] = node_submitted_beneficiary
 features[variable][] = node_submitted_project
+features[views_view][] = beneficiaries
 features[views_view][] = projects
 features_exclude[dependencies][ctools] = ctools
 features_exclude[dependencies][features] = features
