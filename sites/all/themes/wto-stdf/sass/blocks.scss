@@ -208,6 +208,9 @@ footer .block a { color: #978a82; }
 
 #block-views-nodequeue-upcoming-events-block,
 #block-stdffrontpage-resources {
+  h2 {
+    font-size:14pt;
+  }
   .view-nodequeue-upcoming-events {
     .item-list ul {
       margin: 0; 
@@ -317,6 +320,9 @@ footer .block a { color: #978a82; }
   text-transform: uppercase;
   font-size: 14pt;
   width: 100%;
+  p{
+    margin:12px;
+  }
 }
 
 #block-stdffrontpage-partnerlogos{
