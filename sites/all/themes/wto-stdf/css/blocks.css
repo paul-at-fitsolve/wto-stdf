@@ -318,7 +318,7 @@ footer .block a {
   display: block;
   float: left;
   position: absolute;
-  margin: 11px 0 0 7px;
+  margin: 4px 0 0 7px;
 }
 
 /* line 243, ../sass/blocks.scss */
@@ -330,7 +330,7 @@ footer .block a {
   display: block;
   float: left;
   position: absolute;
-  margin: 11px 0 0 7px;
+  margin: 4px 0 0 7px;
 }
 
 /* line 256, ../sass/blocks.scss */
@@ -348,51 +348,53 @@ footer .block a {
   text-decoration: none;
   color: #978A82;
   text-size: 1.25em;
+  display: block;
+  width: 100%;
 }
-/* line 270, ../sass/blocks.scss */
+/* line 272, ../sass/blocks.scss */
 #block-stdffrontpage-resources li.newsletter {
   background: url(../images/newsletter_bg.png) center left no-repeat;
 }
-/* line 273, ../sass/blocks.scss */
+/* line 275, ../sass/blocks.scss */
 #block-stdffrontpage-resources li.newsletter a img {
-  position: relative;
-  left: 60%;
+  position: absolute;
+  right: 6%;
 }
-/* line 279, ../sass/blocks.scss */
+/* line 281, ../sass/blocks.scss */
 #block-stdffrontpage-resources li.briefings {
   background: url(../images/briefings_bg.png) center left no-repeat;
 }
-/* line 282, ../sass/blocks.scss */
+/* line 284, ../sass/blocks.scss */
 #block-stdffrontpage-resources li.briefings a img {
-  position: relative;
-  left: 63.5%;
+  position: absolute;
+  right: 6%;
 }
-/* line 288, ../sass/blocks.scss */
+/* line 290, ../sass/blocks.scss */
 #block-stdffrontpage-resources li.publications {
   background: url(../images/publications_bg.png) center left no-repeat;
 }
-/* line 291, ../sass/blocks.scss */
+/* line 293, ../sass/blocks.scss */
 #block-stdffrontpage-resources li.publications a img {
-  position: relative;
-  left: 58%;
+  position: absolute;
+  right: 6%;
 }
-/* line 297, ../sass/blocks.scss */
+/* line 299, ../sass/blocks.scss */
 #block-stdffrontpage-resources li.videos {
   background: url(../images/videos_bg.png) center left no-repeat;
 }
-/* line 300, ../sass/blocks.scss */
+/* line 302, ../sass/blocks.scss */
 #block-stdffrontpage-resources li.videos a img {
-  position: relative;
-  left: 66%;
+  position: absolute;
+  right: 6%;
 }
 
-/* line 308, ../sass/blocks.scss */
+/* line 310, ../sass/blocks.scss */
 #block-block-2 {
   width: 100%;
   margin: 0 auto;
 }
 
-/* line 314, ../sass/blocks.scss */
+/* line 316, ../sass/blocks.scss */
 #block-stdffrontpage-proposal-deadline {
   position: relative;
   top: -50px;
@@ -403,28 +405,28 @@ footer .block a {
   font-size: 14pt;
   width: 100%;
 }
-/* line 323, ../sass/blocks.scss */
+/* line 325, ../sass/blocks.scss */
 #block-stdffrontpage-proposal-deadline p {
   margin: 12px;
 }
 
-/* line 328, ../sass/blocks.scss */
+/* line 330, ../sass/blocks.scss */
 #block-stdffrontpage-partnerlogos {
   max-width: 960px;
   margin-bottom: 1em !important;
 }
-/* line 331, ../sass/blocks.scss */
+/* line 333, ../sass/blocks.scss */
 #block-stdffrontpage-partnerlogos h2 {
   text-align: center;
   text-transform: uppercase;
   font-size: 14pt;
 }
-/* line 336, ../sass/blocks.scss */
+/* line 338, ../sass/blocks.scss */
 #block-stdffrontpage-partnerlogos img {
   margin: 0 2.8em;
 }
 
-/* line 341, ../sass/blocks.scss */
+/* line 343, ../sass/blocks.scss */
 #block-nice-menus-2 {
   background: url("images/bkg.png") repeat-x scroll left bottom #101010;
   left: 0;
@@ -439,14 +441,14 @@ footer .block a {
   top: 0;
   z-index: 1000;
 }
-/* line 342, ../sass/blocks.scss */
+/* line 344, ../sass/blocks.scss */
 #block-nice-menus-2 .block-title {
   color: white;
   float: right;
   font-size: 1em;
   font-weight: normal;
 }
-/* line 360, ../sass/blocks.scss */
+/* line 362, ../sass/blocks.scss */
 #block-nice-menus-2 ul {
   line-height: 1.4em;
   list-style: none outside none;
@@ -454,26 +456,26 @@ footer .block a {
   padding: 0;
   z-index: 999;
 }
-/* line 366, ../sass/blocks.scss */
+/* line 368, ../sass/blocks.scss */
 #block-nice-menus-2 ul li {
   float: left;
   background-color: black !important;
   border: none !important;
 }
-/* line 370, ../sass/blocks.scss */
+/* line 372, ../sass/blocks.scss */
 #block-nice-menus-2 ul li a {
   text-decoration: none;
   margin-bottom: 4px;
   color: white;
 }
 
-/* line 379, ../sass/blocks.scss */
+/* line 381, ../sass/blocks.scss */
 #block-menu-block-1 a {
   font-weight: 500;
   font-size: 12px;
   color: #668faf;
 }
-/* line 384, ../sass/blocks.scss */
+/* line 386, ../sass/blocks.scss */
 #block-menu-block-1 a.active {
   font-weight: 900;
   color: #00335c;
