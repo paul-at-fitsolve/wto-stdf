@@ -166,7 +166,7 @@
 /* line 109, ../sass/blocks.scss */
 #footer .block h2.block-title {
   text-align: center;
-  background: #99b4c9;
+  background: url(../images/title_bg.png) repeat-x center;
   color: #fff;
   text-transform: uppercase;
   font-size: 1em;
