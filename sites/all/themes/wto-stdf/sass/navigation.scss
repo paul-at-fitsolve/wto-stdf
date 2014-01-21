@@ -117,6 +117,7 @@ li a.active {
 	  a:hover { color: #87a9c4;}
 	  
 	  li { border-top: 1px dotted #a5a6a9; padding: 0.2em 0;}
+    li.first { border-top: none; }
 	  li.collapsed { background: url('../images/bullet-sidebar-menu.png') no-repeat right center; }
 	  
 	  ul.menu {
