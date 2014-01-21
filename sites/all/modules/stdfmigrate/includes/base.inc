@@ -12,8 +12,9 @@ abstract class StdfMigration extends Migration {
     $this->virtual_library_source_file = drupal_get_path ( 'module', 'stdfmigrate' ) . '/stdfvlibrary.csv';
   }
   protected function vlibrarycsvcolumns() {
-    $columns [0] = array (
-        'ref',
+   
+     $columns [0] = array (
+        'reference_number',
         'Reference Number' 
     );
     $columns [1] = array (
@@ -30,33 +31,42 @@ abstract class StdfMigration extends Migration {
         'Authors' 
     );
     $columns [4] = array (
-        'publisher',
-        'Publisher' 
+        'publisher_en',
+        'Publisher EN' 
     );
     
-    $columns [5] = array (
-        'keywords',
-        'Keywords' 
+     $columns [5] = array (
+        'publisher_fr',
+        'Publisher FR' 
     );
     
-    $columns [6] = array (
-        'country',
-        'Country' 
+     $columns [6] = array (
+        'publisher_sp',
+        'Publisher SP' 
+    );
+    $columns [7] = array (
+        'country_en',
+        'Country EN' 
+    );
+    
+    $columns [8] = array (
+        'country_fr',
+        'Country FR' 
     );
     
     $columns [9] = array (
+        'country_sp',
+        'Country SP' 
+    );
+    
+    $columns [10] = array (
         'language',
         'Language' 
     );
     
-    $columns [10] = array (
+    $columns [11] = array (
         'filename',
         'Filename' 
-    );
-    
-    $columns [15] = array (
-        'type',
-        'Type' 
     );
     
     return $columns;

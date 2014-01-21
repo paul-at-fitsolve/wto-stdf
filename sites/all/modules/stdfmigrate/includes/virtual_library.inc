@@ -22,21 +22,22 @@ class StdfMigrationVirtualLibraryMigration extends StdfMigration {
     
     $this->addFieldMapping ( 'field_publication_date', 'pub_date' );
     
-    $this->addFieldMapping ( 'field_keywords', 'keywords' );
-    $this->addFieldMapping ( 'field_keywords:create_term' )->defaultValue ( TRUE );
-    
-    $this->addFieldMapping ( 'field_document_type', 'type' );
-    $this->addFieldMapping ( 'field_document_type:create_term' )->defaultValue ( TRUE );
-    
-    $this->addFieldMapping ( 'field_publisher', 'publisher' );
+    $this->addFieldMapping ( 'field_publisher', 'publisher_en' )->separator(';');
     $this->addFieldMapping ( 'field_publisher:create_term' )->defaultValue ( TRUE );
+    
+    $this->addFieldMapping ( 'field_publisher', 'publisher_fr' )->separator(';');
+    $this->addFieldMapping ( 'field_publisher:create_term' )->defaultValue ( TRUE );
+    
+    $this->addFieldMapping ( 'field_publisher', 'publisher_sp' )->separator(';');
+    $this->addFieldMapping ( 'field_publisher:create_term' )->defaultValue ( TRUE );
+
     
     $this->addFieldMapping ( 'field_language', 'language' );
     
     $this->addFieldMapping ( 'field_author', 'authors' )->separator ( ';' );
     $this->addFieldMapping ( 'field_author:create_term' )->defaultValue ( TRUE );
     
-    $this->addFieldMapping ( 'field_country', 'country' );
+    $this->addFieldMapping ( 'field_country', 'country_en' );
     $this->addFieldMapping ( 'field_country:create_term' )->defaultValue ( TRUE );
     
     $source_dir = drupal_get_path ( 'module', 'stdfmigrate' ) . '/virtual_library';
