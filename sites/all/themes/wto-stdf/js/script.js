@@ -13,7 +13,8 @@
 (function ($, Drupal, window, document, undefined) {
 
 $(function() {
-$("#block-search-form").mouseenter(
+  if ($(window).width() > 960) {
+   $("#block-search-form").mouseenter(
     function(){ 
         $("#edit-search-block-form--2").stop().animate({width:'200px'},'fast');
     });
@@ -22,6 +23,7 @@ $("#block-search-form").mouseleave(
     if($("#edit-search-block-form--2").val().length ==0) {
       $("#edit-search-block-form--2").stop().animate({width:'0'},'fast');
     }});
+}
 })
 
 $(function() {
