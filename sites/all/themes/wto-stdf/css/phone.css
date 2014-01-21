@@ -45,47 +45,56 @@ div.field-slideshow-caption {
 
 /* line 32, ../sass/phone.scss */
 #header {
+  width: 100%;
   margin-right: 2em;
 }
-/* line 34, ../sass/phone.scss */
+/* line 35, ../sass/phone.scss */
 #header #logo {
   padding-top: 70px;
 }
-/* line 37, ../sass/phone.scss */
+/* line 38, ../sass/phone.scss */
 #header #block-search-form {
-  display: none;
+  padding-top: 75px;
+  float: none;
 }
-/* line 40, ../sass/phone.scss */
+/* line 41, ../sass/phone.scss */
+#header #block-search-form .form-text.form-autocomplete {
+  width: 80%;
+  margin-left: 20%;
+}
+/* line 46, ../sass/phone.scss */
 #header #block-locale-language ul li {
-  padding: 0 1em 0 0;
+  padding: 0;
+  display: block;
+  float: none;
 }
 
-/* line 43, ../sass/phone.scss */
+/* line 53, ../sass/phone.scss */
 #block-views-front-carousel-block img {
   min-height: 250px;
 }
 
-/* line 47, ../sass/phone.scss */
+/* line 57, ../sass/phone.scss */
 body.not-front {
   background-image: none;
 }
-/* line 49, ../sass/phone.scss */
+/* line 59, ../sass/phone.scss */
 body.not-front #header {
   height: 120px;
 }
-/* line 51, ../sass/phone.scss */
+/* line 61, ../sass/phone.scss */
 body.not-front #header #logo {
   padding-top: 20px;
 }
-/* line 53, ../sass/phone.scss */
+/* line 63, ../sass/phone.scss */
 body.not-front #block-locale-language {
   display: none;
 }
-/* line 54, ../sass/phone.scss */
+/* line 64, ../sass/phone.scss */
 body.not-front .region-sidebar-first {
   background-image: none;
 }
-/* line 55, ../sass/phone.scss */
+/* line 65, ../sass/phone.scss */
 body.not-front #footer {
   margin: 1em 0 0;
 }

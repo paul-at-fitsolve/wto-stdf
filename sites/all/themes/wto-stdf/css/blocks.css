@@ -414,19 +414,20 @@ footer .block a {
 #block-stdffrontpage-partnerlogos {
   max-width: 960px;
   margin-bottom: 1em !important;
+  text-align: center;
 }
-/* line 333, ../sass/blocks.scss */
+/* line 334, ../sass/blocks.scss */
 #block-stdffrontpage-partnerlogos h2 {
   text-align: center;
   text-transform: uppercase;
   font-size: 14pt;
 }
-/* line 338, ../sass/blocks.scss */
+/* line 339, ../sass/blocks.scss */
 #block-stdffrontpage-partnerlogos img {
-  margin: 0 2.8em;
+  margin: 0 1.8em;
 }
 
-/* line 343, ../sass/blocks.scss */
+/* line 344, ../sass/blocks.scss */
 #block-nice-menus-2 {
   background: url("images/bkg.png") repeat-x scroll left bottom #101010;
   left: 0;
@@ -441,14 +442,14 @@ footer .block a {
   top: 0;
   z-index: 1000;
 }
-/* line 344, ../sass/blocks.scss */
+/* line 345, ../sass/blocks.scss */
 #block-nice-menus-2 .block-title {
   color: white;
   float: right;
   font-size: 1em;
   font-weight: normal;
 }
-/* line 362, ../sass/blocks.scss */
+/* line 363, ../sass/blocks.scss */
 #block-nice-menus-2 ul {
   line-height: 1.4em;
   list-style: none outside none;
@@ -456,26 +457,26 @@ footer .block a {
   padding: 0;
   z-index: 999;
 }
-/* line 368, ../sass/blocks.scss */
+/* line 369, ../sass/blocks.scss */
 #block-nice-menus-2 ul li {
   float: left;
   background-color: black !important;
   border: none !important;
 }
-/* line 372, ../sass/blocks.scss */
+/* line 373, ../sass/blocks.scss */
 #block-nice-menus-2 ul li a {
   text-decoration: none;
   margin-bottom: 4px;
   color: white;
 }
 
-/* line 381, ../sass/blocks.scss */
+/* line 382, ../sass/blocks.scss */
 #block-menu-block-1 a {
   font-weight: 500;
   font-size: 12px;
   color: #668faf;
 }
-/* line 386, ../sass/blocks.scss */
+/* line 387, ../sass/blocks.scss */
 #block-menu-block-1 a.active {
   font-weight: 900;
   color: #00335c;

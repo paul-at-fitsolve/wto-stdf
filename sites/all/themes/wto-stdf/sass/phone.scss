@@ -30,14 +30,24 @@ div.field-slideshow-caption {
   display:none;
 }
 #header {
+  width: 100%;
   margin-right:2em;
   #logo {
     padding-top: 70px;
   }
   #block-search-form  {
-    display:none;
+    padding-top: 75px;
+    float: none;
+      .form-text.form-autocomplete { 
+        width: 80%;
+        margin-left: 20%;
+      }
   }
-  #block-locale-language ul li { padding: 0 1em 0 0; }
+  #block-locale-language ul li { 
+    padding: 0;
+    display: block;
+    float: none;
+  }
 }
 #block-views-front-carousel-block {
     img {
