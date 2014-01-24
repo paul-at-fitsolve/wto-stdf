@@ -104,7 +104,6 @@
       // print render($content);
     print render($content['field_start_date']);
     print render($content['field_end_date']);
-    
     ?>
     
     <h1><?php print $title; ?></h1>

@@ -145,10 +145,8 @@ article.node-project {
         float: left;
        }
     }
-    .field-name-field-key-objective {
-      .field-label {
-        border-bottom: 1px solid #00335c;
-      }
+    .field-name-field-key-objective {  
+      border-top: 1px solid #00335c;
     }
     #tabs {
       font-size: 90%;
@@ -169,7 +167,8 @@ article.node-project {
           margin-right: 1px;
           border-bottom: 1px solid #fff;
           .field-label { 
-            font-weight: 400;
+            font-weight: 900;
+            text-transform:uppercase;
             font-size: 100%;            
           }
         }

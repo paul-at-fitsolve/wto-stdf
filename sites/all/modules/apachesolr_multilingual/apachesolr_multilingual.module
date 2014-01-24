@@ -633,7 +633,7 @@ function apachesolr_multilingual_form_apachesolr_environment_edit_form_alter(&$f
     '#title' => t('Index taxonomy term translations'),
     '#default_value' => $environment['conf']['apachesolr_multilingual_index_settings']['apachesolr_multilingual_clir']['apachesolr_multilingual_index_term_translations'],
     '#description' => t('Index translations of the taxonomy terms. Requires module Taxonomy Translation which is part of !link.', array('!link' => l(t('Internationalization'), 'http://drupal.org/project/i18n'))),
-    '#disabled' => !module_exists('i18ntaxonomy'),
+    '#disabled' => !module_exists('i18n_taxonomy'),
   );
 
   array_unshift($form['actions']['save']['#submit'], 'apachesolr_multilingual_environment_edit_form_submit');

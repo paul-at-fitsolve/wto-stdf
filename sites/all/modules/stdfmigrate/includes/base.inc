@@ -2,6 +2,7 @@
 abstract class StdfMigration extends Migration {
   protected $project_source_file;
   protected $virtual_library_source_file;
+  protected $publishers_source_file;
   public function __construct($arguments) {
     parent::__construct ( $arguments );
     $this->team = array (
@@ -9,13 +10,32 @@ abstract class StdfMigration extends Migration {
         new MigrateTeamMember ( 'Paul Wilkin', 'paulw@appnovation.com', t ( 'Implementor' ) ) 
     );
     $this->project_source_file = drupal_get_path ( 'module', 'stdfmigrate' ) . '/stdfprojects.csv';
-    $this->virtual_library_source_file = drupal_get_path ( 'module', 'stdfmigrate' ) . '/stdfvlibrary.csv';
+    $this->virtual_library_source_file = drupal_get_path ( 'module', 'stdfmigrate' ) . '/stdfvlibraryfile.csv';
+    $this->publishers_source_file = drupal_get_path('module', 'stdfmigrate' ) . '/publishers.csv';
   }
+  
+  
+  protected function publisherscolumns() {
+    
+      $columns [0] = array (
+        'ref',
+        'Reference ID' 
+    );
+      
+    $columns [1] = array (
+        'publisher',
+        'Publisher' 
+    );
+    
+    return $columns;
+    
+  }
+  
   protected function vlibrarycsvcolumns() {
    
      $columns [0] = array (
-        'reference_number',
-        'Reference Number' 
+        'ref',
+        'Reference ID' 
     );
     $columns [1] = array (
         'title',
@@ -41,8 +61,8 @@ abstract class StdfMigration extends Migration {
     );
     
      $columns [6] = array (
-        'publisher_sp',
-        'Publisher SP' 
+        'publisher_es',
+        'Publisher ES' 
     );
     $columns [7] = array (
         'country_en',

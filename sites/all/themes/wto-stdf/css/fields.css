@@ -103,24 +103,24 @@ article.node-project .projectcontent .field-type-datetime .field-label {
   font-weight: 400;
   float: left;
 }
-/* line 149, ../sass/fields.scss */
-article.node-project .projectcontent .field-name-field-key-objective .field-label {
-  border-bottom: 1px solid #00335c;
+/* line 148, ../sass/fields.scss */
+article.node-project .projectcontent .field-name-field-key-objective {
+  border-top: 1px solid #00335c;
 }
-/* line 153, ../sass/fields.scss */
+/* line 151, ../sass/fields.scss */
 article.node-project .projectcontent #tabs {
   font-size: 90%;
 }
-/* line 156, ../sass/fields.scss */
+/* line 154, ../sass/fields.scss */
 article.node-project .projectcontent #tabs ul .field-items {
   display: none;
 }
-/* line 158, ../sass/fields.scss */
+/* line 156, ../sass/fields.scss */
 article.node-project .projectcontent #tabs .ui-widget-header, article.node-project .projectcontent #tabs .ui-state-default {
   background: none;
   border: none;
 }
-/* line 164, ../sass/fields.scss */
+/* line 162, ../sass/fields.scss */
 article.node-project .projectcontent #tabs .ui-state-default a {
   font-weight: 400;
   color: #333;
@@ -129,41 +129,42 @@ article.node-project .projectcontent #tabs .ui-state-default a {
   margin-right: 1px;
   border-bottom: 1px solid #fff;
 }
-/* line 171, ../sass/fields.scss */
+/* line 169, ../sass/fields.scss */
 article.node-project .projectcontent #tabs .ui-state-default a .field-label {
-  font-weight: 400;
+  font-weight: 900;
+  text-transform: uppercase;
   font-size: 100%;
 }
-/* line 180, ../sass/fields.scss */
+/* line 179, ../sass/fields.scss */
 article.node-project .projectcontent #tabs .ui-tabs-active a {
   background-image: none;
   background-color: #eef1f6;
   border-bottom: 1px solid #eef1f6;
 }
-/* line 186, ../sass/fields.scss */
+/* line 185, ../sass/fields.scss */
 article.node-project .projectcontent .ui-widget-content {
   border: none;
   color: #00335c;
 }
-/* line 190, ../sass/fields.scss */
+/* line 189, ../sass/fields.scss */
 article.node-project .projectcontent .tabcontent {
   background-color: #eef1f6;
   padding: 0.8em;
 }
-/* line 193, ../sass/fields.scss */
+/* line 192, ../sass/fields.scss */
 article.node-project .projectcontent .tabcontent .field-label {
   display: none;
 }
-/* line 194, ../sass/fields.scss */
+/* line 193, ../sass/fields.scss */
 article.node-project .projectcontent .tabcontent table {
   width: 100%;
 }
-/* line 197, ../sass/fields.scss */
+/* line 196, ../sass/fields.scss */
 article.node-project .projectcontent .ui-tabs {
   position: relative;
   zoom: 1;
 }
-/* line 198, ../sass/fields.scss */
+/* line 197, ../sass/fields.scss */
 article.node-project .projectcontent .ui-tabs .ui-tabs-nav li {
   list-style: none;
   float: left;
@@ -173,68 +174,68 @@ article.node-project .projectcontent .ui-tabs .ui-tabs-nav li {
   padding: 0;
   white-space: nowrap;
 }
-/* line 199, ../sass/fields.scss */
+/* line 198, ../sass/fields.scss */
 article.node-project .projectcontent .ui-tabs .ui-tabs-nav li a {
   float: left;
   padding: 0;
   text-decoration: none;
 }
-/* line 200, ../sass/fields.scss */
+/* line 199, ../sass/fields.scss */
 article.node-project .projectcontent .ui-tabs .ui-tabs-nav li.ui-tabs-selected {
   margin-bottom: 0;
   padding-bottom: 1px;
 }
-/* line 201, ../sass/fields.scss */
+/* line 200, ../sass/fields.scss */
 article.node-project .projectcontent .ui-tabs .ui-tabs-nav li.ui-tabs-selected a, article.node-project .projectcontent .ui-tabs .ui-tabs-nav li.ui-state-disabled a, article.node-project .projectcontent .ui-tabs .ui-tabs-nav li.ui-state-processing a {
   cursor: text;
 }
-/* line 202, ../sass/fields.scss */
+/* line 201, ../sass/fields.scss */
 article.node-project .projectcontent .ui-tabs .ui-tabs-nav li a, article.node-project .projectcontent .ui-tabs.ui-tabs-collapsible .ui-tabs-nav li.ui-tabs-selected a {
   cursor: pointer;
 }
-/* line 203, ../sass/fields.scss */
+/* line 202, ../sass/fields.scss */
 article.node-project .projectcontent .ui-tabs .ui-tabs-panel {
   display: block;
   border-width: 0;
   background-color: #eef1f6;
 }
-/* line 204, ../sass/fields.scss */
+/* line 203, ../sass/fields.scss */
 article.node-project .projectcontent .ui-tabs .ui-tabs-hide {
   display: none !important;
 }
 
-/* line 210, ../sass/fields.scss */
+/* line 209, ../sass/fields.scss */
 .ui-accordion .ui-state-default {
   background: url(../images/partners_bg.png) repeat-x center;
   border: none;
 }
-/* line 214, ../sass/fields.scss */
+/* line 213, ../sass/fields.scss */
 .ui-accordion a.ui-accordion-header, .ui-accordion .ui-accordion-header a {
   color: #00335c;
 }
-/* line 215, ../sass/fields.scss */
+/* line 214, ../sass/fields.scss */
 .ui-accordion .ui-widget-content {
   border: none;
   padding: 0;
   background: #EEF1F6;
   color: #00335C;
 }
-/* line 221, ../sass/fields.scss */
+/* line 220, ../sass/fields.scss */
 .ui-accordion .ui-state-active {
   background: #EEF1F6;
 }
 
-/* line 226, ../sass/fields.scss */
+/* line 225, ../sass/fields.scss */
 .ui-widget {
   font-family: "Lato", Verdana, "DejaVu Sans", sans-serif;
 }
 
-/* line 230, ../sass/fields.scss */
+/* line 229, ../sass/fields.scss */
 #field-slideshow-1-controls {
   align: center;
 }
 
-/* line 233, ../sass/fields.scss */
+/* line 232, ../sass/fields.scss */
 .field-name-field-FIELDNAME {
   /* Underscores in field name are replaced with dashes. */
 }

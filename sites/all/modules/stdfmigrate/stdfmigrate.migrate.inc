@@ -19,22 +19,15 @@ function stdfmigrate_migrate_api() {
               'class_name' => 'StdfMigrationVirtualLibraryMigration',
               'group_name' => 'virtual_library' 
           ),
+           'PublisherEN' => array (
+              'class_name' => 'StdfMigrationPublisherMigration',
+              'group_name' => 'virtual_library' 
+          ),
+          
           'ProjectNode' => array (
               'class_name' => 'StdfMigrationProjectMigration',
               'group_name' => 'projects' 
-          // 'dependencies'
-          // =>
-          // array
-          // (
-          // 'ImplementingEntityTerm'
-          // )
-                    ),
-          
-                    'BeneficiaryFieldCollection' => array(
-                            'class_name' => 'StdfMigrationBeneficiariesMigration',
-                            'group_name' => 'projects',
-                    )
-                
-            ) 
+          ),
+       )          
   );
 }
