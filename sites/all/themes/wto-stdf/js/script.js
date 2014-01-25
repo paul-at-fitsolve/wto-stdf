@@ -13,8 +13,7 @@
 (function ($, Drupal, window, document, undefined) {
 
 $(function() {
-  if ($(window).width() > 960) {
-   $("#block-search-form").mouseenter(
+$("#block-search-form").mouseenter(
     function(){ 
         $("#edit-search-block-form--2").stop().animate({width:'200px'},'fast');
     });
@@ -23,11 +22,16 @@ $("#block-search-form").mouseleave(
     if($("#edit-search-block-form--2").val().length ==0) {
       $("#edit-search-block-form--2").stop().animate({width:'0'},'fast');
     }});
-}
 })
 
 $(function() {
-	$( "#tabs" ).tabs();
+	//Apply JQuery UI tab but hide empty tabs with custom code.
+	var mytabs = $('div#tabs').tabs();
+	mytabs.children('ul').children('li').each(function(index, elem) {
+	    if ($(elem).children('a').children().length === 0){
+	        $(elem).hide(); // hide the 'li' tab-element
+	    }
+	}); 
 });
 
 	
