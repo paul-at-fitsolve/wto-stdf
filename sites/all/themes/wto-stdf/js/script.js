@@ -25,13 +25,24 @@ $("#block-search-form").mouseleave(
 })
 
 $(function() {
-	//Apply JQuery UI tab but hide empty tabs with custom code.
+	// Apply JQuery UI tab but hide empty tabs with custom code.
 	var mytabs = $('div#tabs').tabs();
+	// Hide all tabs that do not have content
 	mytabs.children('ul').children('li').each(function(index, elem) {
 	    if ($(elem).children('a').children().length === 0){
 	        $(elem).hide(); // hide the 'li' tab-element
 	    }
 	}); 
+	
+	// if selected tab is now hidden, select the first visible tab
+	if (mytabs.children('ul').children('li').eq(mytabs.tabs('option', 'selected')).is(':hidden')){
+	    mytabs.children('ul').children('li').each(function(index, elem) {
+	        if ($(elem).is(':visible')){
+	        	mytabs.tabs( "option", "active", index ); // select this tab
+	            return false; // break
+	        }
+	    }); 
+	}
 });
 
 	
