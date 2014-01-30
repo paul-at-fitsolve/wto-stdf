@@ -17,6 +17,7 @@ sites/*/themes/*/.sass-cache/*
 .settings
 .idea
 .vagrant
+*.komodoproject
 behat.yml
 site
 /site
