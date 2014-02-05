@@ -519,7 +519,7 @@ function _stdfcustom_countries_autocomplete($value) {
   $v = taxonomy_vocabulary_machine_name_load ( 'country' );
   $terms = taxonomy_get_tree ( $v->vid );
   foreach ( $terms as $term ) {
-    $pos = strpos ( $term->name, $value );
+    $pos = strpos ( strtoupper($term->name), strtoupper($value) );
     if ($pos === 0) {
       $options [$term->name] = $term->name;
     }
