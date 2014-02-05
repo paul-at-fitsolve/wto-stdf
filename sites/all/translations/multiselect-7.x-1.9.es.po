@@ -1,0 +1,26 @@
+# Spanish translation of Multiselect (7.x-1.9)
+# Copyright (c) 2012 by the Spanish translation team
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Multiselect (7.x-1.9)\n"
+"POT-Creation-Date: 2012-05-13 17:21+0000\n"
+"PO-Revision-Date: YYYY-mm-DD HH:MM+ZZZZ\n"
+"Language-Team: Spanish\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n!=1);\n"
+
+msgid "CCK"
+msgstr "CCK"
+msgid "This field is required."
+msgstr "Este campo es obligatorio."
+msgid "Titles only"
+msgstr "Sólo títulos"
+msgid "Full text"
+msgstr "Texto completo"
+msgid "You need to specify the 'allowed values' for this field."
+msgstr "Es necesario especificar los 'valores permitidos' para este campo."
+msgid "Titles plus teaser"
+msgstr "Títulos y resúmenes"
