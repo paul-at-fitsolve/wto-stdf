@@ -137,3 +137,7 @@ DirectoryIndex index.php index.html index.htm
     </FilesMatch>
   </IfModule>
 </IfModule>
+
+# Expand upload limits for Virtual Library
+php_value upload_max_filesize 25M
+php_value post_max_size 25M
