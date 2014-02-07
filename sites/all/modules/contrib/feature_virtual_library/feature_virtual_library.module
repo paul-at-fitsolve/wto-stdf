@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Feature_Virtual_Library feature.
+ */
+
+include_once 'feature_virtual_library.features.inc';

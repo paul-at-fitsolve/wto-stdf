@@ -1,0 +1,251 @@
+<?php
+/*
+ * Implements hook_init().
+ */
+function stdffrontpage_init() {
+  // Add the javaScript needed on the front_page.
+  if (drupal_is_front_page ()) {
+    drupal_add_js ( drupal_get_path ( 'module', 'stdffrontpage' ) . '/stdffrontpage.js' );
+  }
+}
+
+/**
+ * Implements
+ * hook_variable_info().
+ */
+function stdffrontpage_variable_info($options) {
+  // Contact information is declared as a translatable variable.
+  $variables ['Contact Information'] = array (
+      'type' => 'string',
+      'title' => t ( 'Contact Information' ),
+      'default' => t('Not set'),
+      'description' => t ( 'Holds the contact information for the site', array (), $options ),
+      'required' => TRUE,
+      'localize' => TRUE 
+  );
+  return $variables;
+}
+function stdffrontpage_form_alter(&$form, &$form_state, $form_id) {
+  if ($form_id == 'system_site_information_settings') {
+    $form ['contact_info'] = array (
+        '#title' => t ( 'Contact Information' ),
+        '#type' => 'text_format',
+        '#base_type' => 'textarea',
+        '#format' => 'wysiwyg_filter',
+        '#description' => t ( 'The site\'s contact information, which can be translated if required.' ),
+        '#default_value' => i18n_variable_get ( 'contact_info', $_GET ['variable_realm_key_language']),
+    );
+    $form ['proposal_deadline'] = array (
+        '#title' => t ( 'Proposal Deadline' ),
+        '#type' => 'text_format',
+        '#base_type' => 'textarea',
+        '#format' => 'wysiwyg_filter',
+        '#description' => t ( 'The deadline for proposals, which can be translated if required.' ),
+        '#default_value' => i18n_variable_get ( 'proposal_deadline', $_GET ['variable_realm_key_language']),     
+    );
+    
+    $form ['#submit'] [] = 'stdffrontpage_submit';
+    
+  }
+  
+  if ($form_id == 'views_exposed_form') {
+    $form ['submit'] ['#value'] = t('OK');
+    $form ['reset'] ['#value'] = t('CLEAR');
+  }
+}
+function stdffrontpage_submit(&$form, $form_state) {
+  i18n_variable_set ( 'contact_info', $form_state ['values'] ['contact_info']['value'], $_GET ['variable_realm_key_language'] );
+  i18n_variable_set ( 'proposal_deadline', $form_state ['values'] ['proposal_deadline']['value'], $_GET ['variable_realm_key_language'] );
+}
+
+/**
+ * Implements
+ * hook_entity_info_alter().Let's setup the custom viewmodes we need on the frontpage!
+ */
+function stdffrontpage_entity_info_alter(&$entity_info) {
+  $entity_info ['node'] ['view modes'] ['frontpage'] = array (
+      'label' => t ( 'Frontpage' ),
+      'custom settings' => TRUE 
+  );
+  
+  $entity_info ['node'] ['view modes'] ['publications'] = array (
+      'label' => t ( 'Publications' ),
+      'custom settings' => TRUE 
+  );
+  
+  $entity_info ['node'] ['view modes'] ['briefings'] = array (
+      'label' => t ( 'Briefings' ),
+      'custom settings' => TRUE 
+  );
+  
+  $entity_info ['node'] ['view modes'] ['thematic'] = array (
+      'label' => t ( 'Thematic Activities' ),
+      'custom settings' => TRUE 
+  );
+}
+function stdffrontpage_block_info() {
+  $blocks ['contact_info'] = array (
+      'info' => t ( 'Contact Information' ),
+      'cache' => DRUPAL_NO_CACHE 
+  );
+  
+  $blocks ['proposal_deadline'] = array (
+      'info' => t ( 'Proposal Deadline' ),
+      'cache' => DRUPAL_NO_CACHE 
+  );
+  
+  $blocks ['resources'] = array (
+      'info' => t ( 'Resources' ),
+      'cache' => DRUPAL_NO_CACHE 
+  );
+  
+  $blocks ['partnerlogos'] = array (
+      'info' => t ( 'Our Partners' ),
+      'cache' => DRUPAL_NO_CACHE 
+  );
+  
+  $blocks ['copyright'] = array (
+      'info' => t ( 'Copyright' ),
+      'cache' => DRUPAL_NO_CACHE 
+  );
+  
+  return $blocks;
+}
+function stdffrontpage_block_view($delta) {
+  $block = array ();
+  global $language;
+  switch ($delta) {
+    case 'contact_info' :
+      $block ['subject'] = t ( 'Contact Info' );
+      $block ['content'] = "<div class='menu-block-wrapper'>";
+      $block ['content'] .= i18n_variable_get ( 'contact_info', $language->language,'Please set this value.');
+      $block ['content'] .= "</div>";
+      break;
+    case 'proposal_deadline' :
+      $block ['content'] = "<div class='menu-block-wrapper'>";
+      $block ['content'] .= i18n_variable_get ( 'proposal_deadline', $language->language,'Please set this value.');
+      $block ['content'] .= "</div>";
+      break;
+    case 'resources' :
+      $block ['content'] = _stdffrontpage_resources ();
+      break;
+    case 'partnerlogos' :
+      $block ['subject'] = t ( 'Our Partners' );
+      $block ['content'] = _stdffrontpage_partners ();
+      break;
+    case 'copyright' :
+      $block ['subject'] = t ( 'Copyright' );
+      $block ['content'] = '<div id="copyright"><p>';
+      $block ['content'] .= t('&copy; 2013 Standards and Trade Development Facility - All Rights Reserved.');
+      $block ['content'] .= '</div>';
+      break;
+  }
+  return $block;
+}
+function _stdffrontpage_resources() {
+  $links = array (
+      'newsletter' => array (
+          'title' => t ( 'Newsletter' ),
+          'href' => 'mailchimp_archive' 
+      ),
+      'briefings' => array (
+          'title' => t ( 'Briefings' ),
+          'href' => 'nodequeue/briefings' 
+      ),
+      'publications' => array (
+          'title' => t ( 'Publications' ),
+          'href' => 'nodequeue/publications' 
+      ),
+      'videos' => array (
+          'title' => t ( 'Videos' ),
+          'href' => 'video-gallery' 
+      ) 
+  );
+  
+  $heading = array (
+      'text' => t ( 'Resources' ),
+      'level' => 'h2',
+      'class' => 'block-title' 
+  );
+  return theme ( 'links', array (
+      'links' => $links,
+      'heading' => $heading 
+  ) );
+}
+/*
+ * Helper function to generate some html for the partner logos.
+ */
+function _stdffrontpage_partners() {
+  global $language;
+  $image = array (
+      'title' => t ( 'FAO' ),
+      'alt' => t ( 'FAO' ),
+      'path' => path_to_theme () . '/images/partner1.png' 
+  );
+  
+  $html = l ( theme ( 'image', $image ), 'http://www.fao.org/home/' . $language->language, array (
+      'attributes' => array (
+          'target' => '_blank' 
+      ),
+      'html' => TRUE 
+  ) );
+  
+  $image = array (
+      'title' => t ( 'OIE' ),
+      'alt' => t ( 'OIE' ),
+      'path' => path_to_theme () . '/images/partner2.png' 
+  );
+  $html .= l ( theme ( 'image', $image ), 'http://www.oie.int/' . $language->language, array (
+      'attributes' => array (
+          'target' => '_blank' 
+      ),
+      'html' => TRUE 
+  ) );
+  
+  $image = array (
+      'title' => t ( 'World Bank' ),
+      'alt' => t ( 'World Bank' ),
+      'path' => path_to_theme () . '/images/partner3.png' 
+  );
+  
+  if ($language->language == 'en') {
+    $url = 'http://www.worldbank.org/';
+  } elseif ($language->language == 'fr') {
+    $url = 'http://www.banquemondiale.org/';
+  } else {
+    $url = 'http://www.bancomundial.org/';
+  }
+  
+  $html .= l ( theme ( 'image', $image ), $url, array (
+      'attributes' => array (
+          'target' => '_blank' 
+      ),
+      'html' => TRUE 
+  ) );
+  
+  $image = array (
+      'title' => t ( 'WHO' ),
+      'alt' => t ( 'WHO' ),
+      'path' => path_to_theme () . '/images/partner4.png' 
+  );
+  $html .= l ( theme ( 'image', $image ), 'http://www.who.int/' . $language->language, array (
+      'attributes' => array (
+          'target' => '_blank' 
+      ),
+      'html' => TRUE 
+  ) );
+  
+  $image = array (
+      'title' => t ( 'WTO' ),
+      'alt' => t ( 'WTO' ),
+      'path' => path_to_theme () . '/images/partner5.png' 
+  );
+  $html .= l ( theme ( 'image', $image ), 'http://www.wto.org/' . (($language->language == 'en') ? '' : (($language->language == 'fr') ? $language->language : 'indexsp.htm')), array (
+      'attributes' => array (
+          'target' => '_blank' 
+      ),
+      'html' => TRUE 
+  ) );
+  return $html;
+}
+ 

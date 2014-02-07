@@ -1,0 +1,159 @@
+
+  # $Id$
+#
+# LANGUAGE translation of Drupal (general)
+# Copyright YEAR NAME <EMAIL@ADDRESS>
+# Generated from files:
+#  stdfcustom.module: n/a
+#  stdfcustom.info: n/a
+#  stdfcustom.js: n/a
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"POT-Creation-Date: 2013-11-21 13:00+0000\n"
+"PO-Revision-Date: YYYY-mm-DD HH:MM+ZZZZ\n"
+"Last-Translator: NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+
+#: stdfcustom.module:88
+msgid "Simple Search"
+msgstr ""
+
+#: stdfcustom.module:101
+msgid "Advanced Search"
+msgstr ""
+
+#: stdfcustom.module:114
+msgid "STDF Newsletter"
+msgstr ""
+
+#: stdfcustom.module:115
+msgid "Archive of newsletters"
+msgstr ""
+
+#: stdfcustom.module:131
+msgid "Signup For Newsletter"
+msgstr ""
+
+#: stdfcustom.module:145
+msgid "Signup for our newsletter"
+msgstr ""
+
+#: stdfcustom.module:155
+msgid "Taipei"
+msgstr ""
+
+#: stdfcustom.module:174;256
+msgid "Any of these words"
+msgstr ""
+
+#: stdfcustom.module:175;257
+msgid "All of these words"
+msgstr ""
+
+#: stdfcustom.module:176;258
+msgid "Exact Phrase"
+msgstr ""
+
+#: stdfcustom.module:200
+msgid "Please enter more than 2 characters to search on."
+msgstr ""
+
+#: stdfcustom.module:269
+msgid "Title"
+msgstr ""
+
+#: stdfcustom.module:276
+msgid "Author"
+msgstr ""
+
+#: stdfcustom.module:284
+msgid "Publisher"
+msgstr ""
+
+#: stdfcustom.module:292
+msgid "Date From"
+msgstr ""
+
+#: stdfcustom.module:299
+msgid "Date To"
+msgstr ""
+
+#: stdfcustom.module:306
+msgid "Country"
+msgstr ""
+
+#: stdfcustom.module:313
+msgid "Keywords"
+msgstr ""
+
+#: stdfcustom.module:321
+msgid "EN"
+msgstr ""
+
+#: stdfcustom.module:322
+msgid "FR"
+msgstr ""
+
+#: stdfcustom.module:323
+msgid "SP"
+msgstr ""
+
+#: stdfcustom.module:325
+msgid "Filter by language"
+msgstr ""
+
+#: stdfcustom.module:377
+msgid "The STDF newsletter provides an overview of ongoing activities of the STDF and its partners.\r\n       It gives an update of the major developments in the area of SPS standard setting and implementation. \r\n      It also aims to provide SPS practitioners with links to useful resources and with information about forthcoming events."
+msgstr ""
+
+#: stdfcustom.module:411
+msgid "The reference number is already in use."
+msgstr ""
+
+#: stdfcustom.module:663
+msgid "Welcome @user"
+msgstr ""
+
+#: stdfcustom.module:30
+msgid "Solr authors autocomplete"
+msgstr ""
+
+#: stdfcustom.module:45
+msgid "Solr dates autocomplete"
+msgstr ""
+
+#: stdfcustom.module:60
+msgid "Solr publishers autocomplete"
+msgstr ""
+
+#: stdfcustom.module:75
+msgid "Solr keywords autocomplete"
+msgstr ""
+
+#: stdfcustom.module:89
+msgid "Simple Search using SOLR"
+msgstr ""
+
+#: stdfcustom.module:102
+msgid "Advanced Search using SOLR"
+msgstr ""
+
+#: stdfcustom.info:0;0
+msgid "STDF Custom"
+msgstr ""
+
+#: stdfcustom.info:0
+msgid "Customisations for the site by Appnovation"
+msgstr ""
+
+#: stdfcustom.js:0
+msgid "STDF Mailing List / Liste de distribution du STDF / Lista de distribución del STDF"
+msgstr ""
+

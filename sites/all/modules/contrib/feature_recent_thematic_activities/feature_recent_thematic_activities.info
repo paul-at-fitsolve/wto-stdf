@@ -1,0 +1,11 @@
+name = Feature_Recent_Thematic_Activities
+core = 7.x
+package = WTO-STDF
+php = 5.2.4
+version = 7.x-1.0
+project = feature_recent_thematic_activities
+dependencies[] = nodequeue
+dependencies[] = views
+features[ctools][] = views:views_default:3.0
+features[features_api][] = api:2
+features_exclude[dependencies][ctools] = ctools

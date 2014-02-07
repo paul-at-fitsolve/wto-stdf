@@ -1,0 +1,9 @@
+name = Views Dataviz Custom
+description = Provides a a views plugin for generating charts, graphs and other dataviz widgets.
+package = Views
+core = 7.x
+files[] = views_dataviz_custom.module
+files[] = views_dataviz_custom.views.inc
+files[] = views_dataviz_custom_plugin_style_dataviz.inc
+files[] = views_dataviz_custom_plugin_display_extender_dataviz_bigtext.inc
+dependencies[] = views

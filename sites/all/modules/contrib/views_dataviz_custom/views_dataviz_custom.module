@@ -1,0 +1,48 @@
+<?php
+/**
+ * @file
+ * Provides primary Drupal hook implementations.
+ *
+ * @author Jurriaan Roelofs (http://drupal.org/user/52638)
+ * @package Chart
+ */
+
+/**
+ * Our control variable that is used to prevent double loading of our charts
+ * Because drupal_add_js doesn't check for this and causes field duplication
+ */
+global $views_dataviz_custom_log;
+$views_dataviz_custom_log = array();
+
+/**
+ * Implements hook_views_api().
+ */
+function views_dataviz_custom_views_api() {
+  return array(
+    'api' => '3',
+  );
+}
+
+
+/**
+ * Get a map of chart types to human-readable names.
+ *
+ * @return
+ *   An associative array of chart types.
+ */
+function views_dataviz_custom_types() {
+  return array(
+    'AreaChart' => t('Area chart'),
+    'BarChart' => t('Bar chart'),
+    'BubbleChart' => t('Bubble chart'),
+    'ColumnChart' => t('Column chart'),
+    'Gauge' => t('Gauge'),
+    'GeoChart' => t('Geo Chart'),
+    'LineChart' => t('Line chart'),
+    'PieChart' => t('Pie chart'),
+    'ScatterChart' => t('Scatter chart'),
+    'SteppedAreaChart' => t('Stepped area chart'),
+    'Table' => t('Table chart'),
+    'TreeMap' => t('Treemap'),
+  );
+}
