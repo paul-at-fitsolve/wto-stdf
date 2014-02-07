@@ -613,6 +613,24 @@ function stdfcustom_form_user_register_form_alter(&$form, &$form_state) {
   }
 }
 
+function build_solr_search_string($sval) {
+  $filter = '';
+  if (count(sval) > 0) {
+    $words = explode(' ',$sval);
+    $filter = '(';
+    foreach ($words as $word) {
+      if (strlen($word) > 0) {
+        if (strlen($filter) > 1) {
+          $filter .= ' AND ';
+        }
+        $filter .= $word . '*';
+      }
+    }
+    $filter .= ')';
+  }
+  return $filter;
+}
+
 // Apache SOLR customisations
 
 /*
@@ -624,18 +642,23 @@ function stdfcustom_apachesolr_query_alter($query) {
   if ($url[3] == 'simple') {
     return;
   }
-  
-  $compiled_filter = new SolrFilterSubQuery ( 'AND' );
+  $compiled_filter = new SolrFilterSubQuery ( 'OR' );
   if ($_SESSION ['advanced'] ['title'] != '') {
-    $compiled_filter->addFilter ( 'title', $_SESSION ['advanced'] ['title'] );
+    //$compiled_filter->addFilter ( 'title', $_SESSION ['advanced'] ['title'] );
+    $filter = build_solr_search_string($_SESSION ['advanced'] ['title']);
+    $query->addFilter ( 'label', $filter );
   }
   
   if ($_SESSION ['advanced'] ['author'] != '') {
-    $compiled_filter->addFilter ( 'sm_vid_Author', $_SESSION ['advanced'] ['author'] );
+    //$compiled_filter->addFilter ( 'sm_vid_Author', $_SESSION ['advanced'] ['author'] );
+    $filter = build_solr_search_string($_SESSION ['advanced'] ['author']);
+    $query->addFilter ( 'sm_vid_Author', $filter );
   }
   
   if ($_SESSION ['advanced'] ['publisher'] != '') {
-    $compiled_filter->addFilter ( 'sm_vid_Publisher', $_SESSION ['advanced'] ['publisher'] );
+    //$compiled_filter->addFilter ( 'sm_vid_Publisher', $_SESSION ['advanced'] ['publisher'] );
+    $filter = build_solr_search_string($_SESSION ['advanced'] ['publisher']);
+    $query->addFilter ( 'sm_vid_Publisher', $filter );
   }
   
   if ($_SESSION ['advanced'] ['country'] != '') {
@@ -648,6 +671,7 @@ function stdfcustom_apachesolr_query_alter($query) {
   }
   $compiled_filter->addFilter ( 'ds_field_publication_date', $range );
   // dpm($_SESSION['advanced']['language']);
+  
   $language_filter = new SolrFilterSubQuery ( 'OR' );
   if (! $_SESSION ['advanced'] ['language'] ['EN'] == 0) {
     $language_filter->addFilter ( 'ss_field_language', 'en' );
@@ -660,7 +684,8 @@ function stdfcustom_apachesolr_query_alter($query) {
   }
   
   $compiled_filter->addFilterSubQuery ( $language_filter );
-  $query->addFilterSubQuery ( $compiled_filter );
+
+  //$query->addFilterSubQuery ( $compiled_filter );
   //dpm($query->getParams());
 }
 function stdfcustom_block_view_nice_menus_2_alter(&$data, $block) {
