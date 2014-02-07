@@ -1,7 +1,0 @@
-name = STDF Frontpage
-description = Creates html for the frontpage.
-files[] = stdffrontpage.module
-core = 7.x
-package = STDF Custom
-php = 5.2.4
-version = 7.x-1.0

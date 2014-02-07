@@ -1,9 +1,0 @@
-name = stdfmigrate
-core = 7.x
-description = Custom migration for files and projects
-dependencies[] = migrate 
-files[] = includes/base.inc
-files[] = includes/projects.inc
-files[] = includes/virtual_library.inc
-files[] = includes/publishers.inc
-

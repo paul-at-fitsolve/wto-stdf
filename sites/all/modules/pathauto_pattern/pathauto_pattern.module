@@ -1,7 +1,0 @@
-<?php
-/**
- * @file
- * Code for the Pathauto pattern feature.
- */
-
-include_once 'pathauto_pattern.features.inc';

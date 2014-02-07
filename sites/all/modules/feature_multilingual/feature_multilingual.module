@@ -1,7 +1,0 @@
-<?php
-/**
- * @file
- * Code for the Feature_Multilingual feature.
- */
-
-include_once 'feature_multilingual.features.inc';

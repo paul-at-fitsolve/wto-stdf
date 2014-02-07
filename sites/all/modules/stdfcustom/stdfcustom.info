@@ -1,7 +1,0 @@
-name = STDF Custom
-description = Customisations for the site by Appnovation
-files[] = stdfcustom.module
-core = 7.x
-package = STDF Custom
-php = 5.2.4
-version = 7.x-1.0
