@@ -7,7 +7,6 @@ sites/*/settings*.php
 sites/*/files
 sites/*/private
 
-sites/all/libraries/flexslider/
 sites/all/modules/stdfmigrate/vl.tar
 sites/all/modules/stdfmigrate/virtual_library
 sites/default/files
@@ -19,6 +18,7 @@ sites/*/themes/*/.sass-cache/*
 .settings
 .idea
 .vagrant
+*.komodoproject
 behat.yml
 site
 /site
